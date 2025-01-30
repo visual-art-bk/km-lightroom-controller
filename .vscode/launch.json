@@ -1,0 +1,67 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: Debug src/main.py",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/src/main.py",
+            "console": "internalConsole",
+            "cwd": "${workspaceFolder}",
+            "justMyCode": true
+        },
+        {
+            "name": "Test Python tests/test.py",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/tests/test.py",
+            "console": "internalConsole",
+            "cwd": "${workspaceFolder}",
+            "justMyCode": true
+        },
+        {
+            "type": "autohotkey",        // AutoHotkey Debug Adapter 타입
+            "request": "launch",         // 실행 요청 유형 (launch)
+            "name": "Run AutoHotkey",    // 디버그 설정 이름
+            "runtime": "C:/Program Files/AutoHotkey/v2/AutoHotkey64.exe", // AutoHotkey 실행 파일 경로
+            "program": "${workspaceFolder}/AutoHotkey/src/Main.ahk", // 실행할 AHK 스크립트
+            "stopOnEntry": true,         // 디버깅 시작 시 첫 줄에서 멈춤
+            "runtimeArgs": ["/ErrorStdOut"], // 실행 시 추가 옵션
+            "args": [],                  // 스크립트에 전달할 인수 (필요 시 추가)
+            "env": {},                   // 디버깅 시 설정할 환경 변수
+            "cwd": "${workspaceFolder}"  // 현재 작업 디렉터리 설정
+        },
+        {
+            "type": "autohotkey",        // AutoHotkey Debug Adapter 타입
+            "request": "launch",         // 실행 요청 유형 (launch)
+            "name": "Test AutoHotkey",    // 디버그 설정 이름
+            "runtime": "C:/Program Files/AutoHotkey/v2/AutoHotkey64.exe", // AutoHotkey 실행 파일 경로
+            "program": "${workspaceFolder}/tests/test.ahk", // 실행할 AHK 스크립트
+            "stopOnEntry": true,         // 디버깅 시작 시 첫 줄에서 멈춤
+            "runtimeArgs": ["/ErrorStdOut"], // 실행 시 추가 옵션
+            "args": [],                  // 스크립트에 전달할 인수 (필요 시 추가)
+            "env": {},                   // 디버깅 시 설정할 환경 변수
+            "cwd": "${workspaceFolder}"  // 현재 작업 디렉터리 설정
+        },
+        {
+        
+            "type": "lua",
+            "name": "Launch Lua Main",
+            "program": "${workspaceFolder}/Lua/src/main.lua",
+            "request": "launch",
+            "stopOnEntry": true,
+            "arg": [],
+           
+        },
+        {
+            "type": "lua",
+            "name": "Debug Lua File",
+            "program": "${workspaceFolder}/Lua/src/main.lua",
+            "request": "launch",
+
+        }
+    ]
+}

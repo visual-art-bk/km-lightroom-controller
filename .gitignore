@@ -1,0 +1,7 @@
+myenv
+
+*.txt
+
+tests
+
+tests/test.ahk
