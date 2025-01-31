@@ -1,7 +1,5 @@
 myenv
 
-*.txt
-
 tests
 
-tests/test.ahk
+py_inspect.py
