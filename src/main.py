@@ -1,6 +1,8 @@
+import threading
 import tkinter as tk
 from tkinter import messagebox
-import lightroom   # 기존의 Lightroom 연결 함수
+import lightroom  # 기존의 Lightroom 연결 함수
+from gui_utils.overlay.OverlayWindow import OverlayWindow
 
 # Tkinter 창 생성
 # class LightroomApp:
@@ -34,7 +36,15 @@ import lightroom   # 기존의 Lightroom 연결 함수
 #         messagebox.showinfo("완료", f"Lightroom 실행 완료: {username}")
 
 if __name__ == "__main__":
-    lightroom.init('test123')
-    # root = tk.Tk()
-    # app = LightroomApp(root)
-    # root.mainloop()
+    # Tkinter 메인 루프 생성 (오버레이 실행)
+    root = tk.Tk()
+    root.withdraw()  # 기본 Tk 창 숨기기
+
+    # 오버레이 창 생성 (메인 스레드에서 실행)
+    overlay = OverlayWindow.create_overlay()
+
+    # Lightroom 실행을 별도 스레드에서 처리
+    threading.Thread(target=lightroom.init, daemon=True).start()
+
+    # Tkinter 이벤트 루프 실행 (오버레이 유지)
+    root.mainloop()

@@ -23,7 +23,7 @@ def run_tet_capture(username, app):
     cilck_tet_capture_settings_ok(win_specs=tet_capture_settings)
 
 
-def init(username):
+def init(username="정의되지않음"):
     lightroomApp = LightroomApp()
     lightroomApp.start()
 
