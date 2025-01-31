@@ -3,3 +3,5 @@ myenv
 tests
 
 py_inspect.py
+
+src/*/**/__pycache__

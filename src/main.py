@@ -1,6 +1,6 @@
 import tkinter as tk
 from tkinter import messagebox
-from lightroom_utils import connect_lightroom  # 기존의 Lightroom 연결 함수
+import lightroom   # 기존의 Lightroom 연결 함수
 
 # Tkinter 창 생성
 # class LightroomApp:
@@ -34,7 +34,7 @@ from lightroom_utils import connect_lightroom  # 기존의 Lightroom 연결 함�
 #         messagebox.showinfo("완료", f"Lightroom 실행 완료: {username}")
 
 if __name__ == "__main__":
-    connect_lightroom("test123")
+    lightroom.init('test123')
     # root = tk.Tk()
     # app = LightroomApp(root)
     # root.mainloop()
