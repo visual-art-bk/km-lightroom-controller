@@ -30,7 +30,9 @@ def init(username="정의되지않음"):
     app = lightroomApp.get_app()
     run_tet_capture(username, app)
 
-    time.sleep(30)
+    time.sleep(10)
+
+    print("성공적으로 자동화가 끝났습니다")
 
 
 __all__ = ["init"]
