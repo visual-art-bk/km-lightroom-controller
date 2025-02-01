@@ -9,9 +9,16 @@ from .tet_capture.inputs.input_username import input_session_id
 from .tet_capture.clicks.cilck_tet_capture_settings_ok import (
     cilck_tet_capture_settings_ok,
 )
+from StateManager import StateManager
 
 
 def run_tet_capture(username, app):
+    # ✅ 전역 상태 확인
+    state_manager = StateManager()
+    state = state_manager.get_state()
+
+    print(state)
+
     lightroom = get_lightroom_win(app)
 
     select_file_menu(app)
