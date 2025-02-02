@@ -1,7 +1,6 @@
 from PySide6.QtWidgets import QApplication
 from ui.MainWindow import MainWindow
 
-# from ui.overlay.OverlayWindow import
 import sys
 
 if __name__ == "__main__":

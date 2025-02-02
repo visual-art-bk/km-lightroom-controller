@@ -13,6 +13,7 @@ from PySide6.QtCore import QThread, Signal, Qt, QMetaObject
 from StateManager import StateManager, AppState
 import lightroom
 from ui.overlay.OverlayWindow import OverlayWindow
+from monitorings.LightroomMonitorThread import LightroomMonitorThread
 
 
 class LightroomThread(QThread):
@@ -87,6 +88,7 @@ class MainWindow(QMainWindow):
         self.setCentralWidget(container)
 
         self.overlay = None
+        self.lightroom_monitor = None
 
     def init_state(self):
 
@@ -144,6 +146,11 @@ class MainWindow(QMainWindow):
             overlay_running=True,
         )
 
+        # ✅ Lightroom 실행 감지 스레드 시작
+        self.lightroom_monitor = LightroomMonitorThread()
+        self.lightroom_monitor.lightroom_closed.connect(self.close_main_window)
+        self.lightroom_monitor.start()
+
     def create_overlay(self):
         """✅ `overlay_running=True`이면 OverlayWindow 생성"""
         if self.overlay is None:
@@ -162,6 +169,11 @@ class MainWindow(QMainWindow):
             self.overlay.show()
         else:
             print("해당없음")
+
+    def close_main_window(self):
+        """✅ Lightroom이 종료되면 MainWindow도 종료"""
+        print("✅ MainWindow 종료 실행!")
+        self.close()
 
     def on_lightroom_finished(self, result: str):
         """Lightroom 실행 완료 후 UI 업데이트"""

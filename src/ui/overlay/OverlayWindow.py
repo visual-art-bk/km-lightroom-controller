@@ -1,6 +1,5 @@
 from PySide6.QtWidgets import QWidget, QLabel, QVBoxLayout, QGraphicsBlurEffect
 from PySide6.QtCore import Qt, QTimer
-from BlurWindow.blurWindow import GlobalBlur
 
 
 class AnimatedTextWidget(QWidget):
@@ -73,12 +72,12 @@ class OverlayWindow(QWidget):
         # ✅ 부모 `OverlayWindow`를 완전히 투명하게 설정
         self.setAttribute(Qt.WA_TranslucentBackground)
 
-        self.setStyleSheet(
-            """
-            background-color: rgba(255, 255, 255, 1);
-            """
-        )
-        GlobalBlur(self.winId(), Dark=True, QWidget=self)
+        # self.setStyleSheet(
+        #     """
+        #     background-color: rgba(255, 255, 255, 1);
+        #     """
+        # )
+ 
 
         # ✅ 배경 위젯 추가 (부모 위젯이 아니라 별도 위젯으로 투명도 적용)
         self.bg_widget = QWidget(self)
