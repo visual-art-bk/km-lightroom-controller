@@ -5,10 +5,11 @@ from pywinauto import Application
 from pywinauto.findwindows import ElementNotFoundError
 from StateManager import StateManager
 
+
 class LightroomApp:
     _instance = None  # Singleton 인스턴스 저장 변수
     state_manager = StateManager()
-    
+
     def __new__(cls):
         if cls._instance is None:
             cls._instance = super(LightroomApp, cls).__new__(cls)
@@ -17,14 +18,14 @@ class LightroomApp:
 
     def kill_lightroom(self):
         """Lightroom이 실행 중이라면 강제 종료"""
-        for process in psutil.process_iter(attrs=['name', 'pid']):
-            if "Lightroom.exe" in process.info['name']:
+        for process in psutil.process_iter(attrs=["name", "pid"]):
+            if "Lightroom.exe" in process.info["name"]:
                 print(f"❌ Lightroom 프로세스 종료 중... (PID: {process.info['pid']})")
                 process.terminate()  # 프로세스 종료 요청
                 process.wait()  # 프로세스가 완전히 종료될 때까지 대기
                 print("✅ Lightroom이 강제 종료되었습니다.")
 
-    def start(self):
+    def restart(self):
         """무조건 Lightroom을 종료하고 새로 실행하는 메서드"""
         print("🔄 Lightroom을 재시작합니다...")
 
@@ -41,6 +42,9 @@ class LightroomApp:
         time.sleep(10)  # Lightroom 실행을 위한 대기 시간
         print("✅ Lightroom 실행 완료!")
 
+    def start(self):
+        # self.restart()
+        
         try:
             # ✅ 실행된 Lightroom과 연결
             self.app = Application(backend="uia").connect(

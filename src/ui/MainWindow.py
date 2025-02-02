@@ -139,7 +139,7 @@ class MainWindow(QMainWindow):
 
         time.sleep(1.5)
 
-        self.create_overlay()
+        # self.create_overlay()
 
         self.state_manager.update_state(
             context="오버레이실행 상태",

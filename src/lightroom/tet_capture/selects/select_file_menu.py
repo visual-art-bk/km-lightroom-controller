@@ -1,8 +1,9 @@
 import time
-from pywinauto import Application
+from pywinauto import Application, WindowSpecification
 from ...utils.get_lightroom_win import get_lightroom_win
 
-def select_file_menu(app: Application):
+
+def select_file_menu(app: Application)->WindowSpecification:
     try:
         lightroom = get_lightroom_win(app)
 
@@ -17,6 +18,8 @@ def select_file_menu(app: Application):
         file_menu.click_input()
 
         print("File 메뉴 클릭 성공")
+        
+        return file_menu
     except Exception as e:
         is_exist = file_menu.exists(timeout=10)
         if is_exist == False:

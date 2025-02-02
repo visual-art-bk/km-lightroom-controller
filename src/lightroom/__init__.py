@@ -9,7 +9,7 @@ from .tet_capture.inputs.input_username import input_session_id
 from .tet_capture.clicks.cilck_tet_capture_settings_ok import (
     cilck_tet_capture_settings_ok,
 )
-from StateManager import StateManager
+from lightroom.exports.run_exports import run_exports
 
 
 def run_tet_capture(username, app):
@@ -20,21 +20,24 @@ def run_tet_capture(username, app):
     select_start_tet_capture(app)
 
     tet_capture_settings = find_tet_capture_settings(lightroom)
+    tet_capture_settings.print_control_identifiers()
+
     input_session_id(win_specs=tet_capture_settings, session_id=username)
     cilck_tet_capture_settings_ok(win_specs=tet_capture_settings)
 
 
 def init(username="정의되지않음"):
+
     # ✅ 전역 상태 확인
-    state_manager = StateManager()
-    state = state_manager.get_state()
 
     lightroomApp = LightroomApp()
     lightroomApp.start()
 
     app = lightroomApp.get_app()
-    run_tet_capture(username, app)
+    lightroom = get_lightroom_win(app)
 
-    time.sleep(1)
+
+
+    run_exports(app=app, lightroom=lightroom)
 
 __all__ = ["init"]
