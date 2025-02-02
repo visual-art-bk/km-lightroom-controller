@@ -6,10 +6,13 @@ from rx.subject import BehaviorSubject
 class AppState(BaseModel):
     """전역 상태 모델 (Lightroom 자동 제어를 위한 데이터 관리)"""
     username: str = ""  # 사용자가 입력한 이름
+    phone_number: str = ""
     label_text: str = ""  # Label 텍스트 저장
     export_filename: str = ""  # 내보낼 파일명
     lightroom_running: bool = False  # Lightroom 실행 여부
+    overlay_running: bool = False # 오버레이 실행 여부부
     export_completed: bool = False  # 내보내기 완료 여부
+    context: str = ""
 
 
 class StateManager:

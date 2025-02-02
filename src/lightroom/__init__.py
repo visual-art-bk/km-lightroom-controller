@@ -13,12 +13,6 @@ from StateManager import StateManager
 
 
 def run_tet_capture(username, app):
-    # ✅ 전역 상태 확인
-    state_manager = StateManager()
-    state = state_manager.get_state()
-
-    print(state)
-
     lightroom = get_lightroom_win(app)
 
     select_file_menu(app)
@@ -31,15 +25,16 @@ def run_tet_capture(username, app):
 
 
 def init(username="정의되지않음"):
+    # ✅ 전역 상태 확인
+    state_manager = StateManager()
+    state = state_manager.get_state()
+
     lightroomApp = LightroomApp()
     lightroomApp.start()
 
     app = lightroomApp.get_app()
     run_tet_capture(username, app)
 
-    time.sleep(10)
-
-    print("성공적으로 자동화가 끝났습니다")
-
+    time.sleep(1)
 
 __all__ = ["init"]

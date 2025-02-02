@@ -1,3 +1,4 @@
+import time
 from PySide6.QtWidgets import (
     QMainWindow,
     QLabel,
@@ -8,9 +9,10 @@ from PySide6.QtWidgets import (
     QWidget,
     QApplication,
 )
-from PySide6.QtCore import QThread, Signal, Qt
+from PySide6.QtCore import QThread, Signal, Qt, QMetaObject
 from StateManager import StateManager, AppState
 import lightroom
+from ui.overlay.OverlayWindow import OverlayWindow
 
 
 class LightroomThread(QThread):
@@ -64,11 +66,17 @@ class MainWindow(QMainWindow):
         # ✅ UI 레이아웃 설정
         layout = QVBoxLayout()
 
-        self.label = QLabel("사용자 이름을 입력하세요:")
-        layout.addWidget(self.label)
+        self.label_username = QLabel("예약자 이름")
+        layout.addWidget(self.label_username)
 
-        self.entry = QLineEdit()
-        layout.addWidget(self.entry)
+        self.username_entry = QLineEdit()
+        layout.addWidget(self.username_entry)
+
+        self.label_phone_number = QLabel("전화번호 뒷자리 4자리")
+        layout.addWidget(self.label_phone_number)
+
+        self.phone_number_entry = QLineEdit()
+        layout.addWidget(self.phone_number_entry)
 
         self.run_button = QPushButton("Lightroom 실행")
         self.run_button.clicked.connect(self.run_lightroom)
@@ -78,21 +86,82 @@ class MainWindow(QMainWindow):
         container.setLayout(layout)
         self.setCentralWidget(container)
 
+        self.overlay = None
+
+    def init_state(self):
+
+        self.overlay = None
+        # OverlayWindow._instance = None
+        self.state_manager.update_state(
+            phone_number="",
+            username="",
+            context="상태 초기화",
+            lightroom_running=False,
+            overlay_running=False,
+        )
+
     def run_lightroom(self):
+        self.init_state()
+
         """사용자가 입력한 값을 `LightroomThread`에 전달하여 실행"""
-        username = self.entry.text().strip()
+        username = self.username_entry.text().strip()
+        phone_number = self.phone_number_entry.text().strip()
 
         if not username:
             QMessageBox.warning(self, "입력 오류", "사용자 이름을 입력하세요!")
             return
 
+        if not phone_number:
+            QMessageBox.warning(
+                self, "입력 오류", "전화번호 뒷자리 4자리를 입력하세요!"
+            )
+            return
+
         # 🔄 전역 상태 업데이트 (RxPy 자동 반영)
-        self.state_manager.update_state(username=username, lightroom_running=True)
+        self.state_manager.update_state(
+            phone_number=phone_number,
+            username=username,
+            context="사용자정보입력 상태",
+        )
 
         # Lightroom 실행을 백그라운드에서 실행
         self.thread = LightroomThread(username)
         self.thread.finished.connect(self.on_lightroom_finished)
         self.thread.start()
+
+        # 🔄 전역 상태 업데이트 (RxPy 자동 반영)
+        self.state_manager.update_state(
+            context="라이트룸실행 상태",
+            lightroom_running=True,
+        )
+
+        time.sleep(1.5)
+
+        self.create_overlay()
+
+        self.state_manager.update_state(
+            context="오버레이실행 상태",
+            overlay_running=True,
+        )
+
+    def create_overlay(self):
+        """✅ `overlay_running=True`이면 OverlayWindow 생성"""
+        if self.overlay is None:
+            self.overlay = OverlayWindow.create_overlay(
+                width=1200,
+                height=550,
+                bg_color="#FFFFFF",
+                opacity=0.3,
+                text="⚠ 경고: 설정을 변경하지 마세요!",
+                text_color="black",
+                font_size=48,
+                animation_speed=25,
+                y_offset=50,
+                blur_radius=50,
+            )
+            self.overlay.show()
+        else:
+            print("해당없음")
 
     def on_lightroom_finished(self, result: str):
         """Lightroom 실행 완료 후 UI 업데이트"""
@@ -109,12 +178,29 @@ class MainWindow(QMainWindow):
 
     def on_state_change(self, new_state: AppState):
         """전역 상태 변경 감지 및 UI 반영"""
-        print(f"[📢] 상태 변경 감지: {new_state}")
+        print(f"---> [📢] 상태 변경 감지: {new_state.context}")
+        print(f"사용자이름: {new_state.username}")
+        print(f"전화번호: {new_state.phone_number}")
+        print(f"라이트룸 실행여부: {'실행' if new_state.lightroom_running else '중지'}")
+        print(f"오버레이이 실행여부: {'실행' if new_state.overlay_running else '중지'}")
+        print(f"                                                      ")
 
-        if new_state.export_completed:
-            QMessageBox.information(
-                self,
-                "내보내기 완료",
-                f"파일이 내보내졌습니다: {new_state.export_filename}",
+        if (
+            new_state.overlay_running == False
+            and OverlayWindow._instance
+            # and new_state.lightroom_running == True
+        ):
+
+            print(f"✅ 오버레이 창 닫기 실행!")
+
+            QMetaObject.invokeMethod(
+                OverlayWindow._instance, "close", Qt.QueuedConnection
             )
-            print(f"[✅] 최종 상태 → {new_state}")
+
+            OverlayWindow._instance = None  # ✅ 싱글턴 객체 초기화
+
+            self.state_manager.update_state(
+                context="오버레이 종료 상태",
+                lightroom_running=True,
+                overlay_running=False,
+            )

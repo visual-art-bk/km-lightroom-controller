@@ -3,11 +3,12 @@ import time
 import psutil
 from pywinauto import Application
 from pywinauto.findwindows import ElementNotFoundError
-
+from StateManager import StateManager
 
 class LightroomApp:
     _instance = None  # Singleton 인스턴스 저장 변수
-
+    state_manager = StateManager()
+    
     def __new__(cls):
         if cls._instance is None:
             cls._instance = super(LightroomApp, cls).__new__(cls)
