@@ -1,0 +1,974 @@
+---> [📢] 상태 변경 감지: 
+사용자이름: 
+전화번호: 
+라이트룸 실행여부: 중지
+오버레이이 실행여부: 중지
+---> [📢] 상태 변경 감지: 상태 초기화
+사용자이름: 
+전화번호: 
+라이트룸 실행여부: 중지
+오버레이이 실행여부: 중지
+                                                      
+---> [📢] 상태 변경 감지: 사용자정보입력 상태
+사용자이름: dfdf
+전화번호: dff
+라이트룸 실행여부: 중지
+오버레이이 실행여부: 중지
+                                                      
+---> [📢] 상태 변경 감지: 라이트룸실행 상태
+사용자이름: dfdf
+전화번호: dff
+라이트룸 실행여부: 실행
+오버레이이 실행여부: 중지
+                                                      
+[🚀] Lightroom 실행 시작: dfdf
+✅ pywinauto가 Lightroom에 성공적으로 연결됨!
+---> [📢] 상태 변경 감지: 오버레이실행 상태
+사용자이름: dfdf
+전화번호: dff
+라이트룸 실행여부: 실행
+오버레이이 실행여부: 실행
+라이트룸 창 준비완료
+✅ 전체 사진 선택 Ctrl + A 실행 - 키값 ^a 전송 성공
+파일(F) 메뉴 클릭 시작..
+파일(F)  메뉴 클릭 성공!
+✅ 내보내기 단축키 ^+E - 키값 ^+E 전송 성공
+✅ '내보내기' 창 감지 완료!
+Control Identifiers:
+
+Dialog - '6개의 파일 내보내기'    (L422, T226, R1498, B835)
+['6개의 파일 내보내기', '6개의 파일 내보내기Dialog', 'Dialog', '6개의 파일 내보내기0', '6개의 파일 내보내기1']
+child_window(title="6개의 파일 내보내기", control_type="Window")
+   | 
+   | Static - '내보낼 위치:'    (L450, T281, R700, B298)
+   | ['내보낼 위치:', '내보낼 위치:Static', 'Static', '내보낼 위치:0', '내보낼 위치:1', '내보낼 위치:Static0', '내보낼 위치:Static1', 'Static0', 'Static1']
+   | child_window(title="내보낼 위치:", auto_id="-367747984", control_type="Text")
+   | 
+   | ComboBox - '내보낼 위치:'    (L710, T277, R900, B301)
+   | ['내보낼 위치:2', 'ComboBox', '내보낼 위치:ComboBox', 'ComboBox0', 'ComboBox1', '내보낼 위치:ComboBox0', '내보낼 위치:ComboBox1']
+   | child_window(title="내보낼 위치:", auto_id="65535", control_type="ComboBox")
+   |    | 
+   |    | Static - '내보낼 위치:'    (L3, T3, R170, B21)
+   |    | ['내보낼 위치:3', '내보낼 위치:Static2', 'Static2']
+   |    | child_window(title="내보낼 위치:", control_type="Text")
+   |    | 
+   |    | Button - '열기'    (L884, T278, R899, B300)
+   |    | ['열기', '열기Button', 'Button', 'Button0', 'Button1', '열기0', '열기1', '열기Button0', '열기Button1']
+   |    | child_window(title="열기", auto_id="DropDown", control_type="Button")
+   | 
+   | Static - '사전 설정:'    (L450, T312, R508, B326)
+   | ['Static3', '사전 설정:Static', '사전 설정:', '사전 설정:Static0', '사전 설정:Static1']
+   | child_window(title="사전 설정:", auto_id="-367779216", control_type="Text")
+   | 
+   | Pane - 'Scroll View'    (L450, T331, R700, B689)
+   | ['Scroll ViewPane', 'Pane', 'Scroll View', 'Pane0', 'Pane1', 'Scroll ViewPane0', 'Scroll ViewPane1', 'Scroll View0', 'Scroll View1']
+   | child_window(title="Scroll View", auto_id="100", control_type="Pane")
+   |    | 
+   |    | Pane - 'ClipView'    (L452, T333, R682, B687)
+   |    | ['ClipViewPane', 'Pane2', 'ClipView', 'ClipViewPane0', 'ClipViewPane1', 'ClipView0', 'ClipView1']
+   |    | child_window(title="ClipView", auto_id="1593636296", control_type="Pane")
+   |    |    | 
+   |    |    | ListBox - ''    (L452, T333, R682, B687)
+   |    |    | ['ListBox', '사전 설정:ListBox']
+   |    |    | child_window(auto_id="1021", control_type="List")
+   |    |    |    | 
+   |    |    |    | ListItem - ''    (L452, T333, R682, B355)
+   |    |    |    | ['사전 설정:ListItem', 'ListItem', '사전 설정:ListItem0', '사전 설정:ListItem1', 'ListItem0', 'ListItem1']
+   |    |    |    |    | 
+   |    |    |    |    | Static - ''    (L452, T333, R682, B355)
+   |    |    |    |    | ['Static4', '사전 설정:Static2']
+   |    |    |    |    | 
+   |    |    |    |    | Static - ''    (L457, T333, R682, B355)
+   |    |    |    |    | ['Static5', '사전 설정:Static3']
+   |    |    |    | 
+   |    |    |    | ListItem - ''    (L452, T355, R682, B377)
+   |    |    |    | ['사전 설정:ListItem2', 'ListItem2']
+   |    |    |    |    | 
+   |    |    |    |    | Static - ''    (L452, T355, R682, B377)
+   |    |    |    |    | ['Static6', '사전 설정:Static4']
+   |    |    |    |    | 
+   |    |    |    |    | Static - ''    (L457, T355, R682, B377)
+   |    |    |    |    | ['Static7', '사전 설정:Static5']
+   |    | 
+   |    | ScrollBar - ''    (L682, T333, R698, B687)
+   |    | ['내보낼 위치:ScrollBar', 'ScrollBar', 'ScrollBar0', 'ScrollBar1']
+   |    | child_window(auto_id="1593635104", control_type="ScrollBar")
+   | 
+   | Button - '추가'    (L450, T690, R575, B712)
+   | ['추가', 'Button2', '추가Button']
+   | child_window(title="추가", auto_id="65535", control_type="Button")
+   | 
+   | Button - '제거'    (L576, T690, R700, B712)
+   | ['제거Button', '제거', 'Button3']
+   | child_window(title="제거", auto_id="65535", control_type="Button")
+   | 
+   | Static - '6개의 파일 내보내기'    (L710, T312, R817, B326)
+   | ['6개의 파일 내보내기2', 'Static8', '6개의 파일 내보내기Static']
+   | child_window(title="6개의 파일 내보내기", auto_id="-367768976", control_type="Text")
+   | 
+   | Pane - ' (Bridge View)'    (L710, T331, R1470, B712)
+   | ['Pane3', ' (Bridge View)', ' (Bridge View)Pane', ' (Bridge View)0', ' (Bridge View)1', ' (Bridge View)Pane0', ' (Bridge View)Pane1']
+   | child_window(title=" (Bridge View)", auto_id="65535", control_type="Pane")
+   |    | 
+   |    | Pane - 'Scroll View'    (L710, T331, R1470, B712)
+   |    | ['Scroll ViewPane2', 'Pane4', 'Scroll View2']
+   |    | child_window(title="Scroll View", auto_id="100", control_type="Pane")
+   |    |    | 
+   |    |    | Pane - 'ClipView'    (L712, T333, R1452, B710)
+   |    |    | ['ClipViewPane2', 'Pane5', 'ClipView2']
+   |    |    | child_window(title="ClipView", auto_id="1593629096", control_type="Pane")
+   |    |    |    | 
+   |    |    |    | Pane - 'Accordion View'    (L712, T333, R1452, B1705)
+   |    |    |    | ['Pane6', 'Accordion View', 'Accordion ViewPane']
+   |    |    |    | child_window(title="Accordion View", auto_id="100", control_type="Pane")
+   |    |    |    |    | 
+   |    |    |    |    | Pane - 'Accordion Content'    (L712, T333, R1452, B1705)
+   |    |    |    |    | ['Accordion Content', 'Accordion ContentPane', 'Pane7']
+   |    |    |    |    | child_window(title="Accordion Content", auto_id="1946461976", control_type="Pane")
+   |    |    |    |    |    | 
+   |    |    |    |    |    | Pane - '내보내기 위치'    (L713, T333, R1451, B358)
+   |    |    |    |    |    | ['내보내기 위치Pane', 'Pane8', '내보내기 위치', '내보내기 위치0', '내보내기 위치1', '내보내기 위치Pane0', '내보내기 위치Pane1']
+   |    |    |    |    |    | child_window(title="내보내기 위치", auto_id="100", control_type="Pane")
+   |    |    |    |    |    |    | 
+   |    |    |    |    |    |    | Button - ''    (L719, T339, R733, B353)
+   |    |    |    |    |    |    | ['6개의 파일 내보내기Button', 'Button4', '6개의 파일 내보내기Button0', '6개의 파일 내보내기Button1']
+   |    |    |    |    |    |    | child_window(auto_id="65535", control_type="Button")
+   |    |    |    |    |    |    | 
+   |    |    |    |    |    |    | Static - '내보내기 위치'    (L738, T339, R818, B353)
+   |    |    |    |    |    |    | ['내보내기 위치Static', 'Static9', '내보내기 위치2']
+   |    |    |    |    |    |    | child_window(title="내보내기 위치", auto_id="-367774096", control_type="Text")
+   |    |    |    |    |    |    | 
+   |    |    |    |    |    |    | Pane - 'View'    (L818, T335, R1451, B356)
+   |    |    |    |    |    |    | ['ViewPane', 'Pane9', 'View', 'ViewPane0', 'ViewPane1', 'View0', 'View1']
+   |    |    |    |    |    |    | child_window(title="View", auto_id="100", control_type="Pane")
+   |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    | Pane - 'View'    (L818, T339, R1451, B352)
+   |    |    |    |    |    |    |    | ['ViewPane2', 'Pane10', 'View2']
+   |    |    |    |    |    |    |    | child_window(title="View", auto_id="100", control_type="Pane")
+   |    |    |    |    |    | 
+   |    |    |    |    |    | Pane - 'Collapsible Section'    (L712, T358, R1452, B517)
+   |    |    |    |    |    | ['Pane11', 'Collapsible Section', 'Collapsible SectionPane', 'Collapsible Section0', 'Collapsible Section1', 'Collapsible SectionPane0', 'Collapsible SectionPane1']
+   |    |    |    |    |    | child_window(title="Collapsible Section", auto_id="100", control_type="Pane")
+   |    |    |    |    |    |    | 
+   |    |    |    |    |    |    | Pane - '내보내기 위치'    (L712, T358, R1452, B517)
+   |    |    |    |    |    |    | ['내보내기 위치Pane2', 'Pane12', '내보내기 위치3']
+   |    |    |    |    |    |    | child_window(title="내보내기 위치", auto_id="100", control_type="Pane")
+   |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    | Static - '내보낼 위치:'    (L737, T372, R869, B386)
+   |    |    |    |    |    |    |    | ['내보낼 위치:4', '내보낼 위치:Static3', 'Static10']
+   |    |    |    |    |    |    |    | child_window(title="내보낼 위치:", auto_id="-367776144", control_type="Text")
+   |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    | ComboBox - '내보낼 위치:'    (L874, T368, R1427, B389)
+   |    |    |    |    |    |    |    | ['내보낼 위치:5', 'ComboBox2', '내보낼 위치:ComboBox2']
+   |    |    |    |    |    |    |    | child_window(title="내보낼 위치:", auto_id="65535", control_type="ComboBox")
+   |    |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    |    | Static - '내보낼 위치:'    (L3, T3, R533, B18)
+   |    |    |    |    |    |    |    |    | ['내보낼 위치:6', '내보낼 위치:Static4', 'Static11']
+   |    |    |    |    |    |    |    |    | child_window(title="내보낼 위치:", control_type="Text")
+   |    |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    |    | Button - '열기'    (L1411, T369, R1426, B388)
+   |    |    |    |    |    |    |    |    | ['열기2', '열기Button2', 'Button5']
+   |    |    |    |    |    |    |    |    | child_window(title="열기", auto_id="DropDown", control_type="Button")
+   |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    | Static - '폴더:'    (L737, T402, R869, B416)
+   |    |    |    |    |    |    |    | ['Static12', '폴더:Static', '폴더:']
+   |    |    |    |    |    |    |    | child_window(title="폴더:", auto_id="-367768464", control_type="Text")
+   |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    | Static - 'C:\Users\USER\Documents'    (L874, T402, R1427, B416)
+   |    |    |    |    |    |    |    | ['Static13', 'C:\\Users\\USER\\DocumentsStatic', 'C:\\Users\\USER\\Documents']
+   |    |    |    |    |    |    |    | child_window(title="C:\Users\USER\Documents", auto_id="-367774608", control_type="Text")
+   |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    | CheckBox - '하위 폴더에 넣기:'    (L874, T428, R984, B444)
+   |    |    |    |    |    |    |    | ['하위 폴더에 넣기:', 'CheckBox', '하위 폴더에 넣기:CheckBox', 'CheckBox0', 'CheckBox1']
+   |    |    |    |    |    |    |    | child_window(title="하위 폴더에 넣기:", auto_id="100", control_type="CheckBox")
+   |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    | Edit - ''    (L989, T428, R1427, B447)
+   |    |    |    |    |    |    |    | ['Edit', 'C:\\Users\\USER\\DocumentsEdit', 'Edit0', 'Edit1']
+   |    |    |    |    |    |    |    | child_window(auto_id="65535", control_type="Edit")
+   |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    | CheckBox - '이 카탈로그에 추가'    (L874, T455, R990, B471)
+   |    |    |    |    |    |    |    | ['이 카탈로그에 추가', '이 카탈로그에 추가CheckBox', 'CheckBox2']
+   |    |    |    |    |    |    |    | child_window(title="이 카탈로그에 추가", auto_id="100", control_type="CheckBox")
+   |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    | CheckBox - '스택에 추가:'    (L1030, T455, R1114, B471)
+   |    |    |    |    |    |    |    | ['스택에 추가:', '스택에 추가:CheckBox', 'CheckBox3']
+   |    |    |    |    |    |    |    | child_window(title="스택에 추가:", auto_id="100", control_type="CheckBox")
+   |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    | ComboBox - ''    (L1119, T453, R1191, B474)
+   |    |    |    |    |    |    |    | ['ComboBox3', 'C:\\Users\\USER\\DocumentsComboBox']
+   |    |    |    |    |    |    |    | child_window(auto_id="65535", control_type="ComboBox")
+   |    |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    |    | Static - ''    (L3, T3, R52, B18)
+   |    |    |    |    |    |    |    |    | ['Static14']
+   |    |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    |    | Button - '열기'    (L1175, T454, R1190, B473)
+   |    |    |    |    |    |    |    |    | ['열기3', '열기Button3', 'Button6']
+   |    |    |    |    |    |    |    |    | child_window(title="열기", auto_id="DropDown", control_type="Button")
+   |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    | Static - '기존 파일:'    (L737, T489, R869, B503)
+   |    |    |    |    |    |    |    | ['기존 파일:', '기존 파일:Static', 'Static15', '기존 파일:0', '기존 파일:1', '기존 파일:Static0', '기존 파일:Static1']
+   |    |    |    |    |    |    |    | child_window(title="기존 파일:", auto_id="-367773584", control_type="Text")
+   |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    | ComboBox - '기존 파일:'    (L874, T485, R1032, B506)
+   |    |    |    |    |    |    |    | ['ComboBox4', '기존 파일:2', '기존 파일:ComboBox', '기존 파일:ComboBox0', '기존 파일:ComboBox1']
+   |    |    |    |    |    |    |    | child_window(title="기존 파일:", auto_id="65535", control_type="ComboBox")
+   |    |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    |    | Static - '기존 파일:'    (L3, T3, R138, B18)
+   |    |    |    |    |    |    |    |    | ['기존 파일:3', '기존 파일:Static2', 'Static16']
+   |    |    |    |    |    |    |    |    | child_window(title="기존 파일:", control_type="Text")
+   |    |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    |    | Button - '열기'    (L1016, T486, R1031, B505)
+   |    |    |    |    |    |    |    |    | ['열기4', '열기Button4', 'Button7']
+   |    |    |    |    |    |    |    |    | child_window(title="열기", auto_id="DropDown", control_type="Button")
+   |    |    |    |    |    | 
+   |    |    |    |    |    | Pane - '파일 이름 지정'    (L713, T517, R1451, B542)
+   |    |    |    |    |    | ['파일 이름 지정', '파일 이름 지정Pane', 'Pane13', '파일 이름 지정0', '파일 이름 지정1', '파일 이름 지정Pane0', '파일 이름 지정Pane1']
+   |    |    |    |    |    | child_window(title="파일 이름 지정", auto_id="100", control_type="Pane")
+   |    |    |    |    |    |    | 
+   |    |    |    |    |    |    | Button - ''    (L719, T523, R733, B537)
+   |    |    |    |    |    |    | ['6개의 파일 내보내기Button2', 'Button8']
+   |    |    |    |    |    |    | child_window(auto_id="65535", control_type="Button")
+   |    |    |    |    |    |    | 
+   |    |    |    |    |    |    | Static - '파일 이름 지정'    (L738, T523, R821, B537)
+   |    |    |    |    |    |    | ['파일 이름 지정2', 'Static17', '파일 이름 지정Static']
+   |    |    |    |    |    |    | child_window(title="파일 이름 지정", auto_id="-367772560", control_type="Text")
+   |    |    |    |    |    |    | 
+   |    |    |    |    |    |    | Pane - 'View'    (L821, T519, R1451, B540)
+   |    |    |    |    |    |    | ['ViewPane3', 'Pane14', 'View3']
+   |    |    |    |    |    |    | child_window(title="View", auto_id="100", control_type="Pane")
+   |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    | Pane - 'View'    (L821, T523, R1451, B536)
+   |    |    |    |    |    |    |    | ['ViewPane4', 'Pane15', 'View4']
+   |    |    |    |    |    |    |    | child_window(title="View", auto_id="100", control_type="Pane")
+   |    |    |    |    |    | 
+   |    |    |    |    |    | Pane - 'Collapsible Section'    (L712, T542, R1452, B645)
+   |    |    |    |    |    | ['Pane16', 'Collapsible Section2', 'Collapsible SectionPane2']
+   |    |    |    |    |    | child_window(title="Collapsible Section", auto_id="100", control_type="Pane")
+   |    |    |    |    |    |    | 
+   |    |    |    |    |    |    | Pane - '파일 이름 지정'    (L712, T542, R1452, B645)
+   |    |    |    |    |    |    | ['파일 이름 지정3', '파일 이름 지정Pane2', 'Pane17']
+   |    |    |    |    |    |    | child_window(title="파일 이름 지정", auto_id="100", control_type="Pane")
+   |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    | CheckBox - '바꿀 이름:'    (L737, T554, R869, B570)
+   |    |    |    |    |    |    |    | ['바꿀 이름:CheckBox', 'CheckBox4', '바꿀 이름:']
+   |    |    |    |    |    |    |    | child_window(title="바꿀 이름:", auto_id="100", control_type="CheckBox")
+   |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    | ComboBox - ''    (L874, T552, R1427, B573)
+   |    |    |    |    |    |    |    | ['ComboBox5', '기존 파일:ComboBox2']
+   |    |    |    |    |    |    |    | child_window(auto_id="2134", control_type="ComboBox")
+   |    |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    |    | Static - ''    (L3, T3, R533, B18)
+   |    |    |    |    |    |    |    |    | ['Static18']
+   |    |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    |    | Button - '열기'    (L1411, T553, R1426, B572)
+   |    |    |    |    |    |    |    |    | ['열기5', '열기Button5', 'Button9']
+   |    |    |    |    |    |    |    |    | child_window(title="열기", auto_id="DropDown", control_type="Button")
+   |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    | Pane - 'View'    (L737, T584, R1427, B603)
+   |    |    |    |    |    |    |    | ['ViewPane5', 'Pane18', 'View5']
+   |    |    |    |    |    |    |    | child_window(title="View", auto_id="100", control_type="Pane")
+   |    |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    |    | Static - '사용자 정의 텍스트:'    (L737, T586, R869, B600)
+   |    |    |    |    |    |    |    |    | ['사용자 정의 텍스트:', 'Static19', '사용자 정의 텍스트:Static']
+   |    |    |    |    |    |    |    |    | child_window(title="사용자 정의 텍스트:", auto_id="-367793552", control_type="Text")
+   |    |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    |    | Static - '시작 번호:'    (L1232, T586, R1364, B600)
+   |    |    |    |    |    |    |    |    | ['Static20', '시작 번호:', '시작 번호:Static']
+   |    |    |    |    |    |    |    |    | child_window(title="시작 번호:", auto_id="-367808400", control_type="Text")
+   |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    | Static - '예:'    (L737, T617, R869, B631)
+   |    |    |    |    |    |    |    | ['예:', '예:Static', 'Static21']
+   |    |    |    |    |    |    |    | child_window(title="예:", auto_id="-367799184", control_type="Text")
+   |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    | Static - 'caique-morais-nPMhNPzsp7I-unsplash.jpg'    (L874, T617, R1227, B631)
+   |    |    |    |    |    |    |    | ['caique-morais-nPMhNPzsp7I-unsplash.jpg', 'Static22', 'caique-morais-nPMhNPzsp7I-unsplash.jpgStatic']
+   |    |    |    |    |    |    |    | child_window(title="caique-morais-nPMhNPzsp7I-unsplash.jpg", auto_id="-367786896", control_type="Text")
+   |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    | Static - '확장명:'    (L1232, T617, R1364, B631)
+   |    |    |    |    |    |    |    | ['Static23', '확장명:', '확장명:Static', '확장명:0', '확장명:1', '확장명:Static0', '확장명:Static1']
+   |    |    |    |    |    |    |    | child_window(title="확장명:", auto_id="-367804304", control_type="Text")
+   |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    | ComboBox - '확장명:'    (L1369, T613, R1427, B634)
+   |    |    |    |    |    |    |    | ['ComboBox6', '확장명:ComboBox', '확장명:2']
+   |    |    |    |    |    |    |    | child_window(title="확장명:", auto_id="2135", control_type="ComboBox")
+   |    |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    |    | Static - '확장명:'    (L3, T3, R38, B18)
+   |    |    |    |    |    |    |    |    | ['Static24', '확장명:3', '확장명:Static2']
+   |    |    |    |    |    |    |    |    | child_window(title="확장명:", control_type="Text")
+   |    |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    |    | Button - '열기'    (L1411, T614, R1426, B633)
+   |    |    |    |    |    |    |    |    | ['열기6', '열기Button6', 'Button10']
+   |    |    |    |    |    |    |    |    | child_window(title="열기", auto_id="DropDown", control_type="Button")
+   |    |    |    |    |    | 
+   |    |    |    |    |    | Pane - '비디오'    (L713, T645, R1451, B670)
+   |    |    |    |    |    | ['비디오', 'Pane19', '비디오Pane', '비디오0', '비디오1', '비디오Pane0', '비디오Pane1']
+   |    |    |    |    |    | child_window(title="비디오", auto_id="100", control_type="Pane")
+   |    |    |    |    |    |    | 
+   |    |    |    |    |    |    | Button - ''    (L719, T651, R733, B665)
+   |    |    |    |    |    |    | ['6개의 파일 내보내기Button3', 'Button11']
+   |    |    |    |    |    |    | child_window(auto_id="65535", control_type="Button")
+   |    |    |    |    |    |    | 
+   |    |    |    |    |    |    | Static - '비디오'    (L738, T651, R782, B665)
+   |    |    |    |    |    |    | ['비디오2', 'Static25', '비디오Static']
+   |    |    |    |    |    |    | child_window(title="비디오", auto_id="-367805840", control_type="Text")
+   |    |    |    |    |    |    | 
+   |    |    |    |    |    |    | Pane - 'View'    (L782, T647, R1451, B668)
+   |    |    |    |    |    |    | ['ViewPane6', 'Pane20', 'View6']
+   |    |    |    |    |    |    | child_window(title="View", auto_id="100", control_type="Pane")
+   |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    | Pane - 'View'    (L782, T651, R1451, B664)
+   |    |    |    |    |    |    |    | ['ViewPane7', 'Pane21', 'View7']
+   |    |    |    |    |    |    |    | child_window(title="View", auto_id="100", control_type="Pane")
+   |    |    |    |    |    | 
+   |    |    |    |    |    | Pane - 'Collapsible Section'    (L712, T670, R1452, B805)
+   |    |    |    |    |    | ['Pane22', 'Collapsible Section3', 'Collapsible SectionPane3']
+   |    |    |    |    |    | child_window(title="Collapsible Section", auto_id="100", control_type="Pane")
+   |    |    |    |    |    |    | 
+   |    |    |    |    |    |    | Pane - '비디오'    (L712, T670, R1452, B805)
+   |    |    |    |    |    |    | ['비디오3', 'Pane23', '비디오Pane2']
+   |    |    |    |    |    |    | child_window(title="비디오", auto_id="100", control_type="Pane")
+   |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    | Static - ' '    (L737, T689, R869, B703)
+   |    |    |    |    |    |    |    | [' ', 'Static26', ' Static']
+   |    |    |    |    |    |    |    | child_window(title=" ", auto_id="-367794064", control_type="Text")
+   |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    | CheckBox - '비디오 파일 포함:'    (L874, T687, R1019, B703)
+   |    |    |    |    |    |    |    | ['비디오 파일 포함:', 'CheckBox5', '비디오 파일 포함:CheckBox']
+   |    |    |    |    |    |    |    | child_window(title="비디오 파일 포함:", auto_id="100", control_type="CheckBox")
+   |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    | Static - '비디오 형식:'    (L737, T721, R869, B735)
+   |    |    |    |    |    |    |    | ['비디오 형식:Static', 'Static27', '비디오 형식:', '비디오 형식:0', '비디오 형식:1', '비디오 형식:Static0', '비디오 형식:Static1']
+   |    |    |    |    |    |    |    | child_window(title="비디오 형식:", auto_id="-367798672", control_type="Text")
+   |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    | ComboBox - '비디오 형식:'    (L874, T717, R1019, B738)
+   |    |    |    |    |    |    |    | ['비디오 형식:ComboBox', 'ComboBox7', '비디오 형식:2']
+   |    |    |    |    |    |    |    | child_window(title="비디오 형식:", auto_id="65535", control_type="ComboBox")
+   |    |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    |    | Static - '비디오 형식:'    (L3, T3, R125, B18)
+   |    |    |    |    |    |    |    |    | ['비디오 형식:Static2', 'Static28', '비디오 형식:3']
+   |    |    |    |    |    |    |    |    | child_window(title="비디오 형식:", control_type="Text")
+   |    |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    |    | Button - '열기'    (L1003, T718, R1018, B737)
+   |    |    |    |    |    |    |    |    | ['열기7', '열기Button7', 'Button12']
+   |    |    |    |    |    |    |    |    | child_window(title="열기", auto_id="DropDown", control_type="Button")
+   |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    | Static - '화질:'    (L737, T753, R869, B767)
+   |    |    |    |    |    |    |    | ['Static29', '화질:', '화질:Static', '화질:0', '화질:1', '화질:Static0', '화질:Static1']
+   |    |    |    |    |    |    |    | child_window(title="화질:", auto_id="-367809936", control_type="Text")
+   |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    | ComboBox - '화질:'    (L874, T749, R1019, B770)
+   |    |    |    |    |    |    |    | ['ComboBox8', '화질:2', '화질:ComboBox']
+   |    |    |    |    |    |    |    | child_window(title="화질:", auto_id="65535", control_type="ComboBox")
+   |    |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    |    | Static - '화질:'    (L3, T3, R125, B18)
+   |    |    |    |    |    |    |    |    | ['Static30', '화질:3', '화질:Static2']
+   |    |    |    |    |    |    |    |    | child_window(title="화질:", control_type="Text")
+   |    |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    |    | Button - '열기'    (L1003, T750, R1018, B769)
+   |    |    |    |    |    |    |    |    | ['열기8', '열기Button8', 'Button13']
+   |    |    |    |    |    |    |    |    | child_window(title="열기", auto_id="DropDown", control_type="Button")
+   |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    | Static - ''    (L1133, T725, R1427, B739)
+   |    |    |    |    |    |    |    | ['Static31', '확장명:Static3']
+   |    |    |    |    |    |    |    | child_window(auto_id="-367792528", control_type="Text")
+   |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    | Static - ''    (L1133, T749, R1427, B763)
+   |    |    |    |    |    |    |    | ['Static32', '확장명:Static4']
+   |    |    |    |    |    |    |    | child_window(auto_id="-367807888", control_type="Text")
+   |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    | Static - ''    (L874, T781, R1427, B795)
+   |    |    |    |    |    |    |    | ['Static33', '화질:Static3']
+   |    |    |    |    |    |    |    | child_window(auto_id="-367810448", control_type="Text")
+   |    |    |    |    |    | 
+   |    |    |    |    |    | Pane - '파일 설정'    (L713, T805, R1451, B830)
+   |    |    |    |    |    | ['파일 설정', 'Pane24', '파일 설정Pane', '파일 설정0', '파일 설정1', '파일 설정Pane0', '파일 설정Pane1']
+   |    |    |    |    |    | child_window(title="파일 설정", auto_id="100", control_type="Pane")
+   |    |    |    |    |    |    | 
+   |    |    |    |    |    |    | Button - ''    (L719, T811, R733, B825)
+   |    |    |    |    |    |    | ['6개의 파일 내보내기Button4', 'Button14']
+   |    |    |    |    |    |    | child_window(auto_id="65535", control_type="Button")
+   |    |    |    |    |    |    | 
+   |    |    |    |    |    |    | Static - '파일 설정'    (L738, T811, R796, B825)
+   |    |    |    |    |    |    | ['Static34', '파일 설정Static', '파일 설정2']
+   |    |    |    |    |    |    | child_window(title="파일 설정", auto_id="-367796624", control_type="Text")
+   |    |    |    |    |    |    | 
+   |    |    |    |    |    |    | Pane - 'View'    (L796, T807, R1451, B828)
+   |    |    |    |    |    |    | ['ViewPane8', 'Pane25', 'View8']
+   |    |    |    |    |    |    | child_window(title="View", auto_id="100", control_type="Pane")
+   |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    | Pane - 'View'    (L796, T811, R1451, B824)
+   |    |    |    |    |    |    |    | ['ViewPane9', 'Pane26', 'View9']
+   |    |    |    |    |    |    |    | child_window(title="View", auto_id="100", control_type="Pane")
+   |    |    |    |    |    | 
+   |    |    |    |    |    | Pane - 'Collapsible Section'    (L712, T830, R1452, B969)
+   |    |    |    |    |    | ['Pane27', 'Collapsible Section4', 'Collapsible SectionPane4']
+   |    |    |    |    |    | child_window(title="Collapsible Section", auto_id="100", control_type="Pane")
+   |    |    |    |    |    |    | 
+   |    |    |    |    |    |    | Pane - '파일 설정'    (L712, T830, R1452, B969)
+   |    |    |    |    |    |    | ['파일 설정3', 'Pane28', '파일 설정Pane2']
+   |    |    |    |    |    |    | child_window(title="파일 설정", auto_id="100", control_type="Pane")
+   |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    | Static - '이미지 형식:'    (L737, T844, R869, B858)
+   |    |    |    |    |    |    |    | ['이미지 형식:', 'Static35', '이미지 형식:Static', '이미지 형식:0', '이미지 형식:1', '이미지 형식:Static0', '이미지 형식:Static1']
+   |    |    |    |    |    |    |    | child_window(title="이미지 형식:", auto_id="-367806352", control_type="Text")
+   |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    | ComboBox - '이미지 형식:'    (L879, T840, R1082, B861)
+   |    |    |    |    |    |    |    | ['ComboBox9', '이미지 형식:2', '이미지 형식:ComboBox']
+   |    |    |    |    |    |    |    | child_window(title="이미지 형식:", auto_id="65535", control_type="ComboBox")
+   |    |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    |    | Static - '이미지 형식:'    (L3, T3, R183, B18)
+   |    |    |    |    |    |    |    |    | ['이미지 형식:3', 'Static36', '이미지 형식:Static2']
+   |    |    |    |    |    |    |    |    | child_window(title="이미지 형식:", control_type="Text")
+   |    |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    |    | Button - '열기'    (L1066, T841, R1081, B860)
+   |    |    |    |    |    |    |    |    | ['열기9', '열기Button9', 'Button15']
+   |    |    |    |    |    |    |    |    | child_window(title="열기", auto_id="DropDown", control_type="Button")
+   |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    | Pane - 'View'    (L737, T872, R1427, B959)
+   |    |    |    |    |    |    |    | ['ViewPane10', 'Pane29', 'View10']
+   |    |    |    |    |    |    |    | child_window(title="View", auto_id="100", control_type="Pane")
+   |    |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    |    | Pane - 'View'    (L737, T872, R1427, B959)
+   |    |    |    |    |    |    |    |    | ['ViewPane11', 'Pane30', 'View11']
+   |    |    |    |    |    |    |    |    | child_window(title="View", auto_id="100", control_type="Pane")
+   |    |    |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    |    |    | Pane - 'View'    (L737, T872, R1427, B897)
+   |    |    |    |    |    |    |    |    |    | ['ViewPane12', 'Pane31', 'View12']
+   |    |    |    |    |    |    |    |    |    | child_window(title="View", auto_id="100", control_type="Pane")
+   |    |    |    |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    |    |    |    | Pane - 'View'    (L737, T872, R1427, B897)
+   |    |    |    |    |    |    |    |    |    |    | ['ViewPane13', 'Pane32', 'View13']
+   |    |    |    |    |    |    |    |    |    |    | child_window(title="View", auto_id="100", control_type="Pane")
+   |    |    |    |    |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    |    |    |    |    | Static - '품질:'    (L737, T876, R869, B890)
+   |    |    |    |    |    |    |    |    |    |    |    | ['품질:Static', 'Static37', '품질:']
+   |    |    |    |    |    |    |    |    |    |    |    | child_window(title="품질:", auto_id="-367802256", control_type="Text")
+   |    |    |    |    |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    |    |    |    |    | Slider - '품질:'    (L874, T872, R1038, B897)
+   |    |    |    |    |    |    |    |    |    |    |    | ['Slider', '품질:Slider']
+   |    |    |    |    |    |    |    |    |    |    |    | child_window(title="품질:", auto_id="100", control_type="Slider")
+   |    |    |    |    |    |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    |    |    |    |    |    | Button - '페이지 왼쪽으로'    (L881, T880, R964, B884)
+   |    |    |    |    |    |    |    |    |    |    |    |    | ['페이지 왼쪽으로Button', '페이지 왼쪽으로', 'Button16']
+   |    |    |    |    |    |    |    |    |    |    |    |    | child_window(title="페이지 왼쪽으로", control_type="Button")
+   |    |    |    |    |    |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    |    |    |    |    |    | Thumb - '위치'    (L964, T874, R974, B892)
+   |    |    |    |    |    |    |    |    |    |    |    |    | ['위치Thumb', 'Thumb', '위치']
+   |    |    |    |    |    |    |    |    |    |    |    |    | child_window(title="위치", control_type="Thumb")
+   |    |    |    |    |    |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    |    |    |    |    |    | Button - '페이지 오른쪽으로'    (L974, T880, R1030, B884)
+   |    |    |    |    |    |    |    |    |    |    |    |    | ['페이지 오른쪽으로Button', 'Button17', '페이지 오른쪽으로']
+   |    |    |    |    |    |    |    |    |    |    |    |    | child_window(title="페이지 오른쪽으로", control_type="Button")
+   |    |    |    |    |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    |    |    |    |    | Edit - ''    (L1043, T874, R1072, B893)
+   |    |    |    |    |    |    |    |    |    |    |    | ['품질:Edit', 'Edit2']
+   |    |    |    |    |    |    |    |    |    |    |    | child_window(auto_id="65535", control_type="Edit")
+   |    |    |    |    |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    |    |    |    |    | CheckBox - '다음으로 파일 크기 제한:'    (L1092, T874, R1239, B890)
+   |    |    |    |    |    |    |    |    |    |    |    | ['다음으로 파일 크기 제한:', 'CheckBox6', '다음으로 파일 크기 제한:CheckBox']
+   |    |    |    |    |    |    |    |    |    |    |    | child_window(title="다음으로 파일 크기 제한:", auto_id="100", control_type="CheckBox")
+   |    |    |    |    |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    |    |    |    |    | Edit - ''    (L1244, T874, R1291, B893)
+   |    |    |    |    |    |    |    |    |    |    |    | ['Edit3', '자세한 내용 보기Edit']
+   |    |    |    |    |    |    |    |    |    |    |    | child_window(auto_id="65535", control_type="Edit")
+   |    |    |    |    |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    |    |    |    |    | Static - ' K  '    (L1296, T876, R1318, B890)
+   |    |    |    |    |    |    |    |    |    |    |    | ['Static38', ' K  ', ' K  Static']
+   |    |    |    |    |    |    |    |    |    |    |    | child_window(title=" K  ", auto_id="-367809424", control_type="Text")
+   |    |    |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    |    |    | Pane - 'View'    (L737, T907, R1427, B959)
+   |    |    |    |    |    |    |    |    |    | ['ViewPane14', 'Pane33', 'View14']
+   |    |    |    |    |    |    |    |    |    | child_window(title="View", auto_id="100", control_type="Pane")
+   |    |    |    |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    |    |    |    | Static - '색상 공간:'    (L737, T911, R869, B925)
+   |    |    |    |    |    |    |    |    |    |    | ['색상 공간:Static', '색상 공간:', 'Static39', '색상 공간:0', '색상 공간:1', '색상 공간:Static0', '색상 공간:Static1']
+   |    |    |    |    |    |    |    |    |    |    | child_window(title="색상 공간:", auto_id="-367782800", control_type="Text")
+   |    |    |    |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    |    |    |    | ComboBox - '색상 공간:'    (L879, T907, R1072, B928)
+   |    |    |    |    |    |    |    |    |    |    | ['ComboBox10', '색상 공간:ComboBox', '색상 공간:2']
+   |    |    |    |    |    |    |    |    |    |    | child_window(title="색상 공간:", auto_id="65535", control_type="ComboBox")
+   |    |    |    |    |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    |    |    |    |    | Static - '색상 공간:'    (L3, T3, R173, B18)
+   |    |    |    |    |    |    |    |    |    |    |    | ['색상 공간:Static2', '색상 공간:3', 'Static40']
+   |    |    |    |    |    |    |    |    |    |    |    | child_window(title="색상 공간:", control_type="Text")
+   |    |    |    |    |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    |    |    |    |    | Button - '열기'    (L1056, T908, R1071, B927)
+   |    |    |    |    |    |    |    |    |    |    |    | ['열기10', '열기Button10', 'Button18']
+   |    |    |    |    |    |    |    |    |    |    |    | child_window(title="열기", auto_id="DropDown", control_type="Button")
+   |    |    |    |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    |    |    |    | Static - '비트 심도:'    (L1092, T911, R1150, B925)
+   |    |    |    |    |    |    |    |    |    |    | ['Static41', '비트 심도:', '비트 심도:Static', '비트 심도:0', '비트 심도:1', '비트 심도:Static0', '비트 심도:Static1']
+   |    |    |    |    |    |    |    |    |    |    | child_window(title="비트 심도:", auto_id="-367807376", control_type="Text")
+   |    |    |    |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    |    |    |    | ComboBox - '비트 심도:'    (L1155, T907, R1427, B928)
+   |    |    |    |    |    |    |    |    |    |    | ['ComboBox11', '비트 심도:2', '비트 심도:ComboBox']
+   |    |    |    |    |    |    |    |    |    |    | child_window(title="비트 심도:", auto_id="65535", control_type="ComboBox")
+   |    |    |    |    |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    |    |    |    |    | Static - '비트 심도:'    (L3, T3, R252, B18)
+   |    |    |    |    |    |    |    |    |    |    |    | ['Static42', '비트 심도:3', '비트 심도:Static2']
+   |    |    |    |    |    |    |    |    |    |    |    | child_window(title="비트 심도:", control_type="Text")
+   |    |    |    |    |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    |    |    |    |    | Button - '열기'    (L1411, T908, R1426, B927)
+   |    |    |    |    |    |    |    |    |    |    |    | ['열기11', '열기Button11', 'Button19']
+   |    |    |    |    |    |    |    |    |    |    |    | child_window(title="열기", auto_id="DropDown", control_type="Button")
+   |    |    |    |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    |    |    |    | CheckBox - 'HDR 출력'    (L879, T944, R945, B959)
+   |    |    |    |    |    |    |    |    |    |    | ['HDR 출력CheckBox', 'CheckBox7', 'HDR 출력']
+   |    |    |    |    |    |    |    |    |    |    | child_window(title="HDR 출력", auto_id="100", control_type="CheckBox")
+   |    |    |    |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    |    |    |    | CheckBox - '호환성 최대화'    (L955, T944, R1044, B959)
+   |    |    |    |    |    |    |    |    |    |    | ['CheckBox8', '호환성 최대화CheckBox', '호환성 최대화']
+   |    |    |    |    |    |    |    |    |    |    | child_window(title="호환성 최대화", auto_id="100", control_type="CheckBox")
+   |    |    |    |    |    | 
+   |    |    |    |    |    | Pane - 'Content Credentials(얼리 액세스)'    (L713, T969, R1451, B994)
+   |    |    |    |    |    | ['Pane34', 'Content Credentials(얼리 액세스)', 'Content Credentials(얼리 액세스)Pane', 'Content Credentials(얼리 액세스)0', 'Content Credentials(얼리 액세스)1', 'Content Credentials(얼리 액세스)Pane0', 'Content Credentials(얼리 액세스)Pane1']
+   |    |    |    |    |    | child_window(title="Content Credentials(얼리 액세스)", auto_id="100", control_type="Pane")
+   |    |    |    |    |    |    | 
+   |    |    |    |    |    |    | Button - ''    (L719, T975, R733, B989)
+   |    |    |    |    |    |    | ['6개의 파일 내보내기Button5', 'Button20']
+   |    |    |    |    |    |    | child_window(auto_id="65535", control_type="Button")
+   |    |    |    |    |    |    | 
+   |    |    |    |    |    |    | Static - 'Content Credentials(얼리 액세스)'    (L738, T975, R929, B989)
+   |    |    |    |    |    |    | ['Static43', 'Content Credentials(얼리 액세스)2', 'Content Credentials(얼리 액세스)Static']
+   |    |    |    |    |    |    | child_window(title="Content Credentials(얼리 액세스)", auto_id="-367803792", control_type="Text")
+   |    |    |    |    |    |    | 
+   |    |    |    |    |    |    | Pane - 'View'    (L929, T971, R1451, B992)
+   |    |    |    |    |    |    | ['ViewPane15', 'Pane35', 'View15']
+   |    |    |    |    |    |    | child_window(title="View", auto_id="100", control_type="Pane")
+   |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    | Pane - 'View'    (L929, T975, R1451, B988)
+   |    |    |    |    |    |    |    | ['ViewPane16', 'Pane36', 'View16']
+   |    |    |    |    |    |    |    | child_window(title="View", auto_id="100", control_type="Pane")
+   |    |    |    |    |    | 
+   |    |    |    |    |    | Pane - 'Collapsible Section'    (L712, T994, R1452, B1240)
+   |    |    |    |    |    | ['Pane37', 'Collapsible Section5', 'Collapsible SectionPane5']
+   |    |    |    |    |    | child_window(title="Collapsible Section", auto_id="100", control_type="Pane")
+   |    |    |    |    |    |    | 
+   |    |    |    |    |    |    | Pane - 'Content Credentials(얼리 액세스)'    (L712, T994, R1452, B1240)
+   |    |    |    |    |    |    | ['Pane38', 'Content Credentials(얼리 액세스)3', 'Content Credentials(얼리 액세스)Pane2']
+   |    |    |    |    |    |    | child_window(title="Content Credentials(얼리 액세스)", auto_id="100", control_type="Pane")
+   |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    | Static - 'Content Credentials를 사용하면 콘텐츠에 영구적으로 연결할 속성, 편집, 기록을 선택하여 콘텐츠에 컨텍스트를 추가할 수 있습니다. Adobe 플랜에 포함된 클라우드 파일 스토리지와 별개로 공개 Content Credentials 클라우드에 게시하면 파일 크기를 작게 유지하고 Content Credentials를 계속 사용하고 복구할 수 있습니다.'    (L737, T1004, R1184, B1057)
+   |    |    |    |    |    |    |    | ['Static44', 'Content Credentials를 사용하면 콘텐츠에 영구적으로 연결할 속성, 편집, 기록을 선택하여 콘텐츠에 컨텍스트를 추가할 수 있습니다. Adobe 플랜에 포함된 클라우드 파일 스토리지와 별개로 공개 Content Credentials 클라우드에 게시하면 파일 크기를 작게 유지하고 Content Credentials를 계속 사용하고 복구할 수 있습니다.', 'Content Credentials를 사용하면 콘텐츠에 영구적으로 연결할 속성, 편집, 기록을 선택하여 콘텐츠에 컨텍스트를 추가할 수 있습니다. Adobe 플랜에 포함된 클라우드 파일 스토리지와 별개로 공개 Content Credentials 클라우드에 게시하면 파일 크기를 작게 유지하고 Content Credentials를 계속 사용하고 복구할 수 있습니다.Static']
+   |    |    |    |    |    |    |    | child_window(title="Content Credentials를 사용하면 콘텐츠에 영구적으로 연결할 속성, 편집, 기록을 선택하여 콘텐츠에 컨텍스트를 추가할 수 있습니다. Adobe 플랜에 포함된 클라우드 파일 스토리지와 별개로 공개 Content Credentials 클라우드에 게시하면 파일 크기를 작게 유지하고 Content Credentials를 계속 사용하고 복구할 수 있습니다.", auto_id="-367789456", control_type="Text")
+   |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    | Static - 'Content Credentials를 첨부하려면 인터넷 연결이 필요합니다.'    (L737, T1072, R1051, B1088)
+   |    |    |    |    |    |    |    | ['Content Credentials를 첨부하려면 인터넷 연결이 필요합니다.Static', 'Content Credentials를 첨부하려면 인터넷 연결이 필요합니다.', 'Static45', 'Content Credentials를 첨부하려면 인터넷 연결이 필요합니다.0', 'Content Credentials를 첨부하려면 인터넷 연결이 필요합니다.1', 'Content Credentials를 첨부하려면 인터넷 연결이 필요합니다.Static0', 'Content Credentials를 첨부하려면 인터넷 연결이 필요합니다.Static1']
+   |    |    |    |    |    |    |    | child_window(title="Content Credentials를 첨부하려면 인터넷 연결이 필요합니다.", auto_id="-367788944", control_type="Text")
+   |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    | ComboBox - 'Content Credentials를 첨부하려면 인터넷 연결이 필요합니다.'    (L737, T1103, R962, B1124)
+   |    |    |    |    |    |    |    | ['ComboBox12', 'Content Credentials를 첨부하려면 인터넷 연결이 필요합니다.2', 'Content Credentials를 첨부하려면 인터넷 연결이 필요합니다.ComboBox']
+   |    |    |    |    |    |    |    | child_window(title="Content Credentials를 첨부하려면 인터넷 연결이 필요합니다.", auto_id="65535", control_type="ComboBox")
+   |    |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    |    | Static - 'Content Credentials를 첨부하려면 인터넷 연결이 필요합니다.'    (L3, T3, R205, B18)
+   |    |    |    |    |    |    |    |    | ['Content Credentials를 첨부하려면 인터넷 연결이 필요합니다.Static2', 'Content Credentials를 첨부하려면 인터넷 연결이 필요합니다.3', 'Static46']
+   |    |    |    |    |    |    |    |    | child_window(title="Content Credentials를 첨부하려면 인터넷 연결이 필요합니다.", control_type="Text")
+   |    |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    |    | Button - '열기'    (L946, T1104, R961, B1123)
+   |    |    |    |    |    |    |    |    | ['열기12', '열기Button12', 'Button21']
+   |    |    |    |    |    |    |    |    | child_window(title="열기", auto_id="DropDown", control_type="Button")
+   |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    | Static - '자세한 내용 보기'    (L1261, T1107, R1351, B1121)
+   |    |    |    |    |    |    |    | ['자세한 내용 보기', 'Static47', '자세한 내용 보기Static', '자세한 내용 보기0', '자세한 내용 보기1', '자세한 내용 보기Static0', '자세한 내용 보기Static1']
+   |    |    |    |    |    |    |    | child_window(title="자세한 내용 보기", auto_id="-367803280", control_type="Text")
+   |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    | Static - '|'    (L1356, T1107, R1367, B1121)
+   |    |    |    |    |    |    |    | ['|', '|Static', 'Static48']
+   |    |    |    |    |    |    |    | child_window(title="|", auto_id="-367788432", control_type="Text")
+   |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    | Static - '피드백'    (L1372, T1107, R1412, B1121)
+   |    |    |    |    |    |    |    | ['피드백Static', '피드백', 'Static49']
+   |    |    |    |    |    |    |    | child_window(title="피드백", auto_id="-367780240", control_type="Text")
+   |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    | Pane - 'View'    (L737, T1130, R1427, B1140)
+   |    |    |    |    |    |    |    | ['ViewPane17', 'Pane39', 'View17']
+   |    |    |    |    |    |    |    | child_window(title="View", auto_id="100", control_type="Pane")
+   |    |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    |    | Pane - 'View'    (L742, T1130, R1427, B1144)
+   |    |    |    |    |    |    |    |    | ['ViewPane18', 'Pane40', 'View18']
+   |    |    |    |    |    |    |    |    | child_window(title="View", auto_id="100", control_type="Pane")
+   |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    | Static - 'Content Credentials를 첨부할 때 다음을 포함합니다.'    (L737, T1145, R1427, B1159)
+   |    |    |    |    |    |    |    | ['Content Credentials를 첨부할 때 다음을 포함합니다.Static', 'Content Credentials를 첨부할 때 다음을 포함합니다.', 'Static50']
+   |    |    |    |    |    |    |    | child_window(title="Content Credentials를 첨부할 때 다음을 포함합니다.", auto_id="-367801744", control_type="Text")
+   |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    | CheckBox - '프로듀서(kim byungkwan)'    (L737, T1165, R899, B1181)
+   |    |    |    |    |    |    |    | ['프로듀서(kim byungkwan)', 'CheckBox9', '프로듀서(kim byungkwan)CheckBox']
+   |    |    |    |    |    |    |    | child_window(title="프로듀서(kim byungkwan)", auto_id="100", control_type="CheckBox")
+   |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    | CheckBox - '연결된 계정:'    (L737, T1190, R821, B1206)
+   |    |    |    |    |    |    |    | ['연결된 계정:CheckBox', '연결된 계정:', 'CheckBox10']
+   |    |    |    |    |    |    |    | child_window(title="연결된 계정:", auto_id="100", control_type="CheckBox")
+   |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    | Static - '없음'    (L821, T1192, R1068, B1206)
+   |    |    |    |    |    |    |    | ['없음Static', 'Static51', '없음']
+   |    |    |    |    |    |    |    | child_window(title="없음", auto_id="-367799696", control_type="Text")
+   |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    | Static - '관리'    (L1308, T1192, R1337, B1206)
+   |    |    |    |    |    |    |    | ['관리', 'Static52', '관리Static']
+   |    |    |    |    |    |    |    | child_window(title="관리", auto_id="-367801232", control_type="Text")
+   |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    | Pane - '새로 고침 (Bridge View)'    (L1342, T1187, R1412, B1208)
+   |    |    |    |    |    |    |    | ['Pane41', '새로 고침 (Bridge View)', '새로 고침 (Bridge View)Pane']
+   |    |    |    |    |    |    |    | child_window(title="새로 고침 (Bridge View)", auto_id="65535", control_type="Pane")
+   |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    | CheckBox - '편집 및 활동'    (L737, T1214, R820, B1230)
+   |    |    |    |    |    |    |    | ['CheckBox11', '편집 및 활동CheckBox', '편집 및 활동']
+   |    |    |    |    |    |    |    | child_window(title="편집 및 활동", auto_id="100", control_type="CheckBox")
+   |    |    |    |    |    | 
+   |    |    |    |    |    | Pane - '이미지 크기 조정'    (L713, T1240, R1451, B1265)
+   |    |    |    |    |    | ['Pane42', '이미지 크기 조정', '이미지 크기 조정Pane', '이미지 크기 조정0', '이미지 크기 조정1', '이미지 크기 조정Pane0', '이미지 크기 조정Pane1']
+   |    |    |    |    |    | child_window(title="이미지 크기 조정", auto_id="100", control_type="Pane")
+   |    |    |    |    |    |    | 
+   |    |    |    |    |    |    | Button - ''    (L719, T1246, R733, B1260)
+   |    |    |    |    |    |    | ['6개의 파일 내보내기Button6', 'Button22']
+   |    |    |    |    |    |    | child_window(auto_id="65535", control_type="Button")
+   |    |    |    |    |    |    | 
+   |    |    |    |    |    |    | Static - '이미지 크기 조정'    (L738, T1246, R832, B1260)
+   |    |    |    |    |    |    | ['이미지 크기 조정Static', 'Static53', '이미지 크기 조정2']
+   |    |    |    |    |    |    | child_window(title="이미지 크기 조정", auto_id="-367784336", control_type="Text")
+   |    |    |    |    |    |    | 
+   |    |    |    |    |    |    | Pane - 'View'    (L832, T1242, R1451, B1263)
+   |    |    |    |    |    |    | ['ViewPane19', 'Pane43', 'View19']
+   |    |    |    |    |    |    | child_window(title="View", auto_id="100", control_type="Pane")
+   |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    | Pane - 'View'    (L832, T1246, R1451, B1259)
+   |    |    |    |    |    |    |    | ['ViewPane20', 'Pane44', 'View20']
+   |    |    |    |    |    |    |    | child_window(title="View", auto_id="100", control_type="Pane")
+   |    |    |    |    |    | 
+   |    |    |    |    |    | Pane - 'Collapsible Section'    (L712, T1265, R1452, B1339)
+   |    |    |    |    |    | ['Pane45', 'Collapsible Section6', 'Collapsible SectionPane6']
+   |    |    |    |    |    | child_window(title="Collapsible Section", auto_id="100", control_type="Pane")
+   |    |    |    |    |    |    | 
+   |    |    |    |    |    |    | Pane - '이미지 크기 조정'    (L712, T1265, R1452, B1339)
+   |    |    |    |    |    |    | ['Pane46', '이미지 크기 조정3', '이미지 크기 조정Pane2']
+   |    |    |    |    |    |    | child_window(title="이미지 크기 조정", auto_id="100", control_type="Pane")
+   |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    | CheckBox - '크기 조정하여 맞추기:'    (L737, T1275, R869, B1297)
+   |    |    |    |    |    |    |    | ['CheckBox12', '크기 조정하여 맞추기:CheckBox', '크기 조정하여 맞추기:']
+   |    |    |    |    |    |    |    | child_window(title="크기 조정하여 맞추기:", auto_id="100", control_type="CheckBox")
+   |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    | ComboBox - ''    (L874, T1275, R1075, B1296)
+   |    |    |    |    |    |    |    | ['ComboBox13', '이미지 크기 조정ComboBox']
+   |    |    |    |    |    |    |    | child_window(auto_id="65535", control_type="ComboBox")
+   |    |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    |    | Static - ''    (L3, T3, R181, B18)
+   |    |    |    |    |    |    |    |    | ['Static54']
+   |    |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    |    | Button - '열기'    (L1059, T1276, R1074, B1295)
+   |    |    |    |    |    |    |    |    | ['열기13', '열기Button13', 'Button23']
+   |    |    |    |    |    |    |    |    | child_window(title="열기", auto_id="DropDown", control_type="Button")
+   |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    | Static - '너비:'    (L737, T1311, R869, B1325)
+   |    |    |    |    |    |    |    | ['너비:', 'Static55', '너비:Static']
+   |    |    |    |    |    |    |    | child_window(title="너비:", auto_id="-367800208", control_type="Text")
+   |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    | Edit - '%'    (L874, T1309, R921, B1328)
+   |    |    |    |    |    |    |    | ['너비:Edit', 'Edit4']
+   |    |    |    |    |    |    |    | child_window(title="%", auto_id="65535", control_type="Edit")
+   |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    | Static - '높이:'    (L926, T1311, R959, B1325)
+   |    |    |    |    |    |    |    | ['높이:', '높이:Static', 'Static56']
+   |    |    |    |    |    |    |    | child_window(title="높이:", auto_id="-367797648", control_type="Text")
+   |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    | Edit - '높이:'    (L964, T1309, R1011, B1328)
+   |    |    |    |    |    |    |    | ['높이:Edit', 'Edit5']
+   |    |    |    |    |    |    |    | child_window(title="높이:", auto_id="65535", control_type="Edit")
+   |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    | ComboBox - '메가픽셀'    (L1024, T1307, R1075, B1328)
+   |    |    |    |    |    |    |    | ['ComboBox14', '메가픽셀ComboBox', '메가픽셀', '메가픽셀0', '메가픽셀1']
+   |    |    |    |    |    |    |    | child_window(title="메가픽셀", auto_id="65535", control_type="ComboBox")
+   |    |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    |    | Static - '메가픽셀'    (L3, T3, R31, B18)
+   |    |    |    |    |    |    |    |    | ['Static57', '메가픽셀2', '메가픽셀Static']
+   |    |    |    |    |    |    |    |    | child_window(title="메가픽셀", control_type="Text")
+   |    |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    |    | Button - '열기'    (L1059, T1308, R1074, B1327)
+   |    |    |    |    |    |    |    |    | ['열기14', '열기Button14', 'Button24']
+   |    |    |    |    |    |    |    |    | child_window(title="열기", auto_id="DropDown", control_type="Button")
+   |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    | CheckBox - '확대 안 함'    (L1090, T1275, R1162, B1297)
+   |    |    |    |    |    |    |    | ['확대 안 함', '확대 안 함CheckBox', 'CheckBox13']
+   |    |    |    |    |    |    |    | child_window(title="확대 안 함", auto_id="100", control_type="CheckBox")
+   |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    | Static - '해상도:'    (L1090, T1311, R1134, B1325)
+   |    |    |    |    |    |    |    | ['Static58', '해상도:', '해상도:Static']
+   |    |    |    |    |    |    |    | child_window(title="해상도:", auto_id="-367795600", control_type="Text")
+   |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    | Edit - '해상도:'    (L1139, T1309, R1186, B1328)
+   |    |    |    |    |    |    |    | ['해상도:Edit', 'Edit6']
+   |    |    |    |    |    |    |    | child_window(title="해상도:", auto_id="65535", control_type="Edit")
+   |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    | ComboBox - ''    (L1191, T1307, R1427, B1328)
+   |    |    |    |    |    |    |    | ['해상도:ComboBox', 'ComboBox15', 'ComboBox닫기']
+   |    |    |    |    |    |    |    | child_window(auto_id="65535", control_type="ComboBox")
+   |    |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    |    | Static - ''    (L3, T3, R216, B18)
+   |    |    |    |    |    |    |    |    | ['Static59']
+   |    |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    |    | Button - '열기'    (L1411, T1308, R1426, B1327)
+   |    |    |    |    |    |    |    |    | ['열기15', '열기Button15', 'Button25']
+   |    |    |    |    |    |    |    |    | child_window(title="열기", auto_id="DropDown", control_type="Button")
+   |    |    |    |    |    | 
+   |    |    |    |    |    | Pane - '출력 선명하게 하기'    (L713, T1339, R1451, B1364)
+   |    |    |    |    |    | ['출력 선명하게 하기Pane', 'Pane47', '출력 선명하게 하기', '출력 선명하게 하기0', '출력 선명하게 하기1', '출력 선명하게 하기Pane0', '출력 선명하게 하기Pane1']
+   |    |    |    |    |    | child_window(title="출력 선명하게 하기", auto_id="100", control_type="Pane")
+   |    |    |    |    |    |    | 
+   |    |    |    |    |    |    | Button - ''    (L719, T1345, R733, B1359)
+   |    |    |    |    |    |    | ['Button26']
+   |    |    |    |    |    |    | child_window(auto_id="65535", control_type="Button")
+   |    |    |    |    |    |    | 
+   |    |    |    |    |    |    | Static - '출력 선명하게 하기'    (L738, T1345, R843, B1359)
+   |    |    |    |    |    |    | ['Static60', '출력 선명하게 하기2', '출력 선명하게 하기Static']
+   |    |    |    |    |    |    | child_window(title="출력 선명하게 하기", auto_id="-367790992", control_type="Text")
+   |    |    |    |    |    |    | 
+   |    |    |    |    |    |    | Pane - 'View'    (L843, T1341, R1451, B1362)
+   |    |    |    |    |    |    | ['ViewPane21', 'Pane48', 'View21']
+   |    |    |    |    |    |    | child_window(title="View", auto_id="100", control_type="Pane")
+   |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    | Pane - 'View'    (L843, T1345, R1451, B1358)
+   |    |    |    |    |    |    |    | ['ViewPane22', 'Pane49', 'View22']
+   |    |    |    |    |    |    |    | child_window(title="View", auto_id="100", control_type="Pane")
+   |    |    |    |    |    | 
+   |    |    |    |    |    | Pane - 'Collapsible Section'    (L712, T1364, R1452, B1406)
+   |    |    |    |    |    | ['Pane50', 'Collapsible Section7', 'Collapsible SectionPane7']
+   |    |    |    |    |    | child_window(title="Collapsible Section", auto_id="100", control_type="Pane")
+   |    |    |    |    |    |    | 
+   |    |    |    |    |    |    | Pane - '출력 선명하게 하기'    (L712, T1364, R1452, B1406)
+   |    |    |    |    |    |    | ['출력 선명하게 하기Pane2', 'Pane51', '출력 선명하게 하기3']
+   |    |    |    |    |    |    | child_window(title="출력 선명하게 하기", auto_id="100", control_type="Pane")
+   |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    | CheckBox - '선명하게 하기:'    (L737, T1378, R869, B1393)
+   |    |    |    |    |    |    |    | ['선명하게 하기:', 'CheckBox14', '선명하게 하기:CheckBox']
+   |    |    |    |    |    |    |    | child_window(title="선명하게 하기:", auto_id="100", control_type="CheckBox")
+   |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    | ComboBox - ''    (L874, T1374, R1070, B1395)
+   |    |    |    |    |    |    |    | ['ComboBox16', '출력 선명하게 하기ComboBox']
+   |    |    |    |    |    |    |    | child_window(auto_id="65535", control_type="ComboBox")
+   |    |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    |    | Static - ''    (L3, T3, R176, B18)
+   |    |    |    |    |    |    |    |    | ['Static61']
+   |    |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    |    | Button - '열기'    (L1054, T1375, R1069, B1394)
+   |    |    |    |    |    |    |    |    | ['열기16', '열기Button16', 'Button27']
+   |    |    |    |    |    |    |    |    | child_window(title="열기", auto_id="DropDown", control_type="Button")
+   |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    | Static - '양:'    (L1094, T1378, R1116, B1392)
+   |    |    |    |    |    |    |    | ['양:', 'Static62', '양:Static', '양:0', '양:1', '양:Static0', '양:Static1']
+   |    |    |    |    |    |    |    | child_window(title="양:", auto_id="-367787408", control_type="Text")
+   |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    | ComboBox - '양:'    (L1121, T1374, R1266, B1395)
+   |    |    |    |    |    |    |    | ['ComboBox17', '양:2', '양:ComboBox']
+   |    |    |    |    |    |    |    | child_window(title="양:", auto_id="65535", control_type="ComboBox")
+   |    |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    |    | Static - '양:'    (L3, T3, R125, B18)
+   |    |    |    |    |    |    |    |    | ['양:3', 'Static63', '양:Static2']
+   |    |    |    |    |    |    |    |    | child_window(title="양:", control_type="Text")
+   |    |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    |    | Button - '열기'    (L1250, T1375, R1265, B1394)
+   |    |    |    |    |    |    |    |    | ['열기17', '열기Button17', 'Button28']
+   |    |    |    |    |    |    |    |    | child_window(title="열기", auto_id="DropDown", control_type="Button")
+   |    |    |    |    |    | 
+   |    |    |    |    |    | Pane - '메타데이터'    (L713, T1406, R1451, B1431)
+   |    |    |    |    |    | ['메타데이터', 'Pane52', '메타데이터Pane', '메타데이터0', '메타데이터1', '메타데이터Pane0', '메타데이터Pane1']
+   |    |    |    |    |    | child_window(title="메타데이터", auto_id="100", control_type="Pane")
+   |    |    |    |    |    |    | 
+   |    |    |    |    |    |    | Button - ''    (L719, T1412, R733, B1426)
+   |    |    |    |    |    |    | ['Button29']
+   |    |    |    |    |    |    | child_window(auto_id="65535", control_type="Button")
+   |    |    |    |    |    |    | 
+   |    |    |    |    |    |    | Static - '메타데이터'    (L738, T1412, R804, B1426)
+   |    |    |    |    |    |    | ['Static64', '메타데이터Static', '메타데이터2']
+   |    |    |    |    |    |    | child_window(title="메타데이터", auto_id="-367795088", control_type="Text")
+   |    |    |    |    |    |    | 
+   |    |    |    |    |    |    | Pane - 'View'    (L804, T1408, R1451, B1429)
+   |    |    |    |    |    |    | ['ViewPane23', 'Pane53', 'View23']
+   |    |    |    |    |    |    | child_window(title="View", auto_id="100", control_type="Pane")
+   |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    | Pane - 'View'    (L804, T1412, R1451, B1425)
+   |    |    |    |    |    |    |    | ['ViewPane24', 'Pane54', 'View24']
+   |    |    |    |    |    |    |    | child_window(title="View", auto_id="100", control_type="Pane")
+   |    |    |    |    |    | 
+   |    |    |    |    |    | Pane - 'Collapsible Section'    (L712, T1431, R1452, B1533)
+   |    |    |    |    |    | ['Pane55', 'Collapsible Section8', 'Collapsible SectionPane8']
+   |    |    |    |    |    | child_window(title="Collapsible Section", auto_id="100", control_type="Pane")
+   |    |    |    |    |    |    | 
+   |    |    |    |    |    |    | Pane - '메타데이터'    (L712, T1431, R1452, B1533)
+   |    |    |    |    |    |    | ['메타데이터3', 'Pane56', '메타데이터Pane2']
+   |    |    |    |    |    |    | child_window(title="메타데이터", auto_id="100", control_type="Pane")
+   |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    | Static - '포함:'    (L737, T1445, R869, B1459)
+   |    |    |    |    |    |    |    | ['Static65', '포함:Static', '포함:', '포함:0', '포함:1', '포함:Static0', '포함:Static1']
+   |    |    |    |    |    |    |    | child_window(title="포함:", auto_id="-367790480", control_type="Text")
+   |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    | ComboBox - '포함:'    (L874, T1441, R1135, B1462)
+   |    |    |    |    |    |    |    | ['ComboBox18', '포함:ComboBox', '포함:2']
+   |    |    |    |    |    |    |    | child_window(title="포함:", auto_id="65535", control_type="ComboBox")
+   |    |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    |    | Static - '포함:'    (L3, T3, R241, B18)
+   |    |    |    |    |    |    |    |    | ['Static66', '포함:Static2', '포함:3']
+   |    |    |    |    |    |    |    |    | child_window(title="포함:", control_type="Text")
+   |    |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    |    | Button - '열기'    (L1119, T1442, R1134, B1461)
+   |    |    |    |    |    |    |    |    | ['열기18', '열기Button18', 'Button30']
+   |    |    |    |    |    |    |    |    | child_window(title="열기", auto_id="DropDown", control_type="Button")
+   |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    | CheckBox - '사람 정보 제거'    (L874, T1473, R966, B1488)
+   |    |    |    |    |    |    |    | ['사람 정보 제거CheckBox', 'CheckBox15', '사람 정보 제거']
+   |    |    |    |    |    |    |    | child_window(title="사람 정보 제거", auto_id="100", control_type="CheckBox")
+   |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    | CheckBox - '위치 정보 제거'    (L971, T1473, R1063, B1488)
+   |    |    |    |    |    |    |    | ['위치 정보 제거CheckBox', 'CheckBox16', '위치 정보 제거']
+   |    |    |    |    |    |    |    | child_window(title="위치 정보 제거", auto_id="100", control_type="CheckBox")
+   |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    | CheckBox - '키워드를 Lightroom 계층 구조로 쓰기'    (L874, T1498, R1074, B1513)
+   |    |    |    |    |    |    |    | ['키워드를 Lightroom 계층 구조로 쓰기', '키워드를 Lightroom 계층 구조로 쓰기CheckBox', 'CheckBox17']
+   |    |    |    |    |    |    |    | child_window(title="키워드를 Lightroom 계층 구조로 쓰기", auto_id="100", control_type="CheckBox")
+   |    |    |    |    |    | 
+   |    |    |    |    |    | Pane - '워터마크'    (L713, T1533, R1451, B1558)
+   |    |    |    |    |    | ['Pane57', '워터마크Pane', '워터마크', '워터마크0', '워터마크1', '워터마크Pane0', '워터마크Pane1']
+   |    |    |    |    |    | child_window(title="워터마크", auto_id="100", control_type="Pane")
+   |    |    |    |    |    |    | 
+   |    |    |    |    |    |    | Button - ''    (L719, T1539, R733, B1553)
+   |    |    |    |    |    |    | ['Button31']
+   |    |    |    |    |    |    | child_window(auto_id="65535", control_type="Button")
+   |    |    |    |    |    |    | 
+   |    |    |    |    |    |    | Static - '워터마크'    (L738, T1539, R793, B1553)
+   |    |    |    |    |    |    | ['Static67', '워터마크Static', '워터마크2']
+   |    |    |    |    |    |    | child_window(title="워터마크", auto_id="-367810960", control_type="Text")
+   |    |    |    |    |    |    | 
+   |    |    |    |    |    |    | Pane - 'View'    (L793, T1535, R1451, B1556)
+   |    |    |    |    |    |    | ['ViewPane25', 'Pane58', 'View25']
+   |    |    |    |    |    |    | child_window(title="View", auto_id="100", control_type="Pane")
+   |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    | Pane - 'View'    (L793, T1539, R1451, B1552)
+   |    |    |    |    |    |    |    | ['ViewPane26', 'Pane59', 'View26']
+   |    |    |    |    |    |    |    | child_window(title="View", auto_id="100", control_type="Pane")
+   |    |    |    |    |    | 
+   |    |    |    |    |    | Pane - 'Collapsible Section'    (L712, T1558, R1452, B1600)
+   |    |    |    |    |    | ['Pane60', 'Collapsible Section9', 'Collapsible SectionPane9']
+   |    |    |    |    |    | child_window(title="Collapsible Section", auto_id="100", control_type="Pane")
+   |    |    |    |    |    |    | 
+   |    |    |    |    |    |    | Pane - '워터마크'    (L712, T1558, R1452, B1600)
+   |    |    |    |    |    |    | ['Pane61', '워터마크Pane2', '워터마크3']
+   |    |    |    |    |    |    | child_window(title="워터마크", auto_id="100", control_type="Pane")
+   |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    | CheckBox - '워터마크:'    (L737, T1570, R869, B1586)
+   |    |    |    |    |    |    |    | ['워터마크:', 'CheckBox18', '워터마크:CheckBox']
+   |    |    |    |    |    |    |    | child_window(title="워터마크:", auto_id="100", control_type="CheckBox")
+   |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    | ComboBox - ''    (L874, T1568, R1059, B1589)
+   |    |    |    |    |    |    |    | ['ComboBox19', '워터마크ComboBox']
+   |    |    |    |    |    |    |    | child_window(auto_id="65535", control_type="ComboBox")
+   |    |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    |    | Static - ''    (L3, T3, R165, B18)
+   |    |    |    |    |    |    |    |    | ['Static68']
+   |    |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    |    | Button - '열기'    (L1043, T1569, R1058, B1588)
+   |    |    |    |    |    |    |    |    | ['열기19', '열기Button19', 'Button32']
+   |    |    |    |    |    |    |    |    | child_window(title="열기", auto_id="DropDown", control_type="Button")
+   |    |    |    |    |    | 
+   |    |    |    |    |    | Pane - '후처리'    (L713, T1600, R1451, B1625)
+   |    |    |    |    |    | ['Pane62', '후처리', '후처리Pane', '후처리0', '후처리1', '후처리Pane0', '후처리Pane1']
+   |    |    |    |    |    | child_window(title="후처리", auto_id="100", control_type="Pane")
+   |    |    |    |    |    |    | 
+   |    |    |    |    |    |    | Button - ''    (L719, T1606, R733, B1620)
+   |    |    |    |    |    |    | ['Button33']
+   |    |    |    |    |    |    | child_window(auto_id="65535", control_type="Button")
+   |    |    |    |    |    |    | 
+   |    |    |    |    |    |    | Static - '후처리'    (L738, T1606, R782, B1620)
+   |    |    |    |    |    |    | ['Static69', '후처리Static', '후처리2']
+   |    |    |    |    |    |    | child_window(title="후처리", auto_id="-367789968", control_type="Text")
+   |    |    |    |    |    |    | 
+   |    |    |    |    |    |    | Pane - 'View'    (L782, T1602, R1451, B1623)
+   |    |    |    |    |    |    | ['ViewPane27', 'Pane63', 'View27']
+   |    |    |    |    |    |    | child_window(title="View", auto_id="100", control_type="Pane")
+   |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    | Pane - 'View'    (L782, T1606, R1451, B1619)
+   |    |    |    |    |    |    |    | ['ViewPane28', 'Pane64', 'View28']
+   |    |    |    |    |    |    |    | child_window(title="View", auto_id="100", control_type="Pane")
+   |    |    |    |    |    | 
+   |    |    |    |    |    | Pane - 'Collapsible Section'    (L712, T1625, R1452, B1705)
+   |    |    |    |    |    | ['Pane65', 'Collapsible Section10', 'Collapsible SectionPane10']
+   |    |    |    |    |    | child_window(title="Collapsible Section", auto_id="100", control_type="Pane")
+   |    |    |    |    |    |    | 
+   |    |    |    |    |    |    | Pane - '후처리'    (L712, T1625, R1452, B1705)
+   |    |    |    |    |    |    | ['Pane66', '후처리3', '후처리Pane2']
+   |    |    |    |    |    |    | child_window(title="후처리", auto_id="100", control_type="Pane")
+   |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    | Static - '내보낸 후:'    (L737, T1639, R869, B1653)
+   |    |    |    |    |    |    |    | ['내보낸 후:', 'Static70', '내보낸 후:Static', '내보낸 후:0', '내보낸 후:1', '내보낸 후:Static0', '내보낸 후:Static1']
+   |    |    |    |    |    |    |    | child_window(title="내보낸 후:", auto_id="-367785360", control_type="Text")
+   |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    | ComboBox - '내보낸 후:'    (L874, T1635, R1427, B1656)
+   |    |    |    |    |    |    |    | ['내보낸 후:2', 'ComboBox20', '내보낸 후:ComboBox']
+   |    |    |    |    |    |    |    | child_window(title="내보낸 후:", auto_id="65535", control_type="ComboBox")
+   |    |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    |    | Static - '내보낸 후:'    (L3, T3, R533, B18)
+   |    |    |    |    |    |    |    |    | ['내보낸 후:3', 'Static71', '내보낸 후:Static2']
+   |    |    |    |    |    |    |    |    | child_window(title="내보낸 후:", control_type="Text")
+   |    |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    |    | Button - '열기'    (L1411, T1636, R1426, B1655)
+   |    |    |    |    |    |    |    |    | ['열기20', '열기Button20', 'Button34']
+   |    |    |    |    |    |    |    |    | child_window(title="열기", auto_id="DropDown", control_type="Button")
+   |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    | Static - '응용 프로그램:'    (L737, T1674, R869, B1688)
+   |    |    |    |    |    |    |    | ['Static72', '응용 프로그램:', '응용 프로그램:Static']
+   |    |    |    |    |    |    |    | child_window(title="응용 프로그램:", auto_id="-367784848", control_type="Text")
+   |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    | Pane - ' (Bridge View)'    (L874, T1667, R1427, B1695)
+   |    |    |    |    |    |    |    | ['Pane67', ' (Bridge View)2', ' (Bridge View)Pane2']
+   |    |    |    |    |    |    |    | child_window(title=" (Bridge View)", auto_id="65535", control_type="Pane")
+   |    |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    |    | Static - '응용 프로그램 선택...'    (L874, T1674, R1352, B1688)
+   |    |    |    |    |    |    |    |    | ['응용 프로그램 선택...', 'Static73', '응용 프로그램 선택...Static']
+   |    |    |    |    |    |    |    |    | child_window(title="응용 프로그램 선택...", auto_id="-367783824", control_type="Text")
+   |    |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    |    | Pane - ' (Bridge View)'    (L1357, T1678, R1364, B1685)
+   |    |    |    |    |    |    |    |    | ['Pane68', ' (Bridge View)3', ' (Bridge View)Pane3']
+   |    |    |    |    |    |    |    |    | child_window(title=" (Bridge View)", auto_id="65535", control_type="Pane")
+   |    |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    |    | Button - '선택...'    (L1369, T1670, R1424, B1692)
+   |    |    |    |    |    |    |    |    | ['선택...Button', 'Button35', '선택...']
+   |    |    |    |    |    |    |    |    | child_window(title="선택...", auto_id="65535", control_type="Button")
+   |    |    | 
+   |    |    | ScrollBar - ''    (L1452, T333, R1468, B710)
+   |    |    | ['ScrollBar2', 'C:\\Users\\USER\\DocumentsScrollBar']
+   |    |    | child_window(auto_id="1593627904", control_type="ScrollBar")
+   | 
+   | Button - '플러그인 관리자...'    (L450, T780, R564, B805)
+   | ['플러그인 관리자...', '플러그인 관리자...Button', 'Button36']
+   | child_window(title="플러그인 관리자...", auto_id="65535", control_type="Button")
+   | 
+   | Static - '자세한 내용 보기'    (L1078, T789, R1168, B803)
+   | ['자세한 내용 보기2', 'Static74', '자세한 내용 보기Static2']
+   | child_window(title="자세한 내용 보기", auto_id="1509652384", control_type="Text")
+   | 
+   | Button - '완료'    (L1178, T783, R1258, B808)
+   | ['Button37', '완료Button', '완료']
+   | child_window(title="완료", auto_id="65535", control_type="Button")
+   | 
+   | Button - '내보내기'    (L1268, T783, R1380, B808)
+   | ['내보내기', '내보내기Button', 'Button38']
+   | child_window(title="내보내기", auto_id="1", control_type="Button")
+   | 
+   | Button - '취소'    (L1390, T783, R1470, B808)
+   | ['취소Button', 'Button39', '취소']
+   | child_window(title="취소", auto_id="2", control_type="Button")
+   | 
+   | TitleBar - ''    (L430, T229, R1490, B257)
+   | ['TitleBar']
+   |    | 
+   |    | Button - '최소화'    (L1351, T227, R1398, B257)
+   |    | ['최소화Button', '최소화', 'Button40']
+   |    | child_window(title="최소화", control_type="Button")
+   |    | 
+   |    | Button - '최대화'    (L1398, T227, R1444, B257)
+   |    | ['최대화Button', '최대화', 'Button41']
+   |    | child_window(title="최대화", control_type="Button")
+   |    | 
+   |    | Button - '닫기'    (L1444, T227, R1491, B257)
+   |    | ['닫기Button', 'Button42', '닫기']
+   |    | child_window(title="닫기", control_type="Button")
+pydevd warning: Computing repr of export_window (WindowSpecification) was slow (took 0.77s)
+Customize report timeout by setting the `PYDEVD_WARN_SLOW_RESOLVE_TIMEOUT` environment variable to a higher timeout (default is: 0.5s)

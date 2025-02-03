@@ -5,9 +5,6 @@ from pywinauto import WindowSpecification
 
 def open_export_window(lightroom: WindowSpecification):
     """✅ Lightroom에서 'Ctrl + Shift + E' 단축키를 사용하여 '내보내기(E)...' 창 열기"""
-    print("📂 단축키 'Ctrl + Shift + E' 실행...")
-    send_keys("^+E")  # ✅ Ctrl + Shift + E 단축키 실행
-
     export_window = lightroom.child_window(
         title_re=r"\d+개의 파일 내보내기", control_type="Window"
     )
