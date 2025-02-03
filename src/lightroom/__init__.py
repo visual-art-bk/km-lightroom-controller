@@ -1,3 +1,4 @@
+import time
 from .utils.LightroomApp import LightroomApp
 from .utils.get_lightroom_win import get_lightroom_win
 from lightroom.utils.select_ui import select_ui
@@ -23,6 +24,7 @@ class LightroomAutomationThread(QThread):
         app = lightroomApp.get_app()
         lightroom = get_lightroom_win(app)
         
+        time.sleep(1.5)
         #  파일 메뉴 클릭
         file_window = select_ui(
             control_type="MenuItem",
