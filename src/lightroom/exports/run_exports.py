@@ -1,6 +1,7 @@
 import time
 from pywinauto import Application, WindowSpecification
 from lightroom.exports.selects.open_export_window import open_export_window
+from lightroom.exports.selects.select_all_imgs import select_all_imgs
 from lightroom.exports.finds.get_ui_export_location_combo import (
     get_ui_export_location_combo,
 )
@@ -28,9 +29,12 @@ def toggle_checkbox(win_specs: WindowSpecification):
         return
 
 
-def run_exports(app: Application, lightroom: WindowSpecification):
+def run_exports(lightroom: WindowSpecification):
     state_manager = StateManager()
     app_state = state_manager.get_state()
+
+    # TODO    
+    # select_all_imgs(win_specs=lightroom)
 
     # 전체 사진 단축키로 선택
     send_shortcuts(

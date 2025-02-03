@@ -38,6 +38,6 @@ def init(username="정의되지않음"):
 
 
 
-    run_exports(app=app, lightroom=lightroom)
+    run_exports(lightroom=lightroom)
 
 __all__ = ["init"]
