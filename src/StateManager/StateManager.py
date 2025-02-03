@@ -8,11 +8,11 @@ class AppState(BaseModel):
     username: str = ""  # 사용자가 입력한 이름
     phone_number: str = ""
     label_text: str = ""  # Label 텍스트 저장
-    export_filename: str = ""  # 내보낼 파일명
     lightroom_running: bool = False  # Lightroom 실행 여부
-    overlay_running: bool = False # 오버레이 실행 여부부
-    export_completed: bool = False  # 내보내기 완료 여부
+    overlay_running: bool = False # 오버레이 실행 여부
+    overlay_hide: bool = False
     context: str = ""
+
 
 
 class StateManager:

@@ -39,12 +39,11 @@ class LightroomApp:
             creationflags=subprocess.DETACHED_PROCESS,  # Python 프로세스 종료와 무관하게 실행
         )
 
-        time.sleep(10)  # Lightroom 실행을 위한 대기 시간
         print("✅ Lightroom 실행 완료!")
 
     def start(self):
-        # self.restart()
-        
+        self.restart()
+
         try:
             # ✅ 실행된 Lightroom과 연결
             self.app = Application(backend="uia").connect(

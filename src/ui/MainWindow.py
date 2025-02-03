@@ -16,28 +16,6 @@ from ui.overlay.OverlayWindow import OverlayWindow
 from monitorings.LightroomMonitorThread import LightroomMonitorThread
 
 
-class LightroomThread(QThread):
-    """Lightroom 실행을 백그라운드에서 처리하는 스레드"""
-
-    finished = Signal(str)
-
-    def __init__(self, username: str):
-        super().__init__()
-        self.username = username
-
-    def run(self):
-        """Lightroom 실행 및 상태 관리"""
-        try:
-            print(f"[🚀] Lightroom 실행 시작: {self.username}")
-            lightroom.init(self.username)  # Lightroom 자동화 실행
-
-            export_filename = f"{self.username}_exported.jpg"
-            self.finished.emit(export_filename)  # UI에 성공 이벤트 전달
-
-        except Exception as e:
-            self.finished.emit(f"ERROR: {str(e)}")  # 오류 이벤트 전달
-
-
 class MainWindow(QMainWindow):
     """Lightroom 실행 GUI"""
 
@@ -89,6 +67,7 @@ class MainWindow(QMainWindow):
 
         self.overlay = None
         self.lightroom_monitor = None
+        self.thread_lightroom_automation = None
 
     def init_state(self):
 
@@ -101,6 +80,10 @@ class MainWindow(QMainWindow):
             lightroom_running=False,
             overlay_running=False,
         )
+    
+    def delete_overlay(self):
+        self.overlay = None
+        OverlayWindow._instance = None
 
     def run_lightroom(self):
         self.init_state()
@@ -125,24 +108,23 @@ class MainWindow(QMainWindow):
             username=username,
             context="사용자정보입력 상태",
         )
-
-        # Lightroom 실행을 백그라운드에서 실행
-        self.thread = LightroomThread(username)
-        self.thread.finished.connect(self.on_lightroom_finished)
-        self.thread.start()
+        
+        self.thread_lightroom_automation = lightroom.LightroomAutomationThread()
+        self.thread_lightroom_automation.finished.connect(self.on_lightroom_finished)
+        self.thread_lightroom_automation.start()
 
         # 🔄 전역 상태 업데이트 (RxPy 자동 반영)
         self.state_manager.update_state(
-            context="라이트룸실행 상태",
+            context="라이트룸 실행 상태",
             lightroom_running=True,
         )
 
-        time.sleep(1.5)
+        time.sleep(2)
 
-        # self.create_overlay()
+        self.create_overlay()
 
         self.state_manager.update_state(
-            context="오버레이실행 상태",
+            context="오버레이 실행 상태",
             overlay_running=True,
         )
 
@@ -173,46 +155,53 @@ class MainWindow(QMainWindow):
     def close_main_window(self):
         """✅ Lightroom이 종료되면 MainWindow도 종료"""
         print("✅ MainWindow 종료 실행!")
-        self.close()
 
-    def on_lightroom_finished(self, result: str):
+        self.close()
+        
+        self.state_manager.update_state(
+            lightroom_running=False
+        )
+
+    def on_lightroom_finished(self):
         """Lightroom 실행 완료 후 UI 업데이트"""
-        if result.startswith("ERROR"):
-            QMessageBox.critical(self, "오류", f"Lightroom 실행 실패: {result[6:]}")
-            self.state_manager.update_state(
-                lightroom_running=False
-            )  # 오류 시 상태 변경
-        else:
-            QMessageBox.information(self, "완료", f"Lightroom 자동화 완료: {result}")
-            self.state_manager.update_state(
-                export_filename=result, export_completed=True, lightroom_running=False
-            )
+        print(self.thread_lightroom_automation.finished)
+        # if result.startswith("ERROR"):
+        #     QMessageBox.critical(self, "오류", f"Lightroom 실행 실패: {result[6:]}")
+        #     self.state_manager.update_state(
+        #         lightroom_running=False
+        #     )  # 오류 시 상태 변경
+        # else:
+        #     QMessageBox.information(self, "완료", f"Lightroom 자동화 완료: {result}")
+        #     self.state_manager.update_state(
+        #         export_filename=result, export_completed=True, lightroom_running=False
+            # )
+            
+    def hide_overlay(self):
+        print('오버레이 숨김 처리')
+        self.overlay.hide()
 
     def on_state_change(self, new_state: AppState):
         """전역 상태 변경 감지 및 UI 반영"""
-        print(f"---> [📢] 상태 변경 감지: {new_state.context}")
+        print(
+            f"----------------- [📢] 상태 변경 감지: {new_state.context} -----------------"
+        )
         print(f"사용자이름: {new_state.username}")
         print(f"전화번호: {new_state.phone_number}")
         print(f"라이트룸 실행여부: {'실행' if new_state.lightroom_running else '중지'}")
-        print(f"오버레이이 실행여부: {'실행' if new_state.overlay_running else '중지'}")
+        print(f"오버레이 실행여부: {'실행' if new_state.overlay_running else '중지'}")
         print(f"                                                      ")
 
-        if (
-            new_state.overlay_running == False
-            and OverlayWindow._instance
-            # and new_state.lightroom_running == True
-        ):
 
-            print(f"✅ 오버레이 창 닫기 실행!")
+        if  new_state.lightroom_running == False:
+            if OverlayWindow._instance != None:
+                print(f"✅ 오버레이 삭제 실행!")
+                
+                self.delete_overlay()
 
-            QMetaObject.invokeMethod(
-                OverlayWindow._instance, "close", Qt.QueuedConnection
-            )
-
-            OverlayWindow._instance = None  # ✅ 싱글턴 객체 초기화
-
-            self.state_manager.update_state(
-                context="오버레이 종료 상태",
-                lightroom_running=True,
-                overlay_running=False,
-            )
+                self.state_manager.update_state(
+                    context="오버레이 종료 상태",
+                    overlay_running=False,
+                )
+        else:
+            if new_state.overlay_hide == True:
+                self.hide_overlay()
