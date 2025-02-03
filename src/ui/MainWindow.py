@@ -165,16 +165,7 @@ class MainWindow(QMainWindow):
     def on_lightroom_finished(self):
         """Lightroom 실행 완료 후 UI 업데이트"""
         print(self.thread_lightroom_automation.finished)
-        # if result.startswith("ERROR"):
-        #     QMessageBox.critical(self, "오류", f"Lightroom 실행 실패: {result[6:]}")
-        #     self.state_manager.update_state(
-        #         lightroom_running=False
-        #     )  # 오류 시 상태 변경
-        # else:
-        #     QMessageBox.information(self, "완료", f"Lightroom 자동화 완료: {result}")
-        #     self.state_manager.update_state(
-        #         export_filename=result, export_completed=True, lightroom_running=False
-            # )
+
             
     def hide_overlay(self):
         print('오버레이 숨김 처리')
