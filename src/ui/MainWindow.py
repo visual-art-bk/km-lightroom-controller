@@ -97,7 +97,7 @@ class MainWindow(QMainWindow):
         self.thread_lightroom_automation.finished.connect(
             self.on_lightroom_automation_finished
         )
-        self.thread_lightroom_launcher.lightroom_started.connect(
+        self.thread_lightroom_automation.adobe_note_closed.connect(
             self.on_lightroom_launcher_started
         )
         self.thread_lightroom_mornitor.lightroom_closed_mornitoring.connect(
@@ -162,12 +162,13 @@ class MainWindow(QMainWindow):
             overlay_running=False,
         )
 
+        self.hide()
+
     def on_lightroom_closed_mornitoring(self):
         print("✅ Lightroom 종료 감지 → 프로그램 종료")
 
         self.state_manager.update_state(
             context="Lightroom 종료 → 프로그램 종료",
-            overlay_running=False,
             lightroom_running=False,
         )
 
@@ -180,8 +181,11 @@ class MainWindow(QMainWindow):
                 context="Lightroom 실행 완료",
                 lightroom_running=True,
             )
+
             time.sleep(2)
+
             self.create_overlay()
+
             self.state_manager.update_state(
                 context="오버레이 실행 완료",
                 overlay_running=True,
