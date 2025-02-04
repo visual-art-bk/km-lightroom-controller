@@ -6,8 +6,9 @@ import sys
 if __name__ == "__main__":
     app = QApplication(sys.argv)
 
-    # ✅ Lightroom 실행기 GUI 띄우기
-    main_window = MainWindow(y=50)
+    # ✅ MainWindow 생성
+    main_window = MainWindow(y=100)
     main_window.show()
 
-    sys.exit(app.exec())
+    # ✅ 메인 윈도우가 숨겨져도 프로그램이 종료되지 않도록 설정
+    app.exec()  # 🔥 `QApplication`을 계속 유지

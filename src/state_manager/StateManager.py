@@ -10,7 +10,6 @@ class AppState(BaseModel):
     label_text: str = ""  # Label 텍스트 저장
     lightroom_running: bool = False  # Lightroom 실행 여부
     overlay_running: bool = False # 오버레이 실행 여부
-    overlay_hide: bool = False
     context: str = ""
 
 
