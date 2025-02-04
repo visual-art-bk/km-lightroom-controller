@@ -33,7 +33,7 @@ class LightroomAutomationThread(QThread):
         # ✅ Lightroom 창 가져오기
         lightroom = get_lightroom_win(app)
 
-        time.sleep(1)
+        time.sleep(3)
 
                 # ✅ ESC 키를 3번 누르기 (0.5초 간격)
         print("🚀 Lightroom 공지 닫기: ESC 키 3회 입력 시작...")
@@ -47,7 +47,7 @@ class LightroomAutomationThread(QThread):
         
         self.adobe_note_closed.emit(True)
 
-        time.sleep(1)
+        time.sleep(1.5)
 
         try:
 
