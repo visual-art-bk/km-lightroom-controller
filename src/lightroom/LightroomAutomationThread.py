@@ -1,16 +1,15 @@
 import time
-import psutil
-from pywinauto import Application
+from pywinauto import Application, keyboard
 from state_manager.StateManager import StateManager
 from .utils.get_lightroom_win import get_lightroom_win
 from lightroom.utils.select_ui import select_ui
 from PySide6.QtCore import QThread, Signal
 
-
 class LightroomAutomationThread(QThread):
     """Lightroom 자동화 실행을 위한 스레드"""
 
     finished = Signal(bool)  # ✅ 성공/실패 여부를 전달하는 시그널
+    adobe_note_closed = Signal(bool)
 
     def __init__(self):
         super().__init__()
@@ -34,9 +33,24 @@ class LightroomAutomationThread(QThread):
         # ✅ Lightroom 창 가져오기
         lightroom = get_lightroom_win(app)
 
-        time.sleep(2)
+        time.sleep(1)
+
+                # ✅ ESC 키를 3번 누르기 (0.5초 간격)
+        print("🚀 Lightroom 공지 닫기: ESC 키 3회 입력 시작...")
+        for i in range(3):
+            keyboard.send_keys("{ESC}")  # ✅ ESC 키 입력
+            print(f"✅ ESC 키 입력 {i+1}/3 완료")
+            time.sleep(0.5)
+
+        print("✅ Lightroom 공지 닫기 완료!")
+
+        
+        self.adobe_note_closed.emit(True)
+
+        time.sleep(1)
 
         try:
+
             # ✅ 파일 메뉴 클릭
             file_window = select_ui(
                 control_type="MenuItem",
@@ -44,12 +58,14 @@ class LightroomAutomationThread(QThread):
                 win_specs=lightroom,
             )
             file_window.click_input()
+            print("✅ 파일(F) 메뉴 클릭 완료!")
 
             # ✅ 연결전송된 촬영 메뉴 클릭
             tet_capture_window = select_ui(
                 win_specs=lightroom, control_type="MenuItem", title="연결전송된 촬영"
             )
             tet_capture_window.click_input()
+            print("✅ 연결전송된 촬영 메뉴 클릭 완료!")
 
             # ✅ 연결전송된 촬영 시작 메뉴 클릭
             start_tet_capture_window = select_ui(
@@ -58,6 +74,7 @@ class LightroomAutomationThread(QThread):
                 title="연결전송된 촬영 시작...",
             )
             start_tet_capture_window.click_input()
+            print("✅ 연결전송된 촬영 시작 메뉴 클릭 완료!")
 
             # ✅ 사용자 이름과 전화번호 입력
             input_session_id_field = select_ui(
@@ -67,6 +84,7 @@ class LightroomAutomationThread(QThread):
             )
             input_session_id_field.set_text("")
             input_session_id_field.set_text(f"{state.username}{state.phone_number}")
+            print("✅ 사용자 이름과 전화번호 입력 완료!")
 
             # ✅ 확인 버튼 클릭
             confirm_button = select_ui(
@@ -75,10 +93,11 @@ class LightroomAutomationThread(QThread):
                 control_type="Button"
             )
             confirm_button.click_input()
+            print("✅ 확인 버튼 클릭 완료!")
 
             state_manager.update_state(overlay_hide=True)
 
-            print("✅ Lightroom 자동화 완료")
+            print("✅ Lightroom 자동화 완료 🚀")
             self.finished.emit(True)  # ✅ 자동화 성공 시그널 발생
 
         except Exception as e:
