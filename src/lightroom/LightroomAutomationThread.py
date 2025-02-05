@@ -37,17 +37,17 @@ class LightroomAutomationThread(QThread):
 
                 # ✅ ESC 키를 3번 누르기 (0.5초 간격)
         print("🚀 Lightroom 공지 닫기: ESC 키 3회 입력 시작...")
-        for i in range(3):
+        for i in range(10):
             keyboard.send_keys("{ESC}")  # ✅ ESC 키 입력
             print(f"✅ ESC 키 입력 {i+1}/3 완료")
-            time.sleep(0.5)
+            time.sleep(0.1)
 
         print("✅ Lightroom 공지 닫기 완료!")
 
         
         self.adobe_note_closed.emit(True)
 
-        time.sleep(1.5)
+        # time.sleep(1.5)
 
         try:
 
