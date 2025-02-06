@@ -1,3 +1,4 @@
+import os
 import time
 from PySide6.QtWidgets import (
     QMainWindow,
@@ -24,7 +25,7 @@ class MainWindow(QMainWindow):
 
         self.init_state_manager()
 
-        self.setWindowTitle("라이트룸 촬영 매니저")
+        self.setWindowTitle("다비 촬영 매니저 V2.0")
 
         self.init_window_position(
             height=height, x=x, screen_width=self.get_screen_width(), width=width, y=y
@@ -51,7 +52,7 @@ class MainWindow(QMainWindow):
         self.phone_number_entry = QLineEdit()
         layout.addWidget(self.phone_number_entry)
 
-        self.run_button = QPushButton("Lightroom 실행")
+        self.run_button = QPushButton("🚀 촬영 실행!")
         self.run_button.clicked.connect(self.run_main_window)
         layout.addWidget(self.run_button)
 
@@ -149,6 +150,57 @@ class MainWindow(QMainWindow):
         else:
             print("해당없음")
 
+    def cleanup_and_exit(self):
+        """💡 프로그램 종료 전 모든 리소스를 완전히 정리하는 함수"""
+        print("🔄 모든 리소스 정리 중...")
+
+        # ✅ 1. 스레드 강제 종료 (QThread가 완전히 종료되었는지 확인)
+        if self.thread_lightroom_launcher:
+            if self.thread_lightroom_launcher.isRunning():
+                print("⚠️ Lightroom 실행 스레드 강제 종료")
+                self.thread_lightroom_launcher.terminate()
+            self.thread_lightroom_launcher.quit()
+            self.thread_lightroom_launcher.wait()
+            self.thread_lightroom_launcher = None
+
+        if self.thread_lightroom_automation:
+            if self.thread_lightroom_automation.isRunning():
+                print("⚠️ Lightroom 자동화 스레드 강제 종료")
+                self.thread_lightroom_automation.terminate()
+            self.thread_lightroom_automation.quit()
+            self.thread_lightroom_automation.wait()
+            self.thread_lightroom_automation = None
+
+        if self.thread_lightroom_mornitor:
+            if self.thread_lightroom_mornitor.isRunning():
+                print("⚠️ Lightroom 모니터링 스레드 강제 종료")
+                self.thread_lightroom_mornitor.terminate()
+            self.thread_lightroom_mornitor.quit()
+            self.thread_lightroom_mornitor.wait()
+            self.thread_lightroom_mornitor = None
+
+        # ✅ 2. 오버레이 정리 (UI 리소스 해제)
+        if self.overlay_window:
+            print("⚠️ 오버레이이 스레드 강제 종료")
+            self.overlay_window.close()
+            self.overlay_window.deleteLater()
+            self.overlay_window = None
+        OverlayWindow._instance = None  # 싱글톤 인스턴스 초기화
+
+        # ✅ 3. 상태 관리자 해제
+        self.state_manager = None
+
+        # ✅ 4. UI 창 닫기
+        self.close()
+        self.deleteLater()  # UI 객체를 명시적으로 제거
+
+        # ✅ 5. QApplication 완전 종료
+        QApplication.quit()
+
+        # ✅ 6. **운영체제 프로세스 강제 종료 (최후의 수단)**
+        print("🚀 모든 리소스 해제 완료 → 시스템 프로세스 강제 종료")
+        os._exit(0)  # 💀 시스템 차원에서 프로세스 완전 제거
+
     def on_lightroom_closed_mornitoring(self):
         pass
 
@@ -171,6 +223,8 @@ class MainWindow(QMainWindow):
             context="Lightroom 종료 → 프로그램 종료",
             lightroom_running=False,
         )
+
+        self.cleanup_and_exit()
 
         QApplication.quit()  # ✅ `QApplication` 종료 (완전히 종료)
 

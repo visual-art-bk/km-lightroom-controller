@@ -1,9 +1,23 @@
 import time
+import ctypes
+import pyautogui
 from pywinauto import Application, keyboard
 from state_manager.StateManager import StateManager
 from .utils.get_lightroom_win import get_lightroom_win
 from lightroom.utils.select_ui import select_ui
 from PySide6.QtCore import QThread, Signal
+
+
+def lock_input():
+    """✅ 마우스와 키보드 입력을 잠급니다 (Windows 전용)"""
+    ctypes.windll.user32.BlockInput(True)  # 🔒 입력 차단
+    pyautogui.FAILSAFE = False  # ⛔ 마우스 모서리 이동 방지
+
+
+def unlock_input():
+    """✅ 마우스와 키보드 입력을 다시 활성화합니다"""
+    ctypes.windll.user32.BlockInput(False)  # 🔓 입력 해제
+
 
 class LightroomAutomationThread(QThread):
     """Lightroom 자동화 실행을 위한 스레드"""
@@ -15,6 +29,7 @@ class LightroomAutomationThread(QThread):
         super().__init__()
 
     def run(self):
+        lock_input()
         state_manager = StateManager()
         state = state_manager.get_state()
 
@@ -35,7 +50,7 @@ class LightroomAutomationThread(QThread):
 
         time.sleep(3)
 
-                # ✅ ESC 키를 3번 누르기 (0.5초 간격)
+        # ✅ ESC 키를 3번 누르기 (0.5초 간격)
         print("🚀 Lightroom 공지 닫기: ESC 키 3회 입력 시작...")
         for i in range(10):
             keyboard.send_keys("{ESC}")  # ✅ ESC 키 입력
@@ -44,7 +59,6 @@ class LightroomAutomationThread(QThread):
 
         print("✅ Lightroom 공지 닫기 완료!")
 
-        
         self.adobe_note_closed.emit(True)
 
         # time.sleep(1.5)
@@ -78,9 +92,7 @@ class LightroomAutomationThread(QThread):
 
             # ✅ 사용자 이름과 전화번호 입력
             input_session_id_field = select_ui(
-                win_specs=lightroom,
-                title="세션 이름:",
-                control_type="Edit"
+                win_specs=lightroom, title="세션 이름:", control_type="Edit"
             )
             input_session_id_field.set_text("")
             input_session_id_field.set_text(f"{state.username}{state.phone_number}")
@@ -88,9 +100,7 @@ class LightroomAutomationThread(QThread):
 
             # ✅ 확인 버튼 클릭
             confirm_button = select_ui(
-                win_specs=lightroom,
-                title="확인",
-                control_type="Button"
+                win_specs=lightroom, title="확인", control_type="Button"
             )
             confirm_button.click_input()
             print("✅ 확인 버튼 클릭 완료!")
@@ -99,6 +109,8 @@ class LightroomAutomationThread(QThread):
 
             print("✅ Lightroom 자동화 완료 🚀")
             self.finished.emit(True)  # ✅ 자동화 성공 시그널 발생
+
+            unlock_input()
 
         except Exception as e:
             print(f"❌ Lightroom 자동화 실패: {e}")
