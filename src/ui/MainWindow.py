@@ -13,8 +13,10 @@ from PySide6.QtWidgets import (
 from PySide6.QtCore import QThread, Signal, Qt, QMetaObject
 from state_manager import StateManager, AppState
 from lightroom import LightroomAutomationThread, LightroomLaunchThread
-from ui.overlay.OverlayWindow import OverlayWindow
+
+# from ui.overlay.OverlayWindow import OverlayWindow
 from monitorings.LightroomMonitorThread import LightroomMonitorThread
+from ui.overlay.OverlayWindow import OverlayWindow
 
 
 class MainWindow(QMainWindow):
@@ -131,19 +133,19 @@ class MainWindow(QMainWindow):
 
         self.init_threads()
 
+        self.create_overlay()
+
     def create_overlay(self, text="마우스 및 키보드를 절대 건들지 마세요 :)"):
         """✅ `overlay_running=True`이면 OverlayWindow 생성"""
         if self.overlay_window is None:
             self.overlay_window = OverlayWindow.create_overlay(
-                width=1200,
-                height=550,
-                bg_color="#FFFFFF",
-                opacity=0.3,
-                text=text,
+                width=500,
+                height=225,
+                bg_color="#f7dfdf",
+                opacity=1,
                 text_color="black",
-                font_size=48,
-                animation_speed=25,
-                y_offset=50,
+                font_size=20,
+                y_offset=24,
                 blur_radius=50,
             )
             self.overlay_window.show()
@@ -229,7 +231,6 @@ class MainWindow(QMainWindow):
         QApplication.quit()  # ✅ `QApplication` 종료 (완전히 종료)
 
     def on_lightroom_launcher_started(self, success):
-        """✅ Lightroom 실행 완료 후 오버레이 실행"""
         if success:
             self.state_manager.update_state(
                 context="Lightroom 실행 완료",
@@ -237,8 +238,6 @@ class MainWindow(QMainWindow):
             )
 
             time.sleep(2)
-
-            self.create_overlay()
 
             self.state_manager.update_state(
                 context="오버레이 실행 완료",

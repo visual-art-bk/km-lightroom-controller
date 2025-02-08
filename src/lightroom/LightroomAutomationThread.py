@@ -29,7 +29,7 @@ class LightroomAutomationThread(QThread):
         super().__init__()
 
     def run(self):
-        lock_input()
+        # lock_input()
         state_manager = StateManager()
         state = state_manager.get_state()
 
@@ -110,7 +110,7 @@ class LightroomAutomationThread(QThread):
             print("✅ Lightroom 자동화 완료 🚀")
             self.finished.emit(True)  # ✅ 자동화 성공 시그널 발생
 
-            unlock_input()
+            # unlock_input()
 
         except Exception as e:
             print(f"❌ Lightroom 자동화 실패: {e}")
