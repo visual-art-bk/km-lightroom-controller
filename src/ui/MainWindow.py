@@ -137,6 +137,8 @@ class MainWindow(QMainWindow):
 
         self.init_threads()
 
+        self.setWindowState(Qt.WindowMinimized)
+
         self.create_overlay()
 
     def create_overlay(self, text="마우스 및 키보드를 절대 건들지 마세요 :)"):
