@@ -30,7 +30,7 @@ class MainWindow(QMainWindow):
         self.setWindowTitle("다비 촬영 매니저 V2.0")
 
         self.init_window_position(
-            height=height, x=x, screen_width=self.get_screen_width(), width=width, y=y
+            height=height, width=width
         )
 
         self.init_window_layout()
@@ -66,13 +66,17 @@ class MainWindow(QMainWindow):
         self.state_manager = StateManager()
         self.state_manager.subscribe(self.ON_STATE_CHANGE)  # 상태 변경 구독
 
-    def init_window_position(self, x, y, width, height, screen_width):
+    def init_window_position(self, width, height):
         # 항상 최상단에 고정
-        self.setWindowFlags(Qt.WindowStaysOnTopHint)
+        # ✅ 현재 화면의 해상도 가져오기
+        screen_geometry = self.screen().availableGeometry()
+        screen_width = screen_geometry.width()
+        screen_height = screen_geometry.height()
 
-        # ✅ 사용자가 x를 설정하지 않으면 기본값으로 "우측 상단" 위치 지정
-        if x is None:
-            x = screen_width - width  # 우측 끝으로 정렬
+        # ✅ 창을 화면 정중앙에 배치 (좌우 & 상하)
+        x = (screen_width - width) // 2  # 좌우 정가운데
+        y = (screen_height - height) // 2  # 상하 정가운데
+
 
         # ✅ 창의 초기 위치 및 크기 설정 (기본값: 화면 우측 상단)
         self.setGeometry(x, y, width, height)
