@@ -27,7 +27,7 @@ class MainWindow(QMainWindow):
 
         self.init_state_manager()
 
-        self.setWindowTitle("다비 촬영 매니저 V2.1")
+        self.setWindowTitle("다비 촬영 매니저 V.2.1")
 
         self.init_window_position(
             height=height, width=width
