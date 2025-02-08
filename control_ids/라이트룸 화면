@@ -1,522 +1,663 @@
----> [📢] 상태 변경 감지: 
+----------------- [📢] 상태 변경 감지:  -----------------
 사용자이름: 
 전화번호: 
 라이트룸 실행여부: 중지
-오버레이이 실행여부: 중지
----> [📢] 상태 변경 감지: 상태 초기화
-사용자이름: 
-전화번호: 
+오버레이 실행여부: 중지
+----------------- [📢] 상태 변경 감지: 사용자정보 올바르게 입력함 -----------------
+사용자이름: sd
+전화번호: dasd
 라이트룸 실행여부: 중지
-오버레이이 실행여부: 중지
-                                                      
----> [📢] 상태 변경 감지: 사용자정보입력 상태
-사용자이름: sdsdsd
-전화번호: sdsddd
-라이트룸 실행여부: 중지
-오버레이이 실행여부: 중지
----> [📢] 상태 변경 감지: 라이트룸실행 상태
-사용자이름: sdsdsd
-전화번호: sdsddd
-라이트룸 실행여부: 실행
-오버레이이 실행여부: 중지
-                                                      
-[🚀] Lightroom 실행 시작: sdsdsd
-✅ pywinauto가 Lightroom에 성공적으로 연결됨!
----> [📢] 상태 변경 감지: 오버레이실행 상태
-사용자이름: sdsdsd
-전화번호: sdsddd
-라이트룸 실행여부: 실행
-오버레이이 실행여부: 실행
+오버레이 실행여부: 중지
+🚀 Lightroom 실행 중...
+✅ Lightroom 실행 감지됨! (프로세스 유지)
+✅ Lightroom에 성공적으로 연결됨!
 라이트룸 창 준비완료
+🚀 Lightroom 공지 닫기: ESC 키 3회 입력 시작...
+✅ ESC 키 입력 1/3 완료
+✅ ESC 키 입력 2/3 완료
+✅ ESC 키 입력 3/3 완료
+✅ ESC 키 입력 4/3 완료
+✅ ESC 키 입력 5/3 완료
+✅ ESC 키 입력 6/3 완료
+✅ ESC 키 입력 7/3 완료
+✅ ESC 키 입력 8/3 완료
+✅ ESC 키 입력 9/3 완료
+✅ ESC 키 입력 10/3 완료
+✅ Lightroom 공지 닫기 완료!
+----------------- [📢] 상태 변경 감지: Lightroom 실행 완료 -----------------
+사용자이름: sd
+전화번호: dasd
+라이트룸 실행여부: 실행
+오버레이 실행여부: 중지
+----------------- [📢] 상태 변경 감지: 오버레이 실행 완료 -----------------
+사용자이름: sd
+전화번호: dasd
+라이트룸 실행여부: 실행
+오버레이 실행여부: 실행
+✅ 파일(F) 메뉴 클릭 완료!
+✅ 연결전송된 촬영 메뉴 클릭 완료!
+✅ 연결전송된 촬영 시작 메뉴 클릭 완료!
+✅ 사용자 이름과 전화번호 입력 완료!
 Control Identifiers:
 
-Dialog - 'Lightroom Catalog - Adobe Photoshop Lightroom Classic - 라이브러리'    (L-8, T-8, R1928, B1048)
-['Lightroom Catalog - Adobe Photoshop Lightroom Classic - 라이브러리Dialog', 'Dialog', 'Lightroom Catalog - Adobe Photoshop Lightroom Classic - 라이브러리']
+Dialog - 'Lightroom Catalog - Adobe Photoshop Lightroom Classic - 라이브러리'    (L-8, T-8, R1928, B1058)
+['Lightroom Catalog - Adobe Photoshop Lightroom Classic - 라이브러리Dialog', 'Dialog', 'Lightroom Catalog - Adobe Photoshop Lightroom Classic - 라이브러리', 'Dialog0', 'Dialog1']
 child_window(title="Lightroom Catalog - Adobe Photoshop Lightroom Classic - 라이브러리", control_type="Window")
    | 
-   | Pane - ''    (L0, T43, R1920, B1040)
-   | ['탐색기Pane', 'Pane', 'Pane0', 'Pane1']
+   | Dialog - '연결전송된 촬영 설정'    (L665, T95, R1256, B726)
+   | ['연결전송된 촬영 설정Dialog', '연결전송된 촬영 설정', 'Dialog2']
+   | child_window(title="연결전송된 촬영 설정", control_type="Window")
+   |    | 
+   |    | GroupBox - '세션'    (L693, T146, R1230, B221)
+   |    | ['세션GroupBox', 'GroupBox', '세션', 'GroupBox0', 'GroupBox1']
+   |    | child_window(title="세션", auto_id="1819800432", control_type="Group")
+   |    |    | 
+   |    |    | Static - '세션 이름:'    (L703, T168, R808, B182)
+   |    |    | ['세션 이름:Static', 'Static', '세션 이름:', 'Static0', 'Static1']
+   |    |    | child_window(title="세션 이름:", auto_id="1875757184", control_type="Text")
+   |    |    | 
+   |    |    | Edit - '세션 이름:'    (L813, T166, R1024, B185)
+   |    |    | ['세션 이름:Edit', 'Edit', 'Edit0', 'Edit1']
+   |    |    | child_window(title="세션 이름:", auto_id="65535", control_type="Edit")
+   |    |    | 
+   |    |    | CheckBox - '숏별로 사진 나누기'    (L813, T195, R929, B211)
+   |    |    | ['숏별로 사진 나누기', 'CheckBox', '숏별로 사진 나누기CheckBox', 'CheckBox0', 'CheckBox1']
+   |    |    | child_window(title="숏별로 사진 나누기", auto_id="100", control_type="CheckBox")
+   |    | 
+   |    | GroupBox - '이름 지정'    (L693, T241, R1230, B346)
+   |    | ['GroupBox2', '이름 지정', '이름 지정GroupBox']
+   |    | child_window(title="이름 지정", auto_id="1819787952", control_type="Group")
+   |    |    | 
+   |    |    | Static - '샘플:'    (L703, T261, R808, B275)
+   |    |    | ['샘플:Static', '샘플:', 'Static2']
+   |    |    | child_window(title="샘플:", auto_id="1875748992", control_type="Text")
+   |    |    | 
+   |    |    | Static - '제목 없음-0001.DNG'    (L813, T261, R1220, B275)
+   |    |    | ['Static3', '제목 없음-0001.DNGStatic', '제목 없음-0001.DNG', '제목 없음-0001.DNGStatic0', '제목 없음-0001.DNGStatic1']
+   |    |    | child_window(title="제목 없음-0001.DNG", auto_id="1875773056", control_type="Text")
+   |    |    | 
+   |    |    | Static - '템플릿:'    (L703, T289, R808, B303)
+   |    |    | ['템플릿:Static', '템플릿:', 'Static4', '템플릿:0', '템플릿:1', '템플릿:Static0', '템플릿:Static1']
+   |    |    | child_window(title="템플릿:", auto_id="1875745920", control_type="Text")
+   |    |    | 
+   |    |    | ComboBox - '템플릿:'    (L813, T285, R1220, B306)
+   |    |    | ['템플릿:ComboBox', 'ComboBox', '템플릿:2', 'ComboBox0', 'ComboBox1']
+   |    |    | child_window(title="템플릿:", auto_id="2134", control_type="ComboBox")
+   |    |    |    | 
+   |    |    |    | Static - '템플릿:'    (L3, T3, R387, B18)
+   |    |    |    | ['템플릿:Static2', '템플릿:3', 'Static5']
+   |    |    |    | child_window(title="템플릿:", control_type="Text")
+   |    |    |    | 
+   |    |    |    | Button - '열기'    (L1204, T286, R1219, B305)
+   |    |    |    | ['열기Button', '열기', 'Button', 'Button0', 'Button1', '열기Button0', '열기Button1', '열기0', '열기1']
+   |    |    |    | child_window(title="열기", auto_id="DropDown", control_type="Button")
+   |    |    | 
+   |    |    | Pane - 'View'    (L703, T317, R1220, B336)
+   |    |    | ['View', 'ViewPane', 'Pane', 'Pane0', 'Pane1', 'View0', 'View1', 'ViewPane0', 'ViewPane1']
+   |    |    | child_window(title="View", auto_id="100", control_type="Pane")
+   |    |    |    | 
+   |    |    |    | Static - '사용자 정의 텍스트:'    (L703, T319, R808, B333)
+   |    |    |    | ['사용자 정의 텍스트:Static', 'Static6', '사용자 정의 텍스트:']
+   |    |    |    | child_window(title="사용자 정의 텍스트:", auto_id="1875754112", control_type="Text")
+   |    |    |    | 
+   |    |    |    | Edit - '사용자 정의 텍스트:'    (L813, T317, R1058, B336)
+   |    |    |    | ['사용자 정의 텍스트:Edit', 'Edit2']
+   |    |    |    | child_window(title="사용자 정의 텍스트:", auto_id="2136", control_type="Edit")
+   |    |    |    | 
+   |    |    |    | Static - '시작 번호:'    (L1063, T319, R1168, B333)
+   |    |    |    | ['시작 번호:', 'Static7', '시작 번호:Static']
+   |    |    |    | child_window(title="시작 번호:", auto_id="1875774080", control_type="Text")
+   |    | 
+   |    | GroupBox - '대상'    (L693, T366, R1230, B461)
+   |    | ['대상', 'GroupBox3', '대상GroupBox']
+   |    | child_window(title="대상", auto_id="1819803344", control_type="Group")
+   |    |    | 
+   |    |    | Static - '위치:'    (L703, T393, R808, B407)
+   |    |    | ['위치:', 'Static8', '위치:Static']
+   |    |    | child_window(title="위치:", auto_id="1875765888", control_type="Text")
+   |    |    | 
+   |    |    | Pane - ' (Bridge View)'    (L813, T386, R1220, B414)
+   |    |    | [' (Bridge View)Pane', ' (Bridge View)', 'Pane2', ' (Bridge View)Pane0', ' (Bridge View)Pane1', ' (Bridge View)0', ' (Bridge View)1']
+   |    |    | child_window(title=" (Bridge View)", auto_id="65535", control_type="Pane")
+   |    |    |    | 
+   |    |    |    | Static - 'C:\Users\CafeAlle\Pictures'    (L813, T393, R1157, B407)
+   |    |    |    | ['C:\\Users\\CafeAlle\\Pictures', 'C:\\Users\\CafeAlle\\PicturesStatic', 'Static9']
+   |    |    |    | child_window(title="C:\Users\CafeAlle\Pictures", auto_id="1875754624", control_type="Text")
+   |    |    |    | 
+   |    |    |    | Button - '선택...'    (L1162, T389, R1217, B411)
+   |    |    |    | ['선택...', 'Button2', '선택...Button']
+   |    |    |    | child_window(title="선택...", auto_id="65535", control_type="Button")
+   |    |    | 
+   |    |    | CheckBox - '컬렉션에 추가'    (L734, T426, R1128, B442)
+   |    |    | ['컬렉션에 추가CheckBox', 'CheckBox2', '컬렉션에 추가']
+   |    |    | child_window(title="컬렉션에 추가", auto_id="100", control_type="CheckBox")
+   |    | 
+   |    | GroupBox - '정보'    (L693, T481, R1230, B589)
+   |    | ['정보GroupBox', 'GroupBox4', '정보']
+   |    | child_window(title="정보", auto_id="1819779216", control_type="Group")
+   |    |    | 
+   |    |    | Static - '메타데이터:'    (L703, T505, R808, B519)
+   |    |    | ['메타데이터:', 'Static10', '메타데이터:Static', '메타데이터:0', '메타데이터:1', '메타데이터:Static0', '메타데이터:Static1']
+   |    |    | child_window(title="메타데이터:", auto_id="1875761280", control_type="Text")
+   |    |    | 
+   |    |    | ComboBox - '메타데이터:'    (L813, T501, R1220, B522)
+   |    |    | ['메타데이터:2', 'ComboBox2', '메타데이터:ComboBox']
+   |    |    | child_window(title="메타데이터:", auto_id="65535", control_type="ComboBox")
+   |    |    |    | 
+   |    |    |    | Static - '메타데이터:'    (L3, T3, R387, B18)
+   |    |    |    | ['메타데이터:3', 'Static11', '메타데이터:Static2']
+   |    |    |    | child_window(title="메타데이터:", control_type="Text")
+   |    |    |    | 
+   |    |    |    | Button - '열기'    (L1204, T502, R1219, B521)
+   |    |    |    | ['열기Button2', '열기2', 'Button3']
+   |    |    |    | child_window(title="열기", auto_id="DropDown", control_type="Button")
+   |    |    | 
+   |    |    | Static - '키워드:'    (L703, T535, R808, B549)
+   |    |    | ['키워드:Static', '키워드:', 'Static12']
+   |    |    | child_window(title="키워드:", auto_id="1875742848", control_type="Text")
+   |    |    | 
+   |    |    | Edit - '키워드:'    (L813, T533, R1220, B579)
+   |    |    | ['키워드:Edit', 'Edit3']
+   |    |    | child_window(title="키워드:", auto_id="65535", control_type="Edit")
+   |    | 
+   |    | GroupBox - '기타 옵션'    (L693, T609, R1230, B655)
+   |    | ['GroupBox5', '기타 옵션', '기타 옵션GroupBox']
+   |    | child_window(title="기타 옵션", auto_id="1819778800", control_type="Group")
+   |    |    | 
+   |    |    | CheckBox - '자동 진행 사용 안 함'    (L703, T629, R827, B645)
+   |    |    | ['자동 진행 사용 안 함', 'CheckBox3', '자동 진행 사용 안 함CheckBox']
+   |    |    | child_window(title="자동 진행 사용 안 함", auto_id="100", control_type="CheckBox")
+   |    | 
+   |    | Button - '확인'    (L1060, T675, R1140, B700)
+   |    | ['확인', 'Button4', '확인Button']
+   |    | child_window(title="확인", auto_id="1", control_type="Button")
+   |    | 
+   |    | Button - '취소'    (L1150, T675, R1230, B700)
+   |    | ['취소Button', 'Button5', '취소']
+   |    | child_window(title="취소", auto_id="2", control_type="Button")
+   |    | 
+   |    | TitleBar - ''    (L673, T98, R1248, B126)
+   |    | ['TitleBar', '라이브러리 필터:TitleBar', 'TitleBar0', 'TitleBar1']
+   |    |    | 
+   |    |    | Button - '닫기'    (L1215, T96, R1249, B126)
+   |    |    | ['닫기Button', '닫기', 'Button6', '닫기Button0', '닫기Button1', '닫기0', '닫기1']
+   |    |    | child_window(title="닫기", control_type="Button")
+   | 
+   | Pane - ''    (L0, T43, R1920, B1050)
+   | ['Pane3', '탐색기Pane']
    | child_window(auto_id="59648", control_type="Pane")
    |    | 
-   |    | Pane - 'Top/Bottom Panel Host'    (L0, T43, R1920, B1040)
-   |    | ['Top/Bottom Panel HostPane', 'Pane2', 'Top/Bottom Panel Host']
-   |    | child_window(title="Top/Bottom Panel Host", auto_id="977191368", control_type="Pane")
+   |    | Pane - 'Top/Bottom Panel Host'    (L0, T43, R1920, B1050)
+   |    | ['Top/Bottom Panel HostPane', 'Top/Bottom Panel Host', 'Pane4']
+   |    | child_window(title="Top/Bottom Panel Host", auto_id="821533416", control_type="Pane")
    |    |    | 
-   |    |    | Pane - 'Last Bar'    (L0, T1022, R1920, B1040)
-   |    |    | ['Pane3', 'Last BarPane', 'Last Bar', 'Last BarPane0', 'Last BarPane1', 'Last Bar0', 'Last Bar1']
-   |    |    | child_window(title="Last Bar", auto_id="59230208", control_type="Pane")
+   |    |    | Pane - 'Last Bar'    (L0, T1032, R1920, B1050)
+   |    |    | ['Last Bar', 'Last BarPane', 'Pane5', 'Last Bar0', 'Last Bar1', 'Last BarPane0', 'Last BarPane1']
+   |    |    | child_window(title="Last Bar", auto_id="1044890624", control_type="Pane")
    |    |    | 
    |    |    | Pane - 'First Bar'    (L0, T43, R1920, B61)
-   |    |    | ['Pane4', 'First Bar', 'First BarPane', 'First Bar0', 'First Bar1', 'First BarPane0', 'First BarPane1']
-   |    |    | child_window(title="First Bar", auto_id="59271808", control_type="Pane")
+   |    |    | ['First BarPane', 'First Bar', 'Pane6', 'First BarPane0', 'First BarPane1', 'First Bar0', 'First Bar1']
+   |    |    | child_window(title="First Bar", auto_id="876263744", control_type="Pane")
    |    |    | 
    |    |    | Pane - 'Last Panel'    (L0, T61, R1920, B112)
-   |    |    | ['Pane5', 'Last Panel', 'Last PanelPane', 'Last Panel0', 'Last Panel1', 'Last PanelPane0', 'Last PanelPane1']
-   |    |    | child_window(title="Last Panel", auto_id="1005680192", control_type="Pane")
+   |    |    | ['Last PanelPane', 'Pane7', 'Last Panel', 'Last PanelPane0', 'Last PanelPane1', 'Last Panel0', 'Last Panel1']
+   |    |    | child_window(title="Last Panel", auto_id="786049984", control_type="Pane")
    |    |    |    | 
    |    |    |    | Pane - 'modulePicker (Last Panel's content)'    (L0, T61, R1920, B109)
-   |    |    |    | ['Pane6', "modulePicker (Last Panel's content)", "modulePicker (Last Panel's content)Pane"]
+   |    |    |    | ["modulePicker (Last Panel's content)", "modulePicker (Last Panel's content)Pane", 'Pane8']
    |    |    |    | child_window(title="modulePicker (Last Panel's content)", auto_id="100", control_type="Pane")
    |    |    |    |    | 
    |    |    |    |    | Pane - 'ID PLATE (Bridge View)'    (L0, T61, R499, B109)
-   |    |    |    |    | ['Pane7', 'ID PLATE (Bridge View)Pane', 'ID PLATE (Bridge View)']
+   |    |    |    |    | ['ID PLATE (Bridge View)Pane', 'ID PLATE (Bridge View)', 'Pane9']
    |    |    |    |    | child_window(title="ID PLATE (Bridge View)", auto_id="65535", control_type="Pane")
    |    |    |    |    | 
    |    |    |    |    | Pane - ' (Bridge View)'    (L1129, T61, R1874, B106)
-   |    |    |    |    | [' (Bridge View)', 'Pane8', ' (Bridge View)Pane', ' (Bridge View)0', ' (Bridge View)1', ' (Bridge View)Pane0', ' (Bridge View)Pane1']
+   |    |    |    |    | [' (Bridge View)Pane2', ' (Bridge View)2', 'Pane10']
    |    |    |    |    | child_window(title=" (Bridge View)", auto_id="65535", control_type="Pane")
    |    |    |    |    | 
    |    |    |    |    | Pane - 'cloudIcon (Bridge View)'    (L1874, T79, R1920, B109)
-   |    |    |    |    | ['cloudIcon (Bridge View)', 'Pane9', 'cloudIcon (Bridge View)Pane']
+   |    |    |    |    | ['cloudIcon (Bridge View)Pane', 'cloudIcon (Bridge View)', 'Pane11']
    |    |    |    |    | child_window(title="cloudIcon (Bridge View)", auto_id="65535", control_type="Pane")
    |    |    |    |    |    | 
    |    |    |    |    |    | Pane - ' (Bridge View)'    (L1878, T79, R1900, B97)
-   |    |    |    |    |    | [' (Bridge View)2', 'Pane10', ' (Bridge View)Pane2']
+   |    |    |    |    |    | [' (Bridge View)Pane3', ' (Bridge View)3', 'Pane12']
    |    |    |    |    |    | child_window(title=" (Bridge View)", auto_id="65535", control_type="Pane")
    |    |    | 
-   |    |    | Pane - 'First Panel'    (L0, T900, R1920, B1022)
-   |    |    | ['Pane11', 'First Panel', 'First PanelPane', 'First Panel0', 'First Panel1', 'First PanelPane0', 'First PanelPane1']
-   |    |    | child_window(title="First Panel", auto_id="1183458880", control_type="Pane")
+   |    |    | Pane - 'First Panel'    (L0, T910, R1920, B1032)
+   |    |    | ['First PanelPane', 'First Panel', 'Pane13', 'First PanelPane0', 'First PanelPane1', 'First Panel0', 'First Panel1']
+   |    |    | child_window(title="First Panel", auto_id="1127236720", control_type="Pane")
    |    |    |    | 
-   |    |    |    | Pane - 'Photo Bin (Bridge View) (First Panel's content)'    (L0, T903, R1920, B1022)
-   |    |    |    | ['Pane12', "Photo Bin (Bridge View) (First Panel's content)Pane", "Photo Bin (Bridge View) (First Panel's content)"]
+   |    |    |    | Pane - 'Photo Bin (Bridge View) (First Panel's content)'    (L0, T913, R1920, B1032)
+   |    |    |    | ["Photo Bin (Bridge View) (First Panel's content)Pane", "Photo Bin (Bridge View) (First Panel's content)", 'Pane14']
    |    |    |    | child_window(title="Photo Bin (Bridge View) (First Panel's content)", auto_id="65535", control_type="Pane")
    |    |    |    |    | 
-   |    |    |    |    | Pane - ' (Bridge View)'    (L15, T908, R42, B929)
-   |    |    |    |    | [' (Bridge View)3', 'Pane13', ' (Bridge View)Pane3']
+   |    |    |    |    | Pane - ' (Bridge View)'    (L15, T918, R42, B939)
+   |    |    |    |    | [' (Bridge View)Pane4', ' (Bridge View)4', 'Pane15']
    |    |    |    |    | child_window(title=" (Bridge View)", auto_id="65535", control_type="Pane")
    |    |    |    |    | 
-   |    |    |    |    | Pane - ' (Bridge View)'    (L52, T908, R79, B929)
-   |    |    |    |    | [' (Bridge View)4', 'Pane14', ' (Bridge View)Pane4']
+   |    |    |    |    | Pane - ' (Bridge View)'    (L52, T918, R79, B939)
+   |    |    |    |    | [' (Bridge View)Pane5', ' (Bridge View)5', 'Pane16']
    |    |    |    |    | child_window(title=" (Bridge View)", auto_id="65535", control_type="Pane")
    |    |    |    |    | 
-   |    |    |    |    | Pane - ' (Bridge View)'    (L89, T910, R90, B927)
-   |    |    |    |    | [' (Bridge View)5', 'Pane15', ' (Bridge View)Pane5']
+   |    |    |    |    | Pane - ' (Bridge View)'    (L89, T920, R90, B937)
+   |    |    |    |    | [' (Bridge View)Pane6', ' (Bridge View)6', 'Pane17']
    |    |    |    |    | child_window(title=" (Bridge View)", auto_id="65535", control_type="Pane")
    |    |    |    |    | 
-   |    |    |    |    | Button - ''    (L100, T911, R115, B926)
-   |    |    |    |    | ['FlickrButton', 'Button', 'FlickrButton0', 'FlickrButton1', 'Button0', 'Button1']
+   |    |    |    |    | Button - ''    (L100, T921, R115, B936)
+   |    |    |    |    | ['FlickrButton', 'Button7', 'FlickrButton0', 'FlickrButton1']
    |    |    |    |    | child_window(auto_id="65535", control_type="Button")
    |    |    |    |    | 
-   |    |    |    |    | Button - ''    (L125, T911, R140, B926)
-   |    |    |    |    | ['FlickrButton2', 'Button2']
+   |    |    |    |    | Button - ''    (L125, T921, R140, B936)
+   |    |    |    |    | ['FlickrButton2', 'Button8']
    |    |    |    |    | child_window(auto_id="65535", control_type="Button")
    |    |    |    |    | 
-   |    |    |    |    | Button - ''    (L150, T911, R165, B926)
-   |    |    |    |    | ['FlickrButton3', 'Button3']
+   |    |    |    |    | Button - ''    (L150, T921, R165, B936)
+   |    |    |    |    | ['FlickrButton3', 'Button9']
    |    |    |    |    | child_window(auto_id="65535", control_type="Button")
    |    |    |    |    | 
-   |    |    |    |    | Pane - ' (Bridge View)'    (L175, T910, R176, B927)
-   |    |    |    |    | [' (Bridge View)6', 'Pane16', ' (Bridge View)Pane6']
+   |    |    |    |    | Pane - ' (Bridge View)'    (L175, T920, R176, B937)
+   |    |    |    |    | [' (Bridge View)Pane7', ' (Bridge View)7', 'Pane18']
    |    |    |    |    | child_window(title=" (Bridge View)", auto_id="65535", control_type="Pane")
    |    |    |    |    | 
-   |    |    |    |    | Pane - ' (Bridge View)'    (L186, T908, R1620, B928)
-   |    |    |    |    | [' (Bridge View)7', 'Pane17', ' (Bridge View)Pane7']
+   |    |    |    |    | Pane - ' (Bridge View)'    (L186, T918, R1695, B938)
+   |    |    |    |    | [' (Bridge View)Pane8', ' (Bridge View)8', 'Pane19']
    |    |    |    |    | child_window(title=" (Bridge View)", auto_id="65535", control_type="Pane")
    |    |    |    |    |    | 
-   |    |    |    |    |    | Pane - '이전 가져오기 / 6개 사진'    (L186, T911, R1620, B928)
-   |    |    |    |    |    | ['Pane18', '이전 가져오기 / 6개 사진', '이전 가져오기 / 6개 사진Pane']
-   |    |    |    |    |    | child_window(title="이전 가져오기 / 6개 사진", auto_id="65535", control_type="Pane")
+   |    |    |    |    |    | Pane - '폴더 : sdssds / <b>0개 사진</b>'    (L186, T921, R1695, B938)
+   |    |    |    |    |    | ['폴더 : sdssds / <b>0개 사진</b>Pane', '폴더 : sdssds / <b>0개 사진</b>', 'Pane20']
+   |    |    |    |    |    | child_window(title="폴더 : sdssds / <b>0개 사진</b>", auto_id="65535", control_type="Pane")
    |    |    |    |    | 
-   |    |    |    |    | Pane - 'library_filter'    (L1630, T905, R1905, B931)
-   |    |    |    |    | ['Pane19', 'library_filter', 'library_filterPane']
+   |    |    |    |    | Pane - 'library_filter'    (L1705, T915, R1905, B941)
+   |    |    |    |    | ['library_filter', 'library_filterPane', 'Pane21']
    |    |    |    |    | child_window(title="library_filter", auto_id="100", control_type="Pane")
    |    |    |    |    |    | 
-   |    |    |    |    |    | Pane - ' (Bridge View)'    (L1630, T905, R1905, B931)
-   |    |    |    |    |    | [' (Bridge View)8', 'Pane20', ' (Bridge View)Pane8']
+   |    |    |    |    |    | Pane - ' (Bridge View)'    (L1705, T915, R1905, B941)
+   |    |    |    |    |    | [' (Bridge View)Pane9', ' (Bridge View)9', 'Pane22']
    |    |    |    |    |    | child_window(title=" (Bridge View)", auto_id="65535", control_type="Pane")
    |    |    |    |    |    |    | 
-   |    |    |    |    |    |    | Static - '필터 :'    (L1630, T910, R1672, B927)
-   |    |    |    |    |    |    | ['Static', '필터 :', '필터 :Static', '필터 :0', '필터 :1', 'Static0', 'Static1', '필터 :Static0', '필터 :Static1']
-   |    |    |    |    |    |    | child_window(title="필터 :", auto_id="1491479952", control_type="Text")
+   |    |    |    |    |    |    | Static - '필터 :'    (L1705, T920, R1747, B937)
+   |    |    |    |    |    |    | ['필터 :', '필터 :Static', 'Static13', '필터 :0', '필터 :1', '필터 :Static0', '필터 :Static1']
+   |    |    |    |    |    |    | child_window(title="필터 :", auto_id="1215973632", control_type="Text")
    |    |    |    |    |    |    | 
-   |    |    |    |    |    |    | Pane - 'View'    (L1672, T905, R1747, B931)
-   |    |    |    |    |    |    | ['Pane21', 'View', 'ViewPane', 'View0', 'View1', 'ViewPane0', 'ViewPane1']
-   |    |    |    |    |    |    | child_window(title="View", auto_id="100", control_type="Pane")
-   |    |    |    |    |    |    |    | 
-   |    |    |    |    |    |    |    | Pane - ' (Bridge View)'    (L1680, T906, R1739, B931)
-   |    |    |    |    |    |    |    | [' (Bridge View)9', 'Pane22', ' (Bridge View)Pane9']
-   |    |    |    |    |    |    |    | child_window(title=" (Bridge View)", auto_id="65535", control_type="Pane")
-   |    |    |    |    |    |    |    | 
-   |    |    |    |    |    |    |    | Pane - ' (Bridge View)'    (L1746, T910, R1747, B927)
-   |    |    |    |    |    |    |    | [' (Bridge View)10', 'Pane23', ' (Bridge View)Pane10']
-   |    |    |    |    |    |    |    | child_window(title=" (Bridge View)", auto_id="65535", control_type="Pane")
-   |    |    |    |    |    |    | 
-   |    |    |    |    |    |    | ComboBox - '필터 :'    (L1757, T906, R1884, B930)
-   |    |    |    |    |    |    | ['필터 :2', '필터 :ComboBox', 'ComboBox', 'ComboBox0', 'ComboBox1']
+   |    |    |    |    |    |    | ComboBox - '필터 :'    (L1757, T916, R1884, B940)
+   |    |    |    |    |    |    | ['필터 :2', 'ComboBox3', '필터 :ComboBox']
    |    |    |    |    |    |    | child_window(title="필터 :", auto_id="65535", control_type="ComboBox")
    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    | Static - '필터 :'    (L3, T3, R107, B21)
-   |    |    |    |    |    |    |    | ['Static2', '필터 :3', '필터 :Static2']
+   |    |    |    |    |    |    |    | ['필터 :3', '필터 :Static2', 'Static14']
    |    |    |    |    |    |    |    | child_window(title="필터 :", control_type="Text")
    |    |    |    |    |    |    |    | 
-   |    |    |    |    |    |    |    | Button - '열기'    (L1868, T907, R1883, B929)
-   |    |    |    |    |    |    |    | ['열기', 'Button4', '열기Button', '열기0', '열기1', '열기Button0', '열기Button1']
+   |    |    |    |    |    |    |    | Button - '열기'    (L1868, T917, R1883, B939)
+   |    |    |    |    |    |    |    | ['열기Button3', '열기3', 'Button10']
    |    |    |    |    |    |    |    | child_window(title="열기", auto_id="DropDown", control_type="Button")
    |    |    |    |    |    |    | 
-   |    |    |    |    |    |    | Pane - 'Background View'    (L1894, T910, R1905, B926)
-   |    |    |    |    |    |    | ['Background View', 'Pane24', 'Background ViewPane', 'Background View0', 'Background View1', 'Background ViewPane0', 'Background ViewPane1']
-   |    |    |    |    |    |    | child_window(title="Background View", auto_id="1563511824", control_type="Pane")
+   |    |    |    |    |    |    | Pane - 'Background View'    (L1894, T920, R1905, B936)
+   |    |    |    |    |    |    | ['Background ViewPane', 'Background View', 'Pane23', 'Background ViewPane0', 'Background ViewPane1', 'Background View0', 'Background View1']
+   |    |    |    |    |    |    | child_window(title="Background View", auto_id="1518526336", control_type="Pane")
    |    |    |    |    |    |    |    | 
-   |    |    |    |    |    |    |    | CheckBox - ''    (L1895, T911, R1906, B927)
-   |    |    |    |    |    |    |    | ['CheckBox', '주석CheckBox', 'CheckBox0', 'CheckBox1']
+   |    |    |    |    |    |    |    | CheckBox - ''    (L1895, T921, R1906, B937)
+   |    |    |    |    |    |    |    | ['CheckBox4', '필터 :CheckBox']
    |    |    |    |    |    |    |    | child_window(auto_id="100", control_type="CheckBox")
    |    |    |    |    | 
-   |    |    |    |    | Pane - ' (Bridge View)'    (L15, T934, R1905, B1022)
-   |    |    |    |    | [' (Bridge View)11', 'Pane25', ' (Bridge View)Pane11']
+   |    |    |    |    | Pane - ' (Bridge View)'    (L15, T944, R1905, B1032)
+   |    |    |    |    | [' (Bridge View)Pane10', ' (Bridge View)10', 'Pane24']
    |    |    |    |    | child_window(title=" (Bridge View)", auto_id="65535", control_type="Pane")
    |    |    |    |    |    | 
-   |    |    |    |    |    | Thumb - ''    (L18, T1009, R1902, B1019)
-   |    |    |    |    |    | ['Thumb', 'FlickrThumb', 'Thumb0', 'Thumb1']
-   |    |    |    |    |    | child_window(auto_id="1119336064", control_type="Thumb")
+   |    |    |    |    |    | Thumb - ''    (L18, T1019, R1902, B1029)
+   |    |    |    |    |    | ['FlickrThumb', 'Thumb', 'Thumb0', 'Thumb1']
+   |    |    |    |    |    | child_window(auto_id="1130568416", control_type="Thumb")
    |    |    |    |    |    | 
-   |    |    |    |    |    | Pane - 'Scroll View'    (L18, T937, R1902, B1008)
-   |    |    |    |    |    | ['Pane26', 'Scroll View', 'Scroll ViewPane', 'Scroll View0', 'Scroll View1', 'Scroll ViewPane0', 'Scroll ViewPane1']
+   |    |    |    |    |    | Pane - 'Scroll View'    (L18, T947, R1902, B1018)
+   |    |    |    |    |    | ['Scroll View', 'Scroll ViewPane', 'Pane25', 'Scroll View0', 'Scroll View1', 'Scroll ViewPane0', 'Scroll ViewPane1']
    |    |    |    |    |    | child_window(title="Scroll View", auto_id="100", control_type="Pane")
    |    |    |    |    |    |    | 
-   |    |    |    |    |    |    | Pane - 'ClipView'    (L18, T937, R1902, B1008)
-   |    |    |    |    |    |    | ['ClipView', 'Pane27', 'ClipViewPane', 'ClipView0', 'ClipView1', 'ClipViewPane0', 'ClipViewPane1']
-   |    |    |    |    |    |    | child_window(title="ClipView", auto_id="1541671160", control_type="Pane")
+   |    |    |    |    |    |    | Pane - 'ClipView'    (L18, T947, R1902, B1018)
+   |    |    |    |    |    |    | ['Pane26', 'ClipViewPane', 'ClipView', 'ClipViewPane0', 'ClipViewPane1', 'ClipView0', 'ClipView1']
+   |    |    |    |    |    |    | child_window(title="ClipView", auto_id="1213297320", control_type="Pane")
    |    |    |    |    |    |    |    | 
-   |    |    |    |    |    |    |    | Pane - '(D2D Bridge View)'    (L18, T937, R1902, B1008)
-   |    |    |    |    |    |    |    | ['Pane28', '(D2D Bridge View)', '(D2D Bridge View)Pane', '(D2D Bridge View)0', '(D2D Bridge View)1', '(D2D Bridge View)Pane0', '(D2D Bridge View)Pane1']
+   |    |    |    |    |    |    |    | Pane - '(D2D Bridge View)'    (L18, T947, R1902, B1018)
+   |    |    |    |    |    |    |    | ['(D2D Bridge View)', '(D2D Bridge View)Pane', 'Pane27', '(D2D Bridge View)0', '(D2D Bridge View)1', '(D2D Bridge View)Pane0', '(D2D Bridge View)Pane1']
    |    |    |    |    |    |    |    | child_window(title="(D2D Bridge View)", auto_id="100", control_type="Pane")
    |    |    | 
-   |    |    | Pane - 'Main Switcher View'    (L0, T112, R1920, B900)
-   |    |    | ['Pane29', 'Main Switcher View', 'Main Switcher ViewPane']
-   |    |    | child_window(title="Main Switcher View", auto_id="977192328", control_type="Pane")
+   |    |    | Pane - 'Main Switcher View'    (L0, T112, R1920, B910)
+   |    |    | ['Main Switcher View', 'Pane28', 'Main Switcher ViewPane']
+   |    |    | child_window(title="Main Switcher View", auto_id="821534376", control_type="Pane")
    |    |    |    | 
-   |    |    |    | Pane - 'Panel Host (LibraryPanels)'    (L0, T112, R1920, B900)
-   |    |    |    | ['Panel Host (LibraryPanels)Pane', 'Pane30', 'Panel Host (LibraryPanels)']
-   |    |    |    | child_window(title="Panel Host (LibraryPanels)", auto_id="1266148016", control_type="Pane")
+   |    |    |    | Pane - 'Panel Host (LibraryPanels)'    (L0, T112, R1920, B910)
+   |    |    |    | ['Panel Host (LibraryPanels)Pane', 'Panel Host (LibraryPanels)', 'Pane29']
+   |    |    |    | child_window(title="Panel Host (LibraryPanels)", auto_id="1438019648", control_type="Pane")
    |    |    |    |    | 
-   |    |    |    |    | Pane - 'Last Bar'    (L1902, T112, R1920, B900)
-   |    |    |    |    | ['Pane31', 'Last BarPane2', 'Last Bar2']
-   |    |    |    |    | child_window(title="Last Bar", auto_id="1488851200", control_type="Pane")
+   |    |    |    |    | Pane - 'Last Bar'    (L1902, T112, R1920, B910)
+   |    |    |    |    | ['Last Bar2', 'Last BarPane2', 'Pane30']
+   |    |    |    |    | child_window(title="Last Bar", auto_id="1446500160", control_type="Pane")
    |    |    |    |    | 
-   |    |    |    |    | Pane - 'First Bar'    (L0, T112, R18, B900)
-   |    |    |    |    | ['Pane32', 'First Bar2', 'First BarPane2']
-   |    |    |    |    | child_window(title="First Bar", auto_id="1488850240", control_type="Pane")
+   |    |    |    |    | Pane - 'First Bar'    (L0, T112, R18, B910)
+   |    |    |    |    | ['First BarPane2', 'First Bar2', 'Pane31']
+   |    |    |    |    | child_window(title="First Bar", auto_id="1446501440", control_type="Pane")
    |    |    |    |    | 
-   |    |    |    |    | Pane - 'Last Panel'    (L18, T112, R341, B900)
-   |    |    |    |    | ['Pane33', 'Last Panel2', 'Last PanelPane2']
-   |    |    |    |    | child_window(title="Last Panel", auto_id="1266149504", control_type="Pane")
+   |    |    |    |    | Pane - 'Last Panel'    (L18, T112, R341, B910)
+   |    |    |    |    | ['Last PanelPane2', 'Pane32', 'Last Panel2']
+   |    |    |    |    | child_window(title="Last Panel", auto_id="1437997824", control_type="Pane")
    |    |    |    |    |    | 
-   |    |    |    |    |    | Pane - 'View (Last Panel's content)'    (L18, T112, R339, B900)
-   |    |    |    |    |    | ['Pane34', "View (Last Panel's content)Pane", "View (Last Panel's content)"]
+   |    |    |    |    |    | Pane - 'View (Last Panel's content)'    (L18, T112, R339, B910)
+   |    |    |    |    |    | ["View (Last Panel's content)", 'Pane33', "View (Last Panel's content)Pane"]
    |    |    |    |    |    | child_window(title="View (Last Panel's content)", auto_id="100", control_type="Pane")
    |    |    |    |    |    |    | 
    |    |    |    |    |    |    | Pane - 'Background View'    (L18, T112, R339, B440)
-   |    |    |    |    |    |    | ['Background View2', 'Pane35', 'Background ViewPane2']
-   |    |    |    |    |    |    | child_window(title="Background View", auto_id="1563570880", control_type="Pane")
+   |    |    |    |    |    |    | ['Background ViewPane2', 'Background View2', 'Pane34']
+   |    |    |    |    |    |    | child_window(title="Background View", auto_id="1518433408", control_type="Pane")
    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    | Pane - ' (Bridge View)'    (L18, T112, R29, B440)
-   |    |    |    |    |    |    |    | [' (Bridge View)12', 'Pane36', ' (Bridge View)Pane12']
+   |    |    |    |    |    |    |    | [' (Bridge View)Pane11', ' (Bridge View)11', 'Pane35']
    |    |    |    |    |    |    |    | child_window(title=" (Bridge View)", auto_id="65535", control_type="Pane")
    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    | Pane - 'View'    (L29, T112, R339, B440)
-   |    |    |    |    |    |    |    | ['Pane37', 'View2', 'ViewPane2']
+   |    |    |    |    |    |    |    | ['View2', 'ViewPane2', 'Pane36']
    |    |    |    |    |    |    |    | child_window(title="View", auto_id="100", control_type="Pane")
    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    | Pane - ' (Bridge View)'    (L29, T112, R339, B440)
-   |    |    |    |    |    |    |    |    | [' (Bridge View)13', 'Pane38', ' (Bridge View)Pane13']
+   |    |    |    |    |    |    |    |    | [' (Bridge View)Pane12', ' (Bridge View)12', 'Pane37']
    |    |    |    |    |    |    |    |    | child_window(title=" (Bridge View)", auto_id="65535", control_type="Pane")
    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    | Pane - '탐색기 (Bridge View)'    (L35, T115, R339, B136)
-   |    |    |    |    |    |    |    |    |    | ['Pane39', '탐색기 (Bridge View)', '탐색기 (Bridge View)Pane']
+   |    |    |    |    |    |    |    |    |    | ['탐색기 (Bridge View)', 'Pane38', '탐색기 (Bridge View)Pane']
    |    |    |    |    |    |    |    |    |    | child_window(title="탐색기 (Bridge View)", auto_id="65535", control_type="Pane")
    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    | Button - ''    (L35, T118, R49, B134)
-   |    |    |    |    |    |    |    |    |    |    | ['Button5']
+   |    |    |    |    |    |    |    |    |    |    | ['Button11']
    |    |    |    |    |    |    |    |    |    |    | child_window(auto_id="65535", control_type="Button")
    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    | Static - '탐색기'    (L57, T115, R183, B136)
-   |    |    |    |    |    |    |    |    |    |    | ['Static3', '탐색기Static', '탐색기']
-   |    |    |    |    |    |    |    |    |    |    | child_window(title="탐색기", auto_id="1189478016", control_type="Text")
+   |    |    |    |    |    |    |    |    |    |    | ['탐색기', 'Static15', '탐색기Static']
+   |    |    |    |    |    |    |    |    |    |    | child_window(title="탐색기", auto_id="1222227616", control_type="Text")
    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    | Pane - 'View'    (L191, T115, R339, B136)
-   |    |    |    |    |    |    |    |    |    |    | ['Pane40', 'View3', 'ViewPane3']
+   |    |    |    |    |    |    |    |    |    |    | ['View3', 'ViewPane3', 'Pane39']
    |    |    |    |    |    |    |    |    |    |    | child_window(title="View", auto_id="100", control_type="Pane")
    |    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    |    | CheckBox - '맞춤'    (L196, T118, R221, B133)
-   |    |    |    |    |    |    |    |    |    |    |    | ['CheckBox2', '맞춤', '맞춤CheckBox']
+   |    |    |    |    |    |    |    |    |    |    |    | ['맞춤', 'CheckBox5', '맞춤CheckBox']
    |    |    |    |    |    |    |    |    |    |    |    | child_window(title="맞춤", auto_id="100", control_type="CheckBox")
    |    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    |    | ComboBox - ''    (L221, T114, R233, B136)
-   |    |    |    |    |    |    |    |    |    |    |    | ['ComboBox2', '탐색기ComboBox', '탐색기ComboBox0', '탐색기ComboBox1']
+   |    |    |    |    |    |    |    |    |    |    |    | ['탐색기ComboBox', 'ComboBox4', '탐색기ComboBox0', '탐색기ComboBox1']
    |    |    |    |    |    |    |    |    |    |    |    | child_window(auto_id="65535", control_type="ComboBox")
    |    |    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    |    |    | Static - ''    (L0, T0, R0, B0)
-   |    |    |    |    |    |    |    |    |    |    |    |    | ['Static4']
+   |    |    |    |    |    |    |    |    |    |    |    |    | ['Static16']
    |    |    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    |    |    | Button - '열기'    (L217, T115, R232, B135)
-   |    |    |    |    |    |    |    |    |    |    |    |    | ['열기2', 'Button6', '열기Button2']
+   |    |    |    |    |    |    |    |    |    |    |    |    | ['열기Button4', '열기4', 'Button12']
    |    |    |    |    |    |    |    |    |    |    |    |    | child_window(title="열기", auto_id="DropDown", control_type="Button")
    |    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    |    | CheckBox - '100%'    (L243, T118, R269, B133)
-   |    |    |    |    |    |    |    |    |    |    |    | ['100%CheckBox', '100%', 'CheckBox3']
+   |    |    |    |    |    |    |    |    |    |    |    | ['100%', 'CheckBox6', '100%CheckBox']
    |    |    |    |    |    |    |    |    |    |    |    | child_window(title="100%", auto_id="100", control_type="CheckBox")
    |    |    |    |    |    |    |    |    |    |    |    | 
-   |    |    |    |    |    |    |    |    |    |    |    | CheckBox - '12.5%'    (L279, T118, R322, B133)
-   |    |    |    |    |    |    |    |    |    |    |    | ['12.5%', '12.5%CheckBox', 'CheckBox4']
-   |    |    |    |    |    |    |    |    |    |    |    | child_window(title="12.5%", auto_id="100", control_type="CheckBox")
+   |    |    |    |    |    |    |    |    |    |    |    | CheckBox - '300%'    (L279, T118, R322, B133)
+   |    |    |    |    |    |    |    |    |    |    |    | ['CheckBox7', '300%CheckBox', '300%']
+   |    |    |    |    |    |    |    |    |    |    |    | child_window(title="300%", auto_id="100", control_type="CheckBox")
    |    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    |    | ComboBox - ''    (L322, T114, R334, B136)
-   |    |    |    |    |    |    |    |    |    |    |    | ['ComboBox3', '탐색기ComboBox2']
+   |    |    |    |    |    |    |    |    |    |    |    | ['탐색기ComboBox2', 'ComboBox5']
    |    |    |    |    |    |    |    |    |    |    |    | child_window(auto_id="65535", control_type="ComboBox")
    |    |    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    |    |    | Static - ''    (L0, T0, R0, B0)
-   |    |    |    |    |    |    |    |    |    |    |    |    | ['Static5']
+   |    |    |    |    |    |    |    |    |    |    |    |    | ['Static17']
    |    |    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    |    |    | Button - '열기'    (L318, T115, R333, B135)
-   |    |    |    |    |    |    |    |    |    |    |    |    | ['열기3', 'Button7', '열기Button3']
+   |    |    |    |    |    |    |    |    |    |    |    |    | ['열기Button5', '열기5', 'Button13']
    |    |    |    |    |    |    |    |    |    |    |    |    | child_window(title="열기", auto_id="DropDown", control_type="Button")
    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    | Pane - ' (Bridge View)'    (L29, T139, R339, B440)
-   |    |    |    |    |    |    |    |    |    | [' (Bridge View)14', 'Pane41', ' (Bridge View)Pane14']
+   |    |    |    |    |    |    |    |    |    | [' (Bridge View)Pane13', ' (Bridge View)13', 'Pane40']
    |    |    |    |    |    |    |    |    |    | child_window(title=" (Bridge View)", auto_id="65535", control_type="Pane")
    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    | Pane - 'AgLibrary_navigatorPanel'    (L36, T142, R332, B437)
-   |    |    |    |    |    |    |    |    |    |    | ['AgLibrary_navigatorPanel', 'Pane42', 'AgLibrary_navigatorPanelPane']
+   |    |    |    |    |    |    |    |    |    |    | ['Pane41', 'AgLibrary_navigatorPanel', 'AgLibrary_navigatorPanelPane']
    |    |    |    |    |    |    |    |    |    |    | child_window(title="AgLibrary_navigatorPanel", auto_id="100", control_type="Pane")
    |    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    |    | Pane - 'navigatorPicture (D2D Bridge View)'    (L36, T142, R332, B437)
-   |    |    |    |    |    |    |    |    |    |    |    | ['Pane43', 'navigatorPicture (D2D Bridge View)', 'navigatorPicture (D2D Bridge View)Pane']
+   |    |    |    |    |    |    |    |    |    |    |    | ['navigatorPicture (D2D Bridge View)Pane', 'Pane42', 'navigatorPicture (D2D Bridge View)']
    |    |    |    |    |    |    |    |    |    |    |    | child_window(title="navigatorPicture (D2D Bridge View)", auto_id="100", control_type="Pane")
    |    |    |    |    |    |    | 
-   |    |    |    |    |    |    | Pane - 'Scroll View'    (L18, T440, R339, B857)
-   |    |    |    |    |    |    | ['Pane44', 'Scroll View2', 'Scroll ViewPane2']
+   |    |    |    |    |    |    | Pane - 'Scroll View'    (L18, T440, R339, B867)
+   |    |    |    |    |    |    | ['Scroll View2', 'Scroll ViewPane2', 'Pane43']
    |    |    |    |    |    |    | child_window(title="Scroll View", auto_id="100", control_type="Pane")
    |    |    |    |    |    |    |    | 
-   |    |    |    |    |    |    |    | Pane - 'ClipView'    (L29, T440, R350, B857)
-   |    |    |    |    |    |    |    | ['ClipView2', 'Pane45', 'ClipViewPane2']
-   |    |    |    |    |    |    |    | child_window(title="ClipView", auto_id="1216195112", control_type="Pane")
+   |    |    |    |    |    |    |    | Pane - 'ClipView'    (L29, T440, R350, B867)
+   |    |    |    |    |    |    |    | ['Pane44', 'ClipViewPane2', 'ClipView2']
+   |    |    |    |    |    |    |    | child_window(title="ClipView", auto_id="1401640568", control_type="Pane")
    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    | Pane - 'Accordion View'    (L29, T440, R339, B919)
-   |    |    |    |    |    |    |    |    | ['Pane46', 'Accordion ViewPane', 'Accordion View', 'Accordion ViewPane0', 'Accordion ViewPane1', 'Accordion View0', 'Accordion View1']
+   |    |    |    |    |    |    |    |    | ['Accordion View', 'Accordion ViewPane', 'Pane45', 'Accordion View0', 'Accordion View1', 'Accordion ViewPane0', 'Accordion ViewPane1']
    |    |    |    |    |    |    |    |    | child_window(title="Accordion View", auto_id="100", control_type="Pane")
    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    | Pane - 'Accordion Content'    (L29, T440, R339, B919)
-   |    |    |    |    |    |    |    |    |    | ['Pane47', 'Accordion Content', 'Accordion ContentPane', 'Accordion Content0', 'Accordion Content1', 'Accordion ContentPane0', 'Accordion ContentPane1']
-   |    |    |    |    |    |    |    |    |    | child_window(title="Accordion Content", auto_id="1373114024", control_type="Pane")
+   |    |    |    |    |    |    |    |    |    | ['Accordion Content', 'Accordion ContentPane', 'Pane46', 'Accordion Content0', 'Accordion Content1', 'Accordion ContentPane0', 'Accordion ContentPane1']
+   |    |    |    |    |    |    |    |    |    | child_window(title="Accordion Content", auto_id="1138015128", control_type="Pane")
    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    | Pane - '카탈로그'    (L34, T440, R334, B467)
-   |    |    |    |    |    |    |    |    |    |    | ['Pane48', '카탈로그', '카탈로그Pane', '카탈로그0', '카탈로그1']
+   |    |    |    |    |    |    |    |    |    |    | ['카탈로그', 'Pane47', '카탈로그Pane', '카탈로그0', '카탈로그1']
    |    |    |    |    |    |    |    |    |    |    | child_window(title="카탈로그", auto_id="100", control_type="Pane")
    |    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    |    | Button - ''    (L35, T447, R49, B461)
-   |    |    |    |    |    |    |    |    |    |    |    | ['Button8']
+   |    |    |    |    |    |    |    |    |    |    |    | ['Button14']
    |    |    |    |    |    |    |    |    |    |    |    | child_window(auto_id="65535", control_type="Button")
    |    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    |    | Static - '카탈로그'    (L57, T444, R134, B465)
-   |    |    |    |    |    |    |    |    |    |    |    | ['Static6', '카탈로그Static', '카탈로그2', '카탈로그Static0', '카탈로그Static1']
-   |    |    |    |    |    |    |    |    |    |    |    | child_window(title="카탈로그", auto_id="1187758048", control_type="Text")
+   |    |    |    |    |    |    |    |    |    |    |    | ['Static18', '카탈로그Static', '카탈로그2', '카탈로그Static0', '카탈로그Static1']
+   |    |    |    |    |    |    |    |    |    |    |    | child_window(title="카탈로그", auto_id="1218464496", control_type="Text")
    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    | Pane - 'Collapsible Section'    (L33, T467, R335, B550)
-   |    |    |    |    |    |    |    |    |    |    | ['Pane49', 'Collapsible SectionPane', 'Collapsible Section', 'Collapsible SectionPane0', 'Collapsible SectionPane1', 'Collapsible Section0', 'Collapsible Section1']
+   |    |    |    |    |    |    |    |    |    |    | ['Collapsible Section', 'Pane48', 'Collapsible SectionPane', 'Collapsible Section0', 'Collapsible Section1', 'Collapsible SectionPane0', 'Collapsible SectionPane1']
    |    |    |    |    |    |    |    |    |    |    | child_window(title="Collapsible Section", auto_id="100", control_type="Pane")
    |    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    |    | ListBox - ''    (L34, T468, R333, B548)
-   |    |    |    |    |    |    |    |    |    |    |    | ['ListBox', '카탈로그ListBox', 'ListBox0', 'ListBox1']
+   |    |    |    |    |    |    |    |    |    |    |    | ['카탈로그ListBox', 'ListBox', 'ListBox0', 'ListBox1']
    |    |    |    |    |    |    |    |    |    |    |    | child_window(auto_id="1000", control_type="List")
    |    |    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    |    |    | ListItem - ''    (L34, T468, R333, B488)
-   |    |    |    |    |    |    |    |    |    |    |    |    | ['ListItem', '카탈로그ListItem', 'ListItem0', 'ListItem1', '카탈로그ListItem0', '카탈로그ListItem1']
+   |    |    |    |    |    |    |    |    |    |    |    |    | ['카탈로그ListItem', 'ListItem', '카탈로그ListItem0', '카탈로그ListItem1', 'ListItem0', 'ListItem1']
    |    |    |    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    |    |    |    | Static - ''    (L34, T468, R333, B488)
-   |    |    |    |    |    |    |    |    |    |    |    |    |    | ['Static7', '카탈로그Static2']
+   |    |    |    |    |    |    |    |    |    |    |    |    |    | ['카탈로그Static2', 'Static19']
    |    |    |    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    |    |    |    | Static - ''    (L55, T468, R272, B488)
-   |    |    |    |    |    |    |    |    |    |    |    |    |    | ['Static8', '카탈로그Static3']
+   |    |    |    |    |    |    |    |    |    |    |    |    |    | ['카탈로그Static3', 'Static20']
    |    |    |    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    |    |    |    | Static - ''    (L272, T468, R325, B488)
-   |    |    |    |    |    |    |    |    |    |    |    |    |    | ['Static9', '카탈로그Static4']
+   |    |    |    |    |    |    |    |    |    |    |    |    |    | ['카탈로그Static4', 'Static21']
    |    |    |    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    |    |    |    | Static - ''    (L325, T468, R333, B488)
-   |    |    |    |    |    |    |    |    |    |    |    |    |    | ['Static10', '카탈로그Static5']
+   |    |    |    |    |    |    |    |    |    |    |    |    |    | ['카탈로그Static5', 'Static22']
    |    |    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    |    |    | ListItem - ''    (L34, T488, R333, B508)
-   |    |    |    |    |    |    |    |    |    |    |    |    | ['ListItem2', '카탈로그ListItem2']
+   |    |    |    |    |    |    |    |    |    |    |    |    | ['카탈로그ListItem2', 'ListItem2']
    |    |    |    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    |    |    |    | Static - ''    (L34, T488, R333, B508)
-   |    |    |    |    |    |    |    |    |    |    |    |    |    | ['Static11', '카탈로그Static6']
+   |    |    |    |    |    |    |    |    |    |    |    |    |    | ['카탈로그Static6', 'Static23']
    |    |    |    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    |    |    |    | Static - ''    (L55, T488, R272, B508)
-   |    |    |    |    |    |    |    |    |    |    |    |    |    | ['Static12', '카탈로그Static7']
+   |    |    |    |    |    |    |    |    |    |    |    |    |    | ['카탈로그Static7', 'Static24']
    |    |    |    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    |    |    |    | Static - ''    (L272, T488, R325, B508)
-   |    |    |    |    |    |    |    |    |    |    |    |    |    | ['Static13', '카탈로그Static8']
+   |    |    |    |    |    |    |    |    |    |    |    |    |    | ['카탈로그Static8', 'Static25']
    |    |    |    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    |    |    |    | Static - ''    (L325, T488, R333, B508)
-   |    |    |    |    |    |    |    |    |    |    |    |    |    | ['Static14', '카탈로그Static9']
+   |    |    |    |    |    |    |    |    |    |    |    |    |    | ['카탈로그Static9', 'Static26']
    |    |    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    |    |    | ListItem - ''    (L34, T508, R333, B528)
-   |    |    |    |    |    |    |    |    |    |    |    |    | ['ListItem3', '카탈로그ListItem3']
+   |    |    |    |    |    |    |    |    |    |    |    |    | ['카탈로그ListItem3', 'ListItem3']
    |    |    |    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    |    |    |    | Static - ''    (L34, T508, R333, B528)
-   |    |    |    |    |    |    |    |    |    |    |    |    |    | ['Static15', '카탈로그Static10']
+   |    |    |    |    |    |    |    |    |    |    |    |    |    | ['카탈로그Static10', 'Static27']
    |    |    |    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    |    |    |    | Static - ''    (L55, T508, R272, B528)
-   |    |    |    |    |    |    |    |    |    |    |    |    |    | ['Static16', '카탈로그Static11']
+   |    |    |    |    |    |    |    |    |    |    |    |    |    | ['카탈로그Static11', 'Static28']
    |    |    |    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    |    |    |    | Static - ''    (L272, T508, R325, B528)
-   |    |    |    |    |    |    |    |    |    |    |    |    |    | ['Static17', '카탈로그Static12']
+   |    |    |    |    |    |    |    |    |    |    |    |    |    | ['카탈로그Static12', 'Static29']
    |    |    |    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    |    |    |    | Static - ''    (L325, T508, R333, B528)
-   |    |    |    |    |    |    |    |    |    |    |    |    |    | ['Static18', '카탈로그Static13']
+   |    |    |    |    |    |    |    |    |    |    |    |    |    | ['카탈로그Static13', 'Static30']
    |    |    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    |    |    | ListItem - ''    (L34, T528, R333, B548)
-   |    |    |    |    |    |    |    |    |    |    |    |    | ['ListItem4', '카탈로그ListItem4']
+   |    |    |    |    |    |    |    |    |    |    |    |    | ['카탈로그ListItem4', 'ListItem4']
    |    |    |    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    |    |    |    | Static - ''    (L34, T528, R333, B548)
-   |    |    |    |    |    |    |    |    |    |    |    |    |    | ['Static19', '카탈로그Static14']
+   |    |    |    |    |    |    |    |    |    |    |    |    |    | ['카탈로그Static14', 'Static31']
    |    |    |    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    |    |    |    | Static - ''    (L55, T528, R272, B548)
-   |    |    |    |    |    |    |    |    |    |    |    |    |    | ['Static20', '카탈로그Static15']
+   |    |    |    |    |    |    |    |    |    |    |    |    |    | ['카탈로그Static15', 'Static32']
    |    |    |    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    |    |    |    | Static - ''    (L272, T528, R325, B548)
-   |    |    |    |    |    |    |    |    |    |    |    |    |    | ['Static21', '카탈로그Static16']
+   |    |    |    |    |    |    |    |    |    |    |    |    |    | ['카탈로그Static16', 'Static33']
    |    |    |    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    |    |    |    | Static - ''    (L325, T528, R333, B548)
-   |    |    |    |    |    |    |    |    |    |    |    |    |    | ['Static22', '카탈로그Static17']
+   |    |    |    |    |    |    |    |    |    |    |    |    |    | ['카탈로그Static17', 'Static34']
    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    | Pane - '폴더'    (L34, T550, R334, B577)
-   |    |    |    |    |    |    |    |    |    |    | ['Pane50', '폴더', '폴더Pane', '폴더0', '폴더1', '폴더Pane0', '폴더Pane1']
+   |    |    |    |    |    |    |    |    |    |    | ['폴더Pane', 'Pane49', '폴더', '폴더0', '폴더1', '폴더Pane0', '폴더Pane1']
    |    |    |    |    |    |    |    |    |    |    | child_window(title="폴더", auto_id="100", control_type="Pane")
    |    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    |    | Button - ''    (L35, T557, R49, B571)
-   |    |    |    |    |    |    |    |    |    |    |    | ['Button9']
+   |    |    |    |    |    |    |    |    |    |    |    | ['Button15']
    |    |    |    |    |    |    |    |    |    |    |    | child_window(auto_id="65535", control_type="Button")
    |    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    |    | Static - '폴더'    (L57, T554, R99, B575)
-   |    |    |    |    |    |    |    |    |    |    |    | ['Static23', '폴더2', '폴더Static']
-   |    |    |    |    |    |    |    |    |    |    |    | child_window(title="폴더", auto_id="1383169168", control_type="Text")
+   |    |    |    |    |    |    |    |    |    |    |    | ['Static35', '폴더2', '폴더Static']
+   |    |    |    |    |    |    |    |    |    |    |    | child_window(title="폴더", auto_id="1218493680", control_type="Text")
    |    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    |    | Pane - 'View'    (L99, T550, R334, B577)
-   |    |    |    |    |    |    |    |    |    |    |    | ['Pane51', 'View4', 'ViewPane4']
+   |    |    |    |    |    |    |    |    |    |    |    | ['View4', 'ViewPane4', 'Pane50']
    |    |    |    |    |    |    |    |    |    |    |    | child_window(title="View", auto_id="100", control_type="Pane")
    |    |    |    |    |    |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    |    |    |    |    |    | Pane - ' (Bridge View)'    (L290, T553, R312, B575)
+   |    |    |    |    |    |    |    |    |    |    |    |    | [' (Bridge View)Pane14', ' (Bridge View)14', 'Pane51']
+   |    |    |    |    |    |    |    |    |    |    |    |    | child_window(title=" (Bridge View)", auto_id="65535", control_type="Pane")
+   |    |    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    |    |    | Pane - ' (Bridge View)'    (L312, T553, R334, B575)
-   |    |    |    |    |    |    |    |    |    |    |    |    | [' (Bridge View)15', 'Pane52', ' (Bridge View)Pane15']
+   |    |    |    |    |    |    |    |    |    |    |    |    | [' (Bridge View)Pane15', ' (Bridge View)15', 'Pane52']
    |    |    |    |    |    |    |    |    |    |    |    |    | child_window(title=" (Bridge View)", auto_id="65535", control_type="Pane")
    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    | Pane - 'Collapsible Section'    (L33, T577, R335, B666)
-   |    |    |    |    |    |    |    |    |    |    | ['Pane53', 'Collapsible SectionPane2', 'Collapsible Section2']
+   |    |    |    |    |    |    |    |    |    |    | ['Collapsible Section2', 'Pane53', 'Collapsible SectionPane2']
    |    |    |    |    |    |    |    |    |    |    | child_window(title="Collapsible Section", auto_id="100", control_type="Pane")
    |    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    |    | Pane - '폴더'    (L34, T578, R333, B664)
-   |    |    |    |    |    |    |    |    |    |    |    | ['Pane54', '폴더3', '폴더Pane2']
+   |    |    |    |    |    |    |    |    |    |    |    | ['폴더Pane2', 'Pane54', '폴더3']
    |    |    |    |    |    |    |    |    |    |    |    | child_window(title="폴더", auto_id="100", control_type="Pane")
    |    |    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    |    |    | Pane - 'View'    (L34, T578, R333, B664)
-   |    |    |    |    |    |    |    |    |    |    |    |    | ['Pane55', 'View5', 'ViewPane5']
+   |    |    |    |    |    |    |    |    |    |    |    |    | ['View5', 'ViewPane5', 'Pane55']
    |    |    |    |    |    |    |    |    |    |    |    |    | child_window(title="View", auto_id="100", control_type="Pane")
    |    |    |    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    |    |    |    | Pane - ' (Bridge View)'    (L34, T578, R333, B611)
-   |    |    |    |    |    |    |    |    |    |    |    |    |    | [' (Bridge View)16', 'Pane56', ' (Bridge View)Pane16']
+   |    |    |    |    |    |    |    |    |    |    |    |    |    | [' (Bridge View)Pane16', ' (Bridge View)16', 'Pane56']
    |    |    |    |    |    |    |    |    |    |    |    |    |    | child_window(title=" (Bridge View)", auto_id="65535", control_type="Pane")
    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | Edit - ''    (L44, T583, R325, B605)
-   |    |    |    |    |    |    |    |    |    |    |    |    |    |    | ['폴더Edit', 'Edit', 'Edit0', 'Edit1']
+   |    |    |    |    |    |    |    |    |    |    |    |    |    |    | ['Edit4', '폴더Edit']
    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | child_window(auto_id="100", control_type="Edit")
    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | Pane - ' (Bridge View)'    (L34, T610, R333, B612)
-   |    |    |    |    |    |    |    |    |    |    |    |    |    |    | [' (Bridge View)17', 'Pane57', ' (Bridge View)Pane17']
+   |    |    |    |    |    |    |    |    |    |    |    |    |    |    | [' (Bridge View)Pane17', ' (Bridge View)17', 'Pane57']
    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | child_window(title=" (Bridge View)", auto_id="65535", control_type="Pane")
    |    |    |    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    |    |    |    | Pane - 'View'    (L34, T611, R333, B664)
-   |    |    |    |    |    |    |    |    |    |    |    |    |    | ['Pane58', 'View6', 'ViewPane6']
+   |    |    |    |    |    |    |    |    |    |    |    |    |    | ['View6', 'ViewPane6', 'Pane58']
    |    |    |    |    |    |    |    |    |    |    |    |    |    | child_window(title="View", auto_id="100", control_type="Pane")
    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | Pane - 'C:\'    (L34, T611, R334, B661)
-   |    |    |    |    |    |    |    |    |    |    |    |    |    |    | ['Pane59', 'C:\\Pane', 'C:\\']
+   |    |    |    |    |    |    |    |    |    |    |    |    |    |    | ['C:\\Pane', 'C:\\', 'Pane59']
    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | child_window(title="C:\", auto_id="100", control_type="Pane")
    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | Pane - ' (Bridge View)'    (L38, T614, R330, B641)
-   |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | [' (Bridge View)18', 'Pane60', ' (Bridge View)Pane18']
+   |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | [' (Bridge View)Pane18', ' (Bridge View)18', 'Pane60']
    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | child_window(title=" (Bridge View)", auto_id="65535", control_type="Pane")
    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | Pane - ' (Bridge View)'    (L44, T621, R52, B635)
-   |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | [' (Bridge View)19', 'Pane61', ' (Bridge View)Pane19']
+   |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | [' (Bridge View)Pane19', ' (Bridge View)19', 'Pane61']
    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | child_window(title=" (Bridge View)", auto_id="65535", control_type="Pane")
    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | 
-   |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | Static - 'Windows (C:)'    (L57, T620, R237, B636)
-   |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | ['Static24', 'Windows (C:)', 'Windows (C:)Static', 'Windows (C:)Static0', 'Windows (C:)Static1']
-   |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | child_window(title="Windows (C:)", auto_id="1187757024", control_type="Text")
+   |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | Static - '로컬 디스크 (C:)'    (L57, T620, R237, B636)
+   |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | ['로컬 디스크 (C:)Static', 'Static36', '로컬 디스크 (C:)', '로컬 디스크 (C:)Static0', '로컬 디스크 (C:)Static1']
+   |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | child_window(title="로컬 디스크 (C:)", auto_id="821798832", control_type="Text")
    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | 
-   |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | Static - '149/232GB'    (L242, T621, R305, B634)
-   |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | ['Static25', '149/232GBStatic', '149/232GB', '149/232GBStatic0', '149/232GBStatic1']
-   |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | child_window(title="149/232GB", auto_id="1497049776", control_type="Text")
+   |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | Static - '8.5/50GB'    (L242, T621, R305, B634)
+   |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | ['Static37', '8.5/50GBStatic', '8.5/50GB', '8.5/50GBStatic0', '8.5/50GBStatic1']
+   |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | child_window(title="8.5/50GB", auto_id="821821360", control_type="Text")
    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | Button - ''    (L310, T621, R324, B635)
-   |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | ['149/232GBButton', 'Button10']
+   |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | ['8.5/50GBButton', 'Button16']
    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | child_window(auto_id="65535", control_type="Button")
    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | Pane - ' (Bridge View)'    (L34, T641, R334, B661)
-   |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | [' (Bridge View)20', 'Pane62', ' (Bridge View)Pane20']
+   |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | [' (Bridge View)Pane20', ' (Bridge View)20', 'Pane62']
    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | child_window(title=" (Bridge View)", auto_id="65535", control_type="Pane")
    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | ListBox - ''    (L34, T641, R334, B661)
-   |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | ['ListBox2', 'Windows (C:)ListBox']
+   |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | ['ListBox2', '로컬 디스크 (C:)ListBox']
    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | child_window(auto_id="1002", control_type="List")
    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | ListItem - ''    (L34, T641, R334, B661)
-   |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | ['ListItem5', 'Windows (C:)ListItem']
+   |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | ['로컬 디스크 (C:)ListItem', 'ListItem5']
    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | Static - ''    (L34, T641, R334, B661)
-   |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | ['Static26', 'Windows (C:)Static2']
+   |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | ['로컬 디스크 (C:)Static2', 'Static38']
    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | Static - ''    (L40, T641, R280, B661)
-   |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | ['Static27', 'Windows (C:)Static3']
+   |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | ['로컬 디스크 (C:)Static3', 'Static39']
    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | Static - ''    (L280, T641, R325, B661)
-   |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | ['Static28', '149/232GBStatic2']
+   |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | ['Static40', '8.5/50GBStatic2']
    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | Static - ''    (L325, T641, R334, B661)
-   |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | ['Static29', '149/232GBStatic3']
+   |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | ['Static41', '8.5/50GBStatic3']
    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    | Pane - '컬렉션'    (L34, T666, R334, B693)
-   |    |    |    |    |    |    |    |    |    |    | ['Pane63', '컬렉션Pane', '컬렉션', '컬렉션0', '컬렉션1', '컬렉션Pane0', '컬렉션Pane1']
+   |    |    |    |    |    |    |    |    |    |    | ['컬렉션', 'Pane63', '컬렉션Pane', '컬렉션0', '컬렉션1', '컬렉션Pane0', '컬렉션Pane1']
    |    |    |    |    |    |    |    |    |    |    | child_window(title="컬렉션", auto_id="100", control_type="Pane")
    |    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    |    | Button - ''    (L35, T673, R49, B687)
-   |    |    |    |    |    |    |    |    |    |    |    | ['Button11']
+   |    |    |    |    |    |    |    |    |    |    |    | ['Button17']
    |    |    |    |    |    |    |    |    |    |    |    | child_window(auto_id="65535", control_type="Button")
    |    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    |    | Static - '컬렉션'    (L57, T670, R117, B691)
-   |    |    |    |    |    |    |    |    |    |    |    | ['Static30', '컬렉션Static', '컬렉션2', '컬렉션Static0', '컬렉션Static1']
-   |    |    |    |    |    |    |    |    |    |    |    | child_window(title="컬렉션", auto_id="1383167120", control_type="Text")
+   |    |    |    |    |    |    |    |    |    |    |    | ['컬렉션2', 'Static42', '컬렉션Static', '컬렉션Static0', '컬렉션Static1']
+   |    |    |    |    |    |    |    |    |    |    |    | child_window(title="컬렉션", auto_id="1218488048", control_type="Text")
    |    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    |    | Pane - 'View'    (L117, T666, R334, B693)
-   |    |    |    |    |    |    |    |    |    |    |    | ['Pane64', 'View7', 'ViewPane7']
+   |    |    |    |    |    |    |    |    |    |    |    | ['View7', 'ViewPane7', 'Pane64']
    |    |    |    |    |    |    |    |    |    |    |    | child_window(title="View", auto_id="100", control_type="Pane")
    |    |    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    |    |    | Pane - ' (Bridge View)'    (L312, T669, R334, B691)
-   |    |    |    |    |    |    |    |    |    |    |    |    | [' (Bridge View)21', 'Pane65', ' (Bridge View)Pane21']
+   |    |    |    |    |    |    |    |    |    |    |    |    | [' (Bridge View)Pane21', ' (Bridge View)21', 'Pane65']
    |    |    |    |    |    |    |    |    |    |    |    |    | child_window(title=" (Bridge View)", auto_id="65535", control_type="Pane")
    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    | Pane - 'Collapsible Section'    (L33, T693, R335, B749)
-   |    |    |    |    |    |    |    |    |    |    | ['Pane66', 'Collapsible SectionPane3', 'Collapsible Section3']
+   |    |    |    |    |    |    |    |    |    |    | ['Collapsible Section3', 'Pane66', 'Collapsible SectionPane3']
    |    |    |    |    |    |    |    |    |    |    | child_window(title="Collapsible Section", auto_id="100", control_type="Pane")
    |    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    |    | Pane - '컬렉션'    (L34, T694, R333, B747)
-   |    |    |    |    |    |    |    |    |    |    |    | ['Pane67', '컬렉션Pane2', '컬렉션3']
+   |    |    |    |    |    |    |    |    |    |    |    | ['컬렉션3', 'Pane67', '컬렉션Pane2']
    |    |    |    |    |    |    |    |    |    |    |    | child_window(title="컬렉션", auto_id="100", control_type="Pane")
    |    |    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    |    |    | Pane - 'View'    (L34, T694, R333, B747)
-   |    |    |    |    |    |    |    |    |    |    |    |    | ['Pane68', 'View8', 'ViewPane8']
+   |    |    |    |    |    |    |    |    |    |    |    |    | ['View8', 'ViewPane8', 'Pane68']
    |    |    |    |    |    |    |    |    |    |    |    |    | child_window(title="View", auto_id="100", control_type="Pane")
    |    |    |    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    |    |    |    | Pane - ' (Bridge View)'    (L34, T694, R333, B727)
-   |    |    |    |    |    |    |    |    |    |    |    |    |    | [' (Bridge View)22', 'Pane69', ' (Bridge View)Pane22']
+   |    |    |    |    |    |    |    |    |    |    |    |    |    | [' (Bridge View)Pane22', ' (Bridge View)22', 'Pane69']
    |    |    |    |    |    |    |    |    |    |    |    |    |    | child_window(title=" (Bridge View)", auto_id="65535", control_type="Pane")
    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | Edit - ''    (L44, T699, R325, B721)
-   |    |    |    |    |    |    |    |    |    |    |    |    |    |    | ['컬렉션Edit', 'Edit2']
+   |    |    |    |    |    |    |    |    |    |    |    |    |    |    | ['컬렉션Edit', 'Edit5']
    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | child_window(auto_id="100", control_type="Edit")
    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | Pane - ' (Bridge View)'    (L34, T726, R333, B728)
-   |    |    |    |    |    |    |    |    |    |    |    |    |    |    | [' (Bridge View)23', 'Pane70', ' (Bridge View)Pane23']
+   |    |    |    |    |    |    |    |    |    |    |    |    |    |    | [' (Bridge View)Pane23', ' (Bridge View)23', 'Pane70']
    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | child_window(title=" (Bridge View)", auto_id="65535", control_type="Pane")
    |    |    |    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    |    |    |    | ListBox - ''    (L34, T727, R333, B747)
@@ -524,558 +665,662 @@ child_window(title="Lightroom Catalog - Adobe Photoshop Lightroom Classic - 라�
    |    |    |    |    |    |    |    |    |    |    |    |    |    | child_window(auto_id="1001", control_type="List")
    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | ListItem - ''    (L34, T727, R333, B747)
-   |    |    |    |    |    |    |    |    |    |    |    |    |    |    | ['ListItem6', '컬렉션ListItem']
+   |    |    |    |    |    |    |    |    |    |    |    |    |    |    | ['컬렉션ListItem', 'ListItem6']
    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | Static - ''    (L34, T727, R333, B747)
-   |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | ['Static31', '컬렉션Static2']
+   |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | ['Static43', '컬렉션Static2']
    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | Static - ''    (L58, T727, R256, B747)
-   |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | ['Static32', '컬렉션Static3']
+   |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | ['Static44', '컬렉션Static3']
    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | Static - ''    (L256, T727, R312, B747)
-   |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | ['Static33', '149/232GBStatic4']
+   |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | ['Static45', '8.5/50GBStatic4']
    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | Static - ''    (L312, T727, R325, B747)
-   |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | ['Static34', '149/232GBStatic5']
+   |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | ['Static46', '8.5/50GBStatic5']
    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | Static - ''    (L325, T727, R333, B747)
-   |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | ['Static35', '149/232GBStatic6']
+   |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | ['Static47', '8.5/50GBStatic6']
    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    | Pane - '게시 서비스'    (L34, T749, R334, B776)
-   |    |    |    |    |    |    |    |    |    |    | ['게시 서비스', 'Pane71', '게시 서비스Pane', '게시 서비스0', '게시 서비스1', '게시 서비스Pane0', '게시 서비스Pane1']
+   |    |    |    |    |    |    |    |    |    |    | ['게시 서비스Pane', 'Pane71', '게시 서비스', '게시 서비스0', '게시 서비스1', '게시 서비스Pane0', '게시 서비스Pane1']
    |    |    |    |    |    |    |    |    |    |    | child_window(title="게시 서비스", auto_id="100", control_type="Pane")
    |    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    |    | Button - ''    (L35, T756, R49, B770)
-   |    |    |    |    |    |    |    |    |    |    |    | ['Button12']
+   |    |    |    |    |    |    |    |    |    |    |    | ['Button18']
    |    |    |    |    |    |    |    |    |    |    |    | child_window(auto_id="65535", control_type="Button")
    |    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    |    | Static - '게시 서비스'    (L57, T753, R156, B774)
-   |    |    |    |    |    |    |    |    |    |    |    | ['게시 서비스2', 'Static36', '게시 서비스Static']
-   |    |    |    |    |    |    |    |    |    |    |    | child_window(title="게시 서비스", auto_id="1383167632", control_type="Text")
+   |    |    |    |    |    |    |    |    |    |    |    | ['게시 서비스Static', 'Static48', '게시 서비스2']
+   |    |    |    |    |    |    |    |    |    |    |    | child_window(title="게시 서비스", auto_id="1218480880", control_type="Text")
    |    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    |    | Pane - 'View'    (L156, T749, R334, B776)
-   |    |    |    |    |    |    |    |    |    |    |    | ['Pane72', 'View9', 'ViewPane9']
+   |    |    |    |    |    |    |    |    |    |    |    | ['View9', 'ViewPane9', 'Pane72']
    |    |    |    |    |    |    |    |    |    |    |    | child_window(title="View", auto_id="100", control_type="Pane")
    |    |    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    |    |    | Pane - ' (Bridge View)'    (L312, T752, R334, B774)
-   |    |    |    |    |    |    |    |    |    |    |    |    | [' (Bridge View)24', 'Pane73', ' (Bridge View)Pane24']
+   |    |    |    |    |    |    |    |    |    |    |    |    | [' (Bridge View)Pane24', ' (Bridge View)24', 'Pane73']
    |    |    |    |    |    |    |    |    |    |    |    |    | child_window(title=" (Bridge View)", auto_id="65535", control_type="Pane")
    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    | Pane - 'Collapsible Section'    (L33, T776, R335, B915)
-   |    |    |    |    |    |    |    |    |    |    | ['Pane74', 'Collapsible SectionPane4', 'Collapsible Section4']
+   |    |    |    |    |    |    |    |    |    |    | ['Collapsible Section4', 'Pane74', 'Collapsible SectionPane4']
    |    |    |    |    |    |    |    |    |    |    | child_window(title="Collapsible Section", auto_id="100", control_type="Pane")
    |    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    |    | Pane - '게시 서비스'    (L34, T777, R333, B913)
-   |    |    |    |    |    |    |    |    |    |    |    | ['게시 서비스3', 'Pane75', '게시 서비스Pane2']
+   |    |    |    |    |    |    |    |    |    |    |    | ['게시 서비스Pane2', 'Pane75', '게시 서비스3']
    |    |    |    |    |    |    |    |    |    |    |    | child_window(title="게시 서비스", auto_id="100", control_type="Pane")
    |    |    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    |    |    | Pane - 'View'    (L34, T777, R333, B913)
-   |    |    |    |    |    |    |    |    |    |    |    |    | ['Pane76', 'View10', 'ViewPane10']
+   |    |    |    |    |    |    |    |    |    |    |    |    | ['View10', 'ViewPane10', 'Pane76']
    |    |    |    |    |    |    |    |    |    |    |    |    | child_window(title="View", auto_id="100", control_type="Pane")
    |    |    |    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    |    |    |    | Pane - 'com.adobe.ag.export.file'    (L34, T777, R334, B811)
-   |    |    |    |    |    |    |    |    |    |    |    |    |    | ['com.adobe.ag.export.file', 'Pane77', 'com.adobe.ag.export.filePane']
+   |    |    |    |    |    |    |    |    |    |    |    |    |    | ['com.adobe.ag.export.filePane', 'Pane77', 'com.adobe.ag.export.file']
    |    |    |    |    |    |    |    |    |    |    |    |    |    | child_window(title="com.adobe.ag.export.file", auto_id="100", control_type="Pane")
    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | Pane - '하드 드라이브 (Bridge View)'    (L38, T780, R330, B811)
-   |    |    |    |    |    |    |    |    |    |    |    |    |    |    | ['Pane78', '하드 드라이브 (Bridge View)Pane', '하드 드라이브 (Bridge View)']
+   |    |    |    |    |    |    |    |    |    |    |    |    |    |    | ['하드 드라이브 (Bridge View)', '하드 드라이브 (Bridge View)Pane', 'Pane78']
    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | child_window(title="하드 드라이브 (Bridge View)", auto_id="65535", control_type="Pane")
    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | Pane - ' (Bridge View)'    (L44, T784, R70, B807)
-   |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | [' (Bridge View)25', 'Pane79', ' (Bridge View)Pane25']
+   |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | [' (Bridge View)Pane25', ' (Bridge View)25', 'Pane79']
    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | child_window(title=" (Bridge View)", auto_id="65535", control_type="Pane")
    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | Static - '하드 드라이브'    (L75, T787, R197, B803)
-   |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | ['Static37', '하드 드라이브Static', '하드 드라이브']
-   |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | child_window(title="하드 드라이브", auto_id="1571574336", control_type="Text")
+   |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | ['하드 드라이브', 'Static49', '하드 드라이브Static']
+   |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | child_window(title="하드 드라이브", auto_id="821820848", control_type="Text")
    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | Button - '설정...'    (L202, T786, R320, B805)
-   |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | ['설정...Button', '설정...', 'Button13', '설정...Button0', '설정...Button1', '설정...0', '설정...1']
+   |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | ['설정...Button', 'Button19', '설정...', '설정...Button0', '설정...Button1', '설정...0', '설정...1']
    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | child_window(title="설정...", auto_id="65535", control_type="Button")
    |    |    |    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    |    |    |    | Pane - 'com.adobe.lightroom.export.stock'    (L34, T811, R334, B845)
-   |    |    |    |    |    |    |    |    |    |    |    |    |    | ['Pane80', 'com.adobe.lightroom.export.stock', 'com.adobe.lightroom.export.stockPane']
+   |    |    |    |    |    |    |    |    |    |    |    |    |    | ['com.adobe.lightroom.export.stockPane', 'com.adobe.lightroom.export.stock', 'Pane80']
    |    |    |    |    |    |    |    |    |    |    |    |    |    | child_window(title="com.adobe.lightroom.export.stock", auto_id="100", control_type="Pane")
    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | Pane - 'Adobe Stock (Bridge View)'    (L38, T814, R330, B845)
-   |    |    |    |    |    |    |    |    |    |    |    |    |    |    | ['Adobe Stock (Bridge View)', 'Pane81', 'Adobe Stock (Bridge View)Pane']
+   |    |    |    |    |    |    |    |    |    |    |    |    |    |    | ['Adobe Stock (Bridge View)Pane', 'Adobe Stock (Bridge View)', 'Pane81']
    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | child_window(title="Adobe Stock (Bridge View)", auto_id="65535", control_type="Pane")
    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | Pane - ' (Bridge View)'    (L44, T818, R70, B841)
-   |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | [' (Bridge View)26', 'Pane82', ' (Bridge View)Pane26']
+   |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | [' (Bridge View)Pane26', ' (Bridge View)26', 'Pane82']
    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | child_window(title=" (Bridge View)", auto_id="65535", control_type="Pane")
    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | Static - 'Adobe Stock'    (L75, T821, R197, B837)
-   |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | ['Static38', 'Adobe Stock', 'Adobe StockStatic']
-   |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | child_window(title="Adobe Stock", auto_id="1187756512", control_type="Text")
+   |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | ['Static50', 'Adobe Stock', 'Adobe StockStatic']
+   |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | child_window(title="Adobe Stock", auto_id="821819312", control_type="Text")
    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | Button - '설정...'    (L202, T820, R320, B839)
-   |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | ['설정...Button2', '설정...2', 'Button14']
+   |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | ['설정...Button2', 'Button20', '설정...2']
    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | child_window(title="설정...", auto_id="65535", control_type="Button")
    |    |    |    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    |    |    |    | Pane - 'com.adobe.lightroom.export.flickr'    (L34, T845, R334, B879)
-   |    |    |    |    |    |    |    |    |    |    |    |    |    | ['Pane83', 'com.adobe.lightroom.export.flickrPane', 'com.adobe.lightroom.export.flickr']
+   |    |    |    |    |    |    |    |    |    |    |    |    |    | ['com.adobe.lightroom.export.flickr', 'Pane83', 'com.adobe.lightroom.export.flickrPane']
    |    |    |    |    |    |    |    |    |    |    |    |    |    | child_window(title="com.adobe.lightroom.export.flickr", auto_id="100", control_type="Pane")
    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | Pane - 'Flickr (Bridge View)'    (L38, T848, R330, B879)
-   |    |    |    |    |    |    |    |    |    |    |    |    |    |    | ['Pane84', 'Flickr (Bridge View)Pane', 'Flickr (Bridge View)']
+   |    |    |    |    |    |    |    |    |    |    |    |    |    |    | ['Flickr (Bridge View)Pane', 'Pane84', 'Flickr (Bridge View)']
    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | child_window(title="Flickr (Bridge View)", auto_id="65535", control_type="Pane")
    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | Pane - ' (Bridge View)'    (L44, T852, R70, B875)
-   |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | [' (Bridge View)27', 'Pane85', ' (Bridge View)Pane27']
+   |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | [' (Bridge View)Pane27', ' (Bridge View)27', 'Pane85']
    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | child_window(title=" (Bridge View)", auto_id="65535", control_type="Pane")
    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | Static - 'Flickr'    (L75, T855, R197, B871)
-   |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | ['Static39', 'Flickr', 'FlickrStatic', 'FlickrStatic0', 'FlickrStatic1']
-   |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | child_window(title="Flickr", auto_id="1187754976", control_type="Text")
+   |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | ['Flickr', 'Static51', 'FlickrStatic']
+   |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | child_window(title="Flickr", auto_id="821810608", control_type="Text")
    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | Button - '설정...'    (L202, T854, R320, B873)
-   |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | ['설정...Button3', '설정...3', 'Button15']
+   |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | ['설정...Button3', 'Button21', '설정...3']
    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | child_window(title="설정...", auto_id="65535", control_type="Button")
    |    |    |    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    |    |    |    | Pane - 'com.adobe.lightroom.export.findmore'    (L34, T879, R334, B910)
-   |    |    |    |    |    |    |    |    |    |    |    |    |    | ['Pane86', 'com.adobe.lightroom.export.findmore', 'com.adobe.lightroom.export.findmorePane']
+   |    |    |    |    |    |    |    |    |    |    |    |    |    | ['com.adobe.lightroom.export.findmorePane', 'com.adobe.lightroom.export.findmore', 'Pane86']
    |    |    |    |    |    |    |    |    |    |    |    |    |    | child_window(title="com.adobe.lightroom.export.findmore", auto_id="100", control_type="Pane")
    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | Pane - ' (Bridge View)'    (L38, T882, R330, B910)
-   |    |    |    |    |    |    |    |    |    |    |    |    |    |    | [' (Bridge View)28', 'Pane87', ' (Bridge View)Pane28']
+   |    |    |    |    |    |    |    |    |    |    |    |    |    |    | [' (Bridge View)Pane28', ' (Bridge View)28', 'Pane87']
    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | child_window(title=" (Bridge View)", auto_id="65535", control_type="Pane")
    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | Button - '온라인에서 더 많은 서비스 찾기...'    (L44, T886, R324, B906)
-   |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | ['온라인에서 더 많은 서비스 찾기...', 'Button16', '온라인에서 더 많은 서비스 찾기...Button']
+   |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | ['온라인에서 더 많은 서비스 찾기...Button', 'Button22', '온라인에서 더 많은 서비스 찾기...']
    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | child_window(title="온라인에서 더 많은 서비스 찾기...", auto_id="65535", control_type="Button")
    |    |    |    |    |    |    |    | 
-   |    |    |    |    |    |    |    | Thumb - ''    (L18, T440, R29, B857)
+   |    |    |    |    |    |    |    | Thumb - ''    (L18, T440, R29, B867)
    |    |    |    |    |    |    |    | ['Thumb2']
-   |    |    |    |    |    |    |    | child_window(auto_id="1216193920", control_type="Thumb")
+   |    |    |    |    |    |    |    | child_window(auto_id="1401639376", control_type="Thumb")
    |    |    |    |    |    |    | 
-   |    |    |    |    |    |    | Pane - 'Background View'    (L18, T857, R339, B900)
-   |    |    |    |    |    |    | ['Background View3', 'Pane88', 'Background ViewPane3']
-   |    |    |    |    |    |    | child_window(title="Background View", auto_id="1563562528", control_type="Pane")
+   |    |    |    |    |    |    | Pane - 'Background View'    (L18, T867, R339, B910)
+   |    |    |    |    |    |    | ['Background ViewPane3', 'Background View3', 'Pane88']
+   |    |    |    |    |    |    | child_window(title="Background View", auto_id="1518439904", control_type="Pane")
    |    |    |    |    |    |    |    | 
-   |    |    |    |    |    |    |    | Pane - ' (Bridge View)'    (L18, T857, R29, B900)
-   |    |    |    |    |    |    |    | [' (Bridge View)29', 'Pane89', ' (Bridge View)Pane29']
+   |    |    |    |    |    |    |    | Pane - ' (Bridge View)'    (L18, T867, R29, B910)
+   |    |    |    |    |    |    |    | [' (Bridge View)Pane29', ' (Bridge View)29', 'Pane89']
    |    |    |    |    |    |    |    | child_window(title=" (Bridge View)", auto_id="65535", control_type="Pane")
    |    |    |    |    |    |    |    | 
-   |    |    |    |    |    |    |    | Pane - 'View'    (L29, T857, R339, B900)
-   |    |    |    |    |    |    |    | ['Pane90', 'View11', 'ViewPane11']
+   |    |    |    |    |    |    |    | Pane - 'View'    (L29, T867, R339, B910)
+   |    |    |    |    |    |    |    | ['View11', 'ViewPane11', 'Pane90']
    |    |    |    |    |    |    |    | child_window(title="View", auto_id="100", control_type="Pane")
    |    |    |    |    |    |    |    |    | 
-   |    |    |    |    |    |    |    |    | Pane - ' (Bridge View)'    (L29, T857, R339, B864)
-   |    |    |    |    |    |    |    |    | [' (Bridge View)30', 'Pane91', ' (Bridge View)Pane30']
+   |    |    |    |    |    |    |    |    | Pane - ' (Bridge View)'    (L29, T867, R339, B874)
+   |    |    |    |    |    |    |    |    | [' (Bridge View)Pane30', ' (Bridge View)30', 'Pane91']
    |    |    |    |    |    |    |    |    | child_window(title=" (Bridge View)", auto_id="65535", control_type="Pane")
    |    |    |    |    |    |    |    |    | 
-   |    |    |    |    |    |    |    |    | Pane - 'View'    (L29, T865, R339, B894)
-   |    |    |    |    |    |    |    |    | ['Pane92', 'View12', 'ViewPane12']
+   |    |    |    |    |    |    |    |    | Pane - 'View'    (L29, T875, R339, B904)
+   |    |    |    |    |    |    |    |    | ['View12', 'ViewPane12', 'Pane92']
    |    |    |    |    |    |    |    |    | child_window(title="View", auto_id="100", control_type="Pane")
    |    |    |    |    |    |    |    |    |    | 
-   |    |    |    |    |    |    |    |    |    | Button - '가져오기...'    (L33, T865, R183, B894)
-   |    |    |    |    |    |    |    |    |    | ['Button17', '가져오기...', '가져오기...Button']
+   |    |    |    |    |    |    |    |    |    | Button - '가져오기...'    (L33, T875, R183, B904)
+   |    |    |    |    |    |    |    |    |    | ['가져오기...Button', '가져오기...', 'Button23']
    |    |    |    |    |    |    |    |    |    | child_window(title="가져오기...", auto_id="65535", control_type="Button")
    |    |    |    |    |    |    |    |    |    | 
-   |    |    |    |    |    |    |    |    |    | Button - '내보내기...'    (L186, T865, R335, B894)
-   |    |    |    |    |    |    |    |    |    | ['내보내기...Button', 'Button18', '내보내기...']
+   |    |    |    |    |    |    |    |    |    | Button - '내보내기...'    (L186, T875, R335, B904)
+   |    |    |    |    |    |    |    |    |    | ['내보내기...', 'Button24', '내보내기...Button']
    |    |    |    |    |    |    |    |    |    | child_window(title="내보내기...", auto_id="65535", control_type="Button")
    |    |    |    |    | 
-   |    |    |    |    | Pane - 'First Panel'    (L1579, T112, R1902, B900)
-   |    |    |    |    | ['Pane93', 'First Panel2', 'First PanelPane2']
-   |    |    |    |    | child_window(title="First Panel", auto_id="834168736", control_type="Pane")
+   |    |    |    |    | Pane - 'First Panel'    (L1579, T112, R1902, B910)
+   |    |    |    |    | ['First PanelPane2', 'First Panel2', 'Pane93']
+   |    |    |    |    | child_window(title="First Panel", auto_id="1438022624", control_type="Pane")
    |    |    |    |    |    | 
-   |    |    |    |    |    | Pane - 'View (First Panel's content)'    (L1581, T112, R1902, B900)
-   |    |    |    |    |    | ['Pane94', "View (First Panel's content)Pane", "View (First Panel's content)"]
+   |    |    |    |    |    | Pane - 'View (First Panel's content)'    (L1581, T112, R1902, B910)
+   |    |    |    |    |    | ["View (First Panel's content)Pane", "View (First Panel's content)", 'Pane94']
    |    |    |    |    |    | child_window(title="View (First Panel's content)", auto_id="100", control_type="Pane")
    |    |    |    |    |    |    | 
    |    |    |    |    |    |    | Pane - 'Background View'    (L1581, T112, R1902, B308)
-   |    |    |    |    |    |    | ['Background View4', 'Pane95', 'Background ViewPane4']
-   |    |    |    |    |    |    | child_window(title="Background View", auto_id="1563560672", control_type="Pane")
+   |    |    |    |    |    |    | ['Background ViewPane4', 'Background View4', 'Pane95']
+   |    |    |    |    |    |    | child_window(title="Background View", auto_id="1518440368", control_type="Pane")
    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    | Pane - 'View'    (L1581, T112, R1891, B308)
-   |    |    |    |    |    |    |    | ['Pane96', 'View13', 'ViewPane13']
+   |    |    |    |    |    |    |    | ['View13', 'ViewPane13', 'Pane96']
    |    |    |    |    |    |    |    | child_window(title="View", auto_id="100", control_type="Pane")
    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    | Pane - ' (Bridge View)'    (L1581, T112, R1891, B308)
-   |    |    |    |    |    |    |    |    | [' (Bridge View)31', 'Pane97', ' (Bridge View)Pane31']
+   |    |    |    |    |    |    |    |    | [' (Bridge View)Pane31', ' (Bridge View)31', 'Pane97']
    |    |    |    |    |    |    |    |    | child_window(title=" (Bridge View)", auto_id="65535", control_type="Pane")
    |    |    |    |    |    |    |    |    |    | 
-   |    |    |    |    |    |    |    |    |    | Pane - '히스토그램'    (L1581, T115, R1885, B139)
-   |    |    |    |    |    |    |    |    |    | ['Pane98', '히스토그램', '히스토그램Pane', '히스토그램0', '히스토그램1']
-   |    |    |    |    |    |    |    |    |    | child_window(title="히스토그램", auto_id="65535", control_type="Pane")
+   |    |    |    |    |    |    |    |    |    | Pane - '히스토그램 (Bridge View)'    (L1581, T115, R1885, B139)
+   |    |    |    |    |    |    |    |    |    | ['히스토그램 (Bridge View)Pane', 'Pane98', '히스토그램 (Bridge View)']
+   |    |    |    |    |    |    |    |    |    | child_window(title="히스토그램 (Bridge View)", auto_id="65535", control_type="Pane")
    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    | Pane - 'View'    (L1581, T115, R1718, B139)
-   |    |    |    |    |    |    |    |    |    |    | ['Pane99', 'View14', 'ViewPane14']
+   |    |    |    |    |    |    |    |    |    |    | ['View14', 'ViewPane14', 'Pane99']
    |    |    |    |    |    |    |    |    |    |    | child_window(title="View", auto_id="100", control_type="Pane")
    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    | Static - '히스토그램'    (L1726, T117, R1863, B138)
-   |    |    |    |    |    |    |    |    |    |    | ['Static40', '히스토그램Static', '히스토그램2', '히스토그램Static0', '히스토그램Static1']
-   |    |    |    |    |    |    |    |    |    |    | child_window(title="히스토그램", auto_id="1189478528", control_type="Text")
+   |    |    |    |    |    |    |    |    |    |    | ['히스토그램', 'Static52', '히스토그램Static', '히스토그램Static0', '히스토그램Static1']
+   |    |    |    |    |    |    |    |    |    |    | child_window(title="히스토그램", auto_id="1222228128", control_type="Text")
    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    | Button - ''    (L1871, T119, R1885, B135)
-   |    |    |    |    |    |    |    |    |    |    | ['히스토그램Button', 'Button19']
+   |    |    |    |    |    |    |    |    |    |    | ['히스토그램Button', 'Button25']
    |    |    |    |    |    |    |    |    |    |    | child_window(auto_id="65535", control_type="Button")
    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    | Pane - ' (Bridge View)'    (L1581, T142, R1891, B308)
-   |    |    |    |    |    |    |    |    |    | [' (Bridge View)32', 'Pane100', ' (Bridge View)Pane32']
+   |    |    |    |    |    |    |    |    |    | [' (Bridge View)Pane32', ' (Bridge View)32', 'Pane100']
    |    |    |    |    |    |    |    |    |    | child_window(title=" (Bridge View)", auto_id="65535", control_type="Pane")
    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    | Pane - 'AgLibrary_histogramPanel'    (L1588, T145, R1884, B305)
-   |    |    |    |    |    |    |    |    |    |    | ['Pane101', 'AgLibrary_histogramPanel', 'AgLibrary_histogramPanelPane']
+   |    |    |    |    |    |    |    |    |    |    | ['Pane101', 'AgLibrary_histogramPanelPane', 'AgLibrary_histogramPanel']
    |    |    |    |    |    |    |    |    |    |    | child_window(title="AgLibrary_histogramPanel", auto_id="100", control_type="Pane")
    |    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    |    | Pane - ' (Bridge View)'    (L1593, T150, R1879, B259)
-   |    |    |    |    |    |    |    |    |    |    |    | [' (Bridge View)33', 'Pane102', ' (Bridge View)Pane33']
+   |    |    |    |    |    |    |    |    |    |    |    | [' (Bridge View)Pane33', ' (Bridge View)33', 'Pane102']
    |    |    |    |    |    |    |    |    |    |    |    | child_window(title=" (Bridge View)", auto_id="65535", control_type="Pane")
    |    |    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    |    |    | Pane - 'View'    (L1595, T152, R1877, B257)
-   |    |    |    |    |    |    |    |    |    |    |    |    | ['Pane103', 'View15', 'ViewPane15']
+   |    |    |    |    |    |    |    |    |    |    |    |    | ['View15', 'ViewPane15', 'Pane103']
    |    |    |    |    |    |    |    |    |    |    |    |    | child_window(title="View", auto_id="100", control_type="Pane")
    |    |    |    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    |    |    |    | Pane - '(D2D Bridge View)'    (L1595, T152, R1877, B257)
-   |    |    |    |    |    |    |    |    |    |    |    |    |    | ['Pane104', '(D2D Bridge View)2', '(D2D Bridge View)Pane2']
+   |    |    |    |    |    |    |    |    |    |    |    |    |    | ['(D2D Bridge View)2', '(D2D Bridge View)Pane2', 'Pane104']
    |    |    |    |    |    |    |    |    |    |    |    |    |    | child_window(title="(D2D Bridge View)", auto_id="100", control_type="Pane")
    |    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    |    | Pane - 'View'    (L1594, T260, R1878, B276)
-   |    |    |    |    |    |    |    |    |    |    |    | ['Pane105', 'View16', 'ViewPane16']
+   |    |    |    |    |    |    |    |    |    |    |    | ['View16', 'ViewPane16', 'Pane105']
    |    |    |    |    |    |    |    |    |    |    |    | child_window(title="View", auto_id="100", control_type="Pane")
    |    |    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    |    |    | Static - ''    (L1596, T260, R1666, B276)
-   |    |    |    |    |    |    |    |    |    |    |    |    | ['Static41']
-   |    |    |    |    |    |    |    |    |    |    |    |    | child_window(auto_id="1189479040", control_type="Text")
+   |    |    |    |    |    |    |    |    |    |    |    |    | ['Static53', '제목 없음-0001.DNGStatic2']
+   |    |    |    |    |    |    |    |    |    |    |    |    | child_window(auto_id="1222210208", control_type="Text")
    |    |    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    |    |    | Static - ''    (L1666, T260, R1736, B276)
-   |    |    |    |    |    |    |    |    |    |    |    |    | ['Static42', '히스토그램Static2']
-   |    |    |    |    |    |    |    |    |    |    |    |    | child_window(auto_id="1189479552", control_type="Text")
+   |    |    |    |    |    |    |    |    |    |    |    |    | ['Static54', '히스토그램Static2']
+   |    |    |    |    |    |    |    |    |    |    |    |    | child_window(auto_id="1222216864", control_type="Text")
    |    |    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    |    |    | Static - ''    (L1736, T260, R1806, B276)
-   |    |    |    |    |    |    |    |    |    |    |    |    | ['Static43', '히스토그램Static3']
-   |    |    |    |    |    |    |    |    |    |    |    |    | child_window(auto_id="1189476480", control_type="Text")
+   |    |    |    |    |    |    |    |    |    |    |    |    | ['Static55', '히스토그램Static3']
+   |    |    |    |    |    |    |    |    |    |    |    |    | child_window(auto_id="1222217888", control_type="Text")
    |    |    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    |    |    | Static - ''    (L1806, T260, R1876, B276)
-   |    |    |    |    |    |    |    |    |    |    |    |    | ['Static44', '히스토그램Static4']
-   |    |    |    |    |    |    |    |    |    |    |    |    | child_window(auto_id="1463115888", control_type="Text")
+   |    |    |    |    |    |    |    |    |    |    |    |    | ['Static56', '히스토그램Static4']
+   |    |    |    |    |    |    |    |    |    |    |    |    | child_window(auto_id="1222219936", control_type="Text")
    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    | Pane - ' (Bridge View)'    (L1891, T112, R1902, B308)
-   |    |    |    |    |    |    |    | [' (Bridge View)34', 'Pane106', ' (Bridge View)Pane34']
+   |    |    |    |    |    |    |    | [' (Bridge View)Pane34', ' (Bridge View)34', 'Pane106']
    |    |    |    |    |    |    |    | child_window(title=" (Bridge View)", auto_id="65535", control_type="Pane")
    |    |    |    |    |    |    | 
-   |    |    |    |    |    |    | Pane - 'Scroll View'    (L1581, T308, R1902, B857)
-   |    |    |    |    |    |    | ['Pane107', 'Scroll View3', 'Scroll ViewPane3']
+   |    |    |    |    |    |    | Pane - 'Scroll View'    (L1581, T308, R1902, B867)
+   |    |    |    |    |    |    | ['Scroll View3', 'Scroll ViewPane3', 'Pane107']
    |    |    |    |    |    |    | child_window(title="Scroll View", auto_id="100", control_type="Pane")
    |    |    |    |    |    |    |    | 
-   |    |    |    |    |    |    |    | Pane - 'ClipView'    (L1581, T308, R1891, B857)
-   |    |    |    |    |    |    |    | ['ClipView3', 'Pane108', 'ClipViewPane3']
-   |    |    |    |    |    |    |    | child_window(title="ClipView", auto_id="1452021368", control_type="Pane")
+   |    |    |    |    |    |    |    | Pane - 'ClipView'    (L1581, T308, R1891, B867)
+   |    |    |    |    |    |    |    | ['Pane108', 'ClipViewPane3', 'ClipView3']
+   |    |    |    |    |    |    |    | child_window(title="ClipView", auto_id="1439640264", control_type="Pane")
    |    |    |    |    |    |    |    |    | 
-   |    |    |    |    |    |    |    |    | Pane - 'Accordion View'    (L1581, T308, R1891, B780)
-   |    |    |    |    |    |    |    |    | ['Pane109', 'Accordion ViewPane2', 'Accordion View2']
+   |    |    |    |    |    |    |    |    | Pane - 'Accordion View'    (L1581, T308, R1891, B765)
+   |    |    |    |    |    |    |    |    | ['Accordion View2', 'Accordion ViewPane2', 'Pane109']
    |    |    |    |    |    |    |    |    | child_window(title="Accordion View", auto_id="100", control_type="Pane")
    |    |    |    |    |    |    |    |    |    | 
-   |    |    |    |    |    |    |    |    |    | Pane - 'Accordion Content'    (L1581, T308, R1891, B780)
-   |    |    |    |    |    |    |    |    |    | ['Pane110', 'Accordion Content2', 'Accordion ContentPane2']
-   |    |    |    |    |    |    |    |    |    | child_window(title="Accordion Content", auto_id="1373142104", control_type="Pane")
+   |    |    |    |    |    |    |    |    |    | Pane - 'Accordion Content'    (L1581, T308, R1891, B765)
+   |    |    |    |    |    |    |    |    |    | ['Accordion Content2', 'Accordion ContentPane2', 'Pane110']
+   |    |    |    |    |    |    |    |    |    | child_window(title="Accordion Content", auto_id="1138048408", control_type="Pane")
    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    | Pane - '빠른 현상'    (L1586, T308, R1886, B335)
-   |    |    |    |    |    |    |    |    |    |    | ['빠른 현상Pane', 'Pane111', '빠른 현상', '빠른 현상0', '빠른 현상1']
+   |    |    |    |    |    |    |    |    |    |    | ['빠른 현상Pane', '빠른 현상', 'Pane111', '빠른 현상0', '빠른 현상1']
    |    |    |    |    |    |    |    |    |    |    | child_window(title="빠른 현상", auto_id="100", control_type="Pane")
    |    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    |    | Pane - 'View'    (L1586, T308, R1781, B335)
-   |    |    |    |    |    |    |    |    |    |    |    | ['Pane112', 'View17', 'ViewPane17']
+   |    |    |    |    |    |    |    |    |    |    |    | ['View17', 'ViewPane17', 'Pane112']
    |    |    |    |    |    |    |    |    |    |    |    | child_window(title="View", auto_id="100", control_type="Pane")
    |    |    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    |    |    | ComboBox - ''    (L1590, T312, R1740, B332)
-   |    |    |    |    |    |    |    |    |    |    |    |    | ['ComboBox4', '히스토그램ComboBox', '히스토그램ComboBox0', '히스토그램ComboBox1']
+   |    |    |    |    |    |    |    |    |    |    |    |    | ['ComboBox6', '히스토그램ComboBox', '히스토그램ComboBox0', '히스토그램ComboBox1']
    |    |    |    |    |    |    |    |    |    |    |    |    | child_window(auto_id="65535", control_type="ComboBox")
    |    |    |    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    |    |    |    | Static - ''    (L3, T3, R130, B17)
-   |    |    |    |    |    |    |    |    |    |    |    |    |    | ['Static45']
+   |    |    |    |    |    |    |    |    |    |    |    |    |    | ['Static57']
    |    |    |    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    |    |    |    | Button - '열기'    (L1724, T313, R1739, B331)
-   |    |    |    |    |    |    |    |    |    |    |    |    |    | ['열기4', 'Button20', '열기Button4']
+   |    |    |    |    |    |    |    |    |    |    |    |    |    | ['열기Button6', '열기6', 'Button26']
    |    |    |    |    |    |    |    |    |    |    |    |    |    | child_window(title="열기", auto_id="DropDown", control_type="Button")
    |    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    |    | Static - '빠른 현상'    (L1781, T312, R1862, B333)
-   |    |    |    |    |    |    |    |    |    |    |    | ['Static46', '빠른 현상2', '빠른 현상Static']
-   |    |    |    |    |    |    |    |    |    |    |    | child_window(title="빠른 현상", auto_id="1454541568", control_type="Text")
+   |    |    |    |    |    |    |    |    |    |    |    | ['빠른 현상2', '빠른 현상Static', 'Static58']
+   |    |    |    |    |    |    |    |    |    |    |    | child_window(title="빠른 현상", auto_id="1222205088", control_type="Text")
    |    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    |    | Button - ''    (L1871, T315, R1885, B329)
-   |    |    |    |    |    |    |    |    |    |    |    | ['빠른 현상Button', 'Button21']
+   |    |    |    |    |    |    |    |    |    |    |    | ['빠른 현상Button', 'Button27']
    |    |    |    |    |    |    |    |    |    |    |    | child_window(auto_id="65535", control_type="Button")
    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    | Pane - 'Collapsible Section'    (L1585, T335, R1887, B340)
-   |    |    |    |    |    |    |    |    |    |    | ['Pane113', 'Collapsible SectionPane5', 'Collapsible Section5']
+   |    |    |    |    |    |    |    |    |    |    | ['Collapsible Section5', 'Pane113', 'Collapsible SectionPane5']
    |    |    |    |    |    |    |    |    |    |    | child_window(title="Collapsible Section", auto_id="100", control_type="Pane")
    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    | Pane - '키워드 적용'    (L1586, T340, R1886, B367)
-   |    |    |    |    |    |    |    |    |    |    | ['Pane114', '키워드 적용', '키워드 적용Pane', '키워드 적용0', '키워드 적용1']
+   |    |    |    |    |    |    |    |    |    |    | ['키워드 적용Pane', 'Pane114', '키워드 적용', '키워드 적용0', '키워드 적용1']
    |    |    |    |    |    |    |    |    |    |    | child_window(title="키워드 적용", auto_id="100", control_type="Pane")
    |    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    |    | Static - '키워드 적용'    (L1763, T344, R1862, B365)
-   |    |    |    |    |    |    |    |    |    |    |    | ['키워드 적용Static', '키워드 적용2', 'Static47']
-   |    |    |    |    |    |    |    |    |    |    |    | child_window(title="키워드 적용", auto_id="1454542592", control_type="Text")
+   |    |    |    |    |    |    |    |    |    |    |    | ['키워드 적용2', 'Static59', '키워드 적용Static']
+   |    |    |    |    |    |    |    |    |    |    |    | child_window(title="키워드 적용", auto_id="1222210720", control_type="Text")
    |    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    |    | Button - ''    (L1871, T347, R1885, B361)
-   |    |    |    |    |    |    |    |    |    |    |    | ['키워드 적용Button', 'Button22']
+   |    |    |    |    |    |    |    |    |    |    |    | ['Button28', '키워드 적용Button']
    |    |    |    |    |    |    |    |    |    |    |    | child_window(auto_id="65535", control_type="Button")
    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    | Pane - 'Collapsible Section'    (L1585, T367, R1887, B372)
-   |    |    |    |    |    |    |    |    |    |    | ['Pane115', 'Collapsible SectionPane6', 'Collapsible Section6']
+   |    |    |    |    |    |    |    |    |    |    | ['Collapsible Section6', 'Pane115', 'Collapsible SectionPane6']
    |    |    |    |    |    |    |    |    |    |    | child_window(title="Collapsible Section", auto_id="100", control_type="Pane")
    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    | Pane - '키워드 목록'    (L1586, T372, R1886, B399)
-   |    |    |    |    |    |    |    |    |    |    | ['키워드 목록Pane', 'Pane116', '키워드 목록', '키워드 목록0', '키워드 목록1']
+   |    |    |    |    |    |    |    |    |    |    | ['키워드 목록', 'Pane116', '키워드 목록Pane', '키워드 목록0', '키워드 목록1']
    |    |    |    |    |    |    |    |    |    |    | child_window(title="키워드 목록", auto_id="100", control_type="Pane")
    |    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    |    | Pane - 'View'    (L1586, T372, R1763, B399)
-   |    |    |    |    |    |    |    |    |    |    |    | ['Pane117', 'View18', 'ViewPane18']
+   |    |    |    |    |    |    |    |    |    |    |    | ['View18', 'ViewPane18', 'Pane117']
    |    |    |    |    |    |    |    |    |    |    |    | child_window(title="View", auto_id="100", control_type="Pane")
    |    |    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    |    |    | Pane - ' (Bridge View)'    (L1586, T375, R1608, B397)
-   |    |    |    |    |    |    |    |    |    |    |    |    | [' (Bridge View)35', 'Pane118', ' (Bridge View)Pane35']
+   |    |    |    |    |    |    |    |    |    |    |    |    | [' (Bridge View)Pane35', ' (Bridge View)35', 'Pane118']
    |    |    |    |    |    |    |    |    |    |    |    |    | child_window(title=" (Bridge View)", auto_id="65535", control_type="Pane")
    |    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    |    | Static - '키워드 목록'    (L1763, T376, R1862, B397)
-   |    |    |    |    |    |    |    |    |    |    |    | ['Static48', '키워드 목록2', '키워드 목록Static']
-   |    |    |    |    |    |    |    |    |    |    |    | child_window(title="키워드 목록", auto_id="1454542080", control_type="Text")
+   |    |    |    |    |    |    |    |    |    |    |    | ['키워드 목록2', 'Static60', '키워드 목록Static']
+   |    |    |    |    |    |    |    |    |    |    |    | child_window(title="키워드 목록", auto_id="1222218400", control_type="Text")
    |    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    |    | Button - ''    (L1871, T379, R1885, B393)
-   |    |    |    |    |    |    |    |    |    |    |    | ['키워드 목록Button', 'Button23']
+   |    |    |    |    |    |    |    |    |    |    |    | ['키워드 목록Button', 'Button29']
    |    |    |    |    |    |    |    |    |    |    |    | child_window(auto_id="65535", control_type="Button")
    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    | Pane - 'Collapsible Section'    (L1585, T399, R1887, B404)
-   |    |    |    |    |    |    |    |    |    |    | ['Pane119', 'Collapsible SectionPane7', 'Collapsible Section7']
+   |    |    |    |    |    |    |    |    |    |    | ['Collapsible Section7', 'Pane119', 'Collapsible SectionPane7']
    |    |    |    |    |    |    |    |    |    |    | child_window(title="Collapsible Section", auto_id="100", control_type="Pane")
    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    | Pane - '메타데이터'    (L1586, T404, R1886, B435)
-   |    |    |    |    |    |    |    |    |    |    | ['Pane120', '메타데이터', '메타데이터Pane', '메타데이터0', '메타데이터1', '메타데이터Pane0', '메타데이터Pane1']
+   |    |    |    |    |    |    |    |    |    |    | ['메타데이터Pane', '메타데이터', 'Pane120', '메타데이터0', '메타데이터1', '메타데이터Pane0', '메타데이터Pane1']
    |    |    |    |    |    |    |    |    |    |    | child_window(title="메타데이터", auto_id="100", control_type="Pane")
    |    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    |    | Pane - 'View'    (L1586, T404, R1767, B435)
-   |    |    |    |    |    |    |    |    |    |    |    | ['Pane121', 'View19', 'ViewPane19']
+   |    |    |    |    |    |    |    |    |    |    |    | ['View19', 'ViewPane19', 'Pane121']
    |    |    |    |    |    |    |    |    |    |    |    | child_window(title="View", auto_id="100", control_type="Pane")
    |    |    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    |    |    | Pane - ' (Bridge View)'    (L1591, T414, R1603, B426)
-   |    |    |    |    |    |    |    |    |    |    |    |    | [' (Bridge View)36', 'Pane122', ' (Bridge View)Pane36']
+   |    |    |    |    |    |    |    |    |    |    |    |    | [' (Bridge View)Pane36', ' (Bridge View)36', 'Pane122']
    |    |    |    |    |    |    |    |    |    |    |    |    | child_window(title=" (Bridge View)", auto_id="65535", control_type="Pane")
    |    |    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    |    |    | ComboBox - ''    (L1617, T409, R1734, B429)
-   |    |    |    |    |    |    |    |    |    |    |    |    | ['ComboBox닫기', 'ComboBox5', '히스토그램ComboBox2']
+   |    |    |    |    |    |    |    |    |    |    |    |    | ['ComboBox7', '히스토그램ComboBox2']
    |    |    |    |    |    |    |    |    |    |    |    |    | child_window(auto_id="65535", control_type="ComboBox")
    |    |    |    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    |    |    |    | Static - ''    (L3, T3, R97, B17)
-   |    |    |    |    |    |    |    |    |    |    |    |    |    | ['Static49']
+   |    |    |    |    |    |    |    |    |    |    |    |    |    | ['Static61']
    |    |    |    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    |    |    |    | Button - '열기'    (L1718, T410, R1733, B428)
-   |    |    |    |    |    |    |    |    |    |    |    |    |    | ['열기5', 'Button24', '열기Button5']
+   |    |    |    |    |    |    |    |    |    |    |    |    |    | ['열기Button7', '열기7', 'Button30']
    |    |    |    |    |    |    |    |    |    |    |    |    |    | child_window(title="열기", auto_id="DropDown", control_type="Button")
    |    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    |    | Static - '메타데이터'    (L1767, T410, R1862, B431)
-   |    |    |    |    |    |    |    |    |    |    |    | ['Static50', '메타데이터2', '메타데이터Static']
-   |    |    |    |    |    |    |    |    |    |    |    | child_window(title="메타데이터", auto_id="1454543104", control_type="Text")
+   |    |    |    |    |    |    |    |    |    |    |    | ['Static62', '메타데이터2', '메타데이터Static']
+   |    |    |    |    |    |    |    |    |    |    |    | child_window(title="메타데이터", auto_id="1222225568", control_type="Text")
    |    |    |    |    |    |    |    |    |    |    |    | 
    |    |    |    |    |    |    |    |    |    |    |    | Button - ''    (L1871, T413, R1885, B427)
-   |    |    |    |    |    |    |    |    |    |    |    | ['Button25', '메타데이터Button']
+   |    |    |    |    |    |    |    |    |    |    |    | ['메타데이터Button', 'Button31']
    |    |    |    |    |    |    |    |    |    |    |    | child_window(auto_id="65535", control_type="Button")
    |    |    |    |    |    |    |    |    |    |    | 
-   |    |    |    |    |    |    |    |    |    |    | Pane - 'Collapsible Section'    (L1585, T435, R1887, B744)
-   |    |    |    |    |    |    |    |    |    |    | ['Pane123', 'Collapsible SectionPane8', 'Collapsible Section8']
+   |    |    |    |    |    |    |    |    |    |    | Pane - 'Collapsible Section'    (L1585, T435, R1887, B729)
+   |    |    |    |    |    |    |    |    |    |    | ['Collapsible Section8', 'Pane123', 'Collapsible SectionPane8']
    |    |    |    |    |    |    |    |    |    |    | child_window(title="Collapsible Section", auto_id="100", control_type="Pane")
    |    |    |    |    |    |    |    |    |    |    |    | 
-   |    |    |    |    |    |    |    |    |    |    |    | Pane - '메타데이터'    (L1586, T436, R1885, B742)
-   |    |    |    |    |    |    |    |    |    |    |    | ['Pane124', '메타데이터3', '메타데이터Pane2']
+   |    |    |    |    |    |    |    |    |    |    |    | Pane - '메타데이터'    (L1586, T436, R1885, B727)
+   |    |    |    |    |    |    |    |    |    |    |    | ['메타데이터Pane2', '메타데이터3', 'Pane124']
    |    |    |    |    |    |    |    |    |    |    |    | child_window(title="메타데이터", auto_id="100", control_type="Pane")
    |    |    |    |    |    |    |    |    |    |    |    |    | 
-   |    |    |    |    |    |    |    |    |    |    |    |    | Pane - 'containingView'    (L1586, T436, R1885, B742)
-   |    |    |    |    |    |    |    |    |    |    |    |    | ['containingView', 'Pane125', 'containingViewPane']
+   |    |    |    |    |    |    |    |    |    |    |    |    | Pane - 'containingView'    (L1586, T436, R1885, B727)
+   |    |    |    |    |    |    |    |    |    |    |    |    | ['Pane125', 'containingView', 'containingViewPane']
    |    |    |    |    |    |    |    |    |    |    |    |    | child_window(title="containingView", auto_id="100", control_type="Pane")
    |    |    |    |    |    |    |    |    |    |    |    |    |    | 
-   |    |    |    |    |    |    |    |    |    |    |    |    |    | Pane - 'View'    (L1586, T436, R1885, B737)
-   |    |    |    |    |    |    |    |    |    |    |    |    |    | ['Pane126', 'View20', 'ViewPane20']
+   |    |    |    |    |    |    |    |    |    |    |    |    |    | Pane - 'View'    (L1586, T436, R1885, B722)
+   |    |    |    |    |    |    |    |    |    |    |    |    |    | ['View20', 'ViewPane20', 'Pane126']
    |    |    |    |    |    |    |    |    |    |    |    |    |    | child_window(title="View", auto_id="100", control_type="Pane")
    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | 
-   |    |    |    |    |    |    |    |    |    |    |    |    |    |    | Static - '선택된 사진이 없습니다.'    (L1674, T580, R1798, B594)
-   |    |    |    |    |    |    |    |    |    |    |    |    |    |    | ['Static51', '선택된 사진이 없습니다.', '선택된 사진이 없습니다.Static']
-   |    |    |    |    |    |    |    |    |    |    |    |    |    |    | child_window(title="선택된 사진이 없습니다.", auto_id="1454543616", control_type="Text")
+   |    |    |    |    |    |    |    |    |    |    |    |    |    |    | Static - '선택된 사진이 없습니다.'    (L1674, T572, R1798, B586)
+   |    |    |    |    |    |    |    |    |    |    |    |    |    |    | ['선택된 사진이 없습니다.', 'Static63', '선택된 사진이 없습니다.Static']
+   |    |    |    |    |    |    |    |    |    |    |    |    |    |    | child_window(title="선택된 사진이 없습니다.", auto_id="1222206112", control_type="Text")
    |    |    |    |    |    |    |    |    |    |    | 
-   |    |    |    |    |    |    |    |    |    |    | Pane - '주석'    (L1586, T744, R1886, B771)
-   |    |    |    |    |    |    |    |    |    |    | ['주석', 'Pane127', '주석Pane', '주석0', '주석1']
+   |    |    |    |    |    |    |    |    |    |    | Pane - '주석'    (L1586, T729, R1886, B756)
+   |    |    |    |    |    |    |    |    |    |    | ['주석', '주석Pane', 'Pane127', '주석0', '주석1']
    |    |    |    |    |    |    |    |    |    |    | child_window(title="주석", auto_id="100", control_type="Pane")
    |    |    |    |    |    |    |    |    |    |    |    | 
-   |    |    |    |    |    |    |    |    |    |    |    | Pane - 'View'    (L1586, T744, R1724, B771)
-   |    |    |    |    |    |    |    |    |    |    |    | ['Pane128', 'View21', 'ViewPane21']
+   |    |    |    |    |    |    |    |    |    |    |    | Pane - 'View'    (L1586, T729, R1724, B756)
+   |    |    |    |    |    |    |    |    |    |    |    | ['View21', 'ViewPane21', 'Pane128']
    |    |    |    |    |    |    |    |    |    |    |    | child_window(title="View", auto_id="100", control_type="Pane")
    |    |    |    |    |    |    |    |    |    |    |    | 
-   |    |    |    |    |    |    |    |    |    |    |    | Static - '주석'    (L1724, T748, R1862, B769)
-   |    |    |    |    |    |    |    |    |    |    |    | ['주석2', 'Static52', '주석Static']
-   |    |    |    |    |    |    |    |    |    |    |    | child_window(title="주석", auto_id="1497047728", control_type="Text")
+   |    |    |    |    |    |    |    |    |    |    |    | Static - '주석'    (L1724, T733, R1862, B754)
+   |    |    |    |    |    |    |    |    |    |    |    | ['Static64', '주석2', '주석Static']
+   |    |    |    |    |    |    |    |    |    |    |    | child_window(title="주석", auto_id="1222219424", control_type="Text")
    |    |    |    |    |    |    |    |    |    |    |    | 
-   |    |    |    |    |    |    |    |    |    |    |    | Button - ''    (L1871, T751, R1885, B765)
-   |    |    |    |    |    |    |    |    |    |    |    | ['주석Button', 'Button26']
+   |    |    |    |    |    |    |    |    |    |    |    | Button - ''    (L1871, T736, R1885, B750)
+   |    |    |    |    |    |    |    |    |    |    |    | ['주석Button', 'Button32']
    |    |    |    |    |    |    |    |    |    |    |    | child_window(auto_id="65535", control_type="Button")
    |    |    |    |    |    |    |    |    |    |    | 
-   |    |    |    |    |    |    |    |    |    |    | Pane - 'Collapsible Section'    (L1585, T771, R1887, B776)
-   |    |    |    |    |    |    |    |    |    |    | ['Pane129', 'Collapsible SectionPane9', 'Collapsible Section9']
+   |    |    |    |    |    |    |    |    |    |    | Pane - 'Collapsible Section'    (L1585, T756, R1887, B761)
+   |    |    |    |    |    |    |    |    |    |    | ['Collapsible Section9', 'Pane129', 'Collapsible SectionPane9']
    |    |    |    |    |    |    |    |    |    |    | child_window(title="Collapsible Section", auto_id="100", control_type="Pane")
    |    |    |    |    |    |    |    | 
-   |    |    |    |    |    |    |    | Thumb - ''    (L1891, T308, R1902, B857)
-   |    |    |    |    |    |    |    | ['Thumb3', '빠른 현상Thumb']
-   |    |    |    |    |    |    |    | child_window(auto_id="1452020176", control_type="Thumb")
+   |    |    |    |    |    |    |    | Thumb - ''    (L1891, T308, R1902, B867)
+   |    |    |    |    |    |    |    | ['빠른 현상Thumb', 'Thumb3']
+   |    |    |    |    |    |    |    | child_window(auto_id="1439639072", control_type="Thumb")
    |    |    |    |    |    |    | 
-   |    |    |    |    |    |    | Pane - 'Background View'    (L1581, T857, R1902, B900)
-   |    |    |    |    |    |    | ['Background View5', 'Pane130', 'Background ViewPane5']
-   |    |    |    |    |    |    | child_window(title="Background View", auto_id="1563562992", control_type="Pane")
+   |    |    |    |    |    |    | Pane - 'Background View'    (L1581, T867, R1902, B910)
+   |    |    |    |    |    |    | ['Background ViewPane5', 'Background View5', 'Pane130']
+   |    |    |    |    |    |    | child_window(title="Background View", auto_id="1518453824", control_type="Pane")
    |    |    |    |    |    |    |    | 
-   |    |    |    |    |    |    |    | Pane - 'View'    (L1581, T857, R1891, B900)
-   |    |    |    |    |    |    |    | ['Pane131', 'View22', 'ViewPane22']
+   |    |    |    |    |    |    |    | Pane - 'View'    (L1581, T867, R1891, B910)
+   |    |    |    |    |    |    |    | ['View22', 'ViewPane22', 'Pane131']
    |    |    |    |    |    |    |    | child_window(title="View", auto_id="100", control_type="Pane")
    |    |    |    |    |    |    |    |    | 
-   |    |    |    |    |    |    |    |    | Pane - ' (Bridge View)'    (L1581, T857, R1891, B864)
-   |    |    |    |    |    |    |    |    | [' (Bridge View)37', 'Pane132', ' (Bridge View)Pane37']
+   |    |    |    |    |    |    |    |    | Pane - ' (Bridge View)'    (L1581, T867, R1891, B874)
+   |    |    |    |    |    |    |    |    | [' (Bridge View)Pane37', ' (Bridge View)37', 'Pane132']
    |    |    |    |    |    |    |    |    | child_window(title=" (Bridge View)", auto_id="65535", control_type="Pane")
    |    |    |    |    |    |    |    |    | 
-   |    |    |    |    |    |    |    |    | Pane - 'View'    (L1581, T865, R1891, B894)
-   |    |    |    |    |    |    |    |    | ['Pane133', 'View23', 'ViewPane23']
+   |    |    |    |    |    |    |    |    | Pane - 'View'    (L1581, T875, R1891, B904)
+   |    |    |    |    |    |    |    |    | ['View23', 'ViewPane23', 'Pane133']
    |    |    |    |    |    |    |    |    | child_window(title="View", auto_id="100", control_type="Pane")
    |    |    |    |    |    |    |    |    |    | 
-   |    |    |    |    |    |    |    |    |    | CheckBox - ''    (L1585, T865, R1606, B894)
-   |    |    |    |    |    |    |    |    |    | ['CheckBox5']
+   |    |    |    |    |    |    |    |    |    | CheckBox - ''    (L1585, T875, R1606, B904)
+   |    |    |    |    |    |    |    |    |    | ['CheckBox8', '축소판CheckBox']
    |    |    |    |    |    |    |    |    |    | child_window(auto_id="100", control_type="CheckBox")
    |    |    |    |    |    |    |    |    |    | 
-   |    |    |    |    |    |    |    |    |    | Button - '동기화'    (L1606, T865, R1735, B894)
-   |    |    |    |    |    |    |    |    |    | ['Button27', '동기화Button', '동기화']
+   |    |    |    |    |    |    |    |    |    | Button - '동기화'    (L1606, T875, R1735, B904)
+   |    |    |    |    |    |    |    |    |    | ['동기화Button', '동기화', 'Button33']
    |    |    |    |    |    |    |    |    |    | child_window(title="동기화", auto_id="65535", control_type="Button")
    |    |    |    |    |    |    |    |    |    | 
-   |    |    |    |    |    |    |    |    |    | Button - '설정 동기화'    (L1738, T865, R1887, B894)
-   |    |    |    |    |    |    |    |    |    | ['Button28', '설정 동기화', '설정 동기화Button']
+   |    |    |    |    |    |    |    |    |    | Button - '설정 동기화'    (L1738, T875, R1887, B904)
+   |    |    |    |    |    |    |    |    |    | ['설정 동기화', '설정 동기화Button', 'Button34']
    |    |    |    |    |    |    |    |    |    | child_window(title="설정 동기화", auto_id="65535", control_type="Button")
    |    |    |    |    |    |    |    | 
-   |    |    |    |    |    |    |    | Pane - ' (Bridge View)'    (L1891, T857, R1902, B900)
-   |    |    |    |    |    |    |    | [' (Bridge View)38', 'Pane134', ' (Bridge View)Pane38']
+   |    |    |    |    |    |    |    | Pane - ' (Bridge View)'    (L1891, T867, R1902, B910)
+   |    |    |    |    |    |    |    | [' (Bridge View)Pane38', ' (Bridge View)38', 'Pane134']
    |    |    |    |    |    |    |    | child_window(title=" (Bridge View)", auto_id="65535", control_type="Pane")
    |    |    |    |    | 
-   |    |    |    |    | Pane - ' (Bridge View)'    (L341, T112, R1579, B900)
-   |    |    |    |    | [' (Bridge View)39', 'Pane135', ' (Bridge View)Pane39']
+   |    |    |    |    | Pane - ' (Bridge View)'    (L341, T112, R1579, B910)
+   |    |    |    |    | [' (Bridge View)Pane39', ' (Bridge View)39', 'Pane135']
    |    |    |    |    | child_window(title=" (Bridge View)", auto_id="65535", control_type="Pane")
    |    |    |    |    |    | 
-   |    |    |    |    |    | Pane - 'View'    (L341, T112, R1579, B857)
-   |    |    |    |    |    | ['Pane136', 'View24', 'ViewPane24']
-   |    |    |    |    |    | child_window(title="View", auto_id="100", control_type="Pane")
+   |    |    |    |    |    | Pane - 'gridViewContainer'    (L341, T112, R1579, B867)
+   |    |    |    |    |    | ['gridViewContainer', 'Pane136', 'gridViewContainerPane']
+   |    |    |    |    |    | child_window(title="gridViewContainer", auto_id="100", control_type="Pane")
    |    |    |    |    |    |    | 
-   |    |    |    |    |    |    | Pane - ' (Bridge View)'    (L341, T112, R1579, B857)
-   |    |    |    |    |    |    | [' (Bridge View)40', 'Pane137', ' (Bridge View)Pane40']
-   |    |    |    |    |    |    | child_window(title=" (Bridge View)", auto_id="65535", control_type="Pane")
+   |    |    |    |    |    |    | Pane - 'Background View'    (L341, T112, R1579, B145)
+   |    |    |    |    |    |    | ['Background ViewPane6', 'Background View6', 'Pane137']
+   |    |    |    |    |    |    | child_window(title="Background View", auto_id="1518446400", control_type="Pane")
    |    |    |    |    |    |    |    | 
-   |    |    |    |    |    |    |    | Pane - ' (Bridge View)'    (L341, T112, R1579, B857)
-   |    |    |    |    |    |    |    | [' (Bridge View)41', 'Pane138', ' (Bridge View)Pane41']
+   |    |    |    |    |    |    |    | Pane - ' (Bridge View)'    (L341, T112, R1579, B139)
+   |    |    |    |    |    |    |    | [' (Bridge View)Pane40', ' (Bridge View)40', 'Pane138']
    |    |    |    |    |    |    |    | child_window(title=" (Bridge View)", auto_id="65535", control_type="Pane")
+   |    |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    |    | Pane - ' (Bridge View)'    (L341, T112, R1579, B139)
+   |    |    |    |    |    |    |    |    | [' (Bridge View)Pane41', ' (Bridge View)41', 'Pane139']
+   |    |    |    |    |    |    |    |    | child_window(title=" (Bridge View)", auto_id="65535", control_type="Pane")
+   |    |    |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    |    |    | Static - '라이브러리 필터:'    (L351, T115, R489, B136)
+   |    |    |    |    |    |    |    |    |    | ['라이브러리 필터:Static', 'Static65', '라이브러리 필터:', '라이브러리 필터:0', '라이브러리 필터:1', '라이브러리 필터:Static0', '라이브러리 필터:Static1']
+   |    |    |    |    |    |    |    |    |    | child_window(title="라이브러리 필터:", auto_id="1222208160", control_type="Text")
+   |    |    |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    |    |    | Pane - ' (Bridge View)'    (L834, T120, R835, B133)
+   |    |    |    |    |    |    |    |    |    | [' (Bridge View)Pane42', ' (Bridge View)42', 'Pane140']
+   |    |    |    |    |    |    |    |    |    | child_window(title=" (Bridge View)", auto_id="65535", control_type="Pane")
+   |    |    |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    |    |    | CheckBox - '텍스트'    (L845, T118, R882, B134)
+   |    |    |    |    |    |    |    |    |    | ['텍스트', 'CheckBox9', '텍스트CheckBox']
+   |    |    |    |    |    |    |    |    |    | child_window(title="텍스트", auto_id="100", control_type="CheckBox")
+   |    |    |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    |    |    | Pane - ' (Bridge View)'    (L892, T120, R893, B133)
+   |    |    |    |    |    |    |    |    |    | [' (Bridge View)Pane43', ' (Bridge View)43', 'Pane141']
+   |    |    |    |    |    |    |    |    |    | child_window(title=" (Bridge View)", auto_id="65535", control_type="Pane")
+   |    |    |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    |    |    | CheckBox - '특성'    (L903, T118, R928, B134)
+   |    |    |    |    |    |    |    |    |    | ['CheckBox10', '특성', '특성CheckBox']
+   |    |    |    |    |    |    |    |    |    | child_window(title="특성", auto_id="100", control_type="CheckBox")
+   |    |    |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    |    |    | Pane - ' (Bridge View)'    (L938, T120, R939, B133)
+   |    |    |    |    |    |    |    |    |    | [' (Bridge View)Pane44', ' (Bridge View)44', 'Pane142']
+   |    |    |    |    |    |    |    |    |    | child_window(title=" (Bridge View)", auto_id="65535", control_type="Pane")
+   |    |    |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    |    |    | CheckBox - '메타데이터'    (L949, T118, R1010, B134)
+   |    |    |    |    |    |    |    |    |    | ['CheckBox11', '메타데이터CheckBox', '메타데이터4']
+   |    |    |    |    |    |    |    |    |    | child_window(title="메타데이터", auto_id="100", control_type="CheckBox")
+   |    |    |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    |    |    | Pane - ' (Bridge View)'    (L1020, T120, R1021, B133)
+   |    |    |    |    |    |    |    |    |    | [' (Bridge View)Pane45', ' (Bridge View)45', 'Pane143']
+   |    |    |    |    |    |    |    |    |    | child_window(title=" (Bridge View)", auto_id="65535", control_type="Pane")
+   |    |    |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    |    |    | CheckBox - '없음'    (L1031, T118, R1056, B134)
+   |    |    |    |    |    |    |    |    |    | ['CheckBox12', '없음CheckBox', '없음']
+   |    |    |    |    |    |    |    |    |    | child_window(title="없음", auto_id="100", control_type="CheckBox")
+   |    |    |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    |    |    | Pane - ' (Bridge View)'    (L1066, T120, R1067, B133)
+   |    |    |    |    |    |    |    |    |    | [' (Bridge View)Pane46', ' (Bridge View)46', 'Pane144']
+   |    |    |    |    |    |    |    |    |    | child_window(title=" (Bridge View)", auto_id="65535", control_type="Pane")
+   |    |    |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    |    |    | ComboBox - '라이브러리 필터:'    (L1452, T114, R1549, B137)
+   |    |    |    |    |    |    |    |    |    | ['ComboBox8', '라이브러리 필터:2', '라이브러리 필터:ComboBox']
+   |    |    |    |    |    |    |    |    |    | child_window(title="라이브러리 필터:", auto_id="65535", control_type="ComboBox")
+   |    |    |    |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    |    |    |    | Static - '라이브러리 필터:'    (L3, T3, R77, B20)
+   |    |    |    |    |    |    |    |    |    |    | ['라이브러리 필터:Static2', 'Static66', '라이브러리 필터:3']
+   |    |    |    |    |    |    |    |    |    |    | child_window(title="라이브러리 필터:", control_type="Text")
+   |    |    |    |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    |    |    |    | Button - '열기'    (L1533, T115, R1548, B136)
+   |    |    |    |    |    |    |    |    |    |    | ['열기Button8', '열기8', 'Button35']
+   |    |    |    |    |    |    |    |    |    |    | child_window(title="열기", auto_id="DropDown", control_type="Button")
+   |    |    |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    |    |    | CheckBox - ''    (L1552, T113, R1577, B138)
+   |    |    |    |    |    |    |    |    |    | ['CheckBox13']
+   |    |    |    |    |    |    |    |    |    | child_window(auto_id="100", control_type="CheckBox")
+   |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    | Pane - ' (Bridge View)'    (L341, T139, R1579, B145)
+   |    |    |    |    |    |    |    | [' (Bridge View)Pane47', ' (Bridge View)47', 'Pane145']
+   |    |    |    |    |    |    |    | child_window(title=" (Bridge View)", auto_id="65535", control_type="Pane")
+   |    |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    |    | Pane - ' (Bridge View)'    (L341, T139, R1579, B145)
+   |    |    |    |    |    |    |    |    | [' (Bridge View)Pane48', ' (Bridge View)48', 'Pane146']
+   |    |    |    |    |    |    |    |    | child_window(title=" (Bridge View)", auto_id="65535", control_type="Pane")
+   |    |    |    |    |    |    | 
+   |    |    |    |    |    |    | Pane - 'View'    (L341, T145, R1579, B867)
+   |    |    |    |    |    |    | ['View24', 'ViewPane24', 'Pane147']
+   |    |    |    |    |    |    | child_window(title="View", auto_id="100", control_type="Pane")
+   |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    | Pane - 'View'    (L341, T145, R1579, B867)
+   |    |    |    |    |    |    |    | ['View25', 'ViewPane25', 'Pane148']
+   |    |    |    |    |    |    |    | child_window(title="View", auto_id="100", control_type="Pane")
+   |    |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    |    | Pane - 'Scroll View'    (L341, T145, R1564, B867)
+   |    |    |    |    |    |    |    |    | ['Scroll View4', 'Scroll ViewPane4', 'Pane149']
+   |    |    |    |    |    |    |    |    | child_window(title="Scroll View", auto_id="100", control_type="Pane")
+   |    |    |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    |    |    | Pane - 'ClipView'    (L341, T145, R1564, B867)
+   |    |    |    |    |    |    |    |    |    | ['Pane150', 'ClipViewPane4', 'ClipView4']
+   |    |    |    |    |    |    |    |    |    | child_window(title="ClipView", auto_id="1444890696", control_type="Pane")
+   |    |    |    |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    |    |    |    | Pane - 'LibraryGridView (D2D Bridge View)'    (L341, T145, R1564, B867)
+   |    |    |    |    |    |    |    |    |    |    | ['LibraryGridView (D2D Bridge View)Pane', 'LibraryGridView (D2D Bridge View)', 'Pane151']
+   |    |    |    |    |    |    |    |    |    |    | child_window(title="LibraryGridView (D2D Bridge View)", auto_id="100", control_type="Pane")
+   |    |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    |    | Thumb - ''    (L1564, T145, R1579, B867)
+   |    |    |    |    |    |    |    |    | ['Thumb4', '제목 없음-0001.DNGThumb']
+   |    |    |    |    |    |    |    |    | child_window(auto_id="1213940816", control_type="Thumb")
    |    |    |    |    |    | 
-   |    |    |    |    |    | Pane - ' (Bridge View)'    (L341, T857, R1579, B900)
-   |    |    |    |    |    | [' (Bridge View)42', 'Pane139', ' (Bridge View)Pane42']
+   |    |    |    |    |    | Pane - ' (Bridge View)'    (L341, T867, R1579, B910)
+   |    |    |    |    |    | [' (Bridge View)Pane49', ' (Bridge View)49', 'Pane152']
    |    |    |    |    |    | child_window(title=" (Bridge View)", auto_id="65535", control_type="Pane")
    |    |    |    |    |    |    | 
-   |    |    |    |    |    |    | Pane - 'View'    (L346, T859, R551, B900)
-   |    |    |    |    |    |    | ['Pane140', 'View25', 'ViewPane25']
+   |    |    |    |    |    |    | Pane - 'View'    (L346, T869, R551, B910)
+   |    |    |    |    |    |    | ['View26', 'ViewPane26', 'Pane153']
    |    |    |    |    |    |    | child_window(title="View", auto_id="100", control_type="Pane")
    |    |    |    |    |    |    |    | 
-   |    |    |    |    |    |    |    | Pane - ' (Bridge View)'    (L346, T865, R383, B894)
-   |    |    |    |    |    |    |    | [' (Bridge View)43', 'Pane141', ' (Bridge View)Pane43']
+   |    |    |    |    |    |    |    | Pane - ' (Bridge View)'    (L346, T875, R383, B904)
+   |    |    |    |    |    |    |    | [' (Bridge View)Pane50', ' (Bridge View)50', 'Pane154']
    |    |    |    |    |    |    |    | child_window(title=" (Bridge View)", auto_id="65535", control_type="Pane")
    |    |    |    |    |    |    |    | 
-   |    |    |    |    |    |    |    | Pane - ' (Bridge View)'    (L385, T865, R422, B894)
-   |    |    |    |    |    |    |    | [' (Bridge View)44', 'Pane142', ' (Bridge View)Pane44']
+   |    |    |    |    |    |    |    | Pane - ' (Bridge View)'    (L385, T875, R422, B904)
+   |    |    |    |    |    |    |    | [' (Bridge View)Pane51', ' (Bridge View)51', 'Pane155']
    |    |    |    |    |    |    |    | child_window(title=" (Bridge View)", auto_id="65535", control_type="Pane")
    |    |    |    |    |    |    |    | 
-   |    |    |    |    |    |    |    | Pane - ' (Bridge View)'    (L424, T865, R463, B894)
-   |    |    |    |    |    |    |    | [' (Bridge View)45', 'Pane143', ' (Bridge View)Pane45']
+   |    |    |    |    |    |    |    | Pane - ' (Bridge View)'    (L424, T875, R463, B904)
+   |    |    |    |    |    |    |    | [' (Bridge View)Pane52', ' (Bridge View)52', 'Pane156']
    |    |    |    |    |    |    |    | child_window(title=" (Bridge View)", auto_id="65535", control_type="Pane")
    |    |    |    |    |    |    |    | 
-   |    |    |    |    |    |    |    | Pane - ' (Bridge View)'    (L465, T865, R503, B894)
-   |    |    |    |    |    |    |    | [' (Bridge View)46', 'Pane144', ' (Bridge View)Pane46']
+   |    |    |    |    |    |    |    | Pane - ' (Bridge View)'    (L465, T875, R503, B904)
+   |    |    |    |    |    |    |    | [' (Bridge View)Pane53', ' (Bridge View)53', 'Pane157']
    |    |    |    |    |    |    |    | child_window(title=" (Bridge View)", auto_id="65535", control_type="Pane")
    |    |    |    |    |    |    |    | 
-   |    |    |    |    |    |    |    | Pane - ' (Bridge View)'    (L505, T865, R544, B894)
-   |    |    |    |    |    |    |    | [' (Bridge View)47', 'Pane145', ' (Bridge View)Pane47']
+   |    |    |    |    |    |    |    | Pane - ' (Bridge View)'    (L505, T875, R544, B904)
+   |    |    |    |    |    |    |    | [' (Bridge View)Pane54', ' (Bridge View)54', 'Pane158']
    |    |    |    |    |    |    |    | child_window(title=" (Bridge View)", auto_id="65535", control_type="Pane")
    |    |    |    |    |    |    |    | 
-   |    |    |    |    |    |    |    | Pane - ' (Bridge View)'    (L549, T866, R551, B893)
-   |    |    |    |    |    |    |    | [' (Bridge View)48', 'Pane146', ' (Bridge View)Pane48']
+   |    |    |    |    |    |    |    | Pane - ' (Bridge View)'    (L549, T876, R551, B903)
+   |    |    |    |    |    |    |    | [' (Bridge View)Pane55', ' (Bridge View)55', 'Pane159']
    |    |    |    |    |    |    |    | child_window(title=" (Bridge View)", auto_id="65535", control_type="Pane")
    |    |    |    |    |    |    | 
-   |    |    |    |    |    |    | Pane - 'View'    (L561, T859, R1574, B900)
-   |    |    |    |    |    |    | ['Pane147', 'View26', 'ViewPane26']
+   |    |    |    |    |    |    | Pane - 'View'    (L561, T869, R1574, B910)
+   |    |    |    |    |    |    | ['View27', 'ViewPane27', 'Pane160']
    |    |    |    |    |    |    | child_window(title="View", auto_id="100", control_type="Pane")
    |    |    |    |    |    |    |    | 
-   |    |    |    |    |    |    |    | Pane - 'content'    (L561, T859, R1544, B900)
-   |    |    |    |    |    |    |    | ['content', 'Pane148', 'contentPane']
-   |    |    |    |    |    |    |    | child_window(title="content", auto_id="100", control_type="Pane")
+   |    |    |    |    |    |    |    | Pane - 'View'    (L561, T869, R1574, B910)
+   |    |    |    |    |    |    |    | ['View28', 'ViewPane28', 'Pane161']
+   |    |    |    |    |    |    |    | child_window(title="View", auto_id="100", control_type="Pane")
    |    |    |    |    |    |    |    |    | 
-   |    |    |    |    |    |    |    |    | Pane - 'pick'    (L561, T859, R607, B900)
-   |    |    |    |    |    |    |    |    | ['pick', 'Pane149', 'pickPane']
-   |    |    |    |    |    |    |    |    | child_window(title="pick", auto_id="100", control_type="Pane")
+   |    |    |    |    |    |    |    |    | Pane - 'content'    (L561, T869, R1544, B910)
+   |    |    |    |    |    |    |    |    | ['contentPane', 'Pane162', 'content']
+   |    |    |    |    |    |    |    |    | child_window(title="content", auto_id="100", control_type="Pane")
    |    |    |    |    |    |    |    |    |    | 
-   |    |    |    |    |    |    |    |    |    | Pane - ' (Bridge View)'    (L561, T866, R584, B893)
-   |    |    |    |    |    |    |    |    |    | [' (Bridge View)49', 'Pane150', ' (Bridge View)Pane49']
+   |    |    |    |    |    |    |    |    |    | Pane - 'painter'    (L561, T869, R596, B910)
+   |    |    |    |    |    |    |    |    |    | ['painterPane', 'painter', 'Pane163']
+   |    |    |    |    |    |    |    |    |    | child_window(title="painter", auto_id="100", control_type="Pane")
+   |    |    |    |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    |    |    |    | Pane - ' (Bridge View)'    (L563, T869, R594, B910)
+   |    |    |    |    |    |    |    |    |    |    | [' (Bridge View)Pane56', ' (Bridge View)56', 'Pane164']
+   |    |    |    |    |    |    |    |    |    |    | child_window(title=" (Bridge View)", auto_id="65535", control_type="Pane")
+   |    |    |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    |    |    | Pane - ' (Bridge View)'    (L601, T876, R603, B903)
+   |    |    |    |    |    |    |    |    |    | [' (Bridge View)Pane57', ' (Bridge View)57', 'Pane165']
    |    |    |    |    |    |    |    |    |    | child_window(title=" (Bridge View)", auto_id="65535", control_type="Pane")
    |    |    |    |    |    |    |    |    |    | 
-   |    |    |    |    |    |    |    |    |    | Pane - ' (Bridge View)'    (L584, T866, R607, B893)
-   |    |    |    |    |    |    |    |    |    | [' (Bridge View)50', 'Pane151', ' (Bridge View)Pane50']
+   |    |    |    |    |    |    |    |    |    | Pane - 'sort'    (L608, T869, R828, B910)
+   |    |    |    |    |    |    |    |    |    | ['sortPane', 'sort', 'Pane166']
+   |    |    |    |    |    |    |    |    |    | child_window(title="sort", auto_id="100", control_type="Pane")
+   |    |    |    |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    |    |    |    | Pane - ' (Bridge View)'    (L608, T869, R647, B910)
+   |    |    |    |    |    |    |    |    |    |    | [' (Bridge View)Pane58', ' (Bridge View)58', 'Pane167']
+   |    |    |    |    |    |    |    |    |    |    | child_window(title=" (Bridge View)", auto_id="65535", control_type="Pane")
+   |    |    |    |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    |    |    |    | Static - '정렬:'    (L652, T882, R689, B898)
+   |    |    |    |    |    |    |    |    |    |    | ['정렬:', 'Static67', '정렬:Static', '정렬:0', '정렬:1', '정렬:Static0', '정렬:Static1']
+   |    |    |    |    |    |    |    |    |    |    | child_window(title="정렬:", auto_id="1217211520", control_type="Text")
+   |    |    |    |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    |    |    |    | ComboBox - '정렬:'    (L694, T878, R828, B901)
+   |    |    |    |    |    |    |    |    |    |    | ['정렬:2', 'ComboBox9', '정렬:ComboBox']
+   |    |    |    |    |    |    |    |    |    |    | child_window(title="정렬:", auto_id="65535", control_type="ComboBox")
+   |    |    |    |    |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    |    |    |    |    | Static - '정렬:'    (L3, T3, R114, B20)
+   |    |    |    |    |    |    |    |    |    |    |    | ['정렬:3', 'Static68', '정렬:Static2']
+   |    |    |    |    |    |    |    |    |    |    |    | child_window(title="정렬:", control_type="Text")
+   |    |    |    |    |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    |    |    |    |    | Button - '열기'    (L812, T879, R827, B900)
+   |    |    |    |    |    |    |    |    |    |    |    | ['열기Button9', '열기9', 'Button36']
+   |    |    |    |    |    |    |    |    |    |    |    | child_window(title="열기", auto_id="DropDown", control_type="Button")
+   |    |    |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    |    |    | Pane - ' (Bridge View)'    (L833, T876, R835, B903)
+   |    |    |    |    |    |    |    |    |    | [' (Bridge View)Pane59', ' (Bridge View)59', 'Pane168']
    |    |    |    |    |    |    |    |    |    | child_window(title=" (Bridge View)", auto_id="65535", control_type="Pane")
+   |    |    |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    |    |    | Pane - 'image_size'    (L840, T869, R1539, B910)
+   |    |    |    |    |    |    |    |    |    | ['Pane169', 'image_size', 'image_sizePane']
+   |    |    |    |    |    |    |    |    |    | child_window(title="image_size", auto_id="100", control_type="Pane")
+   |    |    |    |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    |    |    |    | Static - '축소판'    (L1454, T879, R1501, B895)
+   |    |    |    |    |    |    |    |    |    |    | ['축소판Static', 'Static69', '축소판']
+   |    |    |    |    |    |    |    |    |    |    | child_window(title="축소판", auto_id="1217207936", control_type="Text")
+   |    |    |    |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    |    |    |    | Slider - '축소판'    (L1450, T894, R1538, B910)
+   |    |    |    |    |    |    |    |    |    |    | ['축소판Slider', 'Slider']
+   |    |    |    |    |    |    |    |    |    |    | child_window(title="축소판", auto_id="100", control_type="Slider")
+   |    |    |    |    |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    |    |    |    |    | Button - '페이지 왼쪽으로'    (L1455, T897, R1481, B901)
+   |    |    |    |    |    |    |    |    |    |    |    | ['페이지 왼쪽으로', '페이지 왼쪽으로Button', 'Button37']
+   |    |    |    |    |    |    |    |    |    |    |    | child_window(title="페이지 왼쪽으로", control_type="Button")
+   |    |    |    |    |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    |    |    |    |    | Thumb - '위치'    (L1481, T896, R1486, B905)
+   |    |    |    |    |    |    |    |    |    |    |    | ['위치Thumb', '위치', 'Thumb5']
+   |    |    |    |    |    |    |    |    |    |    |    | child_window(title="위치", control_type="Thumb")
+   |    |    |    |    |    |    |    |    |    |    |    | 
+   |    |    |    |    |    |    |    |    |    |    |    | Button - '페이지 오른쪽으로'    (L1486, T897, R1533, B901)
+   |    |    |    |    |    |    |    |    |    |    |    | ['페이지 오른쪽으로', 'Button38', '페이지 오른쪽으로Button']
+   |    |    |    |    |    |    |    |    |    |    |    | child_window(title="페이지 오른쪽으로", control_type="Button")
    |    |    |    |    |    |    |    |    | 
-   |    |    |    |    |    |    |    |    | Pane - ' (Bridge View)'    (L612, T866, R614, B893)
-   |    |    |    |    |    |    |    |    | [' (Bridge View)51', 'Pane152', ' (Bridge View)Pane51']
+   |    |    |    |    |    |    |    |    | Pane - ' (Bridge View)'    (L1544, T876, R1546, B903)
+   |    |    |    |    |    |    |    |    | [' (Bridge View)Pane60', ' (Bridge View)60', 'Pane170']
    |    |    |    |    |    |    |    |    | child_window(title=" (Bridge View)", auto_id="65535", control_type="Pane")
    |    |    |    |    |    |    |    |    | 
-   |    |    |    |    |    |    |    |    | Pane - 'rating'    (L619, T859, R704, B900)
-   |    |    |    |    |    |    |    |    | ['rating', 'Pane153', 'ratingPane']
-   |    |    |    |    |    |    |    |    | child_window(title="rating", auto_id="100", control_type="Pane")
-   |    |    |    |    |    |    |    |    |    | 
-   |    |    |    |    |    |    |    |    |    | Pane - ' (Bridge View)'    (L619, T871, R704, B888)
-   |    |    |    |    |    |    |    |    |    | [' (Bridge View)52', 'Pane154', ' (Bridge View)Pane52']
-   |    |    |    |    |    |    |    |    |    | child_window(title=" (Bridge View)", auto_id="65535", control_type="Pane")
-   |    |    |    |    |    |    |    |    | 
-   |    |    |    |    |    |    |    |    | Pane - ' (Bridge View)'    (L709, T866, R711, B893)
-   |    |    |    |    |    |    |    |    | [' (Bridge View)53', 'Pane155', ' (Bridge View)Pane53']
+   |    |    |    |    |    |    |    |    | Pane - ' (Bridge View)'    (L1554, T881, R1569, B899)
+   |    |    |    |    |    |    |    |    | [' (Bridge View)Pane61', ' (Bridge View)61', 'Pane171']
    |    |    |    |    |    |    |    |    | child_window(title=" (Bridge View)", auto_id="65535", control_type="Pane")
-   |    |    |    |    |    |    |    |    | 
-   |    |    |    |    |    |    |    |    | Pane - 'rotate'    (L716, T859, R776, B900)
-   |    |    |    |    |    |    |    |    | ['Pane156', 'rotate', 'rotatePane']
-   |    |    |    |    |    |    |    |    | child_window(title="rotate", auto_id="100", control_type="Pane")
-   |    |    |    |    |    |    |    |    |    | 
-   |    |    |    |    |    |    |    |    |    | Pane - ' (Bridge View)'    (L716, T859, R746, B900)
-   |    |    |    |    |    |    |    |    |    | [' (Bridge View)54', 'Pane157', ' (Bridge View)Pane54']
-   |    |    |    |    |    |    |    |    |    | child_window(title=" (Bridge View)", auto_id="65535", control_type="Pane")
-   |    |    |    |    |    |    |    |    |    | 
-   |    |    |    |    |    |    |    |    |    | Pane - ' (Bridge View)'    (L746, T859, R776, B900)
-   |    |    |    |    |    |    |    |    |    | [' (Bridge View)55', 'Pane158', ' (Bridge View)Pane55']
-   |    |    |    |    |    |    |    |    |    | child_window(title=" (Bridge View)", auto_id="65535", control_type="Pane")
-   |    |    |    |    |    |    |    |    | 
-   |    |    |    |    |    |    |    |    | Pane - ' (Bridge View)'    (L781, T866, R783, B893)
-   |    |    |    |    |    |    |    |    | [' (Bridge View)56', 'Pane159', ' (Bridge View)Pane56']
-   |    |    |    |    |    |    |    |    | child_window(title=" (Bridge View)", auto_id="65535", control_type="Pane")
-   |    |    |    |    |    |    |    |    | 
-   |    |    |    |    |    |    |    |    | Pane - 'draw_region'    (L788, T859, R1539, B900)
-   |    |    |    |    |    |    |    |    | ['Pane160', 'draw_regionPane', 'draw_region']
-   |    |    |    |    |    |    |    |    | child_window(title="draw_region", auto_id="100", control_type="Pane")
-   |    |    |    |    |    |    |    |    |    | 
-   |    |    |    |    |    |    |    |    |    | Pane - ' (Bridge View)'    (L788, T868, R812, B892)
-   |    |    |    |    |    |    |    |    |    | [' (Bridge View)57', 'Pane161', ' (Bridge View)Pane57']
-   |    |    |    |    |    |    |    |    |    | child_window(title=" (Bridge View)", auto_id="65535", control_type="Pane")
-   |    |    |    |    |    |    |    |    |    | 
-   |    |    |    |    |    |    |    |    |    | Static - ''    (L822, T872, R1539, B888)
-   |    |    |    |    |    |    |    |    |    | ['Static53', 'FlickrStatic2']
-   |    |    |    |    |    |    |    |    |    | child_window(auto_id="1491477904", control_type="Text")
-   |    |    |    |    |    |    |    | 
-   |    |    |    |    |    |    |    | Pane - ' (Bridge View)'    (L1544, T866, R1546, B893)
-   |    |    |    |    |    |    |    | [' (Bridge View)58', 'Pane162', ' (Bridge View)Pane58']
-   |    |    |    |    |    |    |    | child_window(title=" (Bridge View)", auto_id="65535", control_type="Pane")
-   |    |    |    |    |    |    |    | 
-   |    |    |    |    |    |    |    | Pane - ' (Bridge View)'    (L1554, T871, R1569, B889)
-   |    |    |    |    |    |    |    | [' (Bridge View)59', 'Pane163', ' (Bridge View)Pane59']
-   |    |    |    |    |    |    |    | child_window(title=" (Bridge View)", auto_id="65535", control_type="Pane")
    | 
    | TitleBar - ''    (L16, T-5, R1920, B23)
-   | ['TitleBar']
+   | ['TitleBar2']
    |    | 
    |    | Menu - '시스템'    (L0, T0, R22, B22)
-   |    | ['Menu', '시스템', '시스템Menu', '시스템0', '시스템1', 'Menu0', 'Menu1']
+   |    | ['시스템', 'Menu', '시스템Menu', '시스템0', '시스템1', 'Menu0', 'Menu1']
    |    | child_window(title="시스템", auto_id="MenuBar", control_type="MenuBar")
    |    |    | 
    |    |    | MenuItem - '시스템'    (L0, T0, R22, B22)
@@ -1083,19 +1328,19 @@ child_window(title="Lightroom Catalog - Adobe Photoshop Lightroom Classic - 라�
    |    |    | child_window(title="시스템", control_type="MenuItem")
    |    | 
    |    | Button - '최소화'    (L1779, T8, R1826, B22)
-   |    | ['최소화', 'Button29', '최소화Button']
+   |    | ['최소화Button', 'Button39', '최소화']
    |    | child_window(title="최소화", control_type="Button")
    |    | 
    |    | Button - '복원'    (L1826, T8, R1872, B22)
-   |    | ['복원', '복원Button', 'Button30']
+   |    | ['복원Button', '복원', 'Button40']
    |    | child_window(title="복원", control_type="Button")
    |    | 
    |    | Button - '닫기'    (L1872, T8, R1928, B22)
-   |    | ['Button31', '닫기', '닫기Button']
+   |    | ['닫기Button2', '닫기2', 'Button41']
    |    | child_window(title="닫기", control_type="Button")
    | 
    | Menu - '응용 프로그램'    (L0, T23, R1920, B42)
-   | ['Menu2', '응용 프로그램Menu', '응용 프로그램']
+   | ['응용 프로그램Menu', '응용 프로그램', 'Menu2']
    | child_window(title="응용 프로그램", auto_id="MenuBar", control_type="MenuBar")
    |    | 
    |    | MenuItem - '파일(F)'    (L0, T23, R52, B42)
@@ -1107,25 +1352,31 @@ child_window(title="Lightroom Catalog - Adobe Photoshop Lightroom Classic - 라�
    |    | child_window(title="편집(E)", control_type="MenuItem")
    |    | 
    |    | MenuItem - '라이브러리(L)'    (L104, T23, R192, B42)
-   |    | ['라이브러리(L)MenuItem', 'MenuItem4', '라이브러리(L)']
+   |    | ['라이브러리(L)', 'MenuItem4', '라이브러리(L)MenuItem']
    |    | child_window(title="라이브러리(L)", control_type="MenuItem")
    |    | 
    |    | MenuItem - '사진(P)'    (L192, T23, R245, B42)
-   |    | ['MenuItem5', '사진(P)', '사진(P)MenuItem']
+   |    | ['MenuItem5', '사진(P)MenuItem', '사진(P)']
    |    | child_window(title="사진(P)", control_type="MenuItem")
    |    | 
    |    | MenuItem - '메타데이터(M)'    (L245, T23, R338, B42)
-   |    | ['MenuItem6', '메타데이터(M)', '메타데이터(M)MenuItem']
+   |    | ['MenuItem6', '메타데이터(M)MenuItem', '메타데이터(M)']
    |    | child_window(title="메타데이터(M)", control_type="MenuItem")
    |    | 
    |    | MenuItem - '보기(V)'    (L338, T23, R392, B42)
-   |    | ['MenuItem7', '보기(V)', '보기(V)MenuItem']
+   |    | ['보기(V)MenuItem', 'MenuItem7', '보기(V)']
    |    | child_window(title="보기(V)", control_type="MenuItem")
    |    | 
    |    | MenuItem - '창(W)'    (L392, T23, R437, B42)
-   |    | ['창(W)MenuItem', 'MenuItem8', '창(W)']
+   |    | ['MenuItem8', '창(W)', '창(W)MenuItem']
    |    | child_window(title="창(W)", control_type="MenuItem")
    |    | 
    |    | MenuItem - '도움말(H)'    (L437, T23, R504, B42)
-   |    | ['도움말(H)', 'MenuItem9', '도움말(H)MenuItem']
+   |    | ['MenuItem9', '도움말(H)MenuItem', '도움말(H)']
    |    | child_window(title="도움말(H)", control_type="MenuItem")
+❌ Lightroom 자동화 실패: Neither GUI element (wrapper) nor wrapper method 'set_test' were found (typo?)
+----------------- [📢] 상태 변경 감지: 자동화 끝! 오버레이 종료 -----------------
+사용자이름: sd
+전화번호: dasd
+라이트룸 실행여부: 실행
+오버레이 실행여부: 중지

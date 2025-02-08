@@ -6,6 +6,7 @@ from state_manager.StateManager import StateManager
 from .utils.get_lightroom_win import get_lightroom_win
 from lightroom.utils.select_ui import select_ui
 from PySide6.QtCore import QThread, Signal
+from lightroom.set_template.set_template import set_template
 
 
 def lock_input():
@@ -97,6 +98,8 @@ class LightroomAutomationThread(QThread):
             input_session_id_field.set_text("")
             input_session_id_field.set_text(f"{state.username}{state.phone_number}")
             print("✅ 사용자 이름과 전화번호 입력 완료!")
+
+            set_template(win_spects=lightroom)
 
             # ✅ 확인 버튼 클릭
             confirm_button = select_ui(
