@@ -113,7 +113,7 @@ class LightroomAutomationThread(QThread):
             input_session_id_field = select_ui(
                 win_specs=lightroom, title="세션 이름:", control_type="Edit"
             )
-            input_session_id_field.set_text("")
+
             input_session_id_field.set_text(f"{state.username}{state.phone_number}")
             print("✅ 사용자 이름과 전화번호 입력 완료!")
 
