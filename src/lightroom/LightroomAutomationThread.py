@@ -1,3 +1,4 @@
+import threading
 import time
 import ctypes
 import pyautogui
@@ -7,6 +8,7 @@ from .utils.get_lightroom_win import get_lightroom_win
 from lightroom.utils.select_ui import select_ui
 from PySide6.QtCore import QThread, Signal
 from lightroom.set_template.set_template import set_template
+from mornitorings.TaskManagerDetector import TaskManagerDetector
 
 
 def lock_input():
@@ -28,9 +30,25 @@ class LightroomAutomationThread(QThread):
 
     def __init__(self):
         super().__init__()
+        self.stop_flag = False  # ✅ 자동화 중지 플래그
+        self.task_detector = TaskManagerDetector(
+            self.stop_automation
+        )  # ✅ 키 감지기 생성
+
+    def stop_automation(self):
+        """✅ `Ctrl + Alt + Delete` 감지 시 자동화 강제 중단"""
+        print("❌ 자동화 강제 중단됨!")
+        self.stop_flag = True
+        unlock_input()  # ✅ 입력 차단 해제
+        self.task_detector.stop()  # ✅ 키 감지 스레드 종료
+        self.finished.emit(False)  # ❌ 자동화 실패 시그널 발생
+        self.quit()
 
     def run(self):
         lock_input()
+
+        self.task_detector.start()
+
         state_manager = StateManager()
         state = state_manager.get_state()
 
@@ -61,7 +79,6 @@ class LightroomAutomationThread(QThread):
             time.sleep(0.1)
 
         print("✅ Lightroom 공지 닫기 완료!")
-
 
         self.adobe_note_closed.emit(True)
 
@@ -111,10 +128,17 @@ class LightroomAutomationThread(QThread):
 
             state_manager.update_state(overlay_hide=True)
 
-            print("✅ Lightroom 자동화 완료 🚀")
-            self.finished.emit(True)  # ✅ 자동화 성공 시그널 발생
+            try:
+                if self.stop_flag:
+                    return
 
-            unlock_input()
+                print("✅ Lightroom 자동화 완료 🚀")
+                self.finished.emit(True)  # ✅ 자동화 성공 시그널 발생
+                unlock_input()
+
+            except Exception as e:
+                print(f"❌ Lightroom 자동화 실패: {e}")
+                self.finished.emit(False)  # ❌ 자동화 실패 시그널 발생
 
         except Exception as e:
             print(f"❌ Lightroom 자동화 실패: {e}")

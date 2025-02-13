@@ -13,8 +13,6 @@ from PySide6.QtWidgets import (
 from PySide6.QtCore import QThread, Signal, Qt, QMetaObject
 from state_manager import StateManager, AppState
 from lightroom import LightroomAutomationThread, LightroomLaunchThread
-
-from monitorings.LightroomMonitorThread import LightroomMonitorThread
 from ui.overlay.OverlayWindow import OverlayWindow
 
 
@@ -149,30 +147,28 @@ class MainWindow(QMainWindow):
         """💡 프로그램 종료 전 모든 리소스를 완전히 정리하는 함수"""
         print("🔄 모든 리소스 정리 중...")
 
-        # ✅ 1. 스레드 강제 종료 (QThread가 완전히 종료되었는지 확인)
         if self.thread_lightroom_launcher:
             if self.thread_lightroom_launcher.isRunning():
-                print("⚠️ Lightroom 실행 스레드 강제 종료")
                 self.thread_lightroom_launcher.terminate()
+                print("⚠️ Lightroom 실행 스레드 강제 종료")
             self.thread_lightroom_launcher.quit()
             self.thread_lightroom_launcher.wait()
             self.thread_lightroom_launcher = None
 
         if self.thread_lightroom_automation:
             if self.thread_lightroom_automation.isRunning():
-                print("⚠️ Lightroom 자동화 스레드 강제 종료")
                 self.thread_lightroom_automation.terminate()
+                print("⚠️ Lightroom 자동화 스레드 강제 종료")
+
             self.thread_lightroom_automation.quit()
             self.thread_lightroom_automation.wait()
             self.thread_lightroom_automation = None
 
-        # ✅ 2. 오버레이 정리 (UI 리소스 해제)
         if self.overlay_window:
-            print("⚠️ 오버레이이 스레드 강제 종료")
             self.overlay_window.close()
             self.overlay_window.deleteLater()
             self.overlay_window = None
-        OverlayWindow._instance = None  # 싱글톤 인스턴스 초기화
+            print("⚠️ 오버레이이 스레드 강제 종료")
 
         # ✅ 3. 상태 관리자 해제
         self.state_manager = None
