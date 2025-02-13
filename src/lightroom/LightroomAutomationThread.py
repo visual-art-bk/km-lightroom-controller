@@ -37,32 +37,33 @@ class LightroomAutomationThread(QThread):
         # ✅ Lightroom 프로세스에 직접 연결
         try:
             app = Application(backend="uia").connect(
-                path=r"C:\Program Files\Adobe\Adobe Lightroom Classic\Lightroom.exe",
-                timeout=15,  # Lightroom 연결 시도 (최대 15초 대기)
+                title_re=".*Lightroom Classic.*", timeout=15
             )
-            print("✅ Lightroom에 성공적으로 연결됨!")
+
+            lightroom = app.window(title_re=".*Lightroom Classic.*")
+
+            lightroom.wait("exists enabled visible ready", timeout=10)
+
+            print("Lightroom에 성공적으로 연결됨!")
+
         except Exception as e:
             print(f"❌ Lightroom 연결 실패: {e}")
             self.finished.emit(False)  # ❌ 연결 실패 시그널 발생
             return
 
-        # ✅ Lightroom 창 가져오기
-        lightroom = get_lightroom_win(app)
+        lightroom.wrapper_object().maximize()
+        lightroom.wrapper_object().set_focus()
 
-        time.sleep(3)
-
-        # ✅ ESC 키를 3번 누르기 (0.5초 간격)
         print("🚀 Lightroom 공지 닫기: ESC 키 3회 입력 시작...")
-        for i in range(10):
+        for i in range(15):
             keyboard.send_keys("{ESC}")  # ✅ ESC 키 입력
             print(f"✅ ESC 키 입력 {i+1}/3 완료")
             time.sleep(0.1)
 
         print("✅ Lightroom 공지 닫기 완료!")
 
-        self.adobe_note_closed.emit(True)
 
-        # time.sleep(1.5)
+        self.adobe_note_closed.emit(True)
 
         try:
 

@@ -14,7 +14,6 @@ from PySide6.QtCore import QThread, Signal, Qt, QMetaObject
 from state_manager import StateManager, AppState
 from lightroom import LightroomAutomationThread, LightroomLaunchThread
 
-# from ui.overlay.OverlayWindow import OverlayWindow
 from monitorings.LightroomMonitorThread import LightroomMonitorThread
 from ui.overlay.OverlayWindow import OverlayWindow
 
@@ -27,7 +26,7 @@ class MainWindow(QMainWindow):
 
         self.init_state_manager()
 
-        self.setWindowTitle("다비 촬영 매니저 V.2.1")
+        self.setWindowTitle("다비 촬영 매니저")
 
         self.init_window_position(
             height=height, width=width
@@ -36,7 +35,6 @@ class MainWindow(QMainWindow):
         self.init_window_layout()
 
         self.overlay_window = None
-        self.lightroom_monitor = None
         self.thread_lightroom_automation = None
 
     def init_window_layout(self):
@@ -99,16 +97,12 @@ class MainWindow(QMainWindow):
     def init_threads(self):
         self.thread_lightroom_launcher = LightroomLaunchThread()
         self.thread_lightroom_automation = LightroomAutomationThread()
-        self.thread_lightroom_mornitor = LightroomMonitorThread()
 
         self.thread_lightroom_automation.finished.connect(
             self.on_lightroom_automation_finished
         )
         self.thread_lightroom_automation.adobe_note_closed.connect(
             self.on_lightroom_launcher_started
-        )
-        self.thread_lightroom_mornitor.lightroom_closed_mornitoring.connect(
-            self.on_lightroom_closed_mornitoring
         )
 
         self.thread_lightroom_launcher.start()
@@ -142,21 +136,14 @@ class MainWindow(QMainWindow):
         self.create_overlay()
 
     def create_overlay(self, text="마우스 및 키보드를 절대 건들지 마세요 :)"):
-        """✅ `overlay_running=True`이면 OverlayWindow 생성"""
-        if self.overlay_window is None:
-            self.overlay_window = OverlayWindow.create_overlay(
-                width=500,
-                height=225,
-                bg_color="#f7dfdf",
-                opacity=1,
-                text_color="black",
-                font_size=20,
-                y_offset=24,
-                blur_radius=50,
-            )
-            self.overlay_window.show()
-        else:
-            print("해당없음")
+        """독립적인 오버레이 창을 생성하고 부모 윈도우와 시그널 연결"""
+        if self.overlay_window is not None:
+            print("이미 오버레이가 생성 중입니다.")
+            return
+
+        self.overlay_window = OverlayWindow()  #  독립적인 오버레이 생성
+        self.overlay_window.show()
+
 
     def cleanup_and_exit(self):
         """💡 프로그램 종료 전 모든 리소스를 완전히 정리하는 함수"""
@@ -178,14 +165,6 @@ class MainWindow(QMainWindow):
             self.thread_lightroom_automation.quit()
             self.thread_lightroom_automation.wait()
             self.thread_lightroom_automation = None
-
-        if self.thread_lightroom_mornitor:
-            if self.thread_lightroom_mornitor.isRunning():
-                print("⚠️ Lightroom 모니터링 스레드 강제 종료")
-                self.thread_lightroom_mornitor.terminate()
-            self.thread_lightroom_mornitor.quit()
-            self.thread_lightroom_mornitor.wait()
-            self.thread_lightroom_mornitor = None
 
         # ✅ 2. 오버레이 정리 (UI 리소스 해제)
         if self.overlay_window:
@@ -209,9 +188,6 @@ class MainWindow(QMainWindow):
         print("🚀 모든 리소스 해제 완료 → 시스템 프로세스 강제 종료")
         os._exit(0)  # 💀 시스템 차원에서 프로세스 완전 제거
 
-    def on_lightroom_closed_mornitoring(self):
-        pass
-
     def on_lightroom_automation_finished(self):
         # ✅ 기존 오버레이 삭제
         if self.overlay_window is not None:
@@ -222,19 +198,7 @@ class MainWindow(QMainWindow):
             overlay_running=False,
         )
 
-        self.hide()
-
-    def on_lightroom_closed_mornitoring(self):
-        print("✅ Lightroom 종료 감지 → 프로그램 종료")
-
-        self.state_manager.update_state(
-            context="Lightroom 종료 → 프로그램 종료",
-            lightroom_running=False,
-        )
-
         self.cleanup_and_exit()
-
-        QApplication.quit()  # ✅ `QApplication` 종료 (완전히 종료)
 
     def on_lightroom_launcher_started(self, success):
         if success:
@@ -243,15 +207,12 @@ class MainWindow(QMainWindow):
                 lightroom_running=True,
             )
 
-            time.sleep(2)
+   
 
             self.state_manager.update_state(
                 context="오버레이 실행 완료",
                 overlay_running=True,
             )
-
-            # ✅ Lightroom이 실행되면 종료 감지 스레드 시작
-            self.thread_lightroom_mornitor.start()
 
         else:
             print("❌ Lightroom 실행 실패! 오버레이 실행 안 함")

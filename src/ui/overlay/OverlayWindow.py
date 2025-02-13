@@ -1,85 +1,99 @@
-from PySide6.QtWidgets import QWidget
-from PySide6.QtCore import Qt
-from ui.overlay.TextContainerWidget import TextContainerWidget
-from ui.overlay.text_contents import text_contents
+from PySide6.QtWidgets import QWidget, QVBoxLayout, QSizePolicy
+from PySide6.QtCore import Qt, Signal
+from ui.buttons.close_btn import close_btn
+from ui.content_layout.content_layout import content_layout
+from ui.effects.ImageSlideshow import ImageSlideshow
 from ui.utils.apply_bg_wideg_style import apply_bg_wideg_style
 
 
 class OverlayWindow(QWidget):
-    """배경 역할을 하는 오버레이 창"""
+    overlay_closed = Signal()
 
-    _instance = None  # 싱글턴 패턴 적용
+    def __init__(self):
+        super().__init__(None)  # 부모 없음 (독립 창)
 
-    def __init__(
-        self,
-        width=500,
-        height=250,
-        bg_color="#0000FF",  # ✅ 기본값 파란색 배경
-        text_color="yellow",  # ✅ 기본값 노란색 텍스트
-        font_size=30,
-        animation_speed=20,
-        y_offset=100,  # ✅ Y축 위치 조정 가능
-        opacity=0.5,  # ✅ 투명도 추가 (0.0 ~ 1.0)
-        blur_radius=10,  # ✅ 블러 강도 추가 (0 이상)
-    ):
-        super().__init__()
+        self.overlay_width = 400
+        self.overlay_height = 250
+        self.init_position()  # 창 위치 초기화
 
-        self.width = width
-        self.height = height
-        self.y_offset = y_offset  # Y축 위치 저장
-        self.bg_color = bg_color  # ✅ 배경색 저장
-        self.opacity = opacity  # ✅ 투명도 저장
-        self.animation_speed = animation_speed
-        self.blur_radius = blur_radius  # ✅ 블러 강도 저장
-
-        self.setWindowTitle("오버레이 창")
-        self.setWindowFlags(Qt.FramelessWindowHint | Qt.WindowStaysOnTopHint)
-
-        # ✅ 부모 `OverlayWindow`를 완전히 투명하게 설정
+        # ✅ 배경 투명 설정, 슬라이드 쇼를 위한 것것
         self.setAttribute(Qt.WA_TranslucentBackground)
+        self.setWindowFlags(Qt.FramelessWindowHint | Qt.Tool | Qt.WindowStaysOnTopHint)
 
-        # ✅ 배경 위젯 추가 (부모 위젯이 아니라 별도 위젯으로 투명도 적용)
-        self.bg_widget = QWidget(self)
+        self.setup_layout()
 
-        self.bg_widget.setGeometry(0, 0, self.width, self.height)
-        bg_style = apply_bg_wideg_style(bg_color=self.bg_color, opacity=self.opacity)
-        self.bg_widget.setStyleSheet(bg_style)
+        bg_color = "#F8F9FA"  # ✅ 원하는 HEX 색상 (연한 회색)
+        opacity = 0.85  # ✅ 투명도 (0.0 ~ 1.0)
 
-        self.text_container = TextContainerWidget(
-            text_contents=text_contents,
-            font_sizes=font_size,
-            text_color=text_color,
-            height=self.height,
+        self.setStyleSheet(apply_bg_wideg_style(bg_color, opacity))
+
+    def set_btn_close(self, overlay_container):
+        if overlay_container == None:
+            raise ValueError("overlay_container가 초기화되지 않았음")
+        btn_close = close_btn()
+        btn_close.setParent(overlay_container)
+        btn_close.move(self.overlay_width - 40, 10)
+        btn_close.clicked.connect(self.close_overlay)
+
+    def set_cotainer_layout(self):
+        ###### 지워서는 안됨! 향후 적용될 수 있음!
+        # slideshow = ImageSlideshow(
+        #     width=self.overlay_width,
+        #     height=self.overlay_height,
+        #     aspect_ratio_mode=Qt.KeepAspectRatioByExpanding,
+        # )
+        # slideshow.setSizePolicy(
+        #     QSizePolicy.Expanding, QSizePolicy.Expanding
+        # )  # ✅ 크기 자동 조정
+        #
+        # 해당 선언이 되었다면, 아래의 주석 처리된,layout.addWidget(slideshow) 호출해야함함
+        #
+        ##############################################################
+
+        # 안내 가이드, 현재 슬라이드를 대체함함
+        guide_contents = content_layout(height=self.overlay_height)
+
+        overlay_container = QWidget(self)
+        overlay_container.setObjectName("overlayContainer")
+        styles = apply_bg_wideg_style(
+            bg_color="#ffe2e0", opacity=0.9, target="#overlayContainer"
         )
-        self.text_container.setParent(self)
-        self.text_container.setGeometry(0, 0, self.width, self.height)
+        overlay_container.setStyleSheet(styles)
 
-        # 창 중앙 정렬
-        self.center_window()
+        layout = QVBoxLayout()
+        layout.setContentsMargins(0, 0, 0, 0)
 
-    def center_window(self):
-        """창을 화면 좌우 정가운데 위치시키고, 위아래(Y축)는 사용자 지정"""
+        ### 향후 사진 슬라이드를 위해 이 코드를 사용해야 함.
+        # layout.addWidget(slideshow)
+        
+        layout.addLayout(guide_contents)
+
+        overlay_container.setLayout(layout)
+        overlay_container.setGeometry(0, 0, self.overlay_width, self.overlay_height)
+
+        return overlay_container
+
+    def close_overlay(self):
+        """✅ 오버레이 닫고 부모 윈도우에 신호 전달"""
+        self.overlay_closed.emit()
+        self.close()
+
+    def init_position(self):
+        """✅ 창을 화면 좌우 정중앙에 위치"""
         screen_geometry = self.screen().availableGeometry()
         screen_width = screen_geometry.width()
-        screen_height = screen_geometry.height()
+        x_pos = (screen_width - self.overlay_width) // 2
+        y_pos = 18  # 고정된 Y축 위치
+        self.setGeometry(x_pos, y_pos, self.overlay_width, self.overlay_height)
 
-        x_pos = (screen_width - self.width) // 2  # 좌우 정중앙
-        y_pos = min(
-            max(self.y_offset, 0), screen_height - self.height
-        )  # Y축 커스텀 가능
+    def setup_layout(self):
+        """전체 UI 레이아웃 설정"""
+        overlay_container = self.set_cotainer_layout()
 
-        self.setGeometry(x_pos, y_pos, self.width, self.height)
+        self.set_btn_close(overlay_container)  # Absolute postin 효과를 위해 나중에 추가
 
-    @classmethod
-    def create_overlay(cls, **kwargs):
-        """싱글턴 방식으로 오버레이 창을 생성"""
-        if cls._instance is None:
-            cls._instance = OverlayWindow(**kwargs)
-        return cls._instance
+        main_layout = QVBoxLayout()
+        main_layout.setContentsMargins(0, 0, 0, 0)
+        main_layout.addWidget(overlay_container)
 
-    @classmethod
-    def close_overlay(cls):
-        """오버레이 창을 닫는 메서드"""
-        if cls._instance:
-            cls._instance.close()
-            cls._instance = None
+        self.setLayout(main_layout)
