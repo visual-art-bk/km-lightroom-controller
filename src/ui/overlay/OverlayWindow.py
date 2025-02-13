@@ -32,7 +32,8 @@ class OverlayWindow(QWidget):
             raise ValueError("overlay_container가 초기화되지 않았음")
         btn_close = close_btn()
         btn_close.setParent(overlay_container)
-        btn_close.move(self.overlay_width - 40, 10)
+        print(self.overlay_width)
+        btn_close.move(self.overlay_width + 45, 10)
         btn_close.clicked.connect(self.close_overlay)
 
     def set_cotainer_layout(self):
@@ -65,7 +66,7 @@ class OverlayWindow(QWidget):
 
         ### 향후 사진 슬라이드를 위해 이 코드를 사용해야 함.
         # layout.addWidget(slideshow)
-        
+
         layout.addLayout(guide_contents)
 
         overlay_container.setLayout(layout)

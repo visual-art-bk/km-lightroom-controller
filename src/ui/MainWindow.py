@@ -50,7 +50,7 @@ class MainWindow(QMainWindow):
         self.phone_number_entry = QLineEdit()
         layout.addWidget(self.phone_number_entry)
 
-        self.run_button = QPushButton("🚀 촬영 실행!")
+        self.run_button = QPushButton("📸 촬영 시작하기")
         self.run_button.clicked.connect(self.run_main_window)
         layout.addWidget(self.run_button)
 
@@ -133,7 +133,7 @@ class MainWindow(QMainWindow):
 
         self.create_overlay()
 
-    def create_overlay(self, text="마우스 및 키보드를 절대 건들지 마세요 :)"):
+    def create_overlay(self):
         """독립적인 오버레이 창을 생성하고 부모 윈도우와 시그널 연결"""
         if self.overlay_window is not None:
             print("이미 오버레이가 생성 중입니다.")
