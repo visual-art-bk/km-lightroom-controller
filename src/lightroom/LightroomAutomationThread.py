@@ -80,7 +80,6 @@ class LightroomAutomationThread(QThread):
         print("✅ Lightroom 공지 닫기 완료!")
 
         try:
-            time.sleep(3000)
             self.check_stop_flag('파일(F) 메뉴 클릭')
             file_window = select_ui(
                 control_type="MenuItem",
