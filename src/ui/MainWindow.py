@@ -1,20 +1,22 @@
 import threading
+from constants import MAIN_WINDOW_BG_COLOR
 from PySide6.QtWidgets import (
     QMainWindow,
-    QLabel,
-    QLineEdit,
-    QPushButton,
     QMessageBox,
     QVBoxLayout,
     QWidget,
     QApplication,
 )
+from PySide6.QtGui import QIcon
 from PySide6.QtCore import Qt
 from state_manager import StateManager, AppState
 from lightroom import LightroomAutomationThread, LightroomLaunchThread
 from ui.overlay.OverlayWindow import OverlayWindow
-from ui.msg_box import create_error_msg
 from helpers.log_exception_to_file import log_exception_to_file
+from ui.msg_box import create_error_msg
+from ui.inputs.input_main_field import input_main_field
+from ui.buttons.btn_run_main import btn_run_main
+from ui.msg_box.show_guide import show_guide
 
 
 class MainWindow(QMainWindow):
@@ -25,7 +27,18 @@ class MainWindow(QMainWindow):
 
         self.init_state_manager()
 
-        self.setWindowTitle("다비 촬영 매니저 v.1.3")
+        self.setWindowTitle("다비 촬영 매니저")
+
+        self.setWindowIcon(QIcon("assets/다비스튜디오_logo11_black_ico.ico"))
+
+        self.setObjectName("MainWindow")
+        self.setStyleSheet(
+            f"""
+            #MainWindow {{
+                background-color: {MAIN_WINDOW_BG_COLOR};
+            }}
+            """
+        )
 
         self.init_window_position(height=height, width=width)
 
@@ -34,23 +47,26 @@ class MainWindow(QMainWindow):
         self.overlay_window = None
         self.thread_lightroom_automation = None
 
+    def init_input_main_fields(self, layout):
+        self.input_username = input_main_field(
+            layout=layout,
+            label="예약자 성함",
+            placeholder="“여기에 입력하세요.”",
+        )
+        self.input_phone = input_main_field(
+            layout=layout,
+            label="전화번호 뒷자리 4자리",
+            placeholder="“여기에 입력하세요.”",
+        )
+
     def init_window_layout(self):
         layout = QVBoxLayout()
 
-        self.label_username = QLabel("예약자 이름")
-        layout.addWidget(self.label_username)
+        self.init_input_main_fields(layout=layout)
 
-        self.username_entry = QLineEdit()
-        layout.addWidget(self.username_entry)
-
-        self.label_phone_number = QLabel("전화번호 뒷자리 4자리")
-        layout.addWidget(self.label_phone_number)
-
-        self.phone_number_entry = QLineEdit()
-        layout.addWidget(self.phone_number_entry)
-
-        self.run_button = QPushButton("📸 촬영 시작하기")
+        self.run_button = btn_run_main()
         self.run_button.clicked.connect(self.run_main_window)
+
         layout.addWidget(self.run_button)
 
         container = QWidget()
@@ -63,7 +79,7 @@ class MainWindow(QMainWindow):
 
     def init_window_position(self, width, height):
         # 항상 최상단에 고정
-        # ✅ 현재 화면의 해상도 가져오기
+        # 현재 화면의 해상도 가져오기
         screen_geometry = self.screen().availableGeometry()
         screen_width = screen_geometry.width()
         screen_height = screen_geometry.height()
@@ -107,9 +123,8 @@ class MainWindow(QMainWindow):
 
     def run_main_window(self):
         try:
-            userer_infos = self.get_user_infos()
-            username = userer_infos["username"]
-            phone_number = userer_infos["phone_number"]
+            username = self.input_username.text().strip()
+            phone_number = self.input_phone.text().strip()
 
             if username == "":
                 QMessageBox.warning(self, "입력 오류", "사용자 이름을 입력하세요!")
@@ -134,7 +149,8 @@ class MainWindow(QMainWindow):
             self.create_overlay()
         except Exception as e:
             log_exception_to_file(
-                exception_obj=e, message="메인 윈도우에서 run_main_window 실행 중 에러발생생"
+                exception_obj=e,
+                message="메인 윈도우에서 run_main_window 실행 중 에러발생생",
             )
 
     def create_overlay(self):
@@ -170,6 +186,11 @@ class MainWindow(QMainWindow):
             overlay_running=False,
         )
 
+        self.raise_()  # ✅ 메인 윈도우를 최상위로 올림
+        self.activateWindow()  # ✅ 메인 윈도우에 포커스 활성화
+
+        show_guide(self)  # ✅ 메시지 창 실행 (수정된 show_guide 사용)
+        
         self.cleanup_resources()
 
     def ON_STATE_CHANGE(self, new_state: AppState):

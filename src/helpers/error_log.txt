@@ -7359,3 +7359,18 @@ RuntimeError: There is no active desktop required for moving mouse cursor!
 
 ============================================================
 
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-15 11:34:17
+============================================================
+메모장 파일을 읽는 중 오류 발생
+
+🔍 [Traceback Details]:
+Traceback (most recent call last):
+  File "C:\Users\USER\Documents\code\light\main\km-lightroom-controller/src\ui\msg_box\show_guide.py", line 24, in show_guide
+    msg_box.setWindowModality(Qt.ApplicationModal)  # 부모 창을 블러킹 (다른 창 못 누름)
+                              ^^
+NameError: name 'Qt' is not defined
+
+============================================================
+
