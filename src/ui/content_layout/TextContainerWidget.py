@@ -1,3 +1,4 @@
+import os
 from PySide6.QtWidgets import QWidget, QLabel, QVBoxLayout, QSizePolicy
 from PySide6.QtCore import Qt
 
@@ -5,10 +6,13 @@ from PySide6.QtCore import Qt
 class TextContainerWidget(QWidget):
     """✅ QLabel을 CSS의 flexbox처럼 가운데 정렬하고, 가장 긴 텍스트에 맞게 너비 조정"""
 
-    def __init__(self, text_contents, text_color, font_sizes, height):
+    def __init__(self, file_path, text_color="black", font_sizes=20, height=200):
         super().__init__()
 
         self.setFixedHeight(height)  # ✅ 높이는 고정 (가장 긴 라벨 기준이 아님)
+
+        # ✅ 파일에서 텍스트 불러오기
+        text_contents = self.load_text_contents(file_path)
 
         # ✅ font_sizes가 정수형이면 리스트로 변환
         if isinstance(font_sizes, int):
@@ -23,7 +27,6 @@ class TextContainerWidget(QWidget):
         self.layout.setSpacing(20)  # 줄 간격 설정
         self.layout.setContentsMargins(10, 10, 10, 10)  # 마진 추가
         self.layout.setAlignment(Qt.AlignCenter)  # ✅ 전체 레이아웃을 중앙 정렬
-      
 
         self.labels = []  # ✅ 모든 QLabel을 저장할 리스트
 
@@ -46,3 +49,12 @@ class TextContainerWidget(QWidget):
         """✅ 가장 긴 QLabel의 너비에 맞춰 `TextContainerWidget` 크기 조정"""
         max_label_width = max(label.sizeHint().width() for label in self.labels)
         self.setFixedWidth(max_label_width + 20)  # ✅ 여유 공간 추가
+
+    @staticmethod
+    def load_text_contents(file_path):
+        """✅ 파일에서 텍스트를 읽어 리스트로 반환"""
+        if os.path.exists(file_path):
+            with open(file_path, "r", encoding="utf-8") as file:
+                return [line.strip() for line in file.readlines() if line.strip()]
+        else:
+            return ["⚠️ 중요 안내: 계속 진행하시겠습니까?"]  # 기본 메시지
