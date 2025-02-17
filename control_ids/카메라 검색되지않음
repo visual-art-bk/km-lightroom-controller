@@ -1,0 +1,10 @@
+=========> 카메라 테스트 시작합니다.
+현재 유저 이름 dsd
+현재 유저 전화번호 ad
+유저 정보 찾았습니다.
+타입 <class 'pywinauto.controls.uia_controls.StaticWrapper'>
+0 uia_controls.ComboBoxWrapper - '', ComboBox
+1 uia_controls.StaticWrapper - 'dsdad', Static
+2 uiawrapper.UIAWrapper - ' (Bridge View)', Pane
+3 uia_controls.ButtonWrapper - '라이브', Button
+4 uiawrapper.UIAWrapper - ' (Bridge View)', Pane

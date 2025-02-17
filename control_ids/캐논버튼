@@ -1,0 +1,20 @@
+0 자식 별 타입:  <class 'pywinauto.controls.uia_controls.ComboBoxWrapper'>
+0 하위 자식들:  [
+    <uia_controls.StaticWrapper - '', Static, -4836130792118790835>, 
+    
+    <uia_controls.ButtonWrapper - '열기', Button, 1671509963983207590>
+] 
+
+0 하위 자식들 텍스트들:  ['', '열기']  UIAWrapper.children_texts()
+0 모든 속성 확인:  {
+    'class_name': 'ComboBox', 
+    'friendly_class_name': 'ComboBox', 
+    'texts': ['', '', '닫기'], 
+    'control_id': 65535, 
+    'rectangle': <RECT L450, T496, R632, B520>, 
+    'is_visible': True, 
+    'is_enabled': True, 
+    'control_count': 2, 
+    'is_keyboard_focusable': True, 
+    'has_keyboard_focus': False, 
+    'automation_id': '65535'}

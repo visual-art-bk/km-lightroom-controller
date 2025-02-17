@@ -106,6 +106,16 @@ class MainWindow(QMainWindow):
             "phone_number": self.phone_number_entry.text().strip(),
         }
 
+    def on_connected_camera(self, is_connected):
+        if is_connected:
+            print("카메라 연결되었습니다.")
+        else:
+            print("카메라 연결중입니다.")
+
+    def on_detected_camera_name(self, name):
+        # test
+        self.show_warning(text=f"카메라: {name}")
+
     def init_threads(self):
         self.thread_lightroom_launcher = LightroomLaunchThread()
         self.thread_lightroom_automation = LightroomAutomationThread()
@@ -116,6 +126,14 @@ class MainWindow(QMainWindow):
 
         self.thread_lightroom_automation.failed.connect(
             self.on_lightroom_automation_failed
+        )
+
+        self.thread_lightroom_automation.connected_camera_state.connect(
+            self.on_connected_camera
+        )
+
+        self.thread_lightroom_automation.detected_camera_name.connect(
+            self.on_detected_camera_name
         )
 
         self.thread_lightroom_launcher.start()
@@ -169,15 +187,14 @@ class MainWindow(QMainWindow):
         self.delete_overlay()
 
         self.show()
-        self.show_err_msg()
+        self.show_err_msg(msg="⚠️ 오류 발생! 프로그램을 다시 시작하세요.")
 
         self.cleanup_resources()
         self.check_running_threads()
 
         self.close()
 
-    def on_lightroom_automation_finished(self):
-        # ✅ 기존 오버레이 삭제
+    def on_lightroom_automation_finished(self, is_finished):
         if self.overlay_window is not None:
             self.delete_overlay()
 
@@ -189,8 +206,14 @@ class MainWindow(QMainWindow):
         self.raise_()  # ✅ 메인 윈도우를 최상위로 올림
         self.activateWindow()  # ✅ 메인 윈도우에 포커스 활성화
 
-        show_guide(self)  # ✅ 메시지 창 실행 (수정된 show_guide 사용)
+        import time
+        time.sleep(10)
         
+        if is_finished:
+            show_guide(self) 
+        else:
+            self.show_err_msg(msg='⚠️ 연결된 카메라가 없어요. 다비 고객센터에 연락주세요. ⚠️')
+
         self.cleanup_resources()
 
     def ON_STATE_CHANGE(self, new_state: AppState):
@@ -204,8 +227,8 @@ class MainWindow(QMainWindow):
         print(f"오버레이 실행여부: {'실행' if new_state.overlay_running else '중지'}")
         print(f"                                                      ")
 
-    def show_err_msg(self):
-        error_msg_box = create_error_msg(parent=self)
+    def show_err_msg(self, msg):
+        error_msg_box = create_error_msg(parent=self, content=msg)
         error_msg_box.exec()
 
     def show_warning(self, text="⚠️ 경고: 잘못된 작업입니다."):

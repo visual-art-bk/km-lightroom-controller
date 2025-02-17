@@ -7374,3 +7374,271 @@ NameError: name 'Qt' is not defined
 
 ============================================================
 
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-17 09:45:52
+============================================================
+작업관리자 실행으로 작업 강제 중단
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-17 09:45:53
+============================================================
+Lightroom 자동화 실패
+
+🔍 [Traceback Details]:
+Traceback (most recent call last):
+  File "c:\Users\USER\Documents\code\light\main\km-lightroom-controller\myenv\Lib\site-packages\pywinauto\mouse.py", line 59, in _set_cursor_pos
+    win32api.SetCursorPos(coords)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+pywintypes.error: (0, 'SetCursorPos', 'No error message is available')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\USER\Documents\code\light\main\km-lightroom-controller/src\lightroom\LightroomAutomationThread.py", line 89, in run
+    file_window.click_input()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "c:\Users\USER\Documents\code\light\main\km-lightroom-controller\myenv\Lib\site-packages\pywinauto\base_wrapper.py", line 774, in click_input
+    _perform_click_input(button, coords, double, button_down, button_up,
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         wheel_dist=wheel_dist, pressed=pressed,
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         key_down=key_down, key_up=key_up)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\USER\Documents\code\light\main\km-lightroom-controller\myenv\Lib\site-packages\pywinauto\mouse.py", line 137, in _perform_click_input
+    _set_cursor_pos((coords[0], coords[1]))
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\USER\Documents\code\light\main\km-lightroom-controller\myenv\Lib\site-packages\pywinauto\mouse.py", line 62, in _set_cursor_pos
+    raise RuntimeError("There is no active desktop required for moving mouse cursor!\n")
+RuntimeError: There is no active desktop required for moving mouse cursor!
+
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-17 10:01:33
+============================================================
+Lightroom 자동화 실패
+
+🔍 [Traceback Details]:
+Traceback (most recent call last):
+  File "C:\Users\USER\Documents\code\light\main\km-lightroom-controller/src\lightroom\LightroomAutomationThread.py", line 136, in run
+    self.connected_camera_state(False)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+TypeError: native Qt signal instance 'connected_camera_state' is not callable
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-17 10:13:08
+============================================================
+작업관리자 실행으로 작업 강제 중단
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-17 10:13:14
+============================================================
+Lightroom 자동화 실패
+
+🔍 [Traceback Details]:
+Traceback (most recent call last):
+  File "C:\Users\USER\Documents\code\light\main\km-lightroom-controller/src\lightroom\LightroomAutomationThread.py", line 108, in run
+    start_tet_capture_window.click_input()
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'click_input'
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-17 10:27:47
+============================================================
+작업관리자 실행으로 작업 강제 중단
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-17 10:42:09
+============================================================
+작업관리자 실행으로 작업 강제 중단
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-17 10:42:29
+============================================================
+Lightroom 자동화 실패
+
+🔍 [Traceback Details]:
+Traceback (most recent call last):
+  File "c:\Users\USER\Documents\code\light\main\km-lightroom-controller\myenv\Lib\site-packages\pywinauto\application.py", line 250, in __resolve_control
+    ctrl = wait_until_passes(
+        timeout,
+    ...<5 lines>...
+         controls.InvalidElement),
+        criteria)
+  File "c:\Users\USER\Documents\code\light\main\km-lightroom-controller\myenv\Lib\site-packages\pywinauto\timings.py", line 458, in wait_until_passes
+    raise err
+pywinauto.timings.TimeoutError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\USER\Documents\code\light\main\km-lightroom-controller/src\lightroom\LightroomAutomationThread.py", line 108, in run
+    start_tet_capture_window.click_input()
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\USER\Documents\code\light\main\km-lightroom-controller\myenv\Lib\site-packages\pywinauto\application.py", line 379, in __getattribute__
+    ctrls = self.__resolve_control(self.criteria)
+  File "c:\Users\USER\Documents\code\light\main\km-lightroom-controller\myenv\Lib\site-packages\pywinauto\application.py", line 261, in __resolve_control
+    raise e.original_exception
+  File "c:\Users\USER\Documents\code\light\main\km-lightroom-controller\myenv\Lib\site-packages\pywinauto\timings.py", line 436, in wait_until_passes
+    func_val = func(*args, **kwargs)
+  File "c:\Users\USER\Documents\code\light\main\km-lightroom-controller\myenv\Lib\site-packages\pywinauto\application.py", line 222, in __get_ctrl
+    ctrl = self.backend.generic_wrapper_class(findwindows.find_element(**ctrl_criteria))
+                                              ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "c:\Users\USER\Documents\code\light\main\km-lightroom-controller\myenv\Lib\site-packages\pywinauto\findwindows.py", line 87, in find_element
+    raise ElementNotFoundError(kwargs)
+pywinauto.findwindows.ElementNotFoundError: {'title': '연결전송된 촬영 시작...', 'control_type': 'MenuItem', 'top_level_only': False, 'enabled_only': False, 'visible_only': False, 'parent': <uia_element_info.UIAElementInfo - 'Lightroom Catalog - Adobe Photoshop Lightroom Classic - 라이브러리', AgWinMainFrame, 329328>, 'backend': 'uia'}
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-17 10:49:59
+============================================================
+작업관리자 실행으로 작업 강제 중단
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-17 10:52:53
+============================================================
+작업관리자 실행으로 작업 강제 중단
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-17 10:52:55
+============================================================
+Lightroom 자동화 실패
+
+🔍 [Traceback Details]:
+Traceback (most recent call last):
+  File "c:\Users\USER\Documents\code\light\main\km-lightroom-controller\myenv\Lib\site-packages\pywinauto\mouse.py", line 59, in _set_cursor_pos
+    win32api.SetCursorPos(coords)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+pywintypes.error: (0, 'SetCursorPos', 'No error message is available')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\USER\Documents\code\light\main\km-lightroom-controller/src\lightroom\LightroomAutomationThread.py", line 92, in run
+    file_window.click_input()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "c:\Users\USER\Documents\code\light\main\km-lightroom-controller\myenv\Lib\site-packages\pywinauto\base_wrapper.py", line 774, in click_input
+    _perform_click_input(button, coords, double, button_down, button_up,
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         wheel_dist=wheel_dist, pressed=pressed,
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         key_down=key_down, key_up=key_up)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\USER\Documents\code\light\main\km-lightroom-controller\myenv\Lib\site-packages\pywinauto\mouse.py", line 137, in _perform_click_input
+    _set_cursor_pos((coords[0], coords[1]))
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\USER\Documents\code\light\main\km-lightroom-controller\myenv\Lib\site-packages\pywinauto\mouse.py", line 62, in _set_cursor_pos
+    raise RuntimeError("There is no active desktop required for moving mouse cursor!\n")
+RuntimeError: There is no active desktop required for moving mouse cursor!
+
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-17 10:57:21
+============================================================
+작업관리자 실행으로 작업 강제 중단
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-17 11:02:51
+============================================================
+작업관리자 실행으로 작업 강제 중단
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-17 11:23:45
+============================================================
+작업관리자 실행으로 작업 강제 중단
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-17 11:32:30
+============================================================
+작업관리자 실행으로 작업 강제 중단
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-17 12:45:43
+============================================================
+작업관리자 실행으로 작업 강제 중단
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-17 13:13:26
+============================================================
+작업관리자 실행으로 작업 강제 중단
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-17 13:40:20
+============================================================
+Lightroom 자동화 실패
+
+🔍 [Traceback Details]:
+Traceback (most recent call last):
+  File "C:\Users\USER\Documents\code\light\main\km-lightroom-controller/src\lightroom\LightroomAutomationThread.py", line 137, in run
+    is_camera_connected = check_camera(
+        lightroom=lightroom, get_user_state=state_manager.get_state
+    )
+TypeError: check_camera() got an unexpected keyword argument 'get_user_state'
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-17 13:51:31
+============================================================
+Lightroom 자동화 실패
+
+🔍 [Traceback Details]:
+Traceback (most recent call last):
+  File "C:\Users\USER\Documents\code\light\main\km-lightroom-controller/src\lightroom\LightroomAutomationThread.py", line 134, in run
+    is_detected_camera, camera_name = check_detected_camera(
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: cannot unpack non-iterable NoneType object
+
+============================================================
+
