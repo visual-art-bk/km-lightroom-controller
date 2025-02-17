@@ -1,5 +1,9 @@
 import threading
-from constants import MAIN_WINDOW_BG_COLOR
+from constants import (
+    MAIN_WINDOW_BG_COLOR,
+    SIGNAL_NO_DETECTED_CAMERA,
+    SIGNAL_NO_SEARCHED_CAMERA,
+)
 from PySide6.QtWidgets import (
     QMainWindow,
     QMessageBox,
@@ -106,16 +110,6 @@ class MainWindow(QMainWindow):
             "phone_number": self.phone_number_entry.text().strip(),
         }
 
-    def on_connected_camera(self, is_connected):
-        if is_connected:
-            print("카메라 연결되었습니다.")
-        else:
-            print("카메라 연결중입니다.")
-
-    def on_detected_camera_name(self, name):
-        # test
-        self.show_warning(text=f"카메라: {name}")
-
     def init_threads(self):
         self.thread_lightroom_launcher = LightroomLaunchThread()
         self.thread_lightroom_automation = LightroomAutomationThread()
@@ -126,14 +120,6 @@ class MainWindow(QMainWindow):
 
         self.thread_lightroom_automation.failed.connect(
             self.on_lightroom_automation_failed
-        )
-
-        self.thread_lightroom_automation.connected_camera_state.connect(
-            self.on_connected_camera
-        )
-
-        self.thread_lightroom_automation.detected_camera_name.connect(
-            self.on_detected_camera_name
         )
 
         self.thread_lightroom_launcher.start()
@@ -180,19 +166,9 @@ class MainWindow(QMainWindow):
         self.overlay_window = OverlayWindow()  #  독립적인 오버레이 생성
         self.overlay_window.show()
 
-    def on_lightroom_automation_failed(self, faield):
-        if faield == False:
-            return
-
-        self.delete_overlay()
-
-        self.show()
-        self.show_err_msg(msg="⚠️ 오류 발생! 프로그램을 다시 시작하세요.")
-
+    def on_lightroom_automation_failed(self, failed):
+        self.show_guide_msg(msg_code=failed)
         self.cleanup_resources()
-        self.check_running_threads()
-
-        self.close()
 
     def on_lightroom_automation_finished(self, is_finished):
         if self.overlay_window is not None:
@@ -206,13 +182,12 @@ class MainWindow(QMainWindow):
         self.raise_()  # ✅ 메인 윈도우를 최상위로 올림
         self.activateWindow()  # ✅ 메인 윈도우에 포커스 활성화
 
-        import time
-        time.sleep(10)
-        
         if is_finished:
-            show_guide(self) 
+            show_guide(self)
         else:
-            self.show_err_msg(msg='⚠️ 연결된 카메라가 없어요. 다비 고객센터에 연락주세요. ⚠️')
+            self.show_guide_msg(
+                msg="⚠️ 연결된 카메라가 없어요. 다비 고객센터에 연락주세요. ⚠️"
+            )
 
         self.cleanup_resources()
 
@@ -227,24 +202,27 @@ class MainWindow(QMainWindow):
         print(f"오버레이 실행여부: {'실행' if new_state.overlay_running else '중지'}")
         print(f"                                                      ")
 
-    def show_err_msg(self, msg):
-        error_msg_box = create_error_msg(parent=self, content=msg)
-        error_msg_box.exec()
+    def show_guide_msg(self, msg_code=""):
+        self.raise_()  # ✅ 메인 윈도우를 최상위로 올림
+        self.activateWindow()  # ✅ 메인 윈도우에 포커스 활성화
 
-    def show_warning(self, text="⚠️ 경고: 잘못된 작업입니다."):
-        msg_box = QMessageBox(self)
-        msg_box.setIcon(QMessageBox.Icon.Information)  # ⚠️ 경고 아이콘
-        msg_box.setWindowTitle("경고")  # 창 제목
-        msg_box.setText(text)  # 메시지 내용
-        msg_box.setStandardButtons(QMessageBox.Ok)  # 확인 버튼 추가
-        msg_box.exec()  # 메시지 박스 실행
+        if msg_code == SIGNAL_NO_DETECTED_CAMERA:
+            show_guide(parent=self, file_path="카메라감지실패메시지.txt")
+        elif msg_code == SIGNAL_NO_SEARCHED_CAMERA:
+            show_guide(parent=self, file_path="카메라검색실패메시지.txt")
+        else:
+            error_msg_box = create_error_msg(
+                parent=self,
+                content="⚠️ 촬영 셋팅 중 오류 발생! 프로그램을 재실행해주세요.",
+            )
+            error_msg_box.exec()
 
     def closeEvent(self, event):
         """메인 윈도우가 닫힐 때 모든 리소스 정리"""
         print(" 프로그램 종료: 모든 리소스 정리 중...")
 
         self.cleanup_resources()
-        self.check_running_threads()
+        # self.check_running_threads()
 
         print(" 모든 리소스 정리 완료. 프로그램 종료.")
         event.accept()  #  정상적으로 창을 닫음
@@ -286,27 +264,3 @@ class MainWindow(QMainWindow):
         self.close()  # ✅ UI 창 닫기
 
         print("✅ 모든 리소스 정리 완료. 프로그램 종료.")
-
-    def check_running_threads(self):
-        """✅ 현재 실행 중인 모든 스레드를 출력 및 강제 종료"""
-        running_threads = threading.enumerate()
-
-        if (
-            len(running_threads) > 1
-        ):  # 메인 스레드를 제외한 다른 스레드가 남아 있으면 경고
-            print("⚠️ 종료되지 않은 스레드 감지:")
-            for thread in running_threads:
-                if thread is not threading.main_thread():
-                    print(f"  - {thread.name} (ID: {thread.ident})")
-
-                    # ❌ DummyThread는 join()을 호출할 수 없음
-                    if isinstance(thread, threading._DummyThread):
-                        print(
-                            f"🚨 {thread.name} (ID: {thread.ident}) 는 DummyThread이므로 join()을 호출하지 않음."
-                        )
-                        continue
-
-                    # ✅ 정상적인 스레드만 join() 실행
-                    thread.join(timeout=3)  # 최대 3초 대기 후 종료 요청
-        else:
-            print("✅ 모든 스레드가 정상적으로 종료됨.")

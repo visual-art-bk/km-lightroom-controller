@@ -1,4 +1,4 @@
-from .check_camera import check_camera
-from .check_detected_camera import check_detected_camera
+from .detect_camera import detect_camera
+from .search_camera import search_camera
 
-__all__ = ["check_camera", "check_detected_camera"]
+__all__ = ["detect_camera", "search_camera"]

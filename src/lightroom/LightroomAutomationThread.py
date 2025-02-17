@@ -1,35 +1,26 @@
 import time
-import ctypes
-import pyautogui
+from constants import (
+    SIGNAL_NO_DETECTED_CAMERA,
+    SIGNAL_NO_SEARCHED_CAMERA,
+    NO_DETECTED_CAMERA_NAME,
+)
 from pywinauto import Application, keyboard
 from state_manager.StateManager import StateManager
-from .utils.get_lightroom_win import get_lightroom_win
 from lightroom.utils.select_ui import select_ui
 from PySide6.QtCore import QThread, Signal
-from lightroom.set_template.set_template import set_template
+
 from mornitorings.TaskManagerDetector import TaskManagerDetector
 from helpers.log_exception_to_file import log_exception_to_file
-from lightroom.check_camera_state import check_camera, check_detected_camera
-
-
-def lock_mouse_keyboard():
-    """✅ 마우스와 키보드 입력을 잠급니다 (Windows 전용)"""
-    ctypes.windll.user32.BlockInput(True)  # 🔒 입력 차단
-    pyautogui.FAILSAFE = False  # ⛔ 마우스 모서리 이동 방지
-
-
-def unlock_mouse_keyboard():
-    """✅ 마우스와 키보드 입력을 다시 활성화합니다"""
-    ctypes.windll.user32.BlockInput(False)  # 🔓 입력 해제
+from lightroom.check_camera_state import detect_camera, search_camera
+from lightroom.utils import lock_mouse_keyboard, unlock_mouse_keyboard
+from lightroom.set_tet_capture import set_tet_capture
 
 
 class LightroomAutomationThread(QThread):
     """Lightroom 자동화 실행을 위한 스레드"""
 
     finished = Signal(bool)  # ✅ 성공/실패 여부를 전달하는 시그널
-    failed = Signal(bool)
-    connected_camera_state = Signal(bool)
-    detected_camera_name = Signal(str)
+    failed = Signal(str)
 
     def __init__(self):
         super().__init__()
@@ -37,25 +28,6 @@ class LightroomAutomationThread(QThread):
         self.task_detector = TaskManagerDetector(
             self.stop_automation
         )  # ✅ 키 감지기 생성
-
-    def stop_automation(self):
-        """✅ `Ctrl + Alt + Delete` 감지 시 자동화 강제 중단"""
-        print("❌ 자동화 강제 중단됨!")
-        log_exception_to_file(
-            exception_obj=None, message="작업관리자 실행으로 작업 강제 중단"
-        )
-        self.stop_flag = True
-        unlock_mouse_keyboard()  # ✅ 입력 차단 해제
-        self.task_detector.stop()  # ✅ 키 감지 스레드 종료
-        self.failed.emit(True)  # ❌ 자동화 실패 시그널 발생
-        self.quit()
-
-    def check_stop_flag(self, context=""):
-        if self.stop_flag == True:
-            print(f"⛔ 자동화 중단 감지! 실행 중지 {context}")
-            self.failed.emit(True)
-            unlock_mouse_keyboard()
-            return self.stop_flag
 
     def run(self):
         lock_mouse_keyboard()
@@ -84,76 +56,51 @@ class LightroomAutomationThread(QThread):
         print("✅ Lightroom 공지 닫기 완료!")
 
         try:
-            self.check_stop_flag("파일(F) 메뉴 클릭")
-            file_window = select_ui(
-                control_type="MenuItem",
-                title="파일(F)",
-                win_specs=lightroom,
-            )
-            file_window.click_input()
-            print("파일(F) 메뉴 클릭 완료!")
+            set_tet_capture(automation=self, lightroom=lightroom)
 
-            self.check_stop_flag("연결전송된 촬영 메뉴 클릭")
-            tet_capture_window = select_ui(
-                win_specs=lightroom, control_type="MenuItem", title="연결전송된 촬영"
-            )
-            tet_capture_window.click_input()
-            print("연결전송된 촬영 메뉴 클릭 완료!")
+            # 너무 빠른 카메라 감지 체크를 하면
+            # 카메라가 올바르게 연결되어있음에도
+            # 카메라 감지 실패할 수 있으니 딜레이를 준다.
+            time.sleep(1.5)
 
-            self.check_stop_flag("연결전송된 촬영 시작... 클릭")
-            start_tet_capture_window = select_ui(
-                win_specs=lightroom,
-                control_type="MenuItem",
-                title="연결전송된 촬영 시작...",
-            )
-            start_tet_capture_window.click_input()
-            print("연결전송된 촬영 시작 메뉴 클릭 완료!")
+            have_detected_camera = detect_camera(lightroom=lightroom)
+            if not have_detected_camera:
+                self.failed.emit(SIGNAL_NO_DETECTED_CAMERA)
+                return
 
-            self.check_stop_flag("세션 이름 입력")
-            input_session_id_field = select_ui(
-                win_specs=lightroom, title="세션 이름:", control_type="Edit"
-            )
-
-            input_session_id_field.set_text(f"{state.username}{state.phone_number}")
-            print("사용자 이름과 전화번호 입력 완료!")
-
-            self.check_stop_flag("템플릿 설정")
-            set_template(win_spects=lightroom)
-
-            # 확인 버튼 클릭
-            confirm_button = select_ui(
-                win_specs=lightroom, title="확인", control_type="Button"
-            )
-            confirm_button.click_input()
-            print("확인 버튼 클릭 완료!")
-
-            unlock_mouse_keyboard()
-
-            time.sleep(5)
-
-            is_detected_camera, camera_name = check_detected_camera(
+            camer_name = search_camera(
                 lightroom=lightroom, get_user_state=state_manager.get_state
             )
 
-            print("is_detected_camera", is_detected_camera)
-            print("detected_camera_name", camera_name)
-            self.detected_camera_name.emit(camera_name)
+            if camer_name == NO_DETECTED_CAMERA_NAME:
+                self.failed.emit(SIGNAL_NO_SEARCHED_CAMERA)
+                return
 
-           
-
-            is_camera_connected = check_camera(lightroom=lightroom)
-            if is_camera_connected:
-                self.connected_camera_state.emit(True)
-                self.finished.emit(True)
-
-            else:
-                self.connected_camera_state.emit(False)
-                self.finished.emit(False)
-
-            state_manager.update_state(overlay_hide=True)
             print("✅ Lightroom 자동화 완료")
+            self.finished.emit(True)
 
         except Exception as e:
             print(f"❌ Lightroom 자동화 실패: {e}")
             self.failed.emit(True)
             log_exception_to_file(exception_obj=e, message="Lightroom 자동화 실패")
+        finally:
+            unlock_mouse_keyboard()
+
+    def stop_automation(self):
+        """✅ `Ctrl + Alt + Delete` 감지 시 자동화 강제 중단"""
+        print("❌ 자동화 강제 중단됨!")
+        log_exception_to_file(
+            exception_obj=None, message="작업관리자 실행으로 작업 강제 중단"
+        )
+        self.stop_flag = True
+        unlock_mouse_keyboard()  # ✅ 입력 차단 해제
+        self.task_detector.stop()  # ✅ 키 감지 스레드 종료
+        self.failed.emit(True)  # ❌ 자동화 실패 시그널 발생
+        self.quit()
+
+    def check_stop_flag(self, context=""):
+        if self.stop_flag == True:
+            print(f"⛔ 자동화 중단 감지! 실행 중지 {context}")
+            self.failed.emit(True)
+            unlock_mouse_keyboard()
+            return self.stop_flag

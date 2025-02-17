@@ -7,23 +7,12 @@ def check_no_detected_camera(selected_combo_text: str) -> bool:
     return "카메라가 검색되지 않음" in selected_combo_text
 
 
-def check_detected_camera(lightroom: WindowSpecification, get_user_state):
+def search_camera(lightroom: WindowSpecification, get_user_state):
     state = get_user_state()
 
     userinfos_on_camera = lightroom.child_window(
         title=f"{ state.username}{state.phone_number}", control_type="Text"
     )
-
-    is_exists_userinfos = userinfos_on_camera.exists()
-
-    if is_exists_userinfos:
-        print("유저 정보 찾았습니다.")
-        print("안정화를 위해 5초대기")
-        import time
-
-        time.sleep(3)
-    else:
-        print("유저 정보 찾는데 실패")
 
     try:
         parent_window = userinfos_on_camera.parent()
@@ -60,10 +49,8 @@ def check_detected_camera(lightroom: WindowSpecification, get_user_state):
                 selected_combo_text = child.selected_text()
                 print(f"선택된 콤보메뉴:", selected_combo_text)
 
-            return (
-                not check_no_detected_camera(selected_combo_text),
-                selected_combo_text,
-            )
+            return selected_combo_text,
+            
 
     except Exception as e:
         print("자식 요소 검사 중 예외발생", e)

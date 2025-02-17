@@ -1,7 +1,7 @@
 from pywinauto import WindowSpecification
 
 
-def check_camera(
+def detect_camera(
     lightroom: WindowSpecification,
 ):
     checking_connected_camera = lightroom.child_window(

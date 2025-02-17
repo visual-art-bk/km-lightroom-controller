@@ -4,9 +4,7 @@ from PySide6.QtWidgets import QMessageBox
 from helpers.log_exception_to_file import log_exception_to_file
 
 
-def show_guide(parent):
-    file_path = "안내메세지.txt"  # 루트 디렉토리에 있는 파일
-
+def show_guide(parent, file_path="안내메세지.txt"):
     try:
         # 파일에서 메시지 읽기
         if os.path.exists(file_path):
@@ -18,10 +16,10 @@ def show_guide(parent):
         # 메시지 박스 생성 및 표시
         msg_box = QMessageBox(parent)
         msg_box.setIcon(QMessageBox.Icon.Information)
-        msg_box.setWindowTitle("확인 필요")
+        msg_box.setWindowTitle("안내 메시지")
         msg_box.setText(message_text)
 
-        # 이 부분을 적용해야 메모장의 콘텐트 너비로 적용된 값으로 
+        # 이 부분을 적용해야 메모장의 콘텐트 너비로 적용된 값으로
         # 박스 너비를 새로고침하고
         # 그래야 하단의 박스 정중앙 위치 값에 올바른 값을 참조할 수 있다
         msg_box.adjustSize()
@@ -49,4 +47,4 @@ def show_guide(parent):
         log_exception_to_file(
             exception_obj=e, message="메모장 파일을 읽는 중 오류 발생"
         )
-        return False 
+        return False
