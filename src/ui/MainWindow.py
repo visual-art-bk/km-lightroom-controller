@@ -100,10 +100,6 @@ class MainWindow(QMainWindow):
         screen = QApplication.primaryScreen().availableGeometry()
         return screen.width()  # 화면 전체 너비
 
-    def delete_overlay(self):
-        self.overlay_window = None
-        OverlayWindow._instance = None
-
     def get_user_infos(self):
         return {
             "username": self.username_entry.text().strip(),
@@ -171,19 +167,11 @@ class MainWindow(QMainWindow):
         self.cleanup_resources()
 
     def on_lightroom_automation_finished(self, is_finished):
-        if self.overlay_window is not None:
-            self.delete_overlay()
-
-        self.state_manager.update_state(
-            context="자동화 끝! 오버레이 종료",
-            overlay_running=False,
-        )
-
         self.raise_()  # ✅ 메인 윈도우를 최상위로 올림
         self.activateWindow()  # ✅ 메인 윈도우에 포커스 활성화
 
         if is_finished:
-            show_guide(self, file_path='메시지/안내메세지.txt')
+            show_guide(self, file_path="메시지/안내메세지.txt")
         else:
             self.show_guide_msg(
                 msg="⚠️ 연결된 카메라가 없어요. 다비 고객센터에 연락주세요. ⚠️"
@@ -209,7 +197,7 @@ class MainWindow(QMainWindow):
         if msg_code == SIGNAL_NO_DETECTED_CAMERA:
             show_guide(parent=self, file_path="메시지/카메라감지실패메시지.txt")
         elif msg_code == SIGNAL_NO_SEARCHED_CAMERA:
-            print('카메라가 검색되지 않음.')
+            print("카메라가 검색되지 않음.")
             show_guide(parent=self, file_path="메시지/카메라감지실패메시지.txt")
         else:
             error_msg_box = create_error_msg(
@@ -223,7 +211,6 @@ class MainWindow(QMainWindow):
         print(" 프로그램 종료: 모든 리소스 정리 중...")
 
         self.cleanup_resources()
-        # self.check_running_threads()
 
         print(" 모든 리소스 정리 완료. 프로그램 종료.")
         event.accept()  #  정상적으로 창을 닫음
