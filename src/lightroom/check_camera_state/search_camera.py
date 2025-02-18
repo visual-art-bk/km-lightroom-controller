@@ -49,7 +49,7 @@ def search_camera(lightroom: WindowSpecification, get_user_state):
                 selected_combo_text = child.selected_text()
                 print(f"선택된 콤보메뉴:", selected_combo_text)
 
-            return selected_combo_text,
+        return selected_combo_text,
             
 
     except Exception as e:

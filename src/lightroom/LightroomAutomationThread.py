@@ -72,10 +72,10 @@ class LightroomAutomationThread(QThread):
                 lightroom=lightroom, get_user_state=state_manager.get_state
             )
 
-            if camer_name == NO_DETECTED_CAMERA_NAME:
+            if NO_DETECTED_CAMERA_NAME in camer_name:
                 self.failed.emit(SIGNAL_NO_SEARCHED_CAMERA)
                 return
-
+        
             print("✅ Lightroom 자동화 완료")
             self.finished.emit(True)
 
