@@ -42,9 +42,11 @@ def search_camera(lightroom: WindowSpecification, get_user_state):
                         print("콤보메뉴의 버튼 찾았습니다.")
                         print("버튼클릭")
                         combo_child.click()
-                        img = child.capture_as_image()
-                        img.save(f"콤보버튼클립캡쳐.jpg")
-                        print("캡쳐완료")
+
+                        # 개발용
+                        # img = child.capture_as_image()
+                        # img.save(f"콤보버튼클립캡쳐.jpg")
+                        # print("캡쳐완료")
 
                 selected_combo_text = child.selected_text()
                 print(f"선택된 콤보메뉴:", selected_combo_text)
