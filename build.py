@@ -26,3 +26,12 @@ for folder in folders_to_copy:
         print(f"{folder} 폴더가 {destination_dir}로 복사되었습니다.")
     else:
         print(f"{folder} 폴더가 존재하지 않습니다!")
+
+# ✅ 설정.yaml 파일 복사 추가
+config_file = "설정.yaml"  # 루트에 있는 설정 파일명
+
+if os.path.exists(config_file):
+    shutil.copy(config_file, exe_dir)
+    print(f"✅ 설정 파일 '{config_file}'이(가) {exe_dir}로 복사되었습니다.")
+else:
+    print(f"⚠️ 설정 파일 '{config_file}'이(가) 존재하지 않습니다!")

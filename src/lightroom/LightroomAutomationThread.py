@@ -84,9 +84,6 @@ class LightroomAutomationThread(QThread):
                 self.failed.emit(SIGNAL_NO_SEARCHED_CAMERA)
                 return
 
-            # 테스트용 향후 지워야야
-            unlock_mouse_keyboard()
-
             # SHUTTER 세팅
             set_camera_settings(
                 lightroom=lightroom,
