@@ -1,4 +1,3 @@
-import threading
 from constants import (
     MAIN_WINDOW_BG_COLOR,
     SIGNAL_NO_DETECTED_CAMERA,

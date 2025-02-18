@@ -1,4 +1,5 @@
 import time
+from helpers.config_loader import load_config
 from constants import (
     SIGNAL_NO_DETECTED_CAMERA,
     SIGNAL_NO_SEARCHED_CAMERA,
@@ -14,6 +15,13 @@ from helpers.log_exception_to_file import log_exception_to_file
 from lightroom.check_camera_state import detect_camera, search_camera
 from lightroom.utils import lock_mouse_keyboard, unlock_mouse_keyboard
 from lightroom.set_tet_capture import set_tet_capture
+from lightroom.camera_settings import set_camera_settings
+
+config = load_config()
+ISO_SETTING = config.get("ISO")
+WB_SETTING = config.get("WB")
+SHUTTER_SETTING = config.get("셔터")
+APERTURE_SETTING = config.get("조리개")
 
 
 class LightroomAutomationThread(QThread):
@@ -75,7 +83,42 @@ class LightroomAutomationThread(QThread):
             if NO_DETECTED_CAMERA_NAME in camer_name:
                 self.failed.emit(SIGNAL_NO_SEARCHED_CAMERA)
                 return
-        
+
+            # 테스트용 향후 지워야야
+            unlock_mouse_keyboard()
+
+            # SHUTTER 세팅
+            set_camera_settings(
+                lightroom=lightroom,
+                title="셔터:",
+                control_type="Text",
+                config_setting=SHUTTER_SETTING,
+            )
+
+            # 조리개 세팅
+            set_camera_settings(
+                lightroom=lightroom,
+                title="조리개:",
+                control_type="Text",
+                config_setting=APERTURE_SETTING,
+            )
+
+            # ISO 세팅
+            set_camera_settings(
+                lightroom=lightroom,
+                title="ISO:",
+                control_type="Text",
+                config_setting=ISO_SETTING,
+            )
+
+            # WB 세팅
+            set_camera_settings(
+                lightroom=lightroom,
+                title="WB:",
+                control_type="Text",
+                config_setting=WB_SETTING,
+            )
+
             print("✅ Lightroom 자동화 완료")
             self.finished.emit(True)
 
