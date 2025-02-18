@@ -4,14 +4,14 @@ from PySide6.QtWidgets import QMessageBox
 from helpers.log_exception_to_file import log_exception_to_file
 
 
-def show_guide(parent, file_path="안내메세지.txt"):
+def show_guide(parent, file_path):
     try:
         # 파일에서 메시지 읽기
         if os.path.exists(file_path):
             with open(file_path, "r", encoding="utf-8") as file:
                 message_text = file.read().strip()
         else:
-            message_text = "⚠️ 중요 안내: 계속 진행하시겠습니까?"
+            message_text = "⚠️ 다비 스튜디오 고객센터에 전화주세요."
 
         # 메시지 박스 생성 및 표시
         msg_box = QMessageBox(parent)

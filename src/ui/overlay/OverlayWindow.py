@@ -33,7 +33,7 @@ class OverlayWindow(QWidget):
         """전체 UI 레이아웃 설정"""
         # 오버레이 콘텐트 위젯젯
         widgetsOverlayContets = TextContainerWidget(
-            file_path="오버레이메세지.txt",
+            file_path="메시지/오버레이메세지.txt",
             font_sizes=20,
             text_color="black",
             height=250,

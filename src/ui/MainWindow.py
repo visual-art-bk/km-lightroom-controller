@@ -183,7 +183,7 @@ class MainWindow(QMainWindow):
         self.activateWindow()  # ✅ 메인 윈도우에 포커스 활성화
 
         if is_finished:
-            show_guide(self)
+            show_guide(self, file_path='메시지/안내메세지.txt')
         else:
             self.show_guide_msg(
                 msg="⚠️ 연결된 카메라가 없어요. 다비 고객센터에 연락주세요. ⚠️"
@@ -207,9 +207,10 @@ class MainWindow(QMainWindow):
         self.activateWindow()  # ✅ 메인 윈도우에 포커스 활성화
 
         if msg_code == SIGNAL_NO_DETECTED_CAMERA:
-            show_guide(parent=self, file_path="카메라감지실패메시지.txt")
+            show_guide(parent=self, file_path="메시지/카메라감지실패메시지.txt")
         elif msg_code == SIGNAL_NO_SEARCHED_CAMERA:
-            show_guide(parent=self, file_path="카메라검색실패메시지.txt")
+            print('카메라가 검색되지 않음.')
+            show_guide(parent=self, file_path="메시지/카메라감지실패메시지.txt")
         else:
             error_msg_box = create_error_msg(
                 parent=self,
