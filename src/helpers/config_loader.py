@@ -1,6 +1,6 @@
 import yaml
 
-def load_config(config_path: str = "config.yaml"):
+def load_config(config_path: str = "설정.yaml"):
     """YAML 설정 파일을 로드하는 함수"""
     try:
         with open(config_path, "r", encoding="utf-8") as file:
