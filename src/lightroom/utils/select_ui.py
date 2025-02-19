@@ -3,7 +3,7 @@ from pywinauto import WindowSpecification
 
 
 def select_ui(
-    win_specs: WindowSpecification, control_type, title, timeout=0.5
+    win_specs: WindowSpecification, control_type, title, timeout=0.1
 ) -> WindowSpecification:
     try:
         child_window = win_specs.child_window(title=title, control_type=control_type)

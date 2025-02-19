@@ -33,10 +33,9 @@ def set_tet_capture(
 
     click_file_to_tet_capture(automation=automation, lightroom=lightroom)
 
-    stop_tet_capture_window = select_ui(
-        win_specs=lightroom,
-        control_type="MenuItem",
+    stop_tet_capture_window = lightroom.child_window(
         title="연결전송된 촬영 중지",
+        control_type="MenuItem",
     )
 
     if stop_tet_capture_window.exists():

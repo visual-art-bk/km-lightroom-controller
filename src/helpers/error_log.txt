@@ -7968,3 +7968,136 @@ TypeError: search_settings() got an unexpected keyword argument 'lightroom'
 
 ============================================================
 
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-19 12:32:21
+============================================================
+Lightroom 자동화 실패
+
+🔍 [Traceback Details]:
+Traceback (most recent call last):
+  File "C:\Users\USER\Documents\code\lightroom\main\km-lightroom-controller/src\lightroom\LightroomAutomationThread.py", line 67, in run
+    set_tet_capture(automation=self, lightroom=lightroom)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\lightroom\main\km-lightroom-controller/src\lightroom\set_tet_capture.py", line 42, in set_tet_capture
+    if stop_tet_capture_window.exists():
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'exists'
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-19 12:34:06
+============================================================
+Lightroom 자동화 실패
+
+🔍 [Traceback Details]:
+Traceback (most recent call last):
+  File "C:\Users\USER\Documents\code\lightroom\main\km-lightroom-controller/src\lightroom\LightroomAutomationThread.py", line 67, in run
+    set_tet_capture(automation=self, lightroom=lightroom)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\lightroom\main\km-lightroom-controller/src\lightroom\set_tet_capture.py", line 42, in set_tet_capture
+    if stop_tet_capture_window.exists(timeout=1):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'exists'
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-19 12:35:22
+============================================================
+작업관리자 실행으로 작업 강제 중단
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-19 12:36:54
+============================================================
+Lightroom 자동화 실패
+
+🔍 [Traceback Details]:
+Traceback (most recent call last):
+  File "C:\Users\USER\Documents\code\lightroom\main\km-lightroom-controller/src\lightroom\LightroomAutomationThread.py", line 67, in run
+    set_tet_capture(automation=self, lightroom=lightroom)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\lightroom\main\km-lightroom-controller/src\lightroom\set_tet_capture.py", line 46, in set_tet_capture
+    if stop_tet_capture_window.exists():
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'exists'
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-19 12:37:51
+============================================================
+작업관리자 실행으로 작업 강제 중단
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-19 12:39:04
+============================================================
+작업관리자 실행으로 작업 강제 중단
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-19 12:39:28
+============================================================
+작업관리자 실행으로 작업 강제 중단
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-19 12:39:29
+============================================================
+Lightroom 자동화 실패
+
+🔍 [Traceback Details]:
+Traceback (most recent call last):
+  File "c:\Users\USER\Documents\code\lightroom\main\km-lightroom-controller\myenv\Lib\site-packages\pywinauto\mouse.py", line 59, in _set_cursor_pos
+    win32api.SetCursorPos(coords)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+pywintypes.error: (0, 'SetCursorPos', 'No error message is available')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\USER\Documents\code\lightroom\main\km-lightroom-controller/src\lightroom\LightroomAutomationThread.py", line 67, in run
+    set_tet_capture(automation=self, lightroom=lightroom)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\lightroom\main\km-lightroom-controller/src\lightroom\set_tet_capture.py", line 79, in set_tet_capture
+    confirm_button.click_input()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "c:\Users\USER\Documents\code\lightroom\main\km-lightroom-controller\myenv\Lib\site-packages\pywinauto\base_wrapper.py", line 774, in click_input
+    _perform_click_input(button, coords, double, button_down, button_up,
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         wheel_dist=wheel_dist, pressed=pressed,
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         key_down=key_down, key_up=key_up)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\USER\Documents\code\lightroom\main\km-lightroom-controller\myenv\Lib\site-packages\pywinauto\mouse.py", line 137, in _perform_click_input
+    _set_cursor_pos((coords[0], coords[1]))
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\USER\Documents\code\lightroom\main\km-lightroom-controller\myenv\Lib\site-packages\pywinauto\mouse.py", line 62, in _set_cursor_pos
+    raise RuntimeError("There is no active desktop required for moving mouse cursor!\n")
+RuntimeError: There is no active desktop required for moving mouse cursor!
+
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-19 12:41:20
+============================================================
+작업관리자 실행으로 작업 강제 중단
+
+============================================================
+
