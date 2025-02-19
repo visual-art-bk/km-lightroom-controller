@@ -5,12 +5,9 @@ from state_manager.StateManager import StateManager
 from lightroom.set_template.set_template import set_template
 
 
-def set_tet_capture(
+def click_file_to_tet_capture(
     automation: LightroomAutomationThread, lightroom: WindowSpecification
 ):
-    state_manager = StateManager()
-    state = state_manager.get_state()
-
     # 파일 메뉴 클릭
     automation.check_stop_flag("파일(F) 메뉴 클릭")
     file_window = select_ui(
@@ -26,6 +23,27 @@ def set_tet_capture(
         win_specs=lightroom, control_type="MenuItem", title="연결전송된 촬영"
     )
     tet_capture_window.click_input()
+
+
+def set_tet_capture(
+    automation: LightroomAutomationThread, lightroom: WindowSpecification
+):
+    state_manager = StateManager()
+    state = state_manager.get_state()
+
+    click_file_to_tet_capture(automation=automation, lightroom=lightroom)
+
+    stop_tet_capture_window = select_ui(
+        win_specs=lightroom,
+        control_type="MenuItem",
+        title="연결전송된 촬영 중지",
+    )
+
+    if stop_tet_capture_window.exists():
+        stop_tet_capture_window.click_input()
+
+        # 연결전송된 촬영 중지 처음부터 다시
+        click_file_to_tet_capture(automation=automation, lightroom=lightroom)
 
     # 연결전송된 촬영 시작... 클릭
     automation.check_stop_flag("연결전송된 촬영 시작... 클릭")
