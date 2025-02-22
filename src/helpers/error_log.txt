@@ -135,3 +135,29 @@ RuntimeError: 공지 창을 닫을 수 없습니다. 프로그램을 중지합�
 
 ============================================================
 
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-22 11:18:34
+============================================================
+라이트룸 연결 후, 윈도우 탐색 실패, 포커스를 맞추지 못함, 모든 공지 창을 닫아야함
+
+🔍 [Traceback Details]:
+Traceback (most recent call last):
+  File "C:\Users\USER\Documents\app\lightroom\km-lightroom-controller/src\lightroom\LightroomAutomationThread.py", line 71, in run
+    lightroom.wait(
+    ~~~~~~~~~~~~~~^
+        "exists enabled visible ready", timeout=TIMEOUT_WAIT_LIGHTROOM_VISIBLE
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "c:\Users\USER\Documents\app\lightroom\km-lightroom-controller\myenv\Lib\site-packages\pywinauto\application.py", line 529, in wait
+    wait_until(timeout, retry_interval,
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+               lambda: self.__check_all_conditions(check_method_names, retry_interval))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\USER\Documents\app\lightroom\km-lightroom-controller\myenv\Lib\site-packages\pywinauto\timings.py", line 375, in wait_until
+    raise err
+pywinauto.timings.TimeoutError: timed out
+
+============================================================
+

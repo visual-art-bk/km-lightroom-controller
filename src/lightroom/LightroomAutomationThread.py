@@ -65,8 +65,8 @@ class LightroomAutomationThread(QThread):
             return
 
         try:
-            close_note_window()
-
+            send_esc_key(parent=self)
+            
             lightroom = app.window(title_re=".*Lightroom Classic.*")
             lightroom.wait(
                 "exists enabled visible ready", timeout=TIMEOUT_WAIT_LIGHTROOM_VISIBLE
@@ -74,7 +74,7 @@ class LightroomAutomationThread(QThread):
             lightroom.wrapper_object().maximize()
             lightroom.wrapper_object().set_focus()
 
-            send_esc_key(parent=self)
+            
 
         except Exception as e:
             log_exception_to_file(
