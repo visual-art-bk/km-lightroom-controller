@@ -2,6 +2,10 @@ from constants import (
     MAIN_WINDOW_BG_COLOR,
     SIGNAL_NO_DETECTED_CAMERA,
     SIGNAL_NO_SEARCHED_CAMERA,
+    SIGNAL_LIGHTROOM_LAUHCNER_START_FAILED,
+    SIGNAL_LIGHTROOM_AUTOMATION_CONNECT_FAILED,
+    SIGNAL_LIGHTROOM_AUTOMATION_FOCUS_FAILED,
+    SIGNAL_LIGHTROOM_AUTOMATION_CONTROL_FAILED
 )
 from PySide6.QtWidgets import (
     QMainWindow,
@@ -105,9 +109,26 @@ class MainWindow(QMainWindow):
             "phone_number": self.phone_number_entry.text().strip(),
         }
 
+    def on_lightroom_launcher_start(self):
+        if (
+            self.thread_lightroom_launcher.lightroom_started
+            == SIGNAL_LIGHTROOM_LAUHCNER_START_FAILED
+        ):
+            print("Main-라이트룸 실행 실패!")
+            self.show_guide_msg(msg_code=SIGNAL_LIGHTROOM_LAUHCNER_START_FAILED)
+            self.cleanup_resources()
+            return
+
+        print("Main-라이트룸 실행 성공")
+        self.thread_lightroom_automation.start()
+
     def init_threads(self):
         self.thread_lightroom_launcher = LightroomLaunchThread()
         self.thread_lightroom_automation = LightroomAutomationThread()
+
+        self.thread_lightroom_launcher.lightroom_started.connect(
+            self.on_lightroom_launcher_start
+        )
 
         self.thread_lightroom_automation.finished.connect(
             self.on_lightroom_automation_finished
@@ -118,7 +139,6 @@ class MainWindow(QMainWindow):
         )
 
         self.thread_lightroom_launcher.start()
-        self.thread_lightroom_automation.start()
 
     def run_main_window(self):
         try:
@@ -196,8 +216,20 @@ class MainWindow(QMainWindow):
         if msg_code == SIGNAL_NO_DETECTED_CAMERA:
             show_guide(parent=self, file_path="메시지/카메라감지실패메시지.txt")
         elif msg_code == SIGNAL_NO_SEARCHED_CAMERA:
-            print("카메라가 검색되지 않음.")
             show_guide(parent=self, file_path="메시지/카메라감지실패메시지.txt")
+        elif msg_code == SIGNAL_LIGHTROOM_AUTOMATION_CONNECT_FAILED:
+            show_guide(
+                parent=self,
+                file_path="",
+                defalut_message="⚠️⚠️⚠️ 라이트룸을 다시 실행해주세요.",
+            )
+        elif msg_code == SIGNAL_LIGHTROOM_AUTOMATION_FOCUS_FAILED:
+            show_guide(
+                parent=self,
+                file_path="",
+                defalut_message="⚠️⚠️⚠️ 라이트룸의 모든 창을 닫고 프로그램을 다시 실행해주세요.",
+            )
+
         else:
             error_msg_box = create_error_msg(
                 parent=self,

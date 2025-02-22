@@ -4,7 +4,11 @@ from constants import (
     SIGNAL_NO_DETECTED_CAMERA,
     SIGNAL_NO_SEARCHED_CAMERA,
     NO_DETECTED_CAMERA_NAME,
+    SIGNAL_LIGHTROOM_AUTOMATION_FOCUS_FAILED,
+    SIGNAL_LIGHTROOM_AUTOMATION_CONTROL_FAILED,
+    SIGNAL_LIGHTROOM_AUTOMATION_CONNECT_FAILED,
 )
+
 from pywinauto import Application, keyboard
 from state_manager.StateManager import StateManager
 from lightroom.utils.select_ui import select_ui
@@ -12,9 +16,11 @@ from PySide6.QtCore import QThread, Signal
 
 from mornitorings.TaskManagerDetector import TaskManagerDetector
 from helpers.log_exception_to_file import log_exception_to_file
+from lightroom.note_window_handlers.send_esc_key import send_esc_key
+from lightroom.note_window_handlers.close_note_window import close_note_window
 from lightroom.check_camera_state import detect_camera, search_camera
 from lightroom.utils import lock_mouse_keyboard, unlock_mouse_keyboard
-from lightroom.set_tet_capture import set_tet_capture
+from lightroom.tet_capture.set_tet_capture import set_tet_capture
 from lightroom.camera_settings import set_camera_settings
 
 config = load_config()
@@ -22,6 +28,9 @@ ISO_SETTING = config.get("ISO")
 WB_SETTING = config.get("WB")
 SHUTTER_SETTING = config.get("셔터")
 APERTURE_SETTING = config.get("조리개")
+
+TIMEOUT_CONNECT_LIGHTROOM = 5
+TIMEOUT_WAIT_LIGHTROOM_VISIBLE = 5
 
 
 class LightroomAutomationThread(QThread):
@@ -44,24 +53,37 @@ class LightroomAutomationThread(QThread):
         self.check_stop_flag()
 
         state_manager = StateManager()
-        state = state_manager.get_state()
 
-        app = Application(backend="uia").connect(
-            title_re=".*Lightroom Classic.*", timeout=15
-        )
+        try:
+            app = Application(backend="uia").connect(
+                title_re=".*Lightroom Classic.*", timeout=TIMEOUT_CONNECT_LIGHTROOM
+            )
+        except Exception as e:
+            log_exception_to_file(exception_obj=e, message="라이트룸 연결 실패")
+            self.failed.emit(SIGNAL_LIGHTROOM_AUTOMATION_CONNECT_FAILED)
+            unlock_mouse_keyboard()
+            return
 
-        lightroom = app.window(title_re=".*Lightroom Classic.*")
-        lightroom.wait("exists enabled visible ready", timeout=10)
-        lightroom.wrapper_object().maximize()
-        lightroom.wrapper_object().set_focus()
+        try:
+            close_note_window()
 
-        self.check_stop_flag("공지 닫기: ESC 키 3회 입력")
-        print("Lightroom 공지 닫기: ESC 키 3회 입력 시작...")
-        for i in range(15):
-            keyboard.send_keys("{ESC}")
-            print(f"✅ ESC 키 입력 {i+1}/3 완료")
-            time.sleep(0.1)
-        print("✅ Lightroom 공지 닫기 완료!")
+            lightroom = app.window(title_re=".*Lightroom Classic.*")
+            lightroom.wait(
+                "exists enabled visible ready", timeout=TIMEOUT_WAIT_LIGHTROOM_VISIBLE
+            )
+            lightroom.wrapper_object().maximize()
+            lightroom.wrapper_object().set_focus()
+
+            send_esc_key(parent=self)
+
+        except Exception as e:
+            log_exception_to_file(
+                exception_obj=e,
+                message="라이트룸 연결 후, 윈도우 탐색 실패, 포커스를 맞추지 못함, 모든 공지 창을 닫아야함",
+            )
+            self.failed.emit(SIGNAL_LIGHTROOM_AUTOMATION_FOCUS_FAILED)
+            unlock_mouse_keyboard()
+            return
 
         try:
             set_tet_capture(automation=self, lightroom=lightroom)
@@ -121,7 +143,7 @@ class LightroomAutomationThread(QThread):
 
         except Exception as e:
             print(f"❌ Lightroom 자동화 실패: {e}")
-            self.failed.emit(True)
+            self.failed.emit(SIGNAL_LIGHTROOM_AUTOMATION_CONTROL_FAILED)
             log_exception_to_file(exception_obj=e, message="Lightroom 자동화 실패")
         finally:
             unlock_mouse_keyboard()

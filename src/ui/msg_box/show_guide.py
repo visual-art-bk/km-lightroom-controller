@@ -3,15 +3,17 @@ from PySide6.QtGui import QGuiApplication
 from PySide6.QtWidgets import QMessageBox
 from helpers.log_exception_to_file import log_exception_to_file
 
+intial_msg="⚠️ 오류 발생! 다비 스튜디오 고객센터에 전화주세요."
+intial_file_path = '메시지/기본경고메시지.txt'
 
-def show_guide(parent, file_path):
+def show_guide(parent, file_path=intial_file_path, defalut_message=intial_msg):
     try:
         # 파일에서 메시지 읽기
         if os.path.exists(file_path):
             with open(file_path, "r", encoding="utf-8") as file:
                 message_text = file.read().strip()
         else:
-            message_text = "⚠️ 다비 스튜디오 고객센터에 전화주세요."
+            message_text = defalut_message
 
         # 메시지 박스 생성 및 표시
         msg_box = QMessageBox(parent)
