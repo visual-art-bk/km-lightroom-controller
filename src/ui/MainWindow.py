@@ -15,131 +15,86 @@ from PySide6.QtWidgets import (
     QLabel,
     QLineEdit,
     QHBoxLayout,
-    QSizePolicy
+    QSizePolicy,
 )
+
 from PySide6.QtGui import QIcon
 from PySide6.QtCore import Qt
+from typedefs.main_window_types import SizeDict
 from state_manager import StateManager, AppState
 from lightroom import LightroomAutomationThread, LightroomLaunchThread
-from ui.overlay.OverlayWindow import OverlayWindow
 from helpers.log_exception_to_file import log_exception_to_file
+
+from ui.overlay.OverlayWindow import OverlayWindow
 from ui.msg_box import create_error_msg
 from ui.inputs.input_main_field import input_main_field
 from ui.inputs.input_container import input_container
 from ui.buttons.btn_run_main import btn_run_main
 from ui.msg_box.show_guide import show_guide
+from ui.surfaces import create_shadow_widget, create_central_widget
+from ui.effects import create_shadow_effect
 
 
 class MainWindow(QMainWindow):
-    """Lightroom 실행 GUI"""
+    def init_widgets(self, size: SizeDict):
+        width = size.get("width")
+        height = size.get("height")
+
+        self.mainContainerWidget = QWidget(self)
+        self.mainContainerWidget.setGeometry(0, 0, width, height)
+
+        self.shadowWidget = create_shadow_widget(size=size)
+        self.shadowWidget.setParent(self.mainContainerWidget)
+        # shadow_effect = create_shadow_effect()
+        # self.shadowWidget.setGraphicsEffect(shadow_effect)
+
+        self.mainCentralWidget = create_central_widget(size=size)
+        self.mainCentralWidget.setParent(self.mainContainerWidget)
+
+        self.inputUsernNameWidget = input_container(
+            label="예약자 성함", placeholder="예) 홍길동"
+        )
+        self.inputPhoneNumberWidget = input_container(
+            label="전화번호 뒷 4자리",
+            placeholder="예) 1234",
+        )
+
+    def init_layouts(self):
+        main_central_layout = QVBoxLayout(self.mainCentralWidget)
+        main_central_layout.setContentsMargins(8, 8, 8, 8)
+        main_central_layout.addWidget(self.inputUsernNameWidget)
+        main_central_layout.addWidget(self.inputPhoneNumberWidget)
+
+        main_container_layout = QVBoxLayout(self.mainContainerWidget)
+        main_container_layout.setContentsMargins(0, 0, 0, 0)
 
     def __init__(self, x=None, y=0, width=300, height=600):
         super().__init__()
 
-        self.init_state_manager()
+        screen_geometry = self.screen().availableGeometry()
+        screen_width = screen_geometry.width()
+        screen_height = screen_geometry.height()
 
-        # self.setWindowTitle("다비 촬영 매니저")
+        size_dict: SizeDict = {
+            "width": width,
+            "height": height,
+            "screen_width": screen_width,
+            "screen_height": screen_height
+        }
 
-        # self.setWindowIcon(QIcon("assets/다비스튜디오_logo11_black_ico.ico"))
+        self.setWindowFlags(Qt.FramelessWindowHint)
+        self.setAttribute(Qt.WA_TranslucentBackground)
 
-        # OS 기본 타이틀바 제거
-
-        # self.setObjectName("MainWindow")
-        # self.setStyleSheet(
-        #     f"""
-        #     #MainWindow {{
-        #         background-color: {MAIN_WINDOW_BG_COLOR};
-        #     }}
-        #     """
-        # )
+        self.init_widgets(size=size_dict)
+        self.init_layouts()
+        self.setCentralWidget(self.mainContainerWidget)
 
         self.init_window_position(height=height, width=width)
-
-        self.init_window_layout()
 
         self.overlay_window = None
         self.thread_lightroom_automation = None
 
-    def init_input_main_fields(self, layout):
-        self.input_username = input_main_field(
-            layout=layout,
-            label="예약자 성함",
-            placeholder="“여기에 입력하세요.”",
-        )
-        self.input_phone = input_main_field(
-            layout=layout,
-            label="전화번호 뒷자리 4자리",
-            placeholder="“여기에 입력하세요.”",
-        )
-
-    def init_window_layout(self):
-        self.setWindowFlags(Qt.FramelessWindowHint)
-
-        self.setAttribute(Qt.WA_TranslucentBackground)
-
-        # 중앙 컨테이너 위젯 생성 (둥근 모서리 적용)
-        self.central_widget = QWidget()
-        self.central_widget.setObjectName("central_widget")
-        self.central_widget.setStyleSheet(
-            """
-            #central_widget {
-                background-color: #F8FAF0;
-                border-radius: 32px;
-            }
-        """
-        )
-        main_layout = QVBoxLayout(self.central_widget)
-        main_layout.setContentsMargins(8, 8, 8, 8)
-        main_layout.setSpacing(0)
-
-        # self.input_username_label = QLabel("예약자 성함")
-        # self.input_username_label.setAlignment(Qt.AlignCenter)
-        # self.input_username_label.setStyleSheet(
-        #     """
-        #     QLabel {
-        #         background-color: yellow;
-        #     }
-        #     """
-        # )
-        # self.input_username_entry = QLineEdit()
-        # self.input_username_entry.setStyleSheet(
-        #     """
-        #     QLineEdit {
-        #         border: none;
-        #         background-color: #EFF2E8;
-        #     }
-        # """
-        # )
-        # self.input_username_label.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
-        # self.input_username_entry.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
-
-        # inputs_layout = QHBoxLayout()
-        # inputs_layout.addWidget(self.input_username_label, 1)
-        # inputs_layout.addWidget(self.input_username_entry, 1)
-
-        # inputs_container = QWidget()
-        # inputs_container.setLayout(inputs_layout)
-        # inputs_container.setStyleSheet(
-        # """
-        # background-color: red;
-        # """
-        # )
-        # inputs_container.setFixedSize(300, 50)  # 너비 300, 높이 50 픽셀로 고정
-
-
-        # self.init_input_main_fields(layout=main_layout)
-
-        # self.run_button = btn_run_main()
-        # self.run_button.clicked.connect(self.run_main_window)
-        # layout.addWidget(self.run_button)
-        # container.setLayout(layout)
-
-        inputContainer = input_container(
-           label='예약자 성함',
-           placeholder='“여기에 입력하세요.”' 
-        )
-        main_layout.addWidget(inputContainer)
-        self.setCentralWidget(self.central_widget)
+        self.init_state_manager()
 
     def init_state_manager(self):
         self.state_manager = StateManager()
@@ -203,8 +158,8 @@ class MainWindow(QMainWindow):
 
     def run_main_window(self):
         try:
-            username = self.input_username.text().strip()
-            phone_number = self.input_phone.text().strip()
+            username = self.inputUsernNameWidget.inputEntry.text().strip()
+            phone_number = self.inputPhoneNumberWidget.inputEntry.text().strip()
 
             if username == "":
                 QMessageBox.warning(self, "입력 오류", "사용자 이름을 입력하세요!")

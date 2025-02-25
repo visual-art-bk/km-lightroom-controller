@@ -22,7 +22,7 @@ def createLabel(label: str):
             color: #ffffff;
             font-size: 14px;
             font-weight: 600;
-            border-radius: 16px;
+            border-radius: 24px;
             background-color: #426833; 
     }
     """
@@ -52,7 +52,9 @@ def createEntry(placeholder: str):
 def createLayout(inputLabel: QLabel, inputEntry: QLineEdit):
     layout = QHBoxLayout()
     layout.addWidget(inputLabel, 1)
-    layout.addWidget(inputEntry, 2)
+    layout.addWidget(inputEntry, 1)
+    layout.setContentsMargins(0, 0, 0, 0)
+    layout.setSpacing(0)
 
     return layout
 
@@ -67,10 +69,11 @@ def input_container(label: str, placeholder: str):
     container.setLayout(layout)
     container.setStyleSheet(
         """
-            background-color: #EFF2E8;
+            background-color: #DAE1CF;
             border-radius: 24px;
         """
     )
-    container.setFixedSize(300, 50)
+    container.setFixedSize(276, 50)
+    container.inputEntry = inputEntry
 
     return container
