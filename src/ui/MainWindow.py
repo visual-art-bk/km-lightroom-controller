@@ -13,7 +13,7 @@ from constants.style_constants import (
     RUN_BTN_STOP_ICON_PATH,
     TOP_APP_BAR_CLOSE_ICON_PATH,
     TOP_APP_BAR_MINIMIZE_ICON_PATH,
-    TOP_APP_BAR_MAXMIZE_ICON_PATH,
+    TOP_APP_BAR_MAIN_ICON_PATH,
 )
 from PySide6.QtWidgets import (
     QMainWindow,
@@ -97,7 +97,7 @@ class MainWindow(QMainWindow):
         if self.thread_lightroom_automation or self.thread_lightroom_launcher:
             self.cleanup_resources()
             return
-        
+
         self.close()
 
     def init_top_app_bar_layout(self):
@@ -108,12 +108,16 @@ class MainWindow(QMainWindow):
         )
         minimize_btn.clicked.connect(self.on_clicked_minimize_btn)
 
+        main_icon = create_btn_with_icon(
+            width=24, height=24, icon_path=TOP_APP_BAR_MAIN_ICON_PATH
+        )
+
         close_btn = create_btn_with_icon(
             width=24, height=24, icon_path=TOP_APP_BAR_CLOSE_ICON_PATH
         )
         close_btn.clicked.connect(self.on_clicked_close_btn)
 
-        btns = [minimize_btn, close_btn]
+        btns = [minimize_btn, main_icon, close_btn]
 
         for btn in btns:
             layout.addWidget(btn)
@@ -122,13 +126,20 @@ class MainWindow(QMainWindow):
 
         return layout
 
+    def update_display_text(self, new_text):
+        """디스플레이의 텍스트를 업데이트 (타이핑 효과 포함)"""
+        if self.main_display:
+            self.main_display.set_text(
+                new_text
+            )  # ✅ TypingEffectDisplay에 새로운 텍스트 설정
+
     def init_display_layout(self):
 
-        main_display = create_main_display_widget(
+        self.main_display = create_main_display_widget(
             size={"width": self.size_dict["width"], "height": 300}
         )
         layout = QHBoxLayout()
-        layout.addWidget(main_display)
+        layout.addWidget(self.main_display)
 
         return layout
 
@@ -269,12 +280,14 @@ class MainWindow(QMainWindow):
             )
             self.toggle_run_btn_icon(is_started=True)
 
-            QTimer.singleShot(1500, self.delayed_tasks_after_start)
+            self.update_display_text("📸 촬영 세팅이 시작됩니다...")
+
+            QTimer.singleShot(2250, self.delayed_tasks_after_start)
 
         except Exception as e:
             log_exception_to_file(
                 exception_obj=e,
-                message="메인 윈도우에서 run_main_window 실행 중 에러발생생",
+                message="메인 윈도우에서 run_main_window 실행 중 에러발생",
             )
 
     def delayed_tasks_after_start(self):
