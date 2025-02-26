@@ -48,6 +48,12 @@ class MainWindow(QMainWindow):
     def __init__(self, x=None, y=0, width=MAIN_WINDOW_WIDTH, height=MAIN_WINDOW_HEIGHT):
         super().__init__()
 
+        icon_path = "assets/다비스튜디오_logo11_black_ico.ico"
+        self.setWindowIcon(QIcon(icon_path))
+
+        # ✅ 윈도우 타이틀 (선택 사항)
+        self.setWindowTitle("촬영 매니저")
+
         screen_geometry = self.screen().availableGeometry()
         screen_width = screen_geometry.width()
         screen_height = screen_geometry.height()

@@ -39,6 +39,7 @@ def createEntry(placeholder: str):
         """
             QLineEdit {
                 border: none;
+                font-size: 14px;
             }
             QLineEdit::placeholder {
                 color: red;  /* 원하는 placeholder 텍스트 색상 */

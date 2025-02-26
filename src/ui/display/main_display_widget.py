@@ -18,7 +18,7 @@ class TypingEffectDisplay(QWidget):
         # ✅ QLabel 생성 (텍스트 출력용)
         self.label = QLabel("", self)
         self.label.setAlignment(Qt.AlignLeft | Qt.AlignTop)  # ✅ 왼쪽 정렬
-        self.label.setStyleSheet("font-size: 18px; color: black;")
+        self.label.setStyleSheet("font-size: 16px; color: #55624C; font-weight: 600")
         self.label.setWordWrap(True)  # ✅ 자동 줄바꿈 활성화
         self.label.setFixedWidth(
             self.width - 24
@@ -63,10 +63,10 @@ class TypingEffectDisplay(QWidget):
 
 def create_main_display_widget(size: SizeDict):
     """챗GPT 같은 타이핑 애니메이션이 적용된 디스플레이 위젯"""
-    text = """안녕하세요😊 환영합니다🎉 
+    try:
+        with open("메시지/디스플레이메시지.txt", "r", encoding="utf-8") as file:
+            text = file.read().strip()
+    except FileNotFoundError:
+        text = "디스플레이 메시지를 불러올 수 없습니다."
 
-📌 사용자 성함 
-📌 전화번호 뒷 4자리
-
-꼭 입력하시고 플레이버튼을 눌러주세요."""  # ✅ 원하는 문장 입력
     return TypingEffectDisplay(size, text)
