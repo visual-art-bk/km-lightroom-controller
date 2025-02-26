@@ -6,20 +6,25 @@ from constants import (
     SIGNAL_LIGHTROOM_AUTOMATION_CONNECT_FAILED,
     SIGNAL_LIGHTROOM_AUTOMATION_FOCUS_FAILED,
 )
+from constants.style_constants import (
+    MAIN_WINDOW_HEIGHT,
+    MAIN_WINDOW_WIDTH,
+    RUN_BTN_PLAY_ICON_PATH,
+    RUN_BTN_STOP_ICON_PATH,
+)
 from PySide6.QtWidgets import (
     QMainWindow,
     QMessageBox,
     QVBoxLayout,
     QWidget,
     QApplication,
-    QLabel,
-    QLineEdit,
     QHBoxLayout,
     QSizePolicy,
+    QPushButton,
 )
 
-from PySide6.QtGui import QIcon
-from PySide6.QtCore import Qt
+from PySide6.QtGui import QIcon, QCursor
+from PySide6.QtCore import Qt, QSize, QTimer
 from typedefs.main_window_types import SizeDict
 from state_manager import StateManager, AppState
 from lightroom import LightroomAutomationThread, LightroomLaunchThread
@@ -36,39 +41,7 @@ from ui.effects import create_shadow_effect
 
 
 class MainWindow(QMainWindow):
-    def init_widgets(self, size: SizeDict):
-        width = size.get("width")
-        height = size.get("height")
-
-        self.mainContainerWidget = QWidget(self)
-        self.mainContainerWidget.setGeometry(0, 0, width, height)
-
-        self.shadowWidget = create_shadow_widget(size=size)
-        self.shadowWidget.setParent(self.mainContainerWidget)
-        # shadow_effect = create_shadow_effect()
-        # self.shadowWidget.setGraphicsEffect(shadow_effect)
-
-        self.mainCentralWidget = create_central_widget(size=size)
-        self.mainCentralWidget.setParent(self.mainContainerWidget)
-
-        self.inputUsernNameWidget = input_container(
-            label="예약자 성함", placeholder="예) 홍길동"
-        )
-        self.inputPhoneNumberWidget = input_container(
-            label="전화번호 뒷 4자리",
-            placeholder="예) 1234",
-        )
-
-    def init_layouts(self):
-        main_central_layout = QVBoxLayout(self.mainCentralWidget)
-        main_central_layout.setContentsMargins(8, 8, 8, 8)
-        main_central_layout.addWidget(self.inputUsernNameWidget)
-        main_central_layout.addWidget(self.inputPhoneNumberWidget)
-
-        main_container_layout = QVBoxLayout(self.mainContainerWidget)
-        main_container_layout.setContentsMargins(0, 0, 0, 0)
-
-    def __init__(self, x=None, y=0, width=300, height=600):
+    def __init__(self, x=None, y=0, width=MAIN_WINDOW_WIDTH, height=MAIN_WINDOW_HEIGHT):
         super().__init__()
 
         screen_geometry = self.screen().availableGeometry()
@@ -79,14 +52,17 @@ class MainWindow(QMainWindow):
             "width": width,
             "height": height,
             "screen_width": screen_width,
-            "screen_height": screen_height
+            "screen_height": screen_height,
         }
 
         self.setWindowFlags(Qt.FramelessWindowHint)
+
         self.setAttribute(Qt.WA_TranslucentBackground)
 
-        self.init_widgets(size=size_dict)
-        self.init_layouts()
+        self.init_surface_widgets(size=size_dict)
+
+        self.init_layouts(mainWidget=self.mainWidget)
+
         self.setCentralWidget(self.mainContainerWidget)
 
         self.init_window_position(height=height, width=width)
@@ -95,6 +71,115 @@ class MainWindow(QMainWindow):
         self.thread_lightroom_automation = None
 
         self.init_state_manager()
+
+    def init_surface_widgets(self, size: SizeDict):
+        width = size.get("width")
+        height = size.get("height")
+
+        self.mainContainerWidget = QWidget(self)
+        self.mainContainerWidget.setGeometry(0, 0, width, height)
+
+        self.shadowWidget = create_shadow_widget(size=size)
+        self.shadowWidget.setParent(self.mainContainerWidget)
+
+        self.mainWidget = create_central_widget(size=size)
+        self.mainWidget.setParent(self.mainContainerWidget)
+
+    def init_top_app_bar_layout(self):
+        style = """
+            background-color: red;
+        """
+        layout = QHBoxLayout()
+
+        test_widget = QWidget()
+        test_widget.setFixedSize(50, 50)
+        test_widget.setStyleSheet(style)
+
+        test_widget_2 = QWidget()
+        test_widget_2.setFixedSize(50, 50)
+        test_widget_2.setStyleSheet(style)
+        layout.setSpacing(10)
+        layout.addWidget(test_widget)
+        layout.addWidget(test_widget_2)
+
+        return layout
+
+    def init_display_layout(self):
+        style = """
+            background-color: yellow;
+        """
+        display = QWidget()
+
+        display.setStyleSheet(style)
+
+        display.setFixedWidth(300)
+        display.setFixedHeight(300)  # 원하는 높이로 설정 (예: 300px)
+
+        layout = QHBoxLayout()
+        layout.addWidget(display)
+
+        return layout
+
+    def init_inputs_layout(self):
+        self.inputUsernNameWidget = input_container(
+            label="예약자 성함", placeholder="예) 홍길동"
+        )
+        self.inputPhoneNumberWidget = input_container(
+            label="전화번호 뒷 4자리",
+            placeholder="예) 1234",
+        )
+        layout = QVBoxLayout()
+
+        layout.addWidget(self.inputUsernNameWidget)
+        layout.addWidget(self.inputPhoneNumberWidget)
+
+        layout.setSpacing(20)
+        layout.addStretch()
+        layout.setContentsMargins(8, 24, 8, 0)
+
+        return layout
+
+    def toggle_run_btn_icon(self, is_started=False):
+        if is_started:
+            self.run_button.setIcon(self.run_btn_stop_icon)
+            print("▶ → ■ 변경됨: 실행 중")
+
+        else:
+            self.run_button.setIcon(self.run_btn_play_icon)
+            print("■ → ▶ 변경됨: 정지됨")
+
+    def init_run_btn_layout(self):
+        self.run_btn_play_icon = QIcon(RUN_BTN_PLAY_ICON_PATH)
+        self.run_btn_stop_icon = QIcon(RUN_BTN_STOP_ICON_PATH)
+
+        self.run_button = QPushButton()
+        self.run_button.setIcon(self.run_btn_play_icon)
+        self.run_button.setIconSize(QSize(40, 40))
+        self.run_button.setFixedSize(40, 40)
+
+        self.run_button.setCursor(QCursor(Qt.PointingHandCursor))
+        self.run_button.clicked.connect(self.run_main_window)
+
+        layout = QHBoxLayout()
+        layout.addWidget(self.run_button)
+        layout.setContentsMargins(0, 0, 0, 24)
+        layout.setSpacing(48)
+
+        return layout
+
+    def init_layouts(self, mainWidget):
+        main_central_layout = QVBoxLayout(mainWidget)
+        main_central_layout.setContentsMargins(0, 0, 0, 0)
+
+        top_app_bar_layout = self.init_top_app_bar_layout()
+        display_layout = self.init_display_layout()
+        inputs_layout = self.init_inputs_layout()
+        run_btn_layout = self.init_run_btn_layout()
+
+        main_central_layout.addLayout(top_app_bar_layout)
+        main_central_layout.addLayout(display_layout)
+        main_central_layout.addLayout(inputs_layout)
+        main_central_layout.addLayout(run_btn_layout)
 
     def init_state_manager(self):
         self.state_manager = StateManager()
@@ -176,17 +261,21 @@ class MainWindow(QMainWindow):
                 username=username,
                 context="사용자정보 올바르게 입력함",
             )
+            self.toggle_run_btn_icon(is_started=True)
 
-            self.init_threads()
+            QTimer.singleShot(1500, self.delayed_tasks_after_start)
 
-            self.setWindowState(Qt.WindowMinimized)
-
-            self.create_overlay()
         except Exception as e:
             log_exception_to_file(
                 exception_obj=e,
                 message="메인 윈도우에서 run_main_window 실행 중 에러발생생",
             )
+
+    def delayed_tasks_after_start(self):
+        """Lightroom 스레드 실행 및 UI 상태 업데이트"""
+        self.init_threads()
+        self.setWindowState(Qt.WindowMinimized)
+        self.create_overlay()
 
     def create_overlay(self):
         """독립적인 오버레이 창을 생성하고 부모 윈도우와 시그널 연결"""
