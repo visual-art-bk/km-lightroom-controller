@@ -11,6 +11,9 @@ from constants.style_constants import (
     MAIN_WINDOW_WIDTH,
     RUN_BTN_PLAY_ICON_PATH,
     RUN_BTN_STOP_ICON_PATH,
+    TOP_APP_BAR_CLOSE_ICON_PATH,
+    TOP_APP_BAR_MINIMIZE_ICON_PATH,
+    TOP_APP_BAR_MAXMIZE_ICON_PATH,
 )
 from PySide6.QtWidgets import (
     QMainWindow,
@@ -32,9 +35,10 @@ from helpers.log_exception_to_file import log_exception_to_file
 
 from ui.overlay.OverlayWindow import OverlayWindow
 from ui.msg_box import create_error_msg
+from ui.display.main_display_widget import create_main_display_widget
 from ui.inputs.input_main_field import input_main_field
 from ui.inputs.input_container import input_container
-from ui.buttons.btn_run_main import btn_run_main
+from ui.buttons.create_btn_with_icon import create_btn_with_icon
 from ui.msg_box.show_guide import show_guide
 from ui.surfaces import create_shadow_widget, create_central_widget
 from ui.effects import create_shadow_effect
@@ -48,7 +52,7 @@ class MainWindow(QMainWindow):
         screen_width = screen_geometry.width()
         screen_height = screen_geometry.height()
 
-        size_dict: SizeDict = {
+        self.size_dict: SizeDict = {
             "width": width,
             "height": height,
             "screen_width": screen_width,
@@ -59,7 +63,7 @@ class MainWindow(QMainWindow):
 
         self.setAttribute(Qt.WA_TranslucentBackground)
 
-        self.init_surface_widgets(size=size_dict)
+        self.init_surface_widgets(size=self.size_dict)
 
         self.init_layouts(mainWidget=self.mainWidget)
 
@@ -69,6 +73,7 @@ class MainWindow(QMainWindow):
 
         self.overlay_window = None
         self.thread_lightroom_automation = None
+        self.thread_lightroom_launcher = None
 
         self.init_state_manager()
 
@@ -85,38 +90,45 @@ class MainWindow(QMainWindow):
         self.mainWidget = create_central_widget(size=size)
         self.mainWidget.setParent(self.mainContainerWidget)
 
+    def on_clicked_minimize_btn(self):
+        self.setWindowState(Qt.WindowMinimized)
+
+    def on_clicked_close_btn(self):
+        if self.thread_lightroom_automation or self.thread_lightroom_launcher:
+            self.cleanup_resources()
+            return
+        
+        self.close()
+
     def init_top_app_bar_layout(self):
-        style = """
-            background-color: red;
-        """
         layout = QHBoxLayout()
 
-        test_widget = QWidget()
-        test_widget.setFixedSize(50, 50)
-        test_widget.setStyleSheet(style)
+        minimize_btn = create_btn_with_icon(
+            width=24, height=24, icon_path=TOP_APP_BAR_MINIMIZE_ICON_PATH
+        )
+        minimize_btn.clicked.connect(self.on_clicked_minimize_btn)
 
-        test_widget_2 = QWidget()
-        test_widget_2.setFixedSize(50, 50)
-        test_widget_2.setStyleSheet(style)
-        layout.setSpacing(10)
-        layout.addWidget(test_widget)
-        layout.addWidget(test_widget_2)
+        close_btn = create_btn_with_icon(
+            width=24, height=24, icon_path=TOP_APP_BAR_CLOSE_ICON_PATH
+        )
+        close_btn.clicked.connect(self.on_clicked_close_btn)
+
+        btns = [minimize_btn, close_btn]
+
+        for btn in btns:
+            layout.addWidget(btn)
+
+        layout.setContentsMargins(0, 8, 0, 0)
 
         return layout
 
     def init_display_layout(self):
-        style = """
-            background-color: yellow;
-        """
-        display = QWidget()
 
-        display.setStyleSheet(style)
-
-        display.setFixedWidth(300)
-        display.setFixedHeight(300)  # 원하는 높이로 설정 (예: 300px)
-
+        main_display = create_main_display_widget(
+            size={"width": self.size_dict["width"], "height": 300}
+        )
         layout = QHBoxLayout()
-        layout.addWidget(display)
+        layout.addWidget(main_display)
 
         return layout
 
@@ -141,23 +153,17 @@ class MainWindow(QMainWindow):
 
     def toggle_run_btn_icon(self, is_started=False):
         if is_started:
-            self.run_button.setIcon(self.run_btn_stop_icon)
+            self.run_button.setIcon(QIcon(RUN_BTN_STOP_ICON_PATH))
             print("▶ → ■ 변경됨: 실행 중")
 
         else:
-            self.run_button.setIcon(self.run_btn_play_icon)
+            self.run_button.setIcon(QIcon(RUN_BTN_PLAY_ICON_PATH))
             print("■ → ▶ 변경됨: 정지됨")
 
     def init_run_btn_layout(self):
-        self.run_btn_play_icon = QIcon(RUN_BTN_PLAY_ICON_PATH)
-        self.run_btn_stop_icon = QIcon(RUN_BTN_STOP_ICON_PATH)
-
-        self.run_button = QPushButton()
-        self.run_button.setIcon(self.run_btn_play_icon)
-        self.run_button.setIconSize(QSize(40, 40))
-        self.run_button.setFixedSize(40, 40)
-
-        self.run_button.setCursor(QCursor(Qt.PointingHandCursor))
+        self.run_button = create_btn_with_icon(
+            width=40, height=40, icon_path=QIcon(RUN_BTN_PLAY_ICON_PATH)
+        )
         self.run_button.clicked.connect(self.run_main_window)
 
         layout = QHBoxLayout()
