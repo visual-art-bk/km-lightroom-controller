@@ -256,10 +256,6 @@ class MainWindow(QMainWindow):
             self.on_lightroom_launcher_start
         )
 
-        self.thread_lightroom_automation.failed.connect(
-            self.on_lightroom_automation_failed
-        )
-
         self.thread_lightroom_automation.automation_result.connect(
             self.on_lightroom_automation_finished
         )
@@ -329,10 +325,6 @@ class MainWindow(QMainWindow):
         self.overlay_window = OverlayWindow()  #  독립적인 오버레이 생성
         self.overlay_window.show()
 
-    def on_lightroom_automation_failed(self, failed):
-        self.show_guide_msg(msg_code=failed)
-        self.cleanup_resources()
-
     def on_lightroom_automation_finished(self, info: TypeAutomationSignal):
 
         self.raise_()  # ✅ 메인 윈도우를 최상위로 올림
@@ -341,7 +333,7 @@ class MainWindow(QMainWindow):
         if info["status"] is False:
             self.show_guide_msg(signal_info_msg=info["message"])
         else:
-            show_guide(self, file_path="메시지/안내메세지.txt")
+            self.show_guide_msg(msg_code=info["error_code"])
 
         self.cleanup_resources()
 
