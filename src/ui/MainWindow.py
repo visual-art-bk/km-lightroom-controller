@@ -278,7 +278,7 @@ class MainWindow(QMainWindow):
 
     def run_main_window(self):
         if self._check_test_version() is True:
-            return 
+            return
         try:
             username = self.inputUsernNameWidget.inputEntry.text().strip()
             phone_number = self.inputPhoneNumberWidget.inputEntry.text().strip()
@@ -331,9 +331,16 @@ class MainWindow(QMainWindow):
         self.activateWindow()  # ✅ 메인 윈도우에 포커스 활성화
 
         if info["status"] is False:
-            self.show_guide_msg(signal_info_msg=info["message"])
+
+            self.show_guide_msg(
+                msg_code=info["error_code"], signal_info_msg=info["message"]
+            )
         else:
-            self.show_guide_msg(msg_code=info["error_code"])
+            show_guide(
+                parent=self,
+                file_path="메시지/안내메세지.txt",
+                defalut_message="촬영 준비가 성공적으로 끝났습니다.",
+            )
 
         self.cleanup_resources()
 

@@ -308,3 +308,41 @@ AttributeError: 'NoneType' object has no attribute 'set_text'
 
 ============================================================
 
+
+============================================================
+📌 [오류 발생 시각]: 2025-03-07 15:06:07
+============================================================
+작업관리자 실행으로 작업 강제 중단되었습니다.
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-03-07 15:06:09
+============================================================
+Lightroom 자동화 실패
+
+🔍 [Traceback Details]:
+Traceback (most recent call last):
+  File "C:\Users\USER\Documents\code\lightroom-controller\km-lightroom-controller/src\lightroom\LightroomAutomationThread.py", line 115, in run
+    set_tet_capture(
+    ~~~~~~~~~~~~~~~^
+        automation=self, lightroom=lightroom, signal=self.automation_steps
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\USER\Documents\code\lightroom-controller\km-lightroom-controller/src\lightroom\tet_capture\set_tet_capture.py", line 153, in set_tet_capture
+    input_session_id_field.set_text(f"{state.username}{state.phone_number}")
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'set_text'
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-03-07 15:08:03
+============================================================
+카메라가 검색되지 않았습니다.
+
+============================================================
+
