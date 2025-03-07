@@ -1,84 +1,180 @@
 
 ============================================================
-📌 [오류 발생 시각]: 2025-02-22 10:53:38
+📌 [오류 발생 시각]: 2025-03-07 14:04:59
 ============================================================
-라이트룸 연결 후, 윈도우 탐색 실패, 포커스를 맞추지 못함함
+파일메뉴에서 연결전송된 촬영을 클릭후, 연결전송된 촬영 시작...을 클릭 실패했습니다.
 
 🔍 [Traceback Details]:
 Traceback (most recent call last):
-  File "C:\Users\USER\Documents\app\lightroom\km-lightroom-controller/src\lightroom\LightroomAutomationThread.py", line 63, in run
-    lightroom.wait(
-    ~~~~~~~~~~~~~~^
-        "exists enabled visible ready", timeout=TIMEOUT_WAIT_LIGHTROOM_VISIBLE
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\capture\main\km-lightroom-controller/src\lightroom\tet_capture\set_tet_capture.py", line 131, in set_tet_capture
+    start_tet_capture_window.click_input()
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'click_input'
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-03-07 14:04:59
+============================================================
+파일메뉴에서 연결전송된 촬영을 클릭후, 연결전송된 촬영 시작...을 클릭 실패했습니다.
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-03-07 14:05:08
+============================================================
+Lightroom 자동화 실패
+
+🔍 [Traceback Details]:
+Traceback (most recent call last):
+  File "C:\Users\USER\Documents\code\capture\main\km-lightroom-controller/src\lightroom\LightroomAutomationThread.py", line 99, in run
+    set_tet_capture(
+    ~~~~~~~~~~~~~~~^
+        automation=self, lightroom=lightroom, signal=self.automation_steps
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
     )
     ^
-  File "c:\Users\USER\Documents\app\lightroom\km-lightroom-controller\myenv\Lib\site-packages\pywinauto\application.py", line 529, in wait
-    wait_until(timeout, retry_interval,
-    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
-               lambda: self.__check_all_conditions(check_method_names, retry_interval))
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "c:\Users\USER\Documents\app\lightroom\km-lightroom-controller\myenv\Lib\site-packages\pywinauto\timings.py", line 375, in wait_until
-    raise err
-pywinauto.timings.TimeoutError: timed out
+  File "C:\Users\USER\Documents\code\capture\main\km-lightroom-controller/src\lightroom\tet_capture\set_tet_capture.py", line 151, in set_tet_capture
+    input_session_id_field.set_text(f"{state.username}{state.phone_number}")
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'set_text'
 
 ============================================================
 
 
 ============================================================
-📌 [오류 발생 시각]: 2025-02-22 11:00:42
+📌 [오류 발생 시각]: 2025-03-07 14:19:10
 ============================================================
-라이트룸 연결 후, 윈도우 탐색 실패, 포커스를 맞추지 못함, 모든 공지 창을 닫아야함
+파일메뉴에서 연결전송된 촬영을 클릭후, 연결전송된 촬영 시작...을 클릭 실패했습니다.
 
 🔍 [Traceback Details]:
 Traceback (most recent call last):
-  File "C:\Users\USER\Documents\app\lightroom\km-lightroom-controller/src\lightroom\LightroomAutomationThread.py", line 67, in run
-    lightroom.wait(
-    ~~~~~~~~~~~~~~^
-        "exists enabled visible ready", timeout=TIMEOUT_WAIT_LIGHTROOM_VISIBLE
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\capture\main\km-lightroom-controller/src\lightroom\tet_capture\set_tet_capture.py", line 131, in set_tet_capture
+    start_tet_capture_window.click_input()
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'click_input'
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-03-07 14:19:10
+============================================================
+파일메뉴에서 연결전송된 촬영을 클릭후, 연결전송된 촬영 시작...을 클릭 실패했습니다.
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-03-07 14:19:18
+============================================================
+작업관리자 실행으로 작업 강제 중단
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-03-07 14:19:19
+============================================================
+Lightroom 자동화 실패
+
+🔍 [Traceback Details]:
+Traceback (most recent call last):
+  File "C:\Users\USER\Documents\code\capture\main\km-lightroom-controller/src\lightroom\LightroomAutomationThread.py", line 115, in run
+    set_tet_capture(
+    ~~~~~~~~~~~~~~~^
+        automation=self, lightroom=lightroom, signal=self.automation_steps
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
     )
     ^
-  File "c:\Users\USER\Documents\app\lightroom\km-lightroom-controller\myenv\Lib\site-packages\pywinauto\application.py", line 529, in wait
-    wait_until(timeout, retry_interval,
-    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
-               lambda: self.__check_all_conditions(check_method_names, retry_interval))
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "c:\Users\USER\Documents\app\lightroom\km-lightroom-controller\myenv\Lib\site-packages\pywinauto\timings.py", line 375, in wait_until
-    raise err
-pywinauto.timings.TimeoutError: timed out
+  File "C:\Users\USER\Documents\code\capture\main\km-lightroom-controller/src\lightroom\tet_capture\set_tet_capture.py", line 151, in set_tet_capture
+    input_session_id_field.set_text(f"{state.username}{state.phone_number}")
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'set_text'
 
 ============================================================
 
 
 ============================================================
-📌 [오류 발생 시각]: 2025-02-22 11:01:08
+📌 [오류 발생 시각]: 2025-03-07 14:20:52
 ============================================================
-라이트룸 연결 후, 윈도우 탐색 실패, 포커스를 맞추지 못함, 모든 공지 창을 닫아야함
+파일메뉴에서 연결전송된 촬영을 클릭후, 연결전송된 촬영 시작...을 클릭 실패했습니다.
 
 🔍 [Traceback Details]:
 Traceback (most recent call last):
-  File "C:\Users\USER\Documents\app\lightroom\km-lightroom-controller/src\lightroom\LightroomAutomationThread.py", line 67, in run
-    lightroom.wait(
-    ~~~~~~~~~~~~~~^
-        "exists enabled visible ready", timeout=TIMEOUT_WAIT_LIGHTROOM_VISIBLE
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\capture\main\km-lightroom-controller/src\lightroom\tet_capture\set_tet_capture.py", line 131, in set_tet_capture
+    start_tet_capture_window.click_input()
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'click_input'
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-03-07 14:20:52
+============================================================
+파일메뉴에서 연결전송된 촬영을 클릭후, 연결전송된 촬영 시작...을 클릭 실패했습니다.
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-03-07 14:21:00
+============================================================
+작업관리자 실행으로 작업 강제 중단
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-03-07 14:21:01
+============================================================
+Lightroom 자동화 실패
+
+🔍 [Traceback Details]:
+Traceback (most recent call last):
+  File "C:\Users\USER\Documents\code\capture\main\km-lightroom-controller/src\lightroom\LightroomAutomationThread.py", line 116, in run
+    set_tet_capture(
+    ~~~~~~~~~~~~~~~^
+        automation=self, lightroom=lightroom, signal=self.automation_steps
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
     )
     ^
-  File "c:\Users\USER\Documents\app\lightroom\km-lightroom-controller\myenv\Lib\site-packages\pywinauto\application.py", line 529, in wait
-    wait_until(timeout, retry_interval,
-    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
-               lambda: self.__check_all_conditions(check_method_names, retry_interval))
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "c:\Users\USER\Documents\app\lightroom\km-lightroom-controller\myenv\Lib\site-packages\pywinauto\timings.py", line 375, in wait_until
-    raise err
-pywinauto.timings.TimeoutError: timed out
+  File "C:\Users\USER\Documents\code\capture\main\km-lightroom-controller/src\lightroom\tet_capture\set_tet_capture.py", line 151, in set_tet_capture
+    input_session_id_field.set_text(f"{state.username}{state.phone_number}")
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'set_text'
 
 ============================================================
 
 
 ============================================================
-📌 [오류 발생 시각]: 2025-02-22 11:05:19
+📌 [오류 발생 시각]: 2025-03-07 14:22:39
+============================================================
+파일메뉴에서 연결전송된 촬영을 클릭후, 연결전송된 촬영 시작...을 클릭 실패했습니다.
+
+🔍 [Traceback Details]:
+Traceback (most recent call last):
+  File "C:\Users\USER\Documents\code\capture\main\km-lightroom-controller/src\lightroom\tet_capture\set_tet_capture.py", line 131, in set_tet_capture
+    start_tet_capture_window.click_input()
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'click_input'
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-03-07 14:22:39
+============================================================
+파일메뉴에서 연결전송된 촬영을 클릭후, 연결전송된 촬영 시작...을 클릭 실패했습니다.
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-03-07 14:22:48
 ============================================================
 작업관리자 실행으로 작업 강제 중단
 
@@ -86,129 +182,52 @@ pywinauto.timings.TimeoutError: timed out
 
 
 ============================================================
-📌 [오류 발생 시각]: 2025-02-22 11:11:46
+📌 [오류 발생 시각]: 2025-03-07 14:22:48
 ============================================================
-라이트룸 연결 후, 윈도우 탐색 실패, 포커스를 맞추지 못함, 모든 공지 창을 닫아야함
+Lightroom 자동화 실패
 
 🔍 [Traceback Details]:
 Traceback (most recent call last):
-  File "C:\Users\USER\Documents\app\lightroom\km-lightroom-controller/src\lightroom\LightroomAutomationThread.py", line 68, in run
-    close_note_window()
-    ~~~~~~~~~~~~~~~~~^^
-  File "C:\Users\USER\Documents\app\lightroom\km-lightroom-controller/src\lightroom\note_window_handlers\close_note_window.py", line 27, in close_note_window
-    raise RuntimeError(error_message)
-RuntimeError: 공지 창을 닫을 수 없습니다. 프로그램을 중지합니다.
-
-============================================================
-
-
-============================================================
-📌 [오류 발생 시각]: 2025-02-22 11:14:23
-============================================================
-라이트룸 연결 후, 윈도우 탐색 실패, 포커스를 맞추지 못함, 모든 공지 창을 닫아야함
-
-🔍 [Traceback Details]:
-Traceback (most recent call last):
-  File "C:\Users\USER\Documents\app\lightroom\km-lightroom-controller/src\lightroom\LightroomAutomationThread.py", line 68, in run
-    close_note_window()
-    ~~~~~~~~~~~~~~~~~^^
-  File "C:\Users\USER\Documents\app\lightroom\km-lightroom-controller/src\lightroom\note_window_handlers\close_note_window.py", line 27, in close_note_window
-    raise RuntimeError(error_message)
-RuntimeError: 공지 창을 닫을 수 없습니다. 프로그램을 중지합니다.
-
-============================================================
-
-
-============================================================
-📌 [오류 발생 시각]: 2025-02-22 11:14:49
-============================================================
-라이트룸 연결 후, 윈도우 탐색 실패, 포커스를 맞추지 못함, 모든 공지 창을 닫아야함
-
-🔍 [Traceback Details]:
-Traceback (most recent call last):
-  File "C:\Users\USER\Documents\app\lightroom\km-lightroom-controller/src\lightroom\LightroomAutomationThread.py", line 68, in run
-    close_note_window()
-    ~~~~~~~~~~~~~~~~~^^
-  File "C:\Users\USER\Documents\app\lightroom\km-lightroom-controller/src\lightroom\note_window_handlers\close_note_window.py", line 27, in close_note_window
-    raise RuntimeError(error_message)
-RuntimeError: 공지 창을 닫을 수 없습니다. 프로그램을 중지합니다.
-
-============================================================
-
-
-============================================================
-📌 [오류 발생 시각]: 2025-02-22 11:18:34
-============================================================
-라이트룸 연결 후, 윈도우 탐색 실패, 포커스를 맞추지 못함, 모든 공지 창을 닫아야함
-
-🔍 [Traceback Details]:
-Traceback (most recent call last):
-  File "C:\Users\USER\Documents\app\lightroom\km-lightroom-controller/src\lightroom\LightroomAutomationThread.py", line 71, in run
-    lightroom.wait(
-    ~~~~~~~~~~~~~~^
-        "exists enabled visible ready", timeout=TIMEOUT_WAIT_LIGHTROOM_VISIBLE
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\capture\main\km-lightroom-controller/src\lightroom\LightroomAutomationThread.py", line 116, in run
+    set_tet_capture(
+    ~~~~~~~~~~~~~~~^
+        automation=self, lightroom=lightroom, signal=self.automation_steps
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
     )
     ^
-  File "c:\Users\USER\Documents\app\lightroom\km-lightroom-controller\myenv\Lib\site-packages\pywinauto\application.py", line 529, in wait
-    wait_until(timeout, retry_interval,
-    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
-               lambda: self.__check_all_conditions(check_method_names, retry_interval))
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "c:\Users\USER\Documents\app\lightroom\km-lightroom-controller\myenv\Lib\site-packages\pywinauto\timings.py", line 375, in wait_until
-    raise err
-pywinauto.timings.TimeoutError: timed out
+  File "C:\Users\USER\Documents\code\capture\main\km-lightroom-controller/src\lightroom\tet_capture\set_tet_capture.py", line 151, in set_tet_capture
+    input_session_id_field.set_text(f"{state.username}{state.phone_number}")
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'set_text'
 
 ============================================================
 
 
 ============================================================
-📌 [오류 발생 시각]: 2025-02-26 12:49:14
+📌 [오류 발생 시각]: 2025-03-07 14:25:02
 ============================================================
-작업관리자 실행으로 작업 강제 중단
-
-============================================================
-
-
-============================================================
-📌 [오류 발생 시각]: 2025-02-26 12:49:15
-============================================================
-라이트룸 연결 실패
+파일메뉴에서 연결전송된 촬영을 클릭후, 연결전송된 촬영 시작...을 클릭 실패했습니다.
 
 🔍 [Traceback Details]:
 Traceback (most recent call last):
-  File "c:\Users\USER\Documents\code\lightroom\main\km-lightroom-controller\myenv\Lib\site-packages\pywinauto\timings.py", line 436, in wait_until_passes
-    func_val = func(*args, **kwargs)
-  File "c:\Users\USER\Documents\code\lightroom\main\km-lightroom-controller\myenv\Lib\site-packages\pywinauto\findwindows.py", line 87, in find_element
-    raise ElementNotFoundError(kwargs)
-pywinauto.findwindows.ElementNotFoundError: {'title_re': '.*Lightroom Classic.*', 'backend': 'uia', 'visible_only': False}
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "C:\Users\USER\Documents\code\lightroom\main\km-lightroom-controller/src\lightroom\LightroomAutomationThread.py", line 58, in run
-    app = Application(backend="uia").connect(
-        title_re=".*Lightroom Classic.*", timeout=TIMEOUT_CONNECT_LIGHTROOM
-    )
-  File "c:\Users\USER\Documents\code\lightroom\main\km-lightroom-controller\myenv\Lib\site-packages\pywinauto\application.py", line 990, in connect
-    self.process = timings.wait_until_passes(
-                   ~~~~~~~~~~~~~~~~~~~~~~~~~^
-            timeout, retry_interval, findwindows.find_element,
-            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    ...<2 lines>...
-            *(), **kwargs
-            ^^^^^^^^^^^^^
-        ).process_id
-        ^
-  File "c:\Users\USER\Documents\code\lightroom\main\km-lightroom-controller\myenv\Lib\site-packages\pywinauto\timings.py", line 458, in wait_until_passes
-    raise err
-pywinauto.timings.TimeoutError
+  File "C:\Users\USER\Documents\code\capture\main\km-lightroom-controller/src\lightroom\tet_capture\set_tet_capture.py", line 131, in set_tet_capture
+    start_tet_capture_window.click_input()
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'click_input'
 
 ============================================================
 
 
 ============================================================
-📌 [오류 발생 시각]: 2025-02-26 12:50:12
+📌 [오류 발생 시각]: 2025-03-07 14:25:02
+============================================================
+파일메뉴에서 연결전송된 촬영을 클릭후, 연결전송된 촬영 시작...을 클릭 실패했습니다.
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-03-07 14:25:09
 ============================================================
 작업관리자 실행으로 작업 강제 중단
 
@@ -216,165 +235,68 @@ pywinauto.timings.TimeoutError
 
 
 ============================================================
-📌 [오류 발생 시각]: 2025-02-26 12:55:30
+📌 [오류 발생 시각]: 2025-03-07 14:25:11
 ============================================================
-작업관리자 실행으로 작업 강제 중단
-
-============================================================
-
-
-============================================================
-📌 [오류 발생 시각]: 2025-02-26 13:23:59
-============================================================
-작업관리자 실행으로 작업 강제 중단
-
-============================================================
-
-
-============================================================
-📌 [오류 발생 시각]: 2025-02-26 13:24:21
-============================================================
-작업관리자 실행으로 작업 강제 중단
-
-============================================================
-
-
-============================================================
-📌 [오류 발생 시각]: 2025-02-26 13:39:44
-============================================================
-작업관리자 실행으로 작업 강제 중단
-
-============================================================
-
-
-============================================================
-📌 [오류 발생 시각]: 2025-02-26 13:40:54
-============================================================
-작업관리자 실행으로 작업 강제 중단
-
-============================================================
-
-
-============================================================
-📌 [오류 발생 시각]: 2025-02-26 13:46:59
-============================================================
-작업관리자 실행으로 작업 강제 중단
-
-============================================================
-
-
-============================================================
-📌 [오류 발생 시각]: 2025-02-26 13:52:00
-============================================================
-작업관리자 실행으로 작업 강제 중단
-
-============================================================
-
-
-============================================================
-📌 [오류 발생 시각]: 2025-02-26 14:50:42
-============================================================
-작업관리자 실행으로 작업 강제 중단
-
-============================================================
-
-
-============================================================
-📌 [오류 발생 시각]: 2025-02-26 14:50:44
-============================================================
-라이트룸 연결 실패
+Lightroom 자동화 실패
 
 🔍 [Traceback Details]:
 Traceback (most recent call last):
-  File "c:\Users\USER\Documents\code\lightroom\main\km-lightroom-controller\myenv\Lib\site-packages\pywinauto\timings.py", line 436, in wait_until_passes
-    func_val = func(*args, **kwargs)
-  File "c:\Users\USER\Documents\code\lightroom\main\km-lightroom-controller\myenv\Lib\site-packages\pywinauto\findwindows.py", line 87, in find_element
-    raise ElementNotFoundError(kwargs)
-pywinauto.findwindows.ElementNotFoundError: {'title_re': '.*Lightroom Classic.*', 'backend': 'uia', 'visible_only': False}
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "C:\Users\USER\Documents\code\lightroom\main\km-lightroom-controller/src\lightroom\LightroomAutomationThread.py", line 58, in run
-    app = Application(backend="uia").connect(
-        title_re=".*Lightroom Classic.*", timeout=TIMEOUT_CONNECT_LIGHTROOM
-    )
-  File "c:\Users\USER\Documents\code\lightroom\main\km-lightroom-controller\myenv\Lib\site-packages\pywinauto\application.py", line 990, in connect
-    self.process = timings.wait_until_passes(
-                   ~~~~~~~~~~~~~~~~~~~~~~~~~^
-            timeout, retry_interval, findwindows.find_element,
-            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    ...<2 lines>...
-            *(), **kwargs
-            ^^^^^^^^^^^^^
-        ).process_id
-        ^
-  File "c:\Users\USER\Documents\code\lightroom\main\km-lightroom-controller\myenv\Lib\site-packages\pywinauto\timings.py", line 458, in wait_until_passes
-    raise err
-pywinauto.timings.TimeoutError
-
-============================================================
-
-
-============================================================
-📌 [오류 발생 시각]: 2025-02-26 14:51:47
-============================================================
-라이트룸 연결 실패
-
-🔍 [Traceback Details]:
-Traceback (most recent call last):
-  File "c:\Users\USER\Documents\code\lightroom\main\km-lightroom-controller\myenv\Lib\site-packages\pywinauto\timings.py", line 436, in wait_until_passes
-    func_val = func(*args, **kwargs)
-  File "c:\Users\USER\Documents\code\lightroom\main\km-lightroom-controller\myenv\Lib\site-packages\pywinauto\findwindows.py", line 87, in find_element
-    raise ElementNotFoundError(kwargs)
-pywinauto.findwindows.ElementNotFoundError: {'title_re': '.*Lightroom Classic.*', 'backend': 'uia', 'visible_only': False}
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "C:\Users\USER\Documents\code\lightroom\main\km-lightroom-controller/src\lightroom\LightroomAutomationThread.py", line 58, in run
-    app = Application(backend="uia").connect(
-        title_re=".*Lightroom Classic.*", timeout=TIMEOUT_CONNECT_LIGHTROOM
-    )
-  File "c:\Users\USER\Documents\code\lightroom\main\km-lightroom-controller\myenv\Lib\site-packages\pywinauto\application.py", line 990, in connect
-    self.process = timings.wait_until_passes(
-                   ~~~~~~~~~~~~~~~~~~~~~~~~~^
-            timeout, retry_interval, findwindows.find_element,
-            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    ...<2 lines>...
-            *(), **kwargs
-            ^^^^^^^^^^^^^
-        ).process_id
-        ^
-  File "c:\Users\USER\Documents\code\lightroom\main\km-lightroom-controller\myenv\Lib\site-packages\pywinauto\timings.py", line 458, in wait_until_passes
-    raise err
-pywinauto.timings.TimeoutError
-
-============================================================
-
-
-============================================================
-📌 [오류 발생 시각]: 2025-02-26 14:59:39
-============================================================
-라이트룸 연결 후, 윈도우 탐색 실패, 포커스를 맞추지 못함, 모든 공지 창을 닫아야함
-
-🔍 [Traceback Details]:
-Traceback (most recent call last):
-  File "C:\Users\USER\Documents\code\lightroom\main\km-lightroom-controller/src\lightroom\LightroomAutomationThread.py", line 71, in run
-    lightroom.wait(
-    ~~~~~~~~~~~~~~^
-        "exists enabled visible ready", timeout=TIMEOUT_WAIT_LIGHTROOM_VISIBLE
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\capture\main\km-lightroom-controller/src\lightroom\LightroomAutomationThread.py", line 117, in run
+    set_tet_capture(
+    ~~~~~~~~~~~~~~~^
+        automation=self, lightroom=lightroom, signal=self.automation_steps
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
     )
     ^
-  File "c:\Users\USER\Documents\code\lightroom\main\km-lightroom-controller\myenv\Lib\site-packages\pywinauto\application.py", line 529, in wait
-    wait_until(timeout, retry_interval,
-    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
-               lambda: self.__check_all_conditions(check_method_names, retry_interval))
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "c:\Users\USER\Documents\code\lightroom\main\km-lightroom-controller\myenv\Lib\site-packages\pywinauto\timings.py", line 375, in wait_until
-    raise err
-pywinauto.timings.TimeoutError: timed out
+  File "C:\Users\USER\Documents\code\capture\main\km-lightroom-controller/src\lightroom\tet_capture\set_tet_capture.py", line 151, in set_tet_capture
+    input_session_id_field.set_text(f"{state.username}{state.phone_number}")
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'set_text'
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-03-07 14:31:10
+============================================================
+파일메뉴에서 연결전송된 촬영을 클릭후, 연결전송된 촬영 시작...을 클릭 실패했습니다.
+
+🔍 [Traceback Details]:
+Traceback (most recent call last):
+  File "C:\Users\USER\Documents\code\capture\main\km-lightroom-controller/src\lightroom\tet_capture\set_tet_capture.py", line 131, in set_tet_capture
+    start_tet_capture_window.click_input()
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'click_input'
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-03-07 14:31:10
+============================================================
+파일메뉴에서 연결전송된 촬영을 클릭후, 연결전송된 촬영 시작...을 클릭 실패했습니다.
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-03-07 14:31:19
+============================================================
+Lightroom 자동화 실패
+
+🔍 [Traceback Details]:
+Traceback (most recent call last):
+  File "C:\Users\USER\Documents\code\capture\main\km-lightroom-controller/src\lightroom\LightroomAutomationThread.py", line 118, in run
+    set_tet_capture(
+    ~~~~~~~~~~~~~~~^
+        automation=self, lightroom=lightroom, signal=self.automation_steps
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\USER\Documents\code\capture\main\km-lightroom-controller/src\lightroom\tet_capture\set_tet_capture.py", line 151, in set_tet_capture
+    input_session_id_field.set_text(f"{state.username}{state.phone_number}")
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'set_text'
 
 ============================================================
 

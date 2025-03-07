@@ -1,3 +1,5 @@
+import helpers
+from typedefs.signal_types import TypeAutomationSignal
 import time
 from pywinauto import WindowSpecification, keyboard
 from lightroom import LightroomAutomationThread
@@ -6,36 +8,46 @@ from state_manager.StateManager import StateManager
 from lightroom.set_template.set_template import set_template
 from helpers.log_exception_to_file import log_exception_to_file
 from pywinauto.findwindows import ElementNotFoundError
+from PySide6.QtCore import QThread, Signal
+
+
+def _get_info(info: TypeAutomationSignal):
+    return info
+
 
 def click_file_menu(
     automation: LightroomAutomationThread, lightroom: WindowSpecification
 ):
     # 파일 메뉴 클릭
     automation.check_stop_flag("파일(F) 메뉴 클릭")
-    
+
     attempt = 0
     max_attempts = 10
     wait_time = 0.5
-    
+
     while attempt < max_attempts:
         try:
             file_window_with_close_note = lightroom.child_window(
                 title="파일(F)", control_type="MenuItem"
             )
-            
+
             if file_window_with_close_note.exists():
                 file_window_with_close_note.click_input()
                 return
-            
+
         except ElementNotFoundError:
-            log_exception_to_file.warning(f"파일(F) 메뉴를 찾을 수 없습니다. ({attempt + 1}/{max_attempts}) Esc 키 전송 시도")
+            log_exception_to_file.warning(
+                f"파일(F) 메뉴를 찾을 수 없습니다. ({attempt + 1}/{max_attempts}) Esc 키 전송 시도"
+            )
             keyboard.send_keys("{ESC}")
             time.sleep(wait_time)
-        
+
         attempt += 1
-    
+
     # 최대 시도 후에도 실패하면 예외 발생
-    error_message = "파일(F) 메뉴를 찾을 수 없습니다. 창을 닫고 프로그램을 다시 시작해주세요."
+    error_message = (
+        "파일(F) 메뉴를 찾을 수 없습니다. 창을 닫고 프로그램을 다시 시작해주세요."
+    )
     log_exception_to_file.error(error_message)
     raise RuntimeError(error_message)
 
@@ -51,34 +63,87 @@ def click_tet_capture(
 
 
 def set_tet_capture(
-    automation: LightroomAutomationThread, lightroom: WindowSpecification
+    automation: LightroomAutomationThread,
+    lightroom: WindowSpecification,
+    signal: Signal,
 ):
     state_manager = StateManager()
     state = state_manager.get_state()
 
-    click_file_menu(automation=automation, lightroom=lightroom)
+    try:
 
-    click_tet_capture(automation=automation, lightroom=lightroom)
-
-    stop_tet_capture_window = lightroom.child_window(
-        title="연결전송된 촬영 중지",
-        control_type="MenuItem",
-    )
-
-    if stop_tet_capture_window.exists():
-        stop_tet_capture_window.click_input()
-
-        # 연결전송된 촬영 중지 처음부터 다시
         click_file_menu(automation=automation, lightroom=lightroom)
 
-    # 연결전송된 촬영 시작... 클릭
-    automation.check_stop_flag("연결전송된 촬영 시작... 클릭")
-    start_tet_capture_window = select_ui(
-        win_specs=lightroom,
-        control_type="MenuItem",
-        title="연결전송된 촬영 시작...",
-    )
-    start_tet_capture_window.click_input()
+    except Exception as e:
+        m = "파일메뉴 클릭 실패했습니다."
+        helpers.log_exception_to_file(exception_obj=e, message=m)
+        signal.emit(
+            _get_info(
+                {
+                    "error_code": "",
+                    "message": m,
+                    "status": False,
+                }
+            )
+        )
+
+    try:
+        click_tet_capture(automation=automation, lightroom=lightroom)
+
+    except Exception as e:
+        m = "파일메뉴에서 연결전송된촬영 메뉴 클릭 실패했습니다."
+        helpers.log_exception_to_file(exception_obj=e, message=m)
+        signal.emit(
+            _get_info(
+                {
+                    "error_code": "",
+                    "message": "파일메뉴에서 연결전송된촬영 메뉴 클릭 실패했습니다.",
+                    "status": False,
+                }
+            )
+        )
+
+    try:
+        stop_tet_capture_window = lightroom.child_window(
+            title="연결전송된 촬영 중지",
+            control_type="MenuItem",
+        )
+
+        if stop_tet_capture_window.exists():
+            stop_tet_capture_window.click_input()
+
+            # 연결전송된 촬영 중지 처음부터 다시
+            click_file_menu(automation=automation, lightroom=lightroom)
+            click_tet_capture(automation=automation, lightroom=lightroom)
+            
+    except Exception as e:
+        m = "연결전송뒨 촬영 중지를 클릭하는데 실패했습니다."
+        helpers.log_exception_to_file(exception_obj=e, message=m)
+        signal.emit(_get_info({"error_code": "", "message": m, "status": False}))
+
+    try:
+
+        # 연결전송된 촬영 시작... 클릭
+        automation.check_stop_flag("연결전송된 촬영 시작... 클릭")
+        start_tet_capture_window = select_ui(
+            win_specs=lightroom,
+            control_type="MenuItem",
+            title="연결전송된 촬영 시작...",
+        )
+        start_tet_capture_window.click_input()
+
+    except Exception as e:
+        m = "파일메뉴에서 연결전송된 촬영을 클릭후, 연결전송된 촬영 시작...을 클릭 실패했습니다."
+        helpers.log_exception_to_file(exception_obj=e, message=m)
+        signal.emit(
+            _get_info(
+                {
+                    "error_code": "",
+                    "message": m,
+                    "status": False,
+                }
+            )
+        )
 
     # 세션 이름 입력
     automation.check_stop_flag("세션 이름 입력")

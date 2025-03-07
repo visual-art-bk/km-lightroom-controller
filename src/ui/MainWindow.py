@@ -1,3 +1,4 @@
+from typedefs.signal_types import TypeAutomationSignal
 from constants import (
     MAIN_WINDOW_BG_COLOR,
     SIGNAL_NO_DETECTED_CAMERA,
@@ -254,13 +255,15 @@ class MainWindow(QMainWindow):
             self.on_lightroom_launcher_start
         )
 
-        self.thread_lightroom_automation.finished.connect(
-            self.on_lightroom_automation_finished
-        )
-
         self.thread_lightroom_automation.failed.connect(
             self.on_lightroom_automation_failed
         )
+
+        self.thread_lightroom_automation.automation_result.connect(
+            self.on_lightroom_automation_finished
+        )
+
+ 
 
         self.thread_lightroom_launcher.start()
 
@@ -315,16 +318,15 @@ class MainWindow(QMainWindow):
         self.show_guide_msg(msg_code=failed)
         self.cleanup_resources()
 
-    def on_lightroom_automation_finished(self, is_finished):
+    def on_lightroom_automation_finished(self, info: TypeAutomationSignal):
+
         self.raise_()  # ✅ 메인 윈도우를 최상위로 올림
         self.activateWindow()  # ✅ 메인 윈도우에 포커스 활성화
 
-        if is_finished:
-            show_guide(self, file_path="메시지/안내메세지.txt")
+        if info["status"] is False:
+            self.show_guide_msg(signal_info_msg=info["message"])
         else:
-            self.show_guide_msg(
-                msg="⚠️ 연결된 카메라가 없어요. 다비 고객센터에 연락주세요. ⚠️"
-            )
+            show_guide(self, file_path="메시지/안내메세지.txt")
 
         self.cleanup_resources()
 
@@ -339,7 +341,7 @@ class MainWindow(QMainWindow):
         print(f"오버레이 실행여부: {'실행' if new_state.overlay_running else '중지'}")
         print(f"                                                      ")
 
-    def show_guide_msg(self, msg_code=""):
+    def show_guide_msg(self, msg_code="", signal_info_msg=''):
         self.raise_()  # ✅ 메인 윈도우를 최상위로 올림
         self.activateWindow()  # ✅ 메인 윈도우에 포커스 활성화
 
@@ -363,7 +365,7 @@ class MainWindow(QMainWindow):
         else:
             error_msg_box = create_error_msg(
                 parent=self,
-                content="⚠️ 촬영 셋팅 중 오류 발생! 프로그램을 재실행해주세요.",
+                content=signal_info_msg,
             )
             error_msg_box.exec()
 

@@ -47,6 +47,8 @@ def createEntry(placeholder: str):
         """
     )
 
+    inputEntry.setAlignment(Qt.AlignCenter)
+
     return inputEntry
 
 
