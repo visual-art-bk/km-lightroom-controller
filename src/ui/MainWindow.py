@@ -1,3 +1,4 @@
+import datetime
 from typedefs.signal_types import TypeAutomationSignal
 from constants import (
     MAIN_WINDOW_BG_COLOR,
@@ -263,11 +264,25 @@ class MainWindow(QMainWindow):
             self.on_lightroom_automation_finished
         )
 
- 
-
         self.thread_lightroom_launcher.start()
 
+    def _check_test_version(self):
+        # ✅ 3일 초과 사용 제한 (최초 실행 날짜 하드코딩)
+        start_date = datetime.date(2025, 3, 7)  # ✅ 최초 실행 날짜 (직접 입력)
+        today = datetime.date.today()
+        allowed_days = 5  # ✅ 사용 가능 일수
+
+        if (today - start_date).days > allowed_days:
+            QMessageBox.critical(
+                self,
+                "사용 기간 만료",
+                "⚠️ 테스트 사용 기간이 만료되었습니다.",
+            )
+            return True
+
     def run_main_window(self):
+        if self._check_test_version() is True:
+            return 
         try:
             username = self.inputUsernNameWidget.inputEntry.text().strip()
             phone_number = self.inputPhoneNumberWidget.inputEntry.text().strip()
@@ -341,7 +356,7 @@ class MainWindow(QMainWindow):
         print(f"오버레이 실행여부: {'실행' if new_state.overlay_running else '중지'}")
         print(f"                                                      ")
 
-    def show_guide_msg(self, msg_code="", signal_info_msg=''):
+    def show_guide_msg(self, msg_code="", signal_info_msg=""):
         self.raise_()  # ✅ 메인 윈도우를 최상위로 올림
         self.activateWindow()  # ✅ 메인 윈도우에 포커스 활성화
 
