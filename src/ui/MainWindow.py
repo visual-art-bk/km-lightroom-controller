@@ -41,6 +41,7 @@ from ui.display.main_display_widget import create_main_display_widget
 from ui.inputs.input_main_field import input_main_field
 from ui.inputs.input_container import input_container
 from ui.buttons.create_btn_with_icon import create_btn_with_icon
+from ui.buttons.btn_run_main import btn_run_main
 from ui.msg_box.show_guide import show_guide
 from ui.surfaces import create_shadow_widget, create_central_widget
 from ui.effects import create_shadow_effect
@@ -49,33 +50,25 @@ from ui.effects import create_shadow_effect
 class MainWindow(QMainWindow):
     def __init__(self, x=None, y=0, width=MAIN_WINDOW_WIDTH, height=MAIN_WINDOW_HEIGHT):
         super().__init__()
-
-        icon_path = "assets/다비스튜디오_logo11_black_ico.ico"
-        self.setWindowIcon(QIcon(icon_path))
+        self.init_state_manager()
 
         # ✅ 윈도우 타이틀 (선택 사항)
-        self.setWindowTitle("촬영 매니저")
+        self.setWindowTitle("다비 촬영 매니저")
+        self.setWindowIcon(QIcon("assets/다비스튜디오_logo11_black_ico.ico"))
+        main_window_obj_name = "MainWindow"
+        self.setObjectName(main_window_obj_name)
+        self.setStyleSheet(
+            f"""
+            #{main_window_obj_name} {{
+                background-color: {MAIN_WINDOW_BG_COLOR};
+            }}
+            """
+        )
 
-        screen_geometry = self.screen().availableGeometry()
-        screen_width = screen_geometry.width()
-        screen_height = screen_geometry.height()
-
-        self.size_dict: SizeDict = {
-            "width": width,
-            "height": height,
-            "screen_width": screen_width,
-            "screen_height": screen_height,
-        }
-
-        self.setWindowFlags(Qt.FramelessWindowHint)
-
-        self.setAttribute(Qt.WA_TranslucentBackground)
-
-        self.init_surface_widgets(size=self.size_dict)
-
-        self.init_layouts(mainWidget=self.mainWidget)
-
-        self.setCentralWidget(self.mainContainerWidget)
+        self.input_username = None
+        self.input_phone = None
+        self.run_button = None
+        self.init_layouts()
 
         self.init_window_position(height=height, width=width)
 
@@ -83,128 +76,30 @@ class MainWindow(QMainWindow):
         self.thread_lightroom_automation = None
         self.thread_lightroom_launcher = None
 
-        self.init_state_manager()
-
-    def init_surface_widgets(self, size: SizeDict):
-        width = size.get("width")
-        height = size.get("height")
-
-        self.mainContainerWidget = QWidget(self)
-        self.mainContainerWidget.setGeometry(0, 0, width, height)
-
-        self.shadowWidget = create_shadow_widget(size=size)
-        self.shadowWidget.setParent(self.mainContainerWidget)
-
-        self.mainWidget = create_central_widget(size=size)
-        self.mainWidget.setParent(self.mainContainerWidget)
-
-    def on_clicked_minimize_btn(self):
-        self.setWindowState(Qt.WindowMinimized)
-
-    def on_clicked_close_btn(self):
-        if self.thread_lightroom_automation or self.thread_lightroom_launcher:
-            self.cleanup_resources()
-            return
-
-        self.close()
-
-    def init_top_app_bar_layout(self):
-        layout = QHBoxLayout()
-
-        minimize_btn = create_btn_with_icon(
-            width=24, height=24, icon_path=TOP_APP_BAR_MINIMIZE_ICON_PATH
+    def init_input_main_fields(self, layout):
+        self.input_username = input_main_field(
+            layout=layout,
+            label="예약자 성함",
+            placeholder="“여기에 입력하세요.”",
         )
-        minimize_btn.clicked.connect(self.on_clicked_minimize_btn)
-
-        main_icon = create_btn_with_icon(
-            width=24, height=24, icon_path=TOP_APP_BAR_MAIN_ICON_PATH
+        self.input_phone = input_main_field(
+            layout=layout,
+            label="전화번호 뒷자리 4자리",
+            placeholder="“여기에 입력하세요.”",
         )
 
-        close_btn = create_btn_with_icon(
-            width=24, height=24, icon_path=TOP_APP_BAR_CLOSE_ICON_PATH
-        )
-        close_btn.clicked.connect(self.on_clicked_close_btn)
+    def init_layouts(self):
+        main_central_layout = QVBoxLayout()
+        
+        self.init_input_main_fields(layout=main_central_layout)
 
-        btns = [minimize_btn, main_icon, close_btn]
-
-        for btn in btns:
-            layout.addWidget(btn)
-
-        layout.setContentsMargins(0, 8, 0, 0)
-
-        return layout
-
-    def update_display_text(self, new_text):
-        """디스플레이의 텍스트를 업데이트 (타이핑 효과 포함)"""
-        if self.main_display:
-            self.main_display.set_text(
-                new_text
-            )  # ✅ TypingEffectDisplay에 새로운 텍스트 설정
-
-    def init_display_layout(self):
-
-        self.main_display = create_main_display_widget(
-            size={"width": self.size_dict["width"], "height": 300}
-        )
-        layout = QHBoxLayout()
-        layout.addWidget(self.main_display)
-
-        return layout
-
-    def init_inputs_layout(self):
-        self.inputUsernNameWidget = input_container(
-            label="예약자 성함", placeholder="예) 홍길동"
-        )
-        self.inputPhoneNumberWidget = input_container(
-            label="전화번호 뒷 4자리",
-            placeholder="예) 1234",
-        )
-        layout = QVBoxLayout()
-
-        layout.addWidget(self.inputUsernNameWidget)
-        layout.addWidget(self.inputPhoneNumberWidget)
-
-        layout.setSpacing(20)
-        layout.addStretch()
-        layout.setContentsMargins(8, 24, 8, 0)
-
-        return layout
-
-    def toggle_run_btn_icon(self, is_started=False):
-        if is_started:
-            self.run_button.setIcon(QIcon(RUN_BTN_STOP_ICON_PATH))
-            print("▶ → ■ 변경됨: 실행 중")
-
-        else:
-            self.run_button.setIcon(QIcon(RUN_BTN_PLAY_ICON_PATH))
-            print("■ → ▶ 변경됨: 정지됨")
-
-    def init_run_btn_layout(self):
-        self.run_button = create_btn_with_icon(
-            width=40, height=40, icon_path=QIcon(RUN_BTN_PLAY_ICON_PATH)
-        )
+        self.run_button = btn_run_main()
         self.run_button.clicked.connect(self.run_main_window)
+        main_central_layout.addWidget(self.run_button)
 
-        layout = QHBoxLayout()
-        layout.addWidget(self.run_button)
-        layout.setContentsMargins(0, 0, 0, 24)
-        layout.setSpacing(48)
-
-        return layout
-
-    def init_layouts(self, mainWidget):
-        main_central_layout = QVBoxLayout(mainWidget)
-        main_central_layout.setContentsMargins(0, 0, 0, 0)
-
-        top_app_bar_layout = self.init_top_app_bar_layout()
-        display_layout = self.init_display_layout()
-        inputs_layout = self.init_inputs_layout()
-        run_btn_layout = self.init_run_btn_layout()
-
-        main_central_layout.addLayout(top_app_bar_layout)
-        main_central_layout.addLayout(display_layout)
-        main_central_layout.addLayout(inputs_layout)
-        main_central_layout.addLayout(run_btn_layout)
+        container = QWidget()
+        container.setLayout(main_central_layout)
+        self.setCentralWidget(container)
 
     def init_state_manager(self):
         self.state_manager = StateManager()
@@ -235,19 +130,6 @@ class MainWindow(QMainWindow):
             "phone_number": self.phone_number_entry.text().strip(),
         }
 
-    def on_lightroom_launcher_start(self):
-        if (
-            self.thread_lightroom_launcher.lightroom_started
-            == SIGNAL_LIGHTROOM_LAUHCNER_START_FAILED
-        ):
-            print("Main-라이트룸 실행 실패!")
-            self.show_guide_msg(msg_code=SIGNAL_LIGHTROOM_LAUHCNER_START_FAILED)
-            self.cleanup_resources()
-            return
-
-        print("Main-라이트룸 실행 성공")
-        self.thread_lightroom_automation.start()
-
     def init_threads(self):
         self.thread_lightroom_launcher = LightroomLaunchThread()
         self.thread_lightroom_automation = LightroomAutomationThread()
@@ -260,28 +142,12 @@ class MainWindow(QMainWindow):
             self.on_lightroom_automation_finished
         )
 
-        self.thread_lightroom_launcher.start()
-
-    def _check_test_version(self):
-        # ✅ 3일 초과 사용 제한 (최초 실행 날짜 하드코딩)
-        start_date = datetime.date(2025, 3, 7)  # ✅ 최초 실행 날짜 (직접 입력)
-        today = datetime.date.today()
-        allowed_days = 5  # ✅ 사용 가능 일수
-
-        if (today - start_date).days > allowed_days:
-            QMessageBox.critical(
-                self,
-                "사용 기간 만료",
-                "⚠️ 테스트 사용 기간이 만료되었습니다.",
-            )
-            return True
-
     def run_main_window(self):
-        if self._check_test_version() is True:
-            return
+        self.init_threads()
+
         try:
-            username = self.inputUsernNameWidget.inputEntry.text().strip()
-            phone_number = self.inputPhoneNumberWidget.inputEntry.text().strip()
+            username = self.input_username.text().strip()
+            phone_number = self.input_phone.text().strip()
 
             if username == "":
                 QMessageBox.warning(self, "입력 오류", "사용자 이름을 입력하세요!")
@@ -298,23 +164,14 @@ class MainWindow(QMainWindow):
                 username=username,
                 context="사용자정보 올바르게 입력함",
             )
-            self.toggle_run_btn_icon(is_started=True)
 
-            self.update_display_text("📸 촬영 세팅이 시작됩니다...")
-
-            QTimer.singleShot(2250, self.delayed_tasks_after_start)
+            self.thread_lightroom_launcher.start()
 
         except Exception as e:
             log_exception_to_file(
                 exception_obj=e,
                 message="메인 윈도우에서 run_main_window 실행 중 에러발생",
             )
-
-    def delayed_tasks_after_start(self):
-        """Lightroom 스레드 실행 및 UI 상태 업데이트"""
-        self.init_threads()
-        self.setWindowState(Qt.WindowMinimized)
-        self.create_overlay()
 
     def create_overlay(self):
         """독립적인 오버레이 창을 생성하고 부모 윈도우와 시그널 연결"""
@@ -324,6 +181,20 @@ class MainWindow(QMainWindow):
 
         self.overlay_window = OverlayWindow()  #  독립적인 오버레이 생성
         self.overlay_window.show()
+
+    def on_lightroom_launcher_start(self):
+        if (
+            self.thread_lightroom_launcher.lightroom_started
+            == SIGNAL_LIGHTROOM_LAUHCNER_START_FAILED
+        ):
+            print("Main-라이트룸 실행 실패!")
+            self.show_guide_msg(msg_code=SIGNAL_LIGHTROOM_LAUHCNER_START_FAILED)
+            self.cleanup_resources()
+            return
+        self.setWindowState(Qt.WindowMinimized)
+        self.create_overlay()
+
+        self.thread_lightroom_automation.start()
 
     def on_lightroom_automation_finished(self, info: TypeAutomationSignal):
 

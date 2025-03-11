@@ -1,5 +1,5 @@
 MAIN_WINDOW_WIDTH = 300
-MAIN_WINDOW_HEIGHT = 600
+MAIN_WINDOW_HEIGHT = 200
 TOP_APP_BAR_CLOSE_ICON_PATH ="assets/icons/main_window_btn_close_40dp.png"
 TOP_APP_BAR_MINIMIZE_ICON_PATH = "assets/icons/minimize_40dp.png"
 TOP_APP_BAR_MAIN_ICON_PATH = "assets/icons/main_icon_40dp.png"
