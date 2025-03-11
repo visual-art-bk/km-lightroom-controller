@@ -1,7 +1,14 @@
 import helpers
 import time
-from typedefs.signal_types import TypeAutomationSignal
+from typedefs.signal_types import TypeAutomationSignal, TypeSignalStatus
 from helpers.config_loader import load_config
+from constants.status_code import (
+    AUTOMATION_APPLICATOIN_INIT_FAILED,
+    AUTOMATION_LIGHTROOM_WINDOW_NOT_FOUNT,
+    AUTOMATION_EXCEPTION_FAILED,
+    CAMERA_NOT_DETECTED,
+    CAMERA_NOT_SEARCHED,
+)
 from constants import (
     SIGNAL_NO_DETECTED_CAMERA,
     SIGNAL_NO_SEARCHED_CAMERA,
@@ -24,6 +31,9 @@ from lightroom.check_camera_state import detect_camera, search_camera
 from lightroom.utils import lock_mouse_keyboard, unlock_mouse_keyboard
 from lightroom.tet_capture.set_tet_capture import set_tet_capture
 from lightroom.camera_settings import set_camera_settings
+import logs
+
+logger = logs.Logger()
 
 config = load_config()
 ISO_SETTING = config.get("ISO")
@@ -38,7 +48,7 @@ TIMEOUT_WAIT_LIGHTROOM_VISIBLE = 5
 class LightroomAutomationThread(QThread):
     """Lightroom 자동화 실행을 위한 스레드"""
 
-    automation_result = Signal(dict)
+    automation = Signal(dict)
     automation_steps = Signal(dict)
 
     def _on_automation_steps(self, info: TypeAutomationSignal):
@@ -47,7 +57,7 @@ class LightroomAutomationThread(QThread):
         if info["status"] is False:
             lock_mouse_keyboard()
             unlock_mouse_keyboard()
-            self.automation_result.emit(info)
+            self.automation.emit(info)
 
     def __init__(self):
         super().__init__()
@@ -68,47 +78,38 @@ class LightroomAutomationThread(QThread):
 
         try:
             app = Application(backend="uia").connect(
-                title_re=".*Lightroom Classic.*", timeout=TIMEOUT_CONNECT_LIGHTROOM
+                title_re=".*Lightroom Classic.*", timeout=5
             )
         except Exception as e:
-            m = "라이트룸 연결 실패"
-
-            log_exception_to_file(exception_obj=e, message=m)
-
-            info: TypeAutomationSignal = {
-                "error_code": "",
-                "message": m,
+            unlock_mouse_keyboard()
+            info: TypeSignalStatus = {
+                "status_code": AUTOMATION_APPLICATOIN_INIT_FAILED,
+                "message": "라이트룸 어플리케이션 초기화 실패했습니다.",
                 "status": False,
             }
 
-            self.automation_result.emit(info)
-            unlock_mouse_keyboard()
+            self.automation.emit(info)
+            logger.error(exception_obj=e, message=info)
             return
 
         try:
             send_esc_key(parent=self)
 
             lightroom = app.window(title_re=".*Lightroom Classic.*")
-            lightroom.wait(
-                "exists enabled visible ready", timeout=TIMEOUT_WAIT_LIGHTROOM_VISIBLE
-            )
+            lightroom.wait("exists enabled visible ready", timeout=5)
             lightroom.wrapper_object().maximize()
             lightroom.wrapper_object().set_focus()
 
         except Exception as e:
-            m = "라이트룸 연결 후, 윈도우 탐색 실패, 포커스를 맞추지 못함, 모든 공지 창을 닫아주세요"
-
-            log_exception_to_file(
-                exception_obj=e,
-                message=m,
-            )
-            info: TypeAutomationSignal = {
-                "error_code": "",
-                "message": m,
+            unlock_mouse_keyboard()
+            info: TypeSignalStatus = {
+                "status_code": AUTOMATION_LIGHTROOM_WINDOW_NOT_FOUNT,
+                "message": "라이트룸 연결후, 윈도우 찾기 실패했습니다.",
                 "status": False,
             }
-            self.automation_result.emit(info)
-            unlock_mouse_keyboard()
+
+            self.automation.emit(info)
+            logger.error(exception_obj=e, message=info)
             return
 
         try:
@@ -123,15 +124,14 @@ class LightroomAutomationThread(QThread):
 
             have_detected_camera = detect_camera(lightroom=lightroom)
             if not have_detected_camera:
-                m = "카메라를 감지하지 못햇습니다."
-                log_exception_to_file(exception_obj=None, message=m)
                 unlock_mouse_keyboard()
                 info: TypeAutomationSignal = {
-                    "error_code": SIGNAL_NO_DETECTED_CAMERA,
-                    "message": m,
+                    "status_code": CAMERA_NOT_DETECTED,
+                    "message": "카메라를 감지하지 못햇습니다.",
                     "status": False,
                 }
-                self.automation_result.emit(info)
+                self.automation.emit(info)
+                logger.info(info)
                 return
 
             camer_name = search_camera(
@@ -140,14 +140,14 @@ class LightroomAutomationThread(QThread):
 
             if NO_DETECTED_CAMERA_NAME in camer_name:
                 unlock_mouse_keyboard()
-                m = "카메라가 검색되지 않았습니다."
-                log_exception_to_file(exception_obj=None, message=m)
+
                 info: TypeAutomationSignal = {
-                    "error_code": SIGNAL_NO_SEARCHED_CAMERA,
-                    "message": m,
+                    "status_code": CAMERA_NOT_SEARCHED,
+                    "message": "카메라가 검색되지 않았습니다.",
                     "status": False,
                 }
-                self.automation_result.emit(info)
+                self.automation.emit(info)
+                logger.info(info)
                 return
 
             # SHUTTER 세팅
@@ -182,25 +182,23 @@ class LightroomAutomationThread(QThread):
                 config_setting=WB_SETTING,
             )
 
-            info: TypeAutomationSignal = {
+            info: TypeSignalStatus = {
                 "error_code": "",
                 "message": "Lightroom 자동화 완료",
                 "status": True,
             }
-            self.automation_result.emit(info)
+            self.automation.emit(info)
+            unlock_mouse_keyboard()
 
         except Exception as e:
-            m = "Lightroom 자동화 실패"
-            log_exception_to_file(exception_obj=e, message=m)
-            info: TypeAutomationSignal = {
-                "error_code": SIGNAL_LIGHTROOM_AUTOMATION_CONTROL_FAILED,
-                "message": m,
+            unlock_mouse_keyboard()
+            info: TypeSignalStatus = {
+                "status_code": AUTOMATION_EXCEPTION_FAILED,
+                "message": "Lightroom 자동화가 예외발생으로 실패했습니다.",
                 "status": False,
             }
-            self.automation_result.emit(info)
-
-        finally:
-            unlock_mouse_keyboard()
+            self.automation.emit(info)
+            logger.error(exception_obj=e, message=info)
 
     def stop_automation(self):
         """✅ `Ctrl + Alt + Delete` 감지 시 자동화 강제 중단"""
@@ -212,7 +210,7 @@ class LightroomAutomationThread(QThread):
         self.task_detector.stop()  # ✅ 키 감지 스레드 종료
 
         info: TypeAutomationSignal = {"error_code": "", "message": m, "status": False}
-        self.automation_result.emit(info)  # ❌ 자동화 실패 시그널 발생
+        self.automation.emit(info)  # ❌ 자동화 실패 시그널 발생
         self.quit()
 
     def check_stop_flag(self, context=""):
@@ -225,6 +223,6 @@ class LightroomAutomationThread(QThread):
                 "message": m,
                 "status": False,
             }
-            self.automation_result.emit(info)
+            self.automation.emit(info)
             unlock_mouse_keyboard()
             return self.stop_flag

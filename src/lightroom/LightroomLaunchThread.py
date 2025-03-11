@@ -1,3 +1,9 @@
+from typedefs.signal_types import TypeSignalStatus
+from constants.status_code import (
+    LIGHTROOM_RUN_DETECTED,
+    LIGHTROOM_RUN_FAILED,
+    LIGHTROOM_EXCEPTION_RUN_FAILED,
+)
 import subprocess
 import time
 import psutil
@@ -6,12 +12,15 @@ from constants import (
     SIGNAL_LIGHTROOM_LAUHCNER_START_FAILED,
     SIGNAL_LIGHTROOM_LAUHCNER_START_SUCCESS,
 )
+import logs
+
+logger = logs.Logger()
 
 
 class LightroomLaunchThread(QThread):
     """Lightroom 실행을 담당하는 스레드"""
 
-    lightroom_started = Signal(str)  # ✅ Lightroom 실행 완료 여부 신호
+    launch_start = Signal(dict)  # ✅ Lightroom 실행 완료 여부 신호
 
     def run(self):
         """Lightroom 실행 (부모 프로세스와 완전히 독립적으로 실행)"""
@@ -34,19 +43,34 @@ class LightroomLaunchThread(QThread):
             )
 
             # ✅ Lightroom 실행될 때까지 대기
-            for _ in range(30):  # 최대 30초 대기
+            for _ in range(10):  # 최대 10초 대기
                 if self.is_lightroom_running():
-                    print("✅ Lightroom 실행 감지됨! (프로세스 유지)")
-                    self.lightroom_started.emit(SIGNAL_LIGHTROOM_LAUHCNER_START_SUCCESS)  # ✅ 실행 완료 시그널 발생
+                    info: TypeSignalStatus = {
+                        "message": "라이트룸 실행 성공",
+                        "status": True,
+                        "status_code": LIGHTROOM_RUN_DETECTED,
+                    }
+                    self.launch_start.emit(info)
+                    logger.info(info)
                     return
                 time.sleep(1)
 
-            print("❌ Lightroom 실행 감지 실패!")
-            self.lightroom_started.emit(SIGNAL_LIGHTROOM_LAUHCNER_START_FAILED)  # ❌ 실행 실패 시그널 발생
+            info: TypeSignalStatus = {
+                "message": "Lightroom 실행 감지 실패",
+                "status": False,
+                "status_code": LIGHTROOM_RUN_FAILED,
+            }
+            self.launch_start.emit(info)
+            logger.info(info)
 
         except Exception as e:
-            print(f"❌ Lightroom 실행 실패: {e}")
-            self.lightroom_started.emit(SIGNAL_LIGHTROOM_LAUHCNER_START_FAILED)  # ❌ 실행 실패 시그널 발생
+            info: TypeSignalStatus = {
+                "message": "Lightroom 실행 실패",
+                "status": False,
+                "status_code": LIGHTROOM_EXCEPTION_RUN_FAILED,
+            }
+            self.launch_start.emit(info)
+            logger.error(exception_obj=e, message=info)
 
     def is_lightroom_running(self):
         """Lightroom이 실행 중인지 확인"""

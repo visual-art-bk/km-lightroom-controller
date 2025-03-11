@@ -1,0 +1,439 @@
+2025-03-11 10:36:37 | INFO | Lightroom Classic 실행 시작...
+2025-03-11 10:36:37 | INFO | {'message': '라이트룸 실행 성공', 'status': True, 'status_code': '200101'}
+2025-03-11 10:39:16 | INFO | Lightroom Classic 실행 시작...
+2025-03-11 10:39:16 | INFO | {'message': '라이트룸 실행 성공', 'status': True, 'status_code': '200101'}
+2025-03-11 10:44:44 | INFO | Lightroom Classic 실행 시작...
+2025-03-11 10:44:44 | INFO | {'message': '라이트룸 실행 성공', 'status': True, 'status_code': '200101'}
+2025-03-11 10:59:19 | INFO | Lightroom Classic 실행 시작...
+2025-03-11 10:59:19 | INFO | Lightroom Classic 실행 시작...
+2025-03-11 10:59:19 | INFO | {'message': '라이트룸 실행 성공', 'status': True, 'status_code': '200101'}
+2025-03-11 10:59:19 | INFO | {'message': '라이트룸 실행 성공', 'status': True, 'status_code': '200101'}
+2025-03-11 10:59:50 | ERROR | {'status_code': '400303', 'message': '라이트룸 어플리케이션 초기화 실패했습니다.', 'status': False}
+Traceback (most recent call last):
+  File "c:\Users\USER\Documents\code\export\km-lightroom-export-v-3\myenv\Lib\site-packages\pywinauto\timings.py", line 436, in wait_until_passes
+    func_val = func(*args, **kwargs)
+  File "c:\Users\USER\Documents\code\export\km-lightroom-export-v-3\myenv\Lib\site-packages\pywinauto\findwindows.py", line 87, in find_element
+    raise ElementNotFoundError(kwargs)
+pywinauto.findwindows.ElementNotFoundError: {'title_re': '.*Lightroom Classic.*', 'backend': 'uia', 'visible_only': False}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\USER\Documents\code\export\km-lightroom-export-v-3/src\lightroom\LightroomAutomationThread.py", line 116, in run
+    app = Application(backend="uia").connect(
+        title_re=".*Lightroom Classic.*", timeout=5
+    )
+  File "c:\Users\USER\Documents\code\export\km-lightroom-export-v-3\myenv\Lib\site-packages\pywinauto\application.py", line 990, in connect
+    self.process = timings.wait_until_passes(
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~^
+            timeout, retry_interval, findwindows.find_element,
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+            *(), **kwargs
+            ^^^^^^^^^^^^^
+        ).process_id
+        ^
+  File "c:\Users\USER\Documents\code\export\km-lightroom-export-v-3\myenv\Lib\site-packages\pywinauto\timings.py", line 458, in wait_until_passes
+    raise err
+pywinauto.timings.TimeoutError
+2025-03-11 10:59:50 | ERROR | {'status_code': '400303', 'message': '라이트룸 어플리케이션 초기화 실패했습니다.', 'status': False}
+Traceback (most recent call last):
+  File "c:\Users\USER\Documents\code\export\km-lightroom-export-v-3\myenv\Lib\site-packages\pywinauto\timings.py", line 436, in wait_until_passes
+    func_val = func(*args, **kwargs)
+  File "c:\Users\USER\Documents\code\export\km-lightroom-export-v-3\myenv\Lib\site-packages\pywinauto\findwindows.py", line 87, in find_element
+    raise ElementNotFoundError(kwargs)
+pywinauto.findwindows.ElementNotFoundError: {'title_re': '.*Lightroom Classic.*', 'backend': 'uia', 'visible_only': False}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\USER\Documents\code\export\km-lightroom-export-v-3/src\lightroom\LightroomAutomationThread.py", line 116, in run
+    app = Application(backend="uia").connect(
+        title_re=".*Lightroom Classic.*", timeout=5
+    )
+  File "c:\Users\USER\Documents\code\export\km-lightroom-export-v-3\myenv\Lib\site-packages\pywinauto\application.py", line 990, in connect
+    self.process = timings.wait_until_passes(
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~^
+            timeout, retry_interval, findwindows.find_element,
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+            *(), **kwargs
+            ^^^^^^^^^^^^^
+        ).process_id
+        ^
+  File "c:\Users\USER\Documents\code\export\km-lightroom-export-v-3\myenv\Lib\site-packages\pywinauto\timings.py", line 458, in wait_until_passes
+    raise err
+pywinauto.timings.TimeoutError
+2025-03-11 11:01:08 | INFO | Lightroom Classic 실행 시작...
+2025-03-11 11:01:08 | INFO | Lightroom Classic 실행 시작...
+2025-03-11 11:01:08 | INFO | {'message': '라이트룸 실행 성공', 'status': True, 'status_code': '200101'}
+2025-03-11 11:01:08 | INFO | {'message': '라이트룸 실행 성공', 'status': True, 'status_code': '200101'}
+2025-03-11 11:04:21 | INFO | Lightroom Classic 실행 시작...
+2025-03-11 11:04:21 | INFO | Lightroom Classic 실행 시작...
+2025-03-11 11:04:21 | INFO | {'message': '라이트룸 실행 성공', 'status': True, 'status_code': '200101'}
+2025-03-11 11:04:21 | INFO | {'message': '라이트룸 실행 성공', 'status': True, 'status_code': '200101'}
+2025-03-11 11:04:28 | ERROR | {'status_code': '400303', 'message': '라이트룸 어플리케이션 초기화 실패했습니다.', 'status': False}
+Traceback (most recent call last):
+  File "c:\Users\USER\Documents\code\export\km-lightroom-export-v-3\myenv\Lib\site-packages\pywinauto\timings.py", line 436, in wait_until_passes
+    func_val = func(*args, **kwargs)
+  File "c:\Users\USER\Documents\code\export\km-lightroom-export-v-3\myenv\Lib\site-packages\pywinauto\findwindows.py", line 87, in find_element
+    raise ElementNotFoundError(kwargs)
+pywinauto.findwindows.ElementNotFoundError: {'title_re': '.*777*', 'backend': 'uia', 'visible_only': False}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\USER\Documents\code\export\km-lightroom-export-v-3/src\lightroom\LightroomAutomationThread.py", line 118, in run
+    app = Application(backend="uia").connect(
+        title_re=".*777*", timeout=5
+    )
+  File "c:\Users\USER\Documents\code\export\km-lightroom-export-v-3\myenv\Lib\site-packages\pywinauto\application.py", line 990, in connect
+    self.process = timings.wait_until_passes(
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~^
+            timeout, retry_interval, findwindows.find_element,
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+            *(), **kwargs
+            ^^^^^^^^^^^^^
+        ).process_id
+        ^
+  File "c:\Users\USER\Documents\code\export\km-lightroom-export-v-3\myenv\Lib\site-packages\pywinauto\timings.py", line 458, in wait_until_passes
+    raise err
+pywinauto.timings.TimeoutError
+2025-03-11 11:04:28 | ERROR | {'status_code': '400303', 'message': '라이트룸 어플리케이션 초기화 실패했습니다.', 'status': False}
+Traceback (most recent call last):
+  File "c:\Users\USER\Documents\code\export\km-lightroom-export-v-3\myenv\Lib\site-packages\pywinauto\timings.py", line 436, in wait_until_passes
+    func_val = func(*args, **kwargs)
+  File "c:\Users\USER\Documents\code\export\km-lightroom-export-v-3\myenv\Lib\site-packages\pywinauto\findwindows.py", line 87, in find_element
+    raise ElementNotFoundError(kwargs)
+pywinauto.findwindows.ElementNotFoundError: {'title_re': '.*777*', 'backend': 'uia', 'visible_only': False}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\USER\Documents\code\export\km-lightroom-export-v-3/src\lightroom\LightroomAutomationThread.py", line 118, in run
+    app = Application(backend="uia").connect(
+        title_re=".*777*", timeout=5
+    )
+  File "c:\Users\USER\Documents\code\export\km-lightroom-export-v-3\myenv\Lib\site-packages\pywinauto\application.py", line 990, in connect
+    self.process = timings.wait_until_passes(
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~^
+            timeout, retry_interval, findwindows.find_element,
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+            *(), **kwargs
+            ^^^^^^^^^^^^^
+        ).process_id
+        ^
+  File "c:\Users\USER\Documents\code\export\km-lightroom-export-v-3\myenv\Lib\site-packages\pywinauto\timings.py", line 458, in wait_until_passes
+    raise err
+pywinauto.timings.TimeoutError
+2025-03-11 11:08:26 | INFO | Lightroom Classic 실행 시작...
+2025-03-11 11:08:26 | INFO | Lightroom Classic 실행 시작...
+2025-03-11 11:08:26 | INFO | {'message': '라이트룸 실행 성공', 'status': True, 'status_code': '200101'}
+2025-03-11 11:08:26 | INFO | {'message': '라이트룸 실행 성공', 'status': True, 'status_code': '200101'}
+2025-03-11 11:08:33 | ERROR | {'status_code': '400303', 'message': '라이트룸 어플리케이션 초기화 실패했습니다.', 'status': False}
+Traceback (most recent call last):
+  File "c:\Users\USER\Documents\code\export\km-lightroom-export-v-3\myenv\Lib\site-packages\pywinauto\timings.py", line 436, in wait_until_passes
+    func_val = func(*args, **kwargs)
+  File "c:\Users\USER\Documents\code\export\km-lightroom-export-v-3\myenv\Lib\site-packages\pywinauto\findwindows.py", line 87, in find_element
+    raise ElementNotFoundError(kwargs)
+pywinauto.findwindows.ElementNotFoundError: {'title_re': '.*777*', 'backend': 'uia', 'visible_only': False}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\USER\Documents\code\export\km-lightroom-export-v-3/src\lightroom\LightroomAutomationThread.py", line 118, in run
+    app = Application(backend="uia").connect(
+        title_re=".*777*", timeout=5
+    )
+  File "c:\Users\USER\Documents\code\export\km-lightroom-export-v-3\myenv\Lib\site-packages\pywinauto\application.py", line 990, in connect
+    self.process = timings.wait_until_passes(
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~^
+            timeout, retry_interval, findwindows.find_element,
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+            *(), **kwargs
+            ^^^^^^^^^^^^^
+        ).process_id
+        ^
+  File "c:\Users\USER\Documents\code\export\km-lightroom-export-v-3\myenv\Lib\site-packages\pywinauto\timings.py", line 458, in wait_until_passes
+    raise err
+pywinauto.timings.TimeoutError
+2025-03-11 11:08:33 | ERROR | {'status_code': '400303', 'message': '라이트룸 어플리케이션 초기화 실패했습니다.', 'status': False}
+Traceback (most recent call last):
+  File "c:\Users\USER\Documents\code\export\km-lightroom-export-v-3\myenv\Lib\site-packages\pywinauto\timings.py", line 436, in wait_until_passes
+    func_val = func(*args, **kwargs)
+  File "c:\Users\USER\Documents\code\export\km-lightroom-export-v-3\myenv\Lib\site-packages\pywinauto\findwindows.py", line 87, in find_element
+    raise ElementNotFoundError(kwargs)
+pywinauto.findwindows.ElementNotFoundError: {'title_re': '.*777*', 'backend': 'uia', 'visible_only': False}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\USER\Documents\code\export\km-lightroom-export-v-3/src\lightroom\LightroomAutomationThread.py", line 118, in run
+    app = Application(backend="uia").connect(
+        title_re=".*777*", timeout=5
+    )
+  File "c:\Users\USER\Documents\code\export\km-lightroom-export-v-3\myenv\Lib\site-packages\pywinauto\application.py", line 990, in connect
+    self.process = timings.wait_until_passes(
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~^
+            timeout, retry_interval, findwindows.find_element,
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+            *(), **kwargs
+            ^^^^^^^^^^^^^
+        ).process_id
+        ^
+  File "c:\Users\USER\Documents\code\export\km-lightroom-export-v-3\myenv\Lib\site-packages\pywinauto\timings.py", line 458, in wait_until_passes
+    raise err
+pywinauto.timings.TimeoutError
+2025-03-11 11:10:18 | INFO | Lightroom Classic 실행 시작...
+2025-03-11 11:10:18 | INFO | Lightroom Classic 실행 시작...
+2025-03-11 11:10:18 | INFO | {'message': '라이트룸 실행 성공', 'status': True, 'status_code': '200101'}
+2025-03-11 11:10:18 | INFO | {'message': '라이트룸 실행 성공', 'status': True, 'status_code': '200101'}
+2025-03-11 11:10:26 | ERROR | {'status_code': '400303', 'message': '라이트룸 어플리케이션 초기화 실패했습니다.', 'status': False}
+Traceback (most recent call last):
+  File "c:\Users\USER\Documents\code\export\km-lightroom-export-v-3\myenv\Lib\site-packages\pywinauto\timings.py", line 436, in wait_until_passes
+    func_val = func(*args, **kwargs)
+  File "c:\Users\USER\Documents\code\export\km-lightroom-export-v-3\myenv\Lib\site-packages\pywinauto\findwindows.py", line 87, in find_element
+    raise ElementNotFoundError(kwargs)
+pywinauto.findwindows.ElementNotFoundError: {'title_re': '.*777*', 'backend': 'uia', 'visible_only': False}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\USER\Documents\code\export\km-lightroom-export-v-3/src\lightroom\LightroomAutomationThread.py", line 118, in run
+    app = Application(backend="uia").connect(
+        title_re=".*777*", timeout=5
+    )
+  File "c:\Users\USER\Documents\code\export\km-lightroom-export-v-3\myenv\Lib\site-packages\pywinauto\application.py", line 990, in connect
+    self.process = timings.wait_until_passes(
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~^
+            timeout, retry_interval, findwindows.find_element,
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+            *(), **kwargs
+            ^^^^^^^^^^^^^
+        ).process_id
+        ^
+  File "c:\Users\USER\Documents\code\export\km-lightroom-export-v-3\myenv\Lib\site-packages\pywinauto\timings.py", line 458, in wait_until_passes
+    raise err
+pywinauto.timings.TimeoutError
+2025-03-11 11:10:26 | ERROR | {'status_code': '400303', 'message': '라이트룸 어플리케이션 초기화 실패했습니다.', 'status': False}
+Traceback (most recent call last):
+  File "c:\Users\USER\Documents\code\export\km-lightroom-export-v-3\myenv\Lib\site-packages\pywinauto\timings.py", line 436, in wait_until_passes
+    func_val = func(*args, **kwargs)
+  File "c:\Users\USER\Documents\code\export\km-lightroom-export-v-3\myenv\Lib\site-packages\pywinauto\findwindows.py", line 87, in find_element
+    raise ElementNotFoundError(kwargs)
+pywinauto.findwindows.ElementNotFoundError: {'title_re': '.*777*', 'backend': 'uia', 'visible_only': False}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\USER\Documents\code\export\km-lightroom-export-v-3/src\lightroom\LightroomAutomationThread.py", line 118, in run
+    app = Application(backend="uia").connect(
+        title_re=".*777*", timeout=5
+    )
+  File "c:\Users\USER\Documents\code\export\km-lightroom-export-v-3\myenv\Lib\site-packages\pywinauto\application.py", line 990, in connect
+    self.process = timings.wait_until_passes(
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~^
+            timeout, retry_interval, findwindows.find_element,
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+            *(), **kwargs
+            ^^^^^^^^^^^^^
+        ).process_id
+        ^
+  File "c:\Users\USER\Documents\code\export\km-lightroom-export-v-3\myenv\Lib\site-packages\pywinauto\timings.py", line 458, in wait_until_passes
+    raise err
+pywinauto.timings.TimeoutError
+2025-03-11 11:11:13 | INFO | Lightroom Classic 실행 시작...
+2025-03-11 11:11:13 | INFO | Lightroom Classic 실행 시작...
+2025-03-11 11:11:13 | INFO | {'message': '라이트룸 실행 성공', 'status': True, 'status_code': '200101'}
+2025-03-11 11:11:13 | INFO | {'message': '라이트룸 실행 성공', 'status': True, 'status_code': '200101'}
+2025-03-11 11:11:21 | ERROR | {'status_code': '400303', 'message': '라이트룸 어플리케이션 초기화 실패했습니다.', 'status': False}
+Traceback (most recent call last):
+  File "c:\Users\USER\Documents\code\export\km-lightroom-export-v-3\myenv\Lib\site-packages\pywinauto\timings.py", line 436, in wait_until_passes
+    func_val = func(*args, **kwargs)
+  File "c:\Users\USER\Documents\code\export\km-lightroom-export-v-3\myenv\Lib\site-packages\pywinauto\findwindows.py", line 87, in find_element
+    raise ElementNotFoundError(kwargs)
+pywinauto.findwindows.ElementNotFoundError: {'title_re': '.*777*', 'backend': 'uia', 'visible_only': False}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\USER\Documents\code\export\km-lightroom-export-v-3/src\lightroom\LightroomAutomationThread.py", line 118, in run
+    app = Application(backend="uia").connect(
+        title_re=".*777*", timeout=5
+    )
+  File "c:\Users\USER\Documents\code\export\km-lightroom-export-v-3\myenv\Lib\site-packages\pywinauto\application.py", line 990, in connect
+    self.process = timings.wait_until_passes(
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~^
+            timeout, retry_interval, findwindows.find_element,
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+            *(), **kwargs
+            ^^^^^^^^^^^^^
+        ).process_id
+        ^
+  File "c:\Users\USER\Documents\code\export\km-lightroom-export-v-3\myenv\Lib\site-packages\pywinauto\timings.py", line 458, in wait_until_passes
+    raise err
+pywinauto.timings.TimeoutError
+2025-03-11 11:11:21 | ERROR | {'status_code': '400303', 'message': '라이트룸 어플리케이션 초기화 실패했습니다.', 'status': False}
+Traceback (most recent call last):
+  File "c:\Users\USER\Documents\code\export\km-lightroom-export-v-3\myenv\Lib\site-packages\pywinauto\timings.py", line 436, in wait_until_passes
+    func_val = func(*args, **kwargs)
+  File "c:\Users\USER\Documents\code\export\km-lightroom-export-v-3\myenv\Lib\site-packages\pywinauto\findwindows.py", line 87, in find_element
+    raise ElementNotFoundError(kwargs)
+pywinauto.findwindows.ElementNotFoundError: {'title_re': '.*777*', 'backend': 'uia', 'visible_only': False}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\USER\Documents\code\export\km-lightroom-export-v-3/src\lightroom\LightroomAutomationThread.py", line 118, in run
+    app = Application(backend="uia").connect(
+        title_re=".*777*", timeout=5
+    )
+  File "c:\Users\USER\Documents\code\export\km-lightroom-export-v-3\myenv\Lib\site-packages\pywinauto\application.py", line 990, in connect
+    self.process = timings.wait_until_passes(
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~^
+            timeout, retry_interval, findwindows.find_element,
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+            *(), **kwargs
+            ^^^^^^^^^^^^^
+        ).process_id
+        ^
+  File "c:\Users\USER\Documents\code\export\km-lightroom-export-v-3\myenv\Lib\site-packages\pywinauto\timings.py", line 458, in wait_until_passes
+    raise err
+pywinauto.timings.TimeoutError
+2025-03-11 11:12:11 | INFO | Lightroom Classic 실행 시작...
+2025-03-11 11:12:11 | INFO | Lightroom Classic 실행 시작...
+2025-03-11 11:12:11 | INFO | {'message': '라이트룸 실행 성공', 'status': True, 'status_code': '200101'}
+2025-03-11 11:12:11 | INFO | {'message': '라이트룸 실행 성공', 'status': True, 'status_code': '200101'}
+2025-03-11 11:12:19 | ERROR | {'status_code': '400303', 'message': '라이트룸 어플리케이션 초기화 실패했습니다.', 'status': False}
+Traceback (most recent call last):
+  File "c:\Users\USER\Documents\code\export\km-lightroom-export-v-3\myenv\Lib\site-packages\pywinauto\timings.py", line 436, in wait_until_passes
+    func_val = func(*args, **kwargs)
+  File "c:\Users\USER\Documents\code\export\km-lightroom-export-v-3\myenv\Lib\site-packages\pywinauto\findwindows.py", line 87, in find_element
+    raise ElementNotFoundError(kwargs)
+pywinauto.findwindows.ElementNotFoundError: {'title_re': '.*777*', 'backend': 'uia', 'visible_only': False}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\USER\Documents\code\export\km-lightroom-export-v-3/src\lightroom\LightroomAutomationThread.py", line 118, in run
+    app = Application(backend="uia").connect(
+        title_re=".*777*", timeout=5
+    )
+  File "c:\Users\USER\Documents\code\export\km-lightroom-export-v-3\myenv\Lib\site-packages\pywinauto\application.py", line 990, in connect
+    self.process = timings.wait_until_passes(
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~^
+            timeout, retry_interval, findwindows.find_element,
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+            *(), **kwargs
+            ^^^^^^^^^^^^^
+        ).process_id
+        ^
+  File "c:\Users\USER\Documents\code\export\km-lightroom-export-v-3\myenv\Lib\site-packages\pywinauto\timings.py", line 458, in wait_until_passes
+    raise err
+pywinauto.timings.TimeoutError
+2025-03-11 11:12:19 | ERROR | {'status_code': '400303', 'message': '라이트룸 어플리케이션 초기화 실패했습니다.', 'status': False}
+Traceback (most recent call last):
+  File "c:\Users\USER\Documents\code\export\km-lightroom-export-v-3\myenv\Lib\site-packages\pywinauto\timings.py", line 436, in wait_until_passes
+    func_val = func(*args, **kwargs)
+  File "c:\Users\USER\Documents\code\export\km-lightroom-export-v-3\myenv\Lib\site-packages\pywinauto\findwindows.py", line 87, in find_element
+    raise ElementNotFoundError(kwargs)
+pywinauto.findwindows.ElementNotFoundError: {'title_re': '.*777*', 'backend': 'uia', 'visible_only': False}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\USER\Documents\code\export\km-lightroom-export-v-3/src\lightroom\LightroomAutomationThread.py", line 118, in run
+    app = Application(backend="uia").connect(
+        title_re=".*777*", timeout=5
+    )
+  File "c:\Users\USER\Documents\code\export\km-lightroom-export-v-3\myenv\Lib\site-packages\pywinauto\application.py", line 990, in connect
+    self.process = timings.wait_until_passes(
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~^
+            timeout, retry_interval, findwindows.find_element,
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+            *(), **kwargs
+            ^^^^^^^^^^^^^
+        ).process_id
+        ^
+  File "c:\Users\USER\Documents\code\export\km-lightroom-export-v-3\myenv\Lib\site-packages\pywinauto\timings.py", line 458, in wait_until_passes
+    raise err
+pywinauto.timings.TimeoutError
+2025-03-11 11:12:49 | INFO | Lightroom Classic 실행 시작...
+2025-03-11 11:12:49 | INFO | Lightroom Classic 실행 시작...
+2025-03-11 11:12:49 | INFO | {'message': '라이트룸 실행 성공', 'status': True, 'status_code': '200101'}
+2025-03-11 11:12:49 | INFO | {'message': '라이트룸 실행 성공', 'status': True, 'status_code': '200101'}
+2025-03-11 11:12:57 | ERROR | {'status_code': '400303', 'message': '라이트룸 어플리케이션 초기화 실패했습니다.', 'status': False}
+Traceback (most recent call last):
+  File "c:\Users\USER\Documents\code\export\km-lightroom-export-v-3\myenv\Lib\site-packages\pywinauto\timings.py", line 436, in wait_until_passes
+    func_val = func(*args, **kwargs)
+  File "c:\Users\USER\Documents\code\export\km-lightroom-export-v-3\myenv\Lib\site-packages\pywinauto\findwindows.py", line 87, in find_element
+    raise ElementNotFoundError(kwargs)
+pywinauto.findwindows.ElementNotFoundError: {'title_re': '.*777*', 'backend': 'uia', 'visible_only': False}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\USER\Documents\code\export\km-lightroom-export-v-3/src\lightroom\LightroomAutomationThread.py", line 118, in run
+    app = Application(backend="uia").connect(
+        title_re=".*777*", timeout=5
+    )
+  File "c:\Users\USER\Documents\code\export\km-lightroom-export-v-3\myenv\Lib\site-packages\pywinauto\application.py", line 990, in connect
+    self.process = timings.wait_until_passes(
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~^
+            timeout, retry_interval, findwindows.find_element,
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+            *(), **kwargs
+            ^^^^^^^^^^^^^
+        ).process_id
+        ^
+  File "c:\Users\USER\Documents\code\export\km-lightroom-export-v-3\myenv\Lib\site-packages\pywinauto\timings.py", line 458, in wait_until_passes
+    raise err
+pywinauto.timings.TimeoutError
+2025-03-11 11:12:57 | ERROR | {'status_code': '400303', 'message': '라이트룸 어플리케이션 초기화 실패했습니다.', 'status': False}
+Traceback (most recent call last):
+  File "c:\Users\USER\Documents\code\export\km-lightroom-export-v-3\myenv\Lib\site-packages\pywinauto\timings.py", line 436, in wait_until_passes
+    func_val = func(*args, **kwargs)
+  File "c:\Users\USER\Documents\code\export\km-lightroom-export-v-3\myenv\Lib\site-packages\pywinauto\findwindows.py", line 87, in find_element
+    raise ElementNotFoundError(kwargs)
+pywinauto.findwindows.ElementNotFoundError: {'title_re': '.*777*', 'backend': 'uia', 'visible_only': False}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\USER\Documents\code\export\km-lightroom-export-v-3/src\lightroom\LightroomAutomationThread.py", line 118, in run
+    app = Application(backend="uia").connect(
+        title_re=".*777*", timeout=5
+    )
+  File "c:\Users\USER\Documents\code\export\km-lightroom-export-v-3\myenv\Lib\site-packages\pywinauto\application.py", line 990, in connect
+    self.process = timings.wait_until_passes(
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~^
+            timeout, retry_interval, findwindows.find_element,
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+            *(), **kwargs
+            ^^^^^^^^^^^^^
+        ).process_id
+        ^
+  File "c:\Users\USER\Documents\code\export\km-lightroom-export-v-3\myenv\Lib\site-packages\pywinauto\timings.py", line 458, in wait_until_passes
+    raise err
+pywinauto.timings.TimeoutError
+2025-03-11 11:13:17 | INFO | Lightroom Classic 실행 시작...
+2025-03-11 11:13:17 | INFO | Lightroom Classic 실행 시작...
+2025-03-11 11:13:17 | INFO | {'message': '라이트룸 실행 성공', 'status': True, 'status_code': '200101'}
+2025-03-11 11:13:17 | INFO | {'message': '라이트룸 실행 성공', 'status': True, 'status_code': '200101'}
+2025-03-11 12:05:44 | INFO | {'message': '라이트룸 실행 성공', 'status': True, 'status_code': '200101'}
+2025-03-11 12:28:13 | INFO | {'message': '라이트룸 실행 성공', 'status': True, 'status_code': '200101'}
+2025-03-11 12:28:13 | INFO | {'message': '라이트룸 실행 성공', 'status': True, 'status_code': '200101'}
+2025-03-11 12:28:31 | INFO | {'status_code': '400401', 'message': '카메라를 감지하지 못햇습니다.', 'status': False}
+2025-03-11 12:28:31 | INFO | {'status_code': '400401', 'message': '카메라를 감지하지 못햇습니다.', 'status': False}

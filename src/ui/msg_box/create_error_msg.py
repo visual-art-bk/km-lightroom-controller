@@ -4,13 +4,21 @@ from .move_msg_center import move_msg_center
 
 default_msg = "⚠️ 오류 발생! 프로그램을 다시 시작하세요."
 
-def create_error_msg(parent, content=default_msg):
+def create_error_msg(parent, content=default_msg, info=None):
+
+    if info is None:
+        message_text = content
+    else:
+        msg = info["message"]
+        status_code = info["status_code"]
+        message_text = f"코드[{status_code}] {msg}"
+ 
     msg_box = QMessageBox(
         parent
     )  # ✅ 부모 윈도우 설정 (현재 윈도우가 닫혀도 메시지박스 유지)
     msg_box.setIcon(QMessageBox.Icon.Information)  # ℹ️ 정보 아이콘 설정
-    msg_box.setWindowTitle("알림")  # 창 제목
-    msg_box.setText(content) 
+    msg_box.setWindowTitle("안내 메시지")  # 창 제목
+    msg_box.setText(message_text) 
 
     msg_box.setStandardButtons(QMessageBox.StandardButton.Ok)  # "확인" 버튼 추가
 

@@ -1,5 +1,11 @@
 import datetime
-from typedefs.signal_types import TypeAutomationSignal
+from typedefs.signal_types import TypeAutomationSignal, TypeSignalStatus
+from constants.status_code import (
+    CAMERA_NOT_DETECTED,
+    CAMERA_NOT_SEARCHED,
+    AUTOMATION_LIGHTROOM_FOCUS_FAILED_WITH_NOTE,
+    AUTOMATION_APPLICATOIN_INIT_FAILED
+)
 from constants import (
     MAIN_WINDOW_BG_COLOR,
     SIGNAL_NO_DETECTED_CAMERA,
@@ -90,7 +96,7 @@ class MainWindow(QMainWindow):
 
     def init_layouts(self):
         main_central_layout = QVBoxLayout()
-        
+
         self.init_input_main_fields(layout=main_central_layout)
 
         self.run_button = btn_run_main()
@@ -134,11 +140,11 @@ class MainWindow(QMainWindow):
         self.thread_lightroom_launcher = LightroomLaunchThread()
         self.thread_lightroom_automation = LightroomAutomationThread()
 
-        self.thread_lightroom_launcher.lightroom_started.connect(
+        self.thread_lightroom_launcher.launch_start.connect(
             self.on_lightroom_launcher_start
         )
 
-        self.thread_lightroom_automation.automation_result.connect(
+        self.thread_lightroom_automation.automation.connect(
             self.on_lightroom_automation_finished
         )
 
@@ -182,21 +188,20 @@ class MainWindow(QMainWindow):
         self.overlay_window = OverlayWindow()  #  독립적인 오버레이 생성
         self.overlay_window.show()
 
-    def on_lightroom_launcher_start(self):
-        if (
-            self.thread_lightroom_launcher.lightroom_started
-            == SIGNAL_LIGHTROOM_LAUHCNER_START_FAILED
-        ):
-            print("Main-라이트룸 실행 실패!")
-            self.show_guide_msg(msg_code=SIGNAL_LIGHTROOM_LAUHCNER_START_FAILED)
+    def on_lightroom_launcher_start(self, info: TypeSignalStatus):
+        if info["status"] is False:
+            self.show_guide_msg(
+                msg_code=SIGNAL_LIGHTROOM_LAUHCNER_START_FAILED, info=info
+            )
             self.cleanup_resources()
             return
+
         self.setWindowState(Qt.WindowMinimized)
         self.create_overlay()
 
         self.thread_lightroom_automation.start()
 
-    def on_lightroom_automation_finished(self, info: TypeAutomationSignal):
+    def on_lightroom_automation_finished(self, info: TypeSignalStatus):
 
         self.raise_()  # ✅ 메인 윈도우를 최상위로 올림
         self.activateWindow()  # ✅ 메인 윈도우에 포커스 활성화
@@ -204,7 +209,7 @@ class MainWindow(QMainWindow):
         if info["status"] is False:
 
             self.show_guide_msg(
-                msg_code=info["error_code"], signal_info_msg=info["message"]
+                msg_code=info["status_code"], signal_info_msg=info["message"], info=info
             )
         else:
             show_guide(
@@ -226,21 +231,18 @@ class MainWindow(QMainWindow):
         print(f"오버레이 실행여부: {'실행' if new_state.overlay_running else '중지'}")
         print(f"                                                      ")
 
-    def show_guide_msg(self, msg_code="", signal_info_msg=""):
-        self.raise_()  # ✅ 메인 윈도우를 최상위로 올림
-        self.activateWindow()  # ✅ 메인 윈도우에 포커스 활성화
-
-        if msg_code == SIGNAL_NO_DETECTED_CAMERA:
+    def show_guide_msg(self, msg_code="", signal_info_msg="", info=None):
+        if msg_code == CAMERA_NOT_DETECTED:
             show_guide(parent=self, file_path="메시지/카메라감지실패메시지.txt")
-        elif msg_code == SIGNAL_NO_SEARCHED_CAMERA:
+        elif msg_code == CAMERA_NOT_SEARCHED:
             show_guide(parent=self, file_path="메시지/카메라감지실패메시지.txt")
-        elif msg_code == SIGNAL_LIGHTROOM_AUTOMATION_CONNECT_FAILED:
+        elif msg_code == AUTOMATION_APPLICATOIN_INIT_FAILED:
             show_guide(
                 parent=self,
                 file_path="",
                 defalut_message="⚠️⚠️⚠️ 라이트룸을 다시 실행해주세요.",
             )
-        elif msg_code == SIGNAL_LIGHTROOM_AUTOMATION_FOCUS_FAILED:
+        elif msg_code == AUTOMATION_LIGHTROOM_FOCUS_FAILED_WITH_NOTE:
             show_guide(
                 parent=self,
                 file_path="",
@@ -249,8 +251,7 @@ class MainWindow(QMainWindow):
 
         else:
             error_msg_box = create_error_msg(
-                parent=self,
-                content=signal_info_msg,
+                parent=self, content=signal_info_msg, info=info
             )
             error_msg_box.exec()
 
